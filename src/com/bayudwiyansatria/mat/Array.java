@@ -1,13 +1,10 @@
-package com.bayudwiyansatria.io;
+package com.bayudwiyansatria.mat;
 
-import com.bayudwiyansatria.mat.Mat;
-import com.bayudwiyansatria.utils.Utils;
+import com.bayudwiyansatria.utils.Calculation;
 
 import java.util.*;
 
-public class Array {
-    static Mat math = new Mat();
-    static Utils utils = new Utils();
+public class Array extends Calculation {
 
     /* ======================================= Array View Start ======================================================*/
 
@@ -68,7 +65,7 @@ public class Array {
     }
 
     public void print(double data, int decimal_fraction) {
-        System.out.println(math.getRound(data, decimal_fraction) + "\n");
+        System.out.println(this.getRound(data, decimal_fraction) + "\n");
     }
 
     public void print(double[] data, int decimal_fraction) {
@@ -80,7 +77,7 @@ public class Array {
     }
 
     public void print(String label, double data, int decimal_fraction) {
-        System.out.println(label + " = " + math.getRound(data, decimal_fraction) + "\n");
+        System.out.println(label + " = " + this.getRound(data, decimal_fraction) + "\n");
     }
 
     public void print(String label, int[] data) {
@@ -177,10 +174,10 @@ public class Array {
             System.out.println(label + " =");
         }
         for(int i = 0; i < data.length - 1; ++i) {
-            System.out.print(math.getRound(data[i], decimal_fraction) + "    ");
+            System.out.print(this.getRound(data[i], decimal_fraction) + "    ");
         }
         if (data.length > 0) {
-            System.out.print(math.getRound(data[data.length - 1], decimal_fraction));
+            System.out.print(this.getRound(data[data.length - 1], decimal_fraction));
         }
         System.out.print("\n\n");
     }
@@ -192,7 +189,7 @@ public class Array {
 
         for(int i = 0; i < data.length; ++i) {
             for(int j = 0; j < data[i].length; ++j) {
-                System.out.print(math.getRound(data[i][j], decimal_fraction) + "    ");
+                System.out.print(this.getRound(data[i][j], decimal_fraction) + "    ");
             }
             System.out.print("\n");
         }
@@ -204,181 +201,181 @@ public class Array {
     /* ======================================= Array Get Dimension Start =============================================*/
 
     public int[] getRow(int[][] data, int row) {
-        int[] _vv = new int[data[0].length];
+        int[] rowData = new int[data[0].length];
         try {
             for(int i = 0; i < data[0].length; ++i) {
-                _vv[i] = data[row][i];
+                rowData[i] = data[row][i];
             }
-        } catch (Exception var6) {
+        } catch (Exception e) {
             System.out.println("Row is not correct!");
         }
-        return _vv;
+        return rowData;
     }
 
     public double[] getRow(double[][] data, int row) {
-        double[] _vv = new double[data[0].length];
+        double[] rowData = new double[data[0].length];
         try {
-            System.arraycopy(data[row], 0, _vv, 0, data[0].length);
+            System.arraycopy(data[row], 0, rowData, 0, data[0].length);
         } catch (Exception var6) {
             System.out.println("Row is not correct!");
         }
-        return _vv;
+        return rowData;
     }
 
     public int[] getRow(int[] data, int startrow, int endrow) {
-        int[] _vv = new int[endrow - startrow + 1];
+        int[] rowData = new int[endrow - startrow + 1];
         try {
             for(int i = ~(0 - (int)(1L + (long)startrow)); i <= endrow; ++i) {
-                _vv[i - startrow] = data[i];
+                rowData[i - startrow] = data[i];
             }
         } catch (Exception var7) {
             System.out.println("Row is not correct!");
         }
-        return _vv;
+        return rowData;
     }
 
     public double[] getRow(double[] data, int startrow, int endrow) {
-        double[] _vv = new double[endrow - startrow + 1];
+        double[] rowData = new double[endrow - startrow + 1];
         try {
             for(int i = ~(0 - (int)(1L + (long)startrow)); i <= endrow; ++i) {
-                _vv[i - startrow] = data[i];
+                rowData[i - startrow] = data[i];
             }
         } catch (Exception var7) {
             System.out.println("Row is not correct!");
         }
-        return _vv;
+        return rowData;
     }
 
     public int[][] getRow(int[][] data, int startrow, int endrow) {
-        int[][] _vv = new int[endrow - startrow + 1][data[0].length];
+        int[][] rowData = new int[endrow - startrow + 1][data[0].length];
         try {
             for(int i = ~(0 - (int)(1L + (long)startrow)); i <= endrow; ++i) {
-                System.arraycopy(data[i], 0, _vv[i - startrow], 0, data[0].length);
+                System.arraycopy(data[i], 0, rowData[i - startrow], 0, data[0].length);
             }
         } catch (Exception var8) {
             System.out.println("Row is not correct!");
         }
-        return _vv;
+        return rowData;
     }
 
     public double[][] getRow(double[][] data, int startrow, int endrow) {
-        double[][] _vv = new double[endrow - startrow + 1][data[0].length];
+        double[][] rowData = new double[endrow - startrow + 1][data[0].length];
         try {
             for(int i = ~(0 - (int)(1L + (long)startrow)); i <= endrow; ++i) {
                 for(int j = 0; i < data[0].length; ++i) {
-                    _vv[i - startrow][i] = data[i][j];
+                    rowData[i - startrow][i] = data[i][j];
                 }
             }
         } catch (Exception var9) {
             System.out.println("Row is not correct!");
         }
-        return _vv;
+        return rowData;
     }
 
     public int[] getCol(int[][] data, int col) {
-        int[] _vv = new int[data.length];
+        int[] colData = new int[data.length];
         try {
             for(int i = 0; i < data.length; ++i) {
-                _vv[i] = data[i][col];
+                colData[i] = data[i][col];
             }
         } catch (Exception var6) {
             System.out.println("Column is not correct!");
         }
-        return _vv;
+        return colData;
     }
 
     public double[] getCol(double[][] data, int col) {
-        double[] _vv = new double[data.length];
+        double[] colData = new double[data.length];
         try {
             for(int i = 0; i < data.length; ++i) {
-                _vv[i] = data[i][col];
+                colData[i] = data[i][col];
             }
         } catch (Exception var6) {
             System.out.println("Column is not correct!");
         }
-        return _vv;
+        return colData;
     }
 
     public int[] getCol(int[] data, int startcol, int endcol) {
-        int[] _vv = new int[endcol - startcol + 1];
+        int[] colData = new int[endcol - startcol + 1];
         try {
             for(int i = ~(0 - (int)(1L + (long)startcol)); i <= endcol; ++i) {
-                _vv[i - startcol] = data[i];
+                colData[i - startcol] = data[i];
             }
         } catch (Exception var7) {
             System.out.println("Row is not correct!");
         }
 
-        return _vv;
+        return colData;
     }
 
     public double[] getCol(double[] data, int startcol, int endcol) {
-        double[] _vv = new double[endcol - startcol + 1];
+        double[] colData = new double[endcol - startcol + 1];
 
         try {
             for(int i = ~(0 - (int)(1L + (long)startcol)); i <= endcol; ++i) {
-                _vv[i - startcol] = data[i];
+                colData[i - startcol] = data[i];
             }
         } catch (Exception var7) {
             System.out.println("Row is not correct!");
         }
-        return _vv;
+        return colData;
     }
 
     public int[][] getCol(int[][] data, int startcol, int endcol) {
-        int[][] _vv = new int[data.length][endcol - startcol + 1];
+        int[][] colData = new int[data.length][endcol - startcol + 1];
         try {
             for(int i = 0; i < data.length; ++i) {
                 for(int j = ~(0 - (int)(1L + (long)startcol)); j <= endcol; ++j) {
-                    _vv[i][j - startcol] = data[i][j];
+                    colData[i][j - startcol] = data[i][j];
                 }
             }
         } catch (Exception var9) {
             System.out.println("Column is not correct!");
         }
-        return _vv;
+        return colData;
     }
 
     public double[][] getCol(double[][] data, int startcol, int endcol) {
-        double[][] _vv = new double[data.length][endcol - startcol + 1];
+        double[][] colData = new double[data.length][endcol - startcol + 1];
         try {
             for(int i = 0; i < data.length; ++i) {
                 for(int j = ~(0 - (int)(1L + (long)startcol)); j <= endcol; ++j) {
-                    _vv[i][j - startcol] = data[i][j];
+                    colData[i][j - startcol] = data[i][j];
                 }
             }
         } catch (Exception var9) {
             System.out.println("Column is not correct!");
         }
-        return _vv;
+        return colData;
     }
 
     public int[][] getRowCol(int[][] data, int startrow, int endrow, int startcol, int endcol) {
-        int[][] _vv = new int[endrow - startrow + 1][endcol - startcol + 1];
+        int[][] colData = new int[endrow - startrow + 1][endcol - startcol + 1];
         try {
             for(int i = ~(0 - (int)(1L + (long)startrow)); i <= endrow; ++i) {
                 for(int j = ~(0 - (int)(1L + (long)startcol)); j <= endcol; ++j) {
-                    _vv[i - startrow][j - startcol] = data[i][j];
+                    colData[i - startrow][j - startcol] = data[i][j];
                 }
             }
         } catch (Exception var11) {
             System.out.println("Row is not correct!");
         }
-        return _vv;
+        return colData;
     }
 
     public double[][] getRowCol(double[][] data, int startrow, int endrow, int startcol, int endcol) {
-        double[][] _vv = new double[endrow - startrow + 1][endcol - startcol + 1];
+        double[][] colData = new double[endrow - startrow + 1][endcol - startcol + 1];
         try {
             for(int i = ~(0 - (int)(1L + (long)startrow)); i <= endrow; ++i) {
                 for(int j = ~(0 - (int)(1L + (long)startcol)); j <= endcol; ++j) {
-                    _vv[i - startrow][j - startcol] = data[i][j];
+                    colData[i - startrow][j - startcol] = data[i][j];
                 }
             }
         } catch (Exception var11) {
             System.out.println("Row is not correct!");
         }
-        return _vv;
+        return colData;
     }
 
     /* ======================================= Array Get Dimension End ===============================================*/
@@ -394,7 +391,7 @@ public class Array {
     }
 
     public int[][] sortData(int[] data, String mode) {
-        int[][] _hasil = new int[2][data.length];
+        int[][] newData = new int[2][data.length];
         mode = mode.toLowerCase();
         int[] ar = this.copyArray(data);
         Arrays.sort(ar);
@@ -404,27 +401,27 @@ public class Array {
         }
         Map<String, String> sortedMap = sortByComparator(map);
         int p;
-        Iterator var8;
+        Iterator iterator;
         Map.Entry entry;
         if (mode.equals("asc")) {
             p = 0;
-            for(var8 = sortedMap.entrySet().iterator(); var8.hasNext(); ++p) {
-                entry = (Map.Entry)var8.next();
-                _hasil[1][p] = (Integer)entry.getKey();
-                _hasil[0][p] = (Integer)entry.getValue();
+            for(iterator = sortedMap.entrySet().iterator(); iterator.hasNext(); ++p) {
+                entry = (Map.Entry)iterator.next();
+                newData[1][p] = (Integer)entry.getKey();
+                newData[0][p] = (Integer)entry.getValue();
             }
         } else if (mode.equals("desc")) {
             p = data.length - 1;
 
-            for(var8 = sortedMap.entrySet().iterator(); var8.hasNext(); --p) {
-                entry = (Map.Entry)var8.next();
-                _hasil[1][p] = (Integer)entry.getKey();
-                _hasil[0][p] = (Integer)entry.getValue();
+            for(iterator = sortedMap.entrySet().iterator(); iterator.hasNext(); --p) {
+                entry = (Map.Entry)iterator.next();
+                newData[1][p] = (Integer)entry.getKey();
+                newData[0][p] = (Integer)entry.getValue();
             }
         } else {
             System.out.println("Mode incorrect");
         }
-        return _hasil;
+        return newData;
     }
 
     public double[][] sortData(double[] data, String mode) {
@@ -438,19 +435,19 @@ public class Array {
         }
         Map<String, String> sortedMap = sortByComparator(map);
         int p;
-        Iterator var8;
+        Iterator iterator;
         Map.Entry entry;
         if (mode.equals("asc")) {
             p = 0;
-            for(var8 = sortedMap.entrySet().iterator(); var8.hasNext(); ++p) {
-                entry = (Map.Entry)var8.next();
+            for(iterator = sortedMap.entrySet().iterator(); iterator.hasNext(); ++p) {
+                entry = (Map.Entry)iterator.next();
                 _hasil[1][p] = (double)(Integer)entry.getKey();
                 _hasil[0][p] = (Double)entry.getValue();
             }
         } else if (mode.equals("desc")) {
             p = data.length - 1;
-            for(var8 = sortedMap.entrySet().iterator(); var8.hasNext(); --p) {
-                entry = (Map.Entry)var8.next();
+            for(iterator = sortedMap.entrySet().iterator(); iterator.hasNext(); --p) {
+                entry = (Map.Entry)iterator.next();
                 _hasil[1][p] = (double)(Integer)entry.getKey();
                 _hasil[0][p] = (Double)entry.getValue();
             }
@@ -468,10 +465,10 @@ public class Array {
             }
         });
         Map sortedMap = new LinkedHashMap();
-        Iterator it = list.iterator();
+        Iterator iterator = list.iterator();
 
-        while(it.hasNext()) {
-            Map.Entry entry = (Map.Entry)it.next();
+        while(iterator.hasNext()) {
+            Map.Entry entry = (Map.Entry)iterator.next();
             sortedMap.put(entry.getKey(), entry.getValue());
         }
         return sortedMap;
@@ -482,333 +479,333 @@ public class Array {
     /* ======================================= Array Merger Start ====================================================*/
 
     public int[] mergeArray(int[] data1, int[] data2) {
-        int[] _output = this.initArray(data1.length + data2.length, 0);
+        int[] newArray = this.initArray(data1.length + data2.length, 0);
 
         int i;
         for(i = 0; i < data1.length; ++i) {
-            _output[i] = data1[i];
+            newArray[i] = data1[i];
         }
 
         for(i = 0; i < data2.length; ++i) {
-            _output[data1.length + i] = data2[i];
+            newArray[data1.length + i] = data2[i];
         }
 
-        return _output;
+        return newArray;
     }
 
     public double[] mergeArray(double[] data1, double[] data2) {
-        double[] _output = this.initArray(data1.length + data2.length, 0.0);
+        double[] newArray = this.initArray(data1.length + data2.length, 0.0);
 
         int i;
         for(i = 0; i < data1.length; ++i) {
-            _output[i] = data1[i];
+            newArray[i] = data1[i];
         }
 
         for(i = 0; i < data2.length; ++i) {
-            _output[data1.length + i] = data2[i];
+            newArray[data1.length + i] = data2[i];
         }
 
-        return _output;
+        return newArray;
     }
 
     public int[][] mergeArray_row(int[] data1, int[] data2) {
-        int[][] _output = this.initArray(2, data1.length, 0);
+        int[][] newArray = this.initArray(2, data1.length, 0);
         if (data1.length != data2.length) {
             System.out.println("length of both data has to be same!");
         }
 
         for(int i = 0; i < data1.length; ++i) {
-            _output[0][i] = data1[i];
-            _output[1][i] = data2[i];
+            newArray[0][i] = data1[i];
+            newArray[1][i] = data2[i];
         }
 
-        return _output;
+        return newArray;
     }
 
     public double[][] mergeArray_row(double[] data1, double[] data2) {
-        double[][] _output = this.initArray(2, data1.length, 0.0);
+        double[][] newArray = this.initArray(2, data1.length, 0.0);
         if (data1.length != data2.length) {
             System.out.println("length of both data has to be same!");
         }
 
         for(int i = 0; i < data1.length; ++i) {
-            _output[0][i] = data1[i];
-            _output[1][i] = data2[i];
+            newArray[0][i] = data1[i];
+            newArray[1][i] = data2[i];
         }
 
-        return _output;
+        return newArray;
     }
 
     public int[][] mergeArray_col(int[] data1, int[] data2) {
-        int[][] _output = this.initArray(data1.length, 2, 0);
+        int[][] newArray = this.initArray(data1.length, 2, 0);
         if (data1.length != data2.length) {
             System.out.println("length of both data has to be same!");
         }
 
         for(int i = 0; i < data1.length; ++i) {
-            _output[i][0] = data1[i];
-            _output[i][1] = data2[i];
+            newArray[i][0] = data1[i];
+            newArray[i][1] = data2[i];
         }
 
-        return _output;
+        return newArray;
     }
 
     public double[][] mergeArray_col(double[] data1, double[] data2) {
-        double[][] _output = this.initArray(data1.length, 2, 0.0);
+        double[][] newArray = this.initArray(data1.length, 2, 0.0);
         if (data1.length != data2.length) {
             System.out.println("length of both data has to be same!");
         }
 
         for(int i = 0; i < data1.length; ++i) {
-            _output[i][0] = data1[i];
-            _output[i][1] = data2[i];
+            newArray[i][0] = data1[i];
+            newArray[i][1] = data2[i];
         }
 
-        return _output;
+        return newArray;
     }
 
     public int[][] mergeArray_row(int[] data1, int[][] data2) {
-        int _dim2 = data2[0].length;
-        int[][] _output = (int[][])null;
-        if (_dim2 == data1.length) {
-            _output = this.initArray(data2.length + 1, _dim2, 0);
+        int dimension = data2[0].length;
+        int[][] newArray = (int[][])null;
+        if (dimension == data1.length) {
+            newArray = this.initArray(data2.length + 1, dimension, 0);
 
             int i;
-            for(i = 0; i < _dim2; ++i) {
-                _output[0][i] = data1[i];
+            for(i = 0; i < dimension; ++i) {
+                newArray[0][i] = data1[i];
             }
 
             for(int j = 1; j <= data2.length; ++j) {
-                for(i = 0; i < _dim2; ++i) {
-                    _output[j][i] = data2[j][i];
+                for(i = 0; i < dimension; ++i) {
+                    newArray[j][i] = data2[j][i];
                 }
             }
         } else {
             System.out.println("Dimension of data has to be same!");
         }
 
-        return _output;
+        return newArray;
     }
 
     public double[][] mergeArray_row(double[] data1, double[][] data2) {
-        int _dim2 = data2[0].length;
-        double[][] _output = (double[][])null;
-        if (_dim2 == data1.length) {
-            _output = this.initArray(data2.length + 1, _dim2, 0.0);
+        int dimension = data2[0].length;
+        double[][] newArray = (double[][])null;
+        if (dimension == data1.length) {
+            newArray = this.initArray(data2.length + 1, dimension, 0.0);
 
             int i;
-            for(i = 0; i < _dim2; ++i) {
-                _output[0][i] = data1[i];
+            for(i = 0; i < dimension; ++i) {
+                newArray[0][i] = data1[i];
             }
 
             for(int j = 1; j <= data2.length; ++j) {
-                for(i = 0; i < _dim2; ++i) {
-                    _output[j][i] = data2[j][i];
+                for(i = 0; i < dimension; ++i) {
+                    newArray[j][i] = data2[j][i];
                 }
             }
         } else {
             System.out.println("Dimension of data has to be same!");
         }
 
-        return _output;
+        return newArray;
     }
 
     public int[][] mergeArray_col(int[] data1, int[][] data2) {
-        int _dim2 = data2[0].length;
-        int[][] _output = (int[][])null;
+        int dimension = data2[0].length;
+        int[][] newArray = (int[][])null;
         if (data1.length == data2.length) {
-            _output = this.initArray(data1.length, _dim2 + 1, 0);
+            newArray = this.initArray(data1.length, dimension + 1, 0);
 
             for(int i = 0; i < data1.length; ++i) {
-                _output[data2.length][0] = data1[i];
+                newArray[data2.length][0] = data1[i];
 
-                for(int j = 1; j <= _dim2; ++j) {
-                    _output[i][j] = data2[i][j];
+                for(int j = 1; j <= dimension; ++j) {
+                    newArray[i][j] = data2[i][j];
                 }
             }
         } else {
             System.out.println("Dimension of data has to be same!");
         }
 
-        return _output;
+        return newArray;
     }
 
     public double[][] mergeArray_col(double[] data1, double[][] data2) {
-        int _dim2 = data2[0].length;
-        double[][] _output = (double[][])null;
+        int dimension = data2[0].length;
+        double[][] newArray = (double[][])null;
         if (data1.length == data2.length) {
-            _output = this.initArray(data1.length, _dim2 + 1, 0.0);
+            newArray = this.initArray(data1.length, dimension + 1, 0.0);
 
             for(int i = 0; i < data1.length; ++i) {
-                _output[data2.length][0] = data1[i];
+                newArray[data2.length][0] = data1[i];
 
-                for(int j = 1; j <= _dim2; ++j) {
-                    _output[i][j] = data2[i][j];
+                for(int j = 1; j <= dimension; ++j) {
+                    newArray[i][j] = data2[i][j];
                 }
             }
         } else {
             System.out.println("Dimension of data has to be same!");
         }
 
-        return _output;
+        return newArray;
     }
 
     public int[][] mergeArray_row(int[][] data1, int[] data2) {
-        int[][] _output = (int[][])null;
+        int[][] newArray = (int[][])null;
         if (data1[0].length == data2.length) {
-            _output = this.initArray(data1.length + 1, data1[0].length, 0);
+            newArray = this.initArray(data1.length + 1, data1[0].length, 0);
 
             int i;
             for(int j = 0; j < data1.length; ++j) {
                 for(i = 0; i < data1[0].length; ++i) {
-                    _output[j][i] = data1[j][i];
+                    newArray[j][i] = data1[j][i];
                 }
             }
 
             for(i = 0; i < data1[0].length; ++i) {
-                _output[data1.length][i] = data2[i];
+                newArray[data1.length][i] = data2[i];
             }
         } else {
             System.out.println("Dimension of data has to be same!");
         }
 
-        return _output;
+        return newArray;
     }
 
     public double[][] mergeArray_row(double[][] data1, double[] data2) {
-        double[][] _output = (double[][])null;
+        double[][] newArray = (double[][])null;
         if (data1[0].length == data2.length) {
-            _output = this.initArray(data1.length + 1, data1[0].length, 0.0);
+            newArray = this.initArray(data1.length + 1, data1[0].length, 0.0);
 
             int i;
             for(int j = 0; j < data1.length; ++j) {
                 for(i = 0; i < data1[0].length; ++i) {
-                    _output[j][i] = data1[j][i];
+                    newArray[j][i] = data1[j][i];
                 }
             }
 
             for(i = 0; i < data1[0].length; ++i) {
-                _output[data1.length][i] = data2[i];
+                newArray[data1.length][i] = data2[i];
             }
         } else {
             System.out.println("Dimension of data has to be same!");
         }
 
-        return _output;
+        return newArray;
     }
 
     public int[][] mergeArray_col(int[][] data1, int[] data2) {
-        int[][] _output = (int[][])null;
+        int[][] newArray = (int[][])null;
         if (data1.length == data2.length) {
-            _output = this.initArray(data1.length, data1[0].length + 1, 0);
+            newArray = this.initArray(data1.length, data1[0].length + 1, 0);
 
             for(int i = 0; i < data1.length; ++i) {
                 for(int j = 0; j < data1[0].length; ++j) {
-                    _output[i][j] = data1[i][j];
+                    newArray[i][j] = data1[i][j];
                 }
 
-                _output[data1.length][data1[0].length] = data2[i];
+                newArray[data1.length][data1[0].length] = data2[i];
             }
         } else {
             System.out.println("Dimension of data has to be same!");
         }
 
-        return _output;
+        return newArray;
     }
 
     public double[][] mergeArray_col(double[][] data1, double[] data2) {
-        double[][] _output = (double[][])null;
+        double[][] newArray = (double[][])null;
         if (data1.length == data2.length) {
-            _output = this.initArray(data1.length, data1[0].length + 1, 0.0);
+            newArray = this.initArray(data1.length, data1[0].length + 1, 0.0);
 
             for(int i = 0; i < data1.length; ++i) {
                 for(int j = 0; j < data1[0].length; ++j) {
-                    _output[i][j] = data1[i][j];
+                    newArray[i][j] = data1[i][j];
                 }
 
-                _output[i][data1[0].length] = data2[i];
+                newArray[i][data1[0].length] = data2[i];
             }
         } else {
             System.out.println("Dimension of data has to be same!");
         }
 
-        return _output;
+        return newArray;
     }
 
     public int[][] mergeArray_row(int[][] data1, int[][] data2) {
-        int _dim2 = data2[0].length;
-        int[][] _output = this.initArray(data1.length + data2.length, data1[0].length, 0);
-        if (data1[0].length != _dim2) {
+        int dimension = data2[0].length;
+        int[][] newArray = this.initArray(data1.length + data2.length, data1[0].length, 0);
+        if (data1[0].length != dimension) {
             System.out.println("Cols of both data has to be same!");
         }
 
         for(int i = 0; i < data1[0].length; ++i) {
             int j;
             for(j = 0; j < data1.length; ++j) {
-                _output[j][i] = data1[j][i];
+                newArray[j][i] = data1[j][i];
             }
 
             for(j = 0; j < data2.length; ++j) {
-                _output[data1.length + j][i] = data2[j][i];
+                newArray[data1.length + j][i] = data2[j][i];
             }
         }
 
-        return _output;
+        return newArray;
     }
 
     public double[][] mergeArray_row(double[][] data1, double[][] data2) {
-        double[][] _output = this.initArray(data1.length + data2.length, data1[0].length, 0.0);
+        double[][] newArray = this.initArray(data1.length + data2.length, data1[0].length, 0.0);
         if (data1[0].length != data1[0].length) {
             System.out.println("Cols of both data has to be same!");
         }
         for(int i = 0; i < data1[0].length; ++i) {
             int j;
             for(j = 0; j < data1.length; ++j) {
-                _output[j][i] = data1[j][i];
+                newArray[j][i] = data1[j][i];
             }
             for(j = 0; j < data2.length; ++j) {
-                _output[data1.length + j][i] = data2[j][i];
+                newArray[data1.length + j][i] = data2[j][i];
             }
         }
-        return _output;
+        return newArray;
     }
 
     public int[][] mergeArray_col(int[][] data1, int[][] data2) {
-        int _dim2 = data2[0].length;
-        int[][] _output = this.initArray(data1.length, data1[0].length + _dim2, 0);
+        int dimension = data2[0].length;
+        int[][] newArray = this.initArray(data1.length, data1[0].length + dimension, 0);
         if (data1.length != data2.length) {
             System.out.println("Rows of both data has to be same!");
         }
         for(int i = 0; i < data1.length; ++i) {
             int j;
             for(j = 0; j < data1[0].length; ++j) {
-                _output[i][j] = data1[i][j];
+                newArray[i][j] = data1[i][j];
             }
-            for(j = 0; j < _dim2; ++j) {
-                _output[i][data1[0].length + j] = data2[i][j];
+            for(j = 0; j < dimension; ++j) {
+                newArray[i][data1[0].length + j] = data2[i][j];
             }
         }
 
-        return _output;
+        return newArray;
     }
 
     public double[][] mergeArray_col(double[][] data1, double[][] data2) {
-        int _dim2 = data2[0].length;
-        double[][] _output = this.initArray(data1.length, data1[0].length + _dim2, 0.0);
+        int dimension = data2[0].length;
+        double[][] newArray = this.initArray(data1.length, data1[0].length + dimension, 0.0);
         if (data1.length != data2.length) {
             System.out.println("Rows of both data has to be same!");
         }
         for(int i = 0; i < data1.length; ++i) {
             int j;
             for(j = 0; j < data1[0].length; ++j) {
-                _output[i][j] = data1[i][j];
+                newArray[i][j] = data1[i][j];
             }
 
-            for(j = 0; j < _dim2; ++j) {
-                _output[i][data1[0].length + j] = data2[i][j];
+            for(j = 0; j < dimension; ++j) {
+                newArray[i][data1[0].length + j] = data2[i][j];
             }
         }
-        return _output;
+        return newArray;
     }
 
     /* ======================================= Array Merger End ======================================================*/
@@ -837,9 +834,9 @@ public class Array {
         int[][] newArray = new int[data.length][];
 
         for(int i = 0; i < data.length; ++i) {
-            int _dimensi = data[i].length;
-            newArray[i] = new int[_dimensi];
-            System.arraycopy(data[i], 0, newArray[i], 0, _dimensi);
+            int dimension = data[i].length;
+            newArray[i] = new int[dimension];
+            System.arraycopy(data[i], 0, newArray[i], 0, dimension);
         }
 
         return newArray;
@@ -849,9 +846,9 @@ public class Array {
         double[][] newArray = new double[data.length][];
 
         for(int i = 0; i < data.length; ++i) {
-            int _dimensi = data[i].length;
-            newArray[i] = new double[_dimensi];
-            System.arraycopy(data[i], 0, newArray[i], 0, _dimensi);
+            int dimension = data[i].length;
+            newArray[i] = new double[dimension];
+            System.arraycopy(data[i], 0, newArray[i], 0, dimension);
         }
 
         return newArray;
@@ -861,9 +858,9 @@ public class Array {
         String[][] newArray = new String[data.length][];
 
         for(int i = 0; i < data.length; ++i) {
-            int _dimensi = data[i].length;
-            newArray[i] = new String[_dimensi];
-            System.arraycopy(data[i], 0, newArray[i], 0, _dimensi);
+            int dimension = data[i].length;
+            newArray[i] = new String[dimension];
+            System.arraycopy(data[i], 0, newArray[i], 0, dimension);
         }
 
         return newArray;
@@ -943,7 +940,7 @@ public class Array {
             newArray = new int[length];
 
             for(int i = 0; i < length; ++i) {
-                newArray[i] = math.getRandom(min, max);
+                newArray[i] = this.getRandom(min, max);
             }
         } else {
             System.out.println("Array length must be greater than zero!");
@@ -958,7 +955,7 @@ public class Array {
             newArray = new double[length];
 
             for(int i = 0; i < length; ++i) {
-                newArray[i] = math.getRandom(min, max);
+                newArray[i] = this.getRandom(min, max);
             }
         } else {
             System.out.println("Array length must be greater than zero!");
@@ -974,7 +971,7 @@ public class Array {
 
             for(int i = 0; i < rows; ++i) {
                 for(int j = 0; j < cols; ++j) {
-                    newArray[i][j] = math.getRandom(min, max);
+                    newArray[i][j] = this.getRandom(min, max);
                 }
             }
         } else {
@@ -991,7 +988,7 @@ public class Array {
 
             for(int i = 0; i < rows; ++i) {
                 for(int j = 0; j < cols; ++j) {
-                    newArray[i][j] = math.getRandom(min, max);
+                    newArray[i][j] = this.getRandom(min, max);
                 }
             }
         } else {
@@ -1001,21 +998,21 @@ public class Array {
         return newArray;
     }
 
-    public int[][] initArrayUniform(int dim) {
-        int[][] pusat = new int[][]{{25, 25}, {50, 25}, {75, 25}, {25, 50}, {50, 50}, {75, 50}, {25, 75}, {50, 75}, {75, 75}};
+    public int[][] initArrayUniform(int dimension) {
+        int[][] center = new int[][]{{25, 25}, {50, 25}, {75, 25}, {25, 50}, {50, 50}, {75, 50}, {25, 75}, {50, 75}, {75, 75}};
         List list_x = new ArrayList();
         List list_y = new ArrayList();
 
         int j;
-        for(int i = 0; i < pusat.length; ++i) {
-            int r = math.getRandom(1, 10);
+        for(int i = 0; i < center.length; ++i) {
+            int r = this.getRandom(1, 10);
             if (r > 5) {
-                int x = pusat[i][0];
-                int y = pusat[i][1];
+                int x = center[i][0];
+                int y = center[i][1];
 
                 for(j = 0; j < 20; ++j) {
-                    list_x.add(new Integer(math.getRandom(x - dim, x + dim)));
-                    list_y.add(new Integer(math.getRandom(y - dim, y + dim)));
+                    list_x.add(new Integer(this.getRandom(x - dimension, x + dimension)));
+                    list_y.add(new Integer(this.getRandom(y - dimension, y + dimension)));
                 }
             }
         }
@@ -1037,41 +1034,39 @@ public class Array {
     public int[] makeArray_1D_int(String data) {
         data = data.replace(" ", "");
         int length = data.length();
-        String _temp = this.cleanArrIn(data);
-        String[] split = _temp.split(",");
-        int[] newData = utils.String_to_int(split);
+        String tmp = this.cleanArrIn(data);
+        String[] split = tmp.split(",");
+        int[] newData = this.String_to_int(split);
         return newData;
     }
 
     public double[] makeArray_1D_double(String data) {
         data = data.replace(" ", "");
         int length = data.length();
-        String _temp = this.cleanArrIn(data);
-        String[] split = _temp.split(",");
-        double[] newData = utils.String_to_double(split);
+        String tmp = this.cleanArrIn(data);
+        String[] split = tmp.split(",");
+        double[] newData = this.String_to_double(split);
         return newData;
     }
 
     public String[] makeArray_1D_String(String data) {
         data = data.replace(" ", "");
-        String _temp = this.cleanArrIn(data);
-        String[] newData = _temp.split(",");
+        String tmp = this.cleanArrIn(data);
+        String[] newData = tmp.split(",");
         return newData;
     }
 
     public int[][] makeArray_2D_int(String data) {
         data = data.replace(" ", "");
-        String _temp = this.cleanArrIn(data);
-        String[] split1 = _temp.split(";");
+        String tmp = this.cleanArrIn(data);
+        String[] split1 = tmp.split(";");
         String[] split2 = split1[0].split(",");
-        int _lrow = split1.length;
-        int _lcol = split2.length;
-        int[][] newData = new int[_lrow][_lcol];
+        int[][] newData = new int[split1.length][split2.length];
 
-        for(int i = 0; i < _lrow; ++i) {
+        for(int i = 0; i < split1.length; ++i) {
             split2 = split1[i].split(",");
 
-            for(int _c2 = 0; _c2 < _lcol; ++_c2) {
+            for(int _c2 = 0; _c2 < split2.length; ++_c2) {
                 newData[i][_c2] = Integer.parseInt(split2[_c2]);
             }
         }
@@ -1080,17 +1075,15 @@ public class Array {
 
     public double[][] makeArray_2D_double(String data) {
         data = data.replace(" ", "");
-        String _temp = this.cleanArrIn(data);
-        String[] split1 = _temp.split(";");
+        String tmp = this.cleanArrIn(data);
+        String[] split1 = tmp.split(";");
         String[] split2 = split1[0].split(",");
-        int _lrow = split1.length;
-        int _lcol = split2.length;
-        double[][] newData = new double[_lrow][_lcol];
+        double[][] newData = new double[split1.length][split2.length];
 
-        for(int i = 0; i < _lrow; ++i) {
+        for(int i = 0; i < split1.length; ++i) {
             split2 = split1[i].split(",");
 
-            for(int _c2 = 0; _c2 < _lcol; ++_c2) {
+            for(int _c2 = 0; _c2 < split2.length; ++_c2) {
                 newData[i][_c2] = Double.parseDouble(split2[_c2]);
             }
         }
@@ -1100,17 +1093,15 @@ public class Array {
 
     public String[][] makeArray_2D_String(String data) {
         data = data.replace(" ", "");
-        String _temp = this.cleanArrIn(data);
-        String[] split1 = _temp.split(";");
+        String tmp = this.cleanArrIn(data);
+        String[] split1 = tmp.split(";");
         String[] split2 = split1[0].split(",");
-        int _lrow = split1.length;
-        int _lcol = split2.length;
-        String[][] newData = new String[_lrow][_lcol];
+        String[][] newData = new String[split1.length][split2.length];
 
-        for(int i = 0; i < _lrow; ++i) {
+        for(int i = 0; i < split1.length; ++i) {
             split2 = split1[i].split(",");
 
-            for(int _c2 = 0; _c2 < _lcol; ++_c2) {
+            for(int _c2 = 0; _c2 < split2.length; ++_c2) {
                 newData[i][_c2] = split2[_c2];
             }
         }

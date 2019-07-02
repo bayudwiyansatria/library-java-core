@@ -1,6 +1,6 @@
 package com.bayudwiyansatria.utils;
 
-import com.bayudwiyansatria.io.Array;
+import com.bayudwiyansatria.mat.Array;
 import com.bayudwiyansatria.io.Files;
 
 public class UtilsExamples {

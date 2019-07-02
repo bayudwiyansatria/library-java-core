@@ -1,50 +1,11 @@
 package com.bayudwiyansatria.io;
 
+import com.bayudwiyansatria.mat.Array;
 import com.bayudwiyansatria.utils.Utils;
-import com.opencsv.*;
 
 import java.io.*;
-import java.util.List;
 
 public class Files extends Array {
-    private String[][] readCSV_OpenCSV_Array(String filename) {
-        List<String[]> allRows = null;
-        filename = filename + ".csv";
-        try {
-            FileReader filereader = new FileReader(filename);
-            CSVReader reader = new CSVReader(filereader);
-            allRows = reader.readAll();
-        } catch (Exception exception){
-            new Utils().warning(exception.toString());
-        }
-
-        String[][] data  = new String[allRows.size()][allRows.get(0).length];
-
-        for(int i=0; i<allRows.size();i++){
-            for(int j=0; j<allRows.get(0).length; j++){
-                data[i][j] = allRows.get(i)[j];
-            }
-        }
-
-        return data;
-
-    }
-
-    public List<String[]> readCSV_OpenCSV_List(String filename) {
-        List<String[]> allRows = null;
-        filename = filename + ".csv";
-        try {
-            FileReader filereader = new FileReader(filename);
-            CSVReader reader = new CSVReader(filereader);
-            allRows = reader.readAll();
-        } catch (Exception exception){
-            new Utils().warning(exception.toString());
-        }
-
-        return allRows;
-
-    }
-
     private String[][] readCSV(String filename, String titlemode) {
         filename = filename + ".csv";
         String initData = "";
@@ -157,14 +118,6 @@ public class Files extends Array {
     public String[][] readCSV_String(String filename) {
         return this.readCSV(filename, "title:no");
     }
-
-    public List readCSV_List(String filename) {
-        List read = this.readCSV_OpenCSV_List(filename);
-        return read;
-    }
-
-
-
 
     public void saveCSV(int[] data, String filename) {
         PrintWriter writer = null;
@@ -392,8 +345,8 @@ public class Files extends Array {
 
     public void saveDST(int[] data, String filename) {
         try {
-            ObjectOutputStream _outputStream = new ObjectOutputStream(new FileOutputStream(filename + ".dst"));
-            _outputStream.writeObject(data);
+            ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream(filename + ".dst"));
+            outputStream.writeObject(data);
         } catch (Exception e) {
             new Utils().warning(e.toString());
         }
@@ -402,8 +355,8 @@ public class Files extends Array {
 
     public void saveDST(double[] data, String filename) {
         try {
-            ObjectOutputStream _outputStream = new ObjectOutputStream(new FileOutputStream(filename + ".dst"));
-            _outputStream.writeObject(data);
+            ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream(filename + ".dst"));
+            outputStream.writeObject(data);
         } catch (Exception e) {
             new Utils().warning(e.toString());
         }
@@ -412,8 +365,8 @@ public class Files extends Array {
 
     public void saveDST(int[][] data, String filename) {
         try {
-            ObjectOutputStream _outputStream = new ObjectOutputStream(new FileOutputStream(filename + ".dst"));
-            _outputStream.writeObject(data);
+            ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream(filename + ".dst"));
+            outputStream.writeObject(data);
         } catch (Exception e) {
             new Utils().warning(e.toString());
         }
@@ -422,8 +375,8 @@ public class Files extends Array {
 
     public void saveDST(double[][] data, String filename) {
         try {
-            ObjectOutputStream _outputStream = new ObjectOutputStream(new FileOutputStream(filename + ".dst"));
-            _outputStream.writeObject(data);
+            ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream(filename + ".dst"));
+            outputStream.writeObject(data);
         } catch (Exception e) {
             new Utils().warning(e.toString());
         }

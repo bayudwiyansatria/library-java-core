@@ -1,237 +1,623 @@
 package com.bayudwiyansatria.mat;
 
-import com.bayudwiyansatria.io.Array;
-import java.text.DecimalFormat;
-import java.util.ArrayList;
-import java.util.Random;
-
 public class Mat extends Vector{
-    static Array array = new Array();
+    /* ========================================= Addition Start ======================================================*/
 
-    /* ========================================= Average Start ====================================================== */
-    public double[] getAverage(int[][] data, String mode) {
-        double[] average = null;
-        double initAverage;
-        int i;
-        int j;
-        if (mode.equals("col")) {
-            average = new double[data[0].length];
-            for(i = 0; i < data[0].length; ++i) {
-                initAverage = 0.0;
-                for(j = 0; j < data.length; ++j) {
-                    initAverage += data[j][i];
-                }
-                average[i] = initAverage / (double)data.length;
-            }
-        } else if (mode.equals("row")) {
-            average = new double[data.length];
+    public int[] addition(int[] inA, int inB) {
+        int l1 = inA.length;
+        int[] res = new int[l1];
 
-            for(i = 0; i < data.length; ++i) {
-                initAverage = 0.0;
-                for(j = 0; j < data[0].length; ++j) {
-                    initAverage += data[i][j];
-                }
-                average[i] = initAverage / (double)data[0].length;
+        for(int c1 = 0; c1 < l1; ++c1) {
+            res[c1] = inA[c1] + inB;
+        }
+        return res;
+    }
+
+    double[] addition(double[] inA, double inB) {
+        int l1 = inA.length;
+        double[] res = new double[l1];
+        for(int c1 = 0; c1 < l1; ++c1) {
+            res[c1] = inA[c1] + inB;
+        }
+        return res;
+    }
+
+    int[] addition(int[] inA, int[] inB) {
+        int l1 = inA.length;
+        int[] res = new int[l1];
+        if (inA.length == inB.length) {
+            for(int c1 = 0; c1 < l1; ++c1) {
+                res[c1] = inA[c1] + inB[c1];
             }
         } else {
-            this.warning("Error in mode parameter!");
+            this.warning("Recheck size of both matrixes!");
         }
-        return average;
+
+        return res;
     }
 
-    public double getAverage(int[] data) {
-        double initAverage = 0.0;
-        for(int i = 0; i < data.length; ++i) {
-            initAverage = initAverage + data[i];
-        }
-        double average = initAverage / (double)data.length;
-        return average;
-    }
-
-    public double getAverage(double[] data) {
-        double initAverage = 0.0;
-        for(int i = 0; i < data.length; ++i) {
-            initAverage = initAverage + data[i];
-        }
-        double average = initAverage / (double)data.length;
-        return average;
-    }
-
-    public double[] getAverage(double[][] data, String mode) {
-        double[] average = null;
-        double initAverage;
-        int i;
-        int j;
-        if (mode.equals("col")) {
-            average = new double[data[0].length];
-            for(i = 0; i < data[0].length; ++i) {
-                initAverage = 0.0;
-                for(j = 0; j < data.length; ++j) {
-                    initAverage += data[j][i];
-                }
-                average[i] = initAverage / (double)data.length;
-            }
-        } else if (mode.equals("row")) {
-            average = new double[data.length];
-            for(i = 0; i < data.length; ++i) {
-                initAverage = 0.0;
-                for(j = 0; j < data[0].length; ++j) {
-                    initAverage += data[i][j];
-                }
-                average[i] = initAverage / (double)data[0].length;
+    double[] addition(double[] inA, double[] inB) {
+        int l1 = inA.length;
+        int l2 = inB.length;
+        double[] res = new double[l1];
+        if (l1 == l2) {
+            for(int c1 = 0; c1 < l1; ++c1) {
+                res[c1] = inA[c1] + inB[c1];
             }
         } else {
-            this.warning("Error in mode parameter!");
+            this.warning("Recheck size of both matrixes!");
         }
-        return average;
+
+        return res;
     }
 
-    /* ========================================= Average End ======================================================== */
+    int[][] addition(int[][] inA, int inB) {
+        int l1 = inA.length;
+        int l2 = inA[0].length;
+        int[][] res = new int[l1][l2];
 
-    /* ========================================= Random Start ======================================================= */
-    public int getRandom(int min, int max) {
-        new Random();
-        int nilai = (int)(java.lang.Math.random() * (double)(max + 1 - min)) + min;
-        return nilai;
-    }
-
-    public double getRandom(double min, double max) {
-        new Random();
-        double nilai = java.lang.Math.random() * (max - min) + min;
-        return nilai;
-    }
-
-    /* ========================================= Random End ========================================================= */
-
-    /* ========================================= Standard Deviation Start =========================================== */
-
-    public double getStd(int[] data) {
-        double _output = this.getStd(this.int_to_double(data));
-        return _output;
-    }
-
-    public double getStd(double[] data) {
-        double _mean = this.getAverage(data);
-        double[] calculate = this.Calculate(data, _mean, "-");
-        double[] sqr_selisih = this.Calculate(calculate, calculate, "*");
-        double _output = java.lang.Math.sqrt(this.getSum(sqr_selisih) / (double)data.length);
-        return _output;
-    }
-
-    public double[] getStd(int[][] data, String type) {
-        double[] _output = this.getStd(this.int_to_double(data), type);
-        return _output;
-    }
-
-    public double[] getStd(double[][] data, String type) {
-        double[] _output = null;
-        int i;
-        if (type.equals("col")) {
-            _output = new double[data[0].length];
-            for(i = 0; i < data[0].length; ++i) {
-                _output[i] = this.getStd(array.getCol(data, i));
+        for(int c1 = 0; c1 < l1; ++c1) {
+            for(int c2 = 0; c2 < l2; ++c2) {
+                res[c1][c2] = inA[c1][c2] + inB;
             }
-        } else if (type.equals("row")) {
-            _output = new double[data.length];
+        }
 
-            for(i = 0; i < data.length; ++i) {
-                _output[i] = this.getStd(array.getRow(data, i));
+        return res;
+    }
+
+    double[][] addition(double[][] inA, double inB) {
+        int l1 = inA.length;
+        int l2 = inA[0].length;
+        double[][] res = new double[l1][l2];
+
+        for(int c1 = 0; c1 < l1; ++c1) {
+            for(int c2 = 0; c2 < l2; ++c2) {
+                res[c1][c2] = inA[c1][c2] + inB;
+            }
+        }
+
+        return res;
+    }
+
+    int[][] addition(int[][] inA, int[] inB) {
+        int l1 = inA.length;
+        int l2 = inA[0].length;
+        int l3 = inB.length;
+        int[][] res = new int[l1][l2];
+        if (l2 == l3) {
+            for(int c1 = 0; c1 < l1; ++c1) {
+                for(int c2 = 0; c2 < l2; ++c2) {
+                    res[c1][c2] = inA[c1][c2] + inB[c2];
+                }
             }
         } else {
-            this.warning("Unknown type!");
+            this.warning("Recheck size of both matrixes. It has to be same");
         }
-        return _output;
+
+        return res;
     }
 
-    /* ========================================= Standard Deviation End ============================================= */
-
-    /* ========================================= Sum Start ========================================================== */
-
-    public int getSum(int[] data) {
-        int _output = 0;
-        for(int i = 0; i < data.length; ++i) {
-            _output += data[i];
-        }
-        return _output;
-    }
-
-    public double getSum(double[] data) {
-        double _output = 0.0;
-        for(int i = 0; i < data.length; ++i) {
-            _output += data[i];
-        }
-        return _output;
-    }
-
-    public int[] getSum(int[][] data, String mode) {
-        int[] _output = null;
-        int sum;
-        int i;
-        int j;
-        if (mode.equals("col")) {
-            _output = new int[data[0].length];
-            for(i = 0; i < data[0].length; ++i) {
-                sum = 0;
-
-                for(j = 0; j < data.length; ++j) {
-                    sum += data[j][i];
+    double[][] addition(double[][] inA, double[] inB) {
+        int l1 = inA.length;
+        int l2 = inA[0].length;
+        int l3 = inB.length;
+        double[][] res = new double[l1][l2];
+        if (l2 == l3) {
+            for(int c1 = 0; c1 < l1; ++c1) {
+                for(int c2 = 0; c2 < l2; ++c2) {
+                    res[c1][c2] = inA[c1][c2] + inB[c2];
                 }
-                _output[i] = sum;
-            }
-        } else if (mode.equals("row")) {
-            _output = new int[data.length];
-            for(i = 0; i < data.length; ++i) {
-                sum = 0;
-
-                for(j = 0; j < data[0].length; ++j) {
-                    sum += data[i][j];
-                }
-                _output[i] = sum;
             }
         } else {
-            this.warning("Error in mode parameter!");
+            this.warning("Recheck size of both matrixes!");
         }
-        return _output;
+
+        return res;
     }
 
-    public double[] getSum(double[][] data, String mode) {
-        double[] _output = null;
-        double sum;
-        int i;
-        int j;
-        if (mode.equals("col")) {
-            _output = new double[data[0].length];
+    int[][] addition(int[][] inA, int[][] inB) {
+        int col1 = inA[0].length;
+        int col2 = inB[0].length;
+        int row1 = inA.length;
+        int row2 = inB.length;
+        int[][] res = (int[][])null;
+        int c1;
+        int c2;
+        if (col1 == 1) {
+            if (row1 == row2) {
+                res = new int[row2][col2];
 
-            for(i = 0; i < data[0].length; ++i) {
-                sum = 0.0;
-
-                for(j = 0; j < data.length; ++j) {
-                    sum += data[j][i];
+                for(c1 = 0; c1 < row2; ++c1) {
+                    for(c2 = 0; c2 < col2; ++c2) {
+                        res[c1][c2] = inB[c1][c2] + inA[c1][0];
+                    }
                 }
-
-                _output[i] = sum;
+            } else {
+                this.warning("Recheck size of both matrixes!");
             }
-        } else if (mode.equals("row")) {
-            _output = new double[data.length];
+        } else if (col2 == 1) {
+            if (row1 == row2) {
+                res = new int[row1][col1];
 
-            for(i = 0; i < data.length; ++i) {
-                sum = 0.0;
-
-                for(j = 0; j < data[0].length; ++j) {
-                    sum += data[i][j];
+                for(c1 = 0; c1 < row1; ++c1) {
+                    for(c2 = 0; c2 < col1; ++c2) {
+                        res[c1][c2] = inA[c1][c2] + inB[c1][0];
+                    }
                 }
-
-                _output[i] = sum;
+            } else {
+                this.warning("Recheck size of both matrixes!");
             }
         } else {
-            this.warning("Error in mode parameter!");
+            res = new int[row1][col1];
+
+            for(c1 = 0; c1 < row1; ++c1) {
+                for(c2 = 0; c2 < col1; ++c2) {
+                    res[c1][c2] = inA[c1][c2] + inB[c1][c2];
+                }
+            }
         }
-        return _output;
+
+        return res;
     }
 
-    /* ========================================= Sum End ============================================================ */
+    double[][] addition(double[][] inA, double[][] inB) {
+        int col1 = inA[0].length;
+        int col2 = inB[0].length;
+        int row1 = inA.length;
+        int row2 = inB.length;
+        double[][] res = (double[][])null;
+        int c1;
+        int c2;
+        if (col1 == 1) {
+            if (row1 == row2) {
+                res = new double[row2][col2];
 
-    /* ========================================= Calculate Start ==================================================== */
+                for(c1 = 0; c1 < row2; ++c1) {
+                    for(c2 = 0; c2 < col2; ++c2) {
+                        res[c1][c2] = inB[c1][c2] + inA[c1][0];
+                    }
+                }
+            } else {
+                this.warning("Recheck size of both matrixes!");
+            }
+        } else if (col2 == 1) {
+            if (row1 == row2) {
+                res = new double[row1][col1];
+
+                for(c1 = 0; c1 < row1; ++c1) {
+                    for(c2 = 0; c2 < col1; ++c2) {
+                        res[c1][c2] = inA[c1][c2] + inB[c1][0];
+                    }
+                }
+            } else {
+                this.warning("Recheck size of both matrixes!");
+            }
+        } else {
+            res = new double[row1][col1];
+
+            for(c1 = 0; c1 < row1; ++c1) {
+                for(c2 = 0; c2 < col1; ++c2) {
+                    res[c1][c2] = inA[c1][c2] + inB[c1][c2];
+                }
+            }
+        }
+
+        return res;
+    }
+
+    /* ========================================= Addition End ========================================================*/
+
+    /* ========================================= Substraction Start ==================================================*/
+
+    double[] substraction(double[] inA, double inB) {
+        int l1 = inA.length;
+        double[] res = new double[l1];
+
+        for(int c1 = 0; c1 < l1; ++c1) {
+            res[c1] = inA[c1] - inB;
+        }
+
+        return res;
+    }
+
+    double[] substraction(double[] inA, double[] inB) {
+        int l1 = inA.length;
+        int l2 = inB.length;
+        double[] res = new double[l1];
+        if (l1 == l2) {
+            for(int c1 = 0; c1 < l1; ++c1) {
+                res[c1] = inA[c1] - inB[c1];
+            }
+        } else {
+            this.warning("Recheck size of both matrixes. It has to be same");
+        }
+
+        return res;
+    }
+
+    double[][] substraction(double[][] inA, double inB) {
+        int l1 = inA.length;
+        int l2 = inA[0].length;
+        double[][] res = new double[l1][l2];
+
+        for(int c1 = 0; c1 < l1; ++c1) {
+            for(int c2 = 0; c2 < l2; ++c2) {
+                res[c1][c2] = inA[c1][c2] - inB;
+            }
+        }
+
+        return res;
+    }
+
+    double[][] substraction(double[][] inA, double[] inB) {
+        int l1 = inA.length;
+        int l2 = inA[0].length;
+        int l3 = inB.length;
+        double[][] res = new double[l1][l2];
+        if (l3 == l2) {
+            for(int c1 = 0; c1 < l1; ++c1) {
+                for(int c2 = 0; c2 < l2; ++c2) {
+                    res[c1][c2] = inA[c1][c2] - inB[c2];
+                }
+            }
+        } else {
+            this.warning("Recheck size of both matrixes!");
+        }
+
+        return res;
+    }
+
+    double[][] substraction(double[][] inA, double[][] inB) {
+        int col1 = inA[0].length;
+        int col2 = inB[0].length;
+        int row1 = inA.length;
+        int row2 = inB.length;
+        double[][] res = (double[][])null;
+        int c1;
+        int c2;
+        if (col1 == 1) {
+            if (row1 == row2) {
+                res = new double[row2][col2];
+
+                for(c1 = 0; c1 < row2; ++c1) {
+                    for(c2 = 0; c2 < col2; ++c2) {
+                        res[c1][c2] = inB[c1][c2] - inA[c1][0];
+                    }
+                }
+            } else {
+                this.warning("Recheck size of both matrixes!");
+            }
+        } else if (col2 == 1) {
+            if (row1 == row2) {
+                res = new double[row1][col1];
+
+                for(c1 = 0; c1 < row1; ++c1) {
+                    for(c2 = 0; c2 < col1; ++c2) {
+                        res[c1][c2] = inA[c1][c2] - inB[c1][0];
+                    }
+                }
+            }
+
+            this.warning("Recheck size of both matrixes!");
+        } else {
+            res = new double[row1][col1];
+
+            for(c1 = 0; c1 < row1; ++c1) {
+                for(c2 = 0; c2 < col1; ++c2) {
+                    res[c1][c2] = inA[c1][c2] - inB[c1][c2];
+                }
+            }
+        }
+
+        return res;
+    }
+
+    public int[] substraction(int[] inA, int inB) {
+        int l1 = inA.length;
+        int[] res = new int[l1];
+
+        for(int c1 = 0; c1 < l1; ++c1) {
+            res[c1] = inA[c1] - inB;
+        }
+
+        return res;
+    }
+
+    int[] substraction(int[] inA, int[] inB) {
+        int l1 = inA.length;
+        int[] res = new int[l1];
+        if (inA.length == inB.length) {
+            for(int c1 = 0; c1 < l1; ++c1) {
+                res[c1] = inA[c1] - inB[c1];
+            }
+        } else {
+            this.warning("Recheck size of both matrixes!");
+        }
+
+        return res;
+    }
+
+    int[][] substraction(int[][] inA, int inB) {
+        int l1 = inA.length;
+        int l2 = inA[0].length;
+        int[][] res = new int[l1][l2];
+
+        for(int c1 = 0; c1 < l1; ++c1) {
+            for(int c2 = 0; c2 < l2; ++c2) {
+                res[c1][c2] = inA[c1][c2] - inB;
+            }
+        }
+
+        return res;
+    }
+
+    int[][] substraction(int[][] inA, int[] inB) {
+        int l1 = inA.length;
+        int l2 = inA[0].length;
+        int l3 = inB.length;
+        int[][] res = new int[l1][l2];
+        if (l2 == l3) {
+            for(int c1 = 0; c1 < l1; ++c1) {
+                for(int c2 = 0; c2 < l2; ++c2) {
+                    res[c1][c2] = inA[c1][c2] - inB[c2];
+                }
+            }
+        } else {
+            this.warning("Recheck size of both matrixes!");
+        }
+
+        return res;
+    }
+
+    int[][] substraction(int[][] inA, int[][] inB) {
+        int col1 = inA[0].length;
+        int col2 = inB[0].length;
+        int row1 = inA.length;
+        int row2 = inB.length;
+        int[][] res = (int[][])null;
+        int c1;
+        int c2;
+        if (col1 == 1) {
+            if (row1 == row2) {
+                res = new int[row2][col2];
+
+                for(c1 = 0; c1 < row2; ++c1) {
+                    for(c2 = 0; c2 < col2; ++c2) {
+                        res[c1][c2] = inB[c1][c2] - inA[c1][0];
+                    }
+                }
+            } else {
+                this.warning("Recheck size of both matrixes!");
+            }
+        } else if (col2 == 1) {
+            if (row1 == row2) {
+                res = new int[row1][col1];
+
+                for(c1 = 0; c1 < row1; ++c1) {
+                    for(c2 = 0; c2 < col1; ++c2) {
+                        res[c1][c2] = inA[c1][c2] - inB[c1][0];
+                    }
+                }
+            } else {
+                this.warning("Recheck size of both matrixes!");
+            }
+        } else {
+            res = new int[row1][col1];
+
+            for(c1 = 0; c1 < row1; ++c1) {
+                for(c2 = 0; c2 < col1; ++c2) {
+                    res[c1][c2] = inA[c1][c2] - inB[c1][c2];
+                }
+            }
+        }
+
+        return res;
+    }
+
+    double[] division(double[] inA, double inB) {
+        int l1 = inA.length;
+        double[] res = new double[l1];
+
+        for(int c1 = 0; c1 < l1; ++c1) {
+            res[c1] = inA[c1] / inB;
+        }
+
+        return res;
+    }
+
+    double[] division(double[] inA, double[] inB) {
+        int l1 = inA.length;
+        int l2 = inB.length;
+        double[] res = new double[l1];
+        if (l1 == l2) {
+            for(int c1 = 0; c1 < l1; ++c1) {
+                res[c1] = inA[c1] / inB[c1];
+            }
+        } else {
+            this.warning("Recheck size of both matrixes!");
+        }
+
+        return res;
+    }
+
+    double[][] division(double[][] inA, double inB) {
+        int l1 = inA.length;
+        int l2 = inA[0].length;
+        double[][] res = new double[l1][l2];
+
+        for(int c1 = 0; c1 < l1; ++c1) {
+            for(int c2 = 0; c2 < l2; ++c2) {
+                res[c1][c2] = inA[c1][c2] / inB;
+            }
+        }
+
+        return res;
+    }
+
+    double[][] division(double[][] inA, double[] inB) {
+        int l1 = inA.length;
+        int l2 = inA[0].length;
+        int l3 = inB.length;
+        double[][] res = new double[l1][l2];
+        if (l2 == l3) {
+            for(int c1 = 0; c1 < l1; ++c1) {
+                for(int c2 = 0; c2 < l2; ++c2) {
+                    res[c1][c2] = inA[c1][c2] / inB[c2];
+                }
+            }
+        } else {
+            this.warning("Recheck size of both matrixes!");
+        }
+
+        return res;
+    }
+
+    double[][] division(double[][] inA, double[][] inB) {
+        int col1 = inA[0].length;
+        int col2 = inB[0].length;
+        int row1 = inA.length;
+        int row2 = inB.length;
+        double[][] res = (double[][])null;
+        int c1;
+        int c2;
+        if (col1 == 1) {
+            if (row1 == row2) {
+                res = new double[row2][col2];
+
+                for(c1 = 0; c1 < row2; ++c1) {
+                    for(c2 = 0; c2 < col2; ++c2) {
+                        res[c1][c2] = inB[c1][c2] / inA[c1][0];
+                    }
+                }
+            } else {
+                this.warning("Recheck size of both matrixes!");
+            }
+        } else if (col2 == 1) {
+            if (row1 == row2) {
+                res = new double[row1][col1];
+
+                for(c1 = 0; c1 < row1; ++c1) {
+                    for(c2 = 0; c2 < col1; ++c2) {
+                        res[c1][c2] = inA[c1][c2] / inB[c1][0];
+                    }
+                }
+            } else {
+                this.warning("Recheck size of both matrixes!");
+            }
+        } else {
+            res = new double[row1][col1];
+
+            for(c1 = 0; c1 < row1; ++c1) {
+                for(c2 = 0; c2 < col1; ++c2) {
+                    res[c1][c2] = inA[c1][c2] / inB[c1][c2];
+                }
+            }
+        }
+
+        return res;
+    }
+
+    double[] division(int[] inA, int inB) {
+        int l1 = inA.length;
+        double[] res = new double[l1];
+
+        for(int c1 = 0; c1 < l1; ++c1) {
+            res[c1] = (double)(inA[c1] / inB);
+        }
+
+        return res;
+    }
+
+    double[] division(int[] inA, int[] inB) {
+        int l1 = inA.length;
+        double[] res = new double[l1];
+        if (inA.length == inB.length) {
+            for(int c1 = 0; c1 < l1; ++c1) {
+                res[c1] = (double)(inA[c1] / inB[c1]);
+            }
+        } else {
+            this.warning("Recheck size of both matrixes!");
+        }
+
+        return res;
+    }
+
+    double[][] division(int[][] inA, int inB) {
+        int l1 = inA.length;
+        int l2 = inA[0].length;
+        double[][] res = new double[l1][l2];
+
+        for(int c1 = 0; c1 < l1; ++c1) {
+            for(int c2 = 0; c2 < l2; ++c2) {
+                res[c1][c2] = (double)(inA[c1][c2] / inB);
+            }
+        }
+
+        return res;
+    }
+
+    double[][] division(int[][] inA, int[] inB) {
+        int l1 = inA.length;
+        int l2 = inA[0].length;
+        int l3 = inB.length;
+        double[][] res = new double[l1][l2];
+        if (l2 == l3) {
+            for(int c1 = 0; c1 < l1; ++c1) {
+                for(int c2 = 0; c2 < l2; ++c2) {
+                    res[c1][c2] = (double)(inA[c1][c2] / inB[c2]);
+                }
+            }
+        } else {
+            this.warning("Recheck size of both matrixes!");
+        }
+
+        return res;
+    }
+
+    double[][] division(int[][] inA, int[][] inB) {
+        int col1 = inA[0].length;
+        int col2 = inB[0].length;
+        int row1 = inA.length;
+        int row2 = inB.length;
+        double[][] res = (double[][])null;
+        int c1;
+        int c2;
+        if (col1 == 1) {
+            if (row1 == row2) {
+                res = new double[row2][col2];
+
+                for(c1 = 0; c1 < row2; ++c1) {
+                    for(c2 = 0; c2 < col2; ++c2) {
+                        res[c1][c2] = (double)(inB[c1][c2] / inA[c1][0]);
+                    }
+                }
+            } else {
+                this.warning("Recheck size of both matrixes!");
+            }
+        } else if (col2 == 1) {
+            if (row1 == row2) {
+                res = new double[row1][col1];
+
+                for(c1 = 0; c1 < row1; ++c1) {
+                    for(c2 = 0; c2 < col1; ++c2) {
+                        res[c1][c2] = (double)(inA[c1][c2] / inB[c1][0]);
+                    }
+                }
+            } else {
+                this.warning("Recheck size of both matrixes!");
+            }
+        } else {
+            res = new double[row1][col1];
+
+            for(c1 = 0; c1 < row1; ++c1) {
+                for(c2 = 0; c2 < col1; ++c2) {
+                    res[c1][c2] = (double)(inA[c1][c2] / inB[c1][c2]);
+                }
+            }
+        }
+
+        return res;
+    }
 
     public int[] Calculate(int[] data, int point, String type) {
         int[] _output = null;
@@ -969,153 +1355,5 @@ public class Mat extends Vector{
     }
 
     /* ========================================= Calculate Start ==================================================== */
-
-    public double getRound(double data, int decimal_fraction) {
-        String _format = "#.";
-        for(int i = 0; i < decimal_fraction; ++i) {
-            _format = _format + "#";
-        }
-        DecimalFormat _Form = new DecimalFormat(_format);
-        _format = _Form.format(data).replace(",", ".");
-        data = Double.parseDouble(_format);
-        return data;
-    }
-
-    public int[] getMin(int[] data) {
-        int[] _min = new int[]{data[0], 0};
-        for(int i = 1; i < data.length; ++i) {
-            if (data[i] < _min[0]) {
-                _min[0] = data[i];
-                _min[1] = i;
-            }
-        }
-        return _min;
-    }
-
-    public double[] getMin(double[] data) {
-        double[] _min = new double[]{data[0], 0.0};
-        for(int i = 1; i < data.length; ++i) {
-            if (data[i] < _min[0]) {
-                _min[0] = data[i];
-                _min[1] = (double)i;
-            }
-        }
-        return _min;
-    }
-
-    public int[][] getMin(int[][] data) {
-        int[][] _min = new int[2][data[0].length];
-
-        for(int i = 0; i < data[0].length; ++i) {
-            int[] _tmp = this.getMin(array.getCol(data, i));
-            _min[0][i] = _tmp[0];
-            _min[1][i] = _tmp[1];
-        }
-
-        return _min;
-    }
-
-    public double[][] getMin(double[][] data) {
-        double[][] _min = new double[2][data[0].length];
-        for(int i = 0; i < data[0].length; ++i) {
-            double[] _tmp = this.getMin(array.getCol(data, i));
-            _min[0][i] = _tmp[0];
-            _min[1][i] = _tmp[1];
-        }
-        return _min;
-    }
-
-    public int[] getMax(int[] data) {
-        int[] _max = new int[]{data[0], 0};
-        for(int i = 1; i < data.length; ++i) {
-            if (data[i] > _max[0]) {
-                _max[0] = data[i];
-                _max[1] = i;
-            }
-        }
-        return _max;
-    }
-
-    public double[] getMax(double[] data) {
-        double[] _max = new double[]{data[0], 0.0};
-        for(int i = 1; i < data.length; ++i) {
-            if (data[i] > _max[0]) {
-                _max[0] = data[i];
-                _max[1] = (double)i;
-            }
-        }
-        return _max;
-    }
-
-    public int[][] getMax(int[][] data) {
-        int[][] _max = new int[2][data[0].length];
-        for(int i = 0; i < data[0].length; ++i) {
-            int[] _tmp = this.getMax(array.getCol(data, i));
-            _max[0][i] = _tmp[0];
-            _max[1][i] = _tmp[1];
-        }
-        return _max;
-    }
-
-    public double[][] getMax(double[][] data) {
-        double[][] _max = new double[2][data[0].length];
-        for(int i = 0; i < data[0].length; ++i) {
-            double[] _tmp = this.getMax(array.getCol(data, i));
-            _max[0][i] = _tmp[0];
-            _max[1][i] = _tmp[1];
-        }
-        return _max;
-    }
-
-    public int getFactorial(int n) {
-        int factorial = 1;
-        if (n < 1) {
-            this.warning("N must be greater than zero!");
-        } else {
-            for(int i = ~(0 - (int)(1L + (long)n)); i > 1; --i) {
-                factorial *= i;
-            }
-        }
-
-        return factorial;
-    }
-
-    public int[][] getPerm(int n) {
-        if (n > 10) {
-            this.warning("Maximal n is 10");
-        }
-
-        int factorial = this.getFactorial(n);
-        int[][] _perm = new int[factorial][n];
-        PermutationGenerator _xx = new PermutationGenerator(n);
-
-        for(int i = 0; _xx.hasMore(); ++i) {
-            int[] _indices = _xx.getNext();
-            System.arraycopy(_indices, 0, _perm[i], 0, n);
-        }
-
-        return _perm;
-    }
-
-    public int[] randPerm(int n) {
-        int[] _randperm = new int[n];
-        ArrayList _data = new ArrayList(n);
-
-        int i;
-        for(i = 0; i < n; ++i) {
-            _data.add(new Integer(i));
-        }
-
-        Random random = new Random();
-
-        for(i = 0; i < n; ++i) {
-            int index = random.nextInt(_data.size());
-            _randperm[i] = (Integer)_data.get(index);
-            _data.remove(index);
-        }
-
-        return _randperm;
-    }
-
 
 }

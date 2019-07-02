@@ -1,6 +1,6 @@
 package com.bayudwiyansatria.utils;
 
-import com.bayudwiyansatria.io.Array;
+import com.bayudwiyansatria.mat.Array;
 import com.bayudwiyansatria.mat.Vector;
 
 import java.io.ObjectInputStream;

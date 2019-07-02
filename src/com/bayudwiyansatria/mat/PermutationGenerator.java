@@ -2,12 +2,12 @@ package com.bayudwiyansatria.mat;
 
 import java.math.BigInteger;
 
-class PermutationGenerator {
+public class PermutationGenerator {
     private int[] a;
     private BigInteger numLeft;
     private BigInteger total;
 
-    protected PermutationGenerator(int n) {
+    public PermutationGenerator(int n) {
         if (n < 1) {
             throw new IllegalArgumentException("Min 1");
         } else {
