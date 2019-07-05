@@ -51,6 +51,10 @@
             <id>ossrh</id>
             <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
+        <repository>
+            <id>dev-azure-com-bayudwiyansatria-bayudwiyansatria</id>
+            <url>https://pkgs.dev.azure.com/bayudwiyansatria/_packaging/bayudwiyansatria/maven/v1</url>
+        </repository>
     </distributionManagement>
 
     <issueManagement>
