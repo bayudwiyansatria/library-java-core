@@ -288,6 +288,7 @@ paket-files/
 .fake/
 
 # JetBrains Rider
+.settings/
 .idea/
 *.sln.iml
 target/
