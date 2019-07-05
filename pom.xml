@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.bayudwiyansatria</groupId>
     <artifactId>core</artifactId>
-    <version>1.1</version>
+    <version>1.1.2</version>
     <packaging>jar</packaging>
 
     <name>Library Core</name>
@@ -64,11 +64,16 @@
             <name>Central Repository</name>
             <url>https://repo.maven.apache.org/maven2</url>
 			<layout>default</layout>
-			<snapshots>
-                <enabled>false</enabled>
-            </snapshots>
+			<snapshots><enabled>false</enabled></snapshots>
+        </repository>
+        <repository>
+            <id>dev-azure-com-bayudwiyansatria-bayudwiyansatria</id>
+            <url>https://pkgs.dev.azure.com/bayudwiyansatria/_packaging/bayudwiyansatria/maven/v1</url>
+            <releases><enabled>true</enabled></releases>
+            <snapshots><enabled>true</enabled></snapshots>
         </repository>
     </repositories>
+
 
 	<pluginRepositories>
 		<pluginRepository>
