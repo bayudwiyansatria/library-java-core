@@ -42,51 +42,17 @@
         <tag>HEAD</tag>
     </scm>
 
-    <distributionManagement>
-        <snapshotRepository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
-        <repository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-        </repository>
-    </distributionManagement>
 
     <issueManagement>
 		<system>Github</system>
 		<url>https://github.com/bayudwiyansatria/Library-Apache-Spark/issues</url>
     </issueManagement>
 
-	<repositories>
-        <repository>
-            <id>central</id>
-            <name>Central Repository</name>
-            <url>https://repo.maven.apache.org/maven2</url>
-			<layout>default</layout>
-			<snapshots><enabled>false</enabled></snapshots>
-        </repository>
-    </repositories>
-
-
-	<pluginRepositories>
-		<pluginRepository>
-			<id>central</id>
-			<name>Central Repository</name>
-			<url>https://repo.maven.apache.org/maven2</url>
-			<layout>default</layout>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-			<releases>
-				<updatePolicy>never</updatePolicy>
-			</releases>
-		</pluginRepository>
-	</pluginRepositories>
-
     <properties>
         <java.version>1.8</java.version>
-
+        <gpg.executable>gpg</gpg.executable>
+        <gpg.keyname>1615FE50</gpg.keyname>
+        <gpg.passphrase>{I/phGLtLhU8Hs41bFNv40rol1uoYsHHrYbhbvhtQ34o=}</gpg.passphrase>
         <maven.version>3.6.1</maven.version>
 		<maven-clean-plugin>3.1.0</maven-clean-plugin>
 		<maven-resources-plugin>3.0.1</maven-resources-plugin>
@@ -105,12 +71,25 @@
 		<maven-checkstyle-plugin>2.10</maven-checkstyle-plugin>
 		<maven-surefire-report-plugin>2.18.1</maven-surefire-report-plugin>
 		<maven-jxr-plugin>2.5</maven-jxr-plugin>
-        <sonatype.plugins>1.6.7</sonatype.plugins>
 		<maven-release-plugin>2.5.3</maven-release-plugin>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <sonatype.plugins>1.6.7</sonatype.plugins>
     </properties>
+
+    <repositories>
+        <repository>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <id>dev-azure-com-bayudwiyansatria-bayudwiyansatria</id>
+            <url>https://pkgs.dev.azure.com/bayudwiyansatria/_packaging/bayudwiyansatria/maven/v1</url>
+        </repository>
+    </repositories>
 
     <dependencies>
         <dependency>
@@ -161,8 +140,7 @@
 		<finalName>${project.artifactId}-${project.version}</finalName>
 		<testOutputDirectory>${project.build.directory}/test-classes</testOutputDirectory>
 		<sourceDirectory>${project.basedir}/src</sourceDirectory>
-		<testSourceDirectory>${project.basedir}/test</testSourceDirectory>
-        <defaultGoal>package</defaultGoal>
+		<defaultGoal>package</defaultGoal>
 
         <resources>
 			<resource>
@@ -289,10 +267,10 @@
 
     <profiles>
 		<profile>
-			<id>release</id>
+			<id>bayudwiyansatria</id>
 			<activation>
 				<property>
-					<name>release</name>
+					<name>bayudwiyansatria</name>
 					<value>true</value>
 				</property>
 			</activation>
@@ -318,4 +296,4 @@
     </profiles>
 
 
-</project> 
+</project>

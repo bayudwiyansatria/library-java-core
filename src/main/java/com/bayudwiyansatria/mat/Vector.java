@@ -1,347 +1,10 @@
 package com.bayudwiyansatria.mat;
 
-import com.bayudwiyansatria.utils.Calculation;
 
-public class Vector extends Calculation {
+import com.bayudwiyansatria.math.Calculation;
+import com.bayudwiyansatria.utils.Utils;
 
-
-    double[] scalarMultiplication(double[] inA, double inB) {
-        int l1 = inA.length;
-        double[] res = new double[l1];
-
-        for(int c1 = 0; c1 < l1; ++c1) {
-            res[c1] = inA[c1] * inB;
-        }
-
-        return res;
-    }
-
-    double[] scalarMultiplication(double[] inA, double[] inB) {
-        int l1 = inA.length;
-        int l2 = inB.length;
-        double[] res = null;
-        if (l1 == l2) {
-            res = new double[l1];
-
-            for(int c1 = 0; c1 < l1; ++c1) {
-                res[c1] = inA[c1] * inB[c1];
-            }
-        } else {
-            this.warning("Recheck size of both matrixes!");
-        }
-
-        return res;
-    }
-
-    double[][] scalarMultiplication(double[][] inA, double inB) {
-        int l1 = inA.length;
-        int l2 = inA[0].length;
-        double[][] res = new double[l1][l2];
-
-        for(int c1 = 0; c1 < l1; ++c1) {
-            for(int c2 = 0; c2 < l2; ++c2) {
-                res[c1][c2] = inA[c1][c2] * inB;
-            }
-        }
-
-        return res;
-    }
-
-    double[][] scalarMultiplication(double[][] inA, double[] inB) {
-        int l1 = inB.length;
-        int l2 = inA.length;
-        int l3 = inA[0].length;
-        double[][] res = (double[][])null;
-        if (l1 == l3) {
-            res = new double[l2][l3];
-
-            for(int c1 = 0; c1 < l2; ++c1) {
-                for(int c2 = 0; c2 < l3; ++c2) {
-                    res[c1][c2] = inB[c2] * inA[c1][c2];
-                }
-            }
-        } else {
-            this.warning("Recheck size of both matrixes!");
-        }
-
-        return res;
-    }
-
-    double[][] scalarMultiplication(double[][] inA, double[][] inB) {
-        int col1 = inA[0].length;
-        int col2 = inB[0].length;
-        int row1 = inA.length;
-        int row2 = inB.length;
-        double[][] res = (double[][])null;
-        int c1;
-        int c2;
-        if (col1 == 1) {
-            if (row1 == row2) {
-                res = new double[row2][col2];
-
-                for(c1 = 0; c1 < row2; ++c1) {
-                    for(c2 = 0; c2 < col2; ++c2) {
-                        res[c1][c2] = inB[c1][c2] * inA[c1][0];
-                    }
-                }
-            } else {
-                this.warning("Recheck size of both matrixes!");
-            }
-        } else if (col2 == 1) {
-            if (row1 == row2) {
-                res = new double[row1][col1];
-
-                for(c1 = 0; c1 < row1; ++c1) {
-                    for(c2 = 0; c2 < col1; ++c2) {
-                        res[c1][c2] = inA[c1][c2] * inB[c1][0];
-                    }
-                }
-            } else {
-                this.warning("Recheck size of both matrixes!");
-            }
-        } else {
-            res = new double[row1][col1];
-
-            for(c1 = 0; c1 < row1; ++c1) {
-                for(c2 = 0; c2 < col1; ++c2) {
-                    res[c1][c2] = inA[c1][c2] * inB[c1][c2];
-                }
-            }
-        }
-
-        return res;
-    }
-
-    int[] scalarMultiplication(int[] inA, int inB) {
-        int l1 = inA.length;
-        int[] res = new int[l1];
-
-        for(int c1 = 0; c1 < l1; ++c1) {
-            res[c1] = inA[c1] * inB;
-        }
-
-        return res;
-    }
-
-    int[] scalarMultiplication(int[] inA, int[] inB) {
-        int l1 = inA.length;
-        int l2 = inB.length;
-        int[] res = null;
-        if (l1 == l2) {
-            res = new int[l1];
-
-            for(int c1 = 0; c1 < l1; ++c1) {
-                res[c1] = inA[c1] * inB[c1];
-            }
-        } else {
-            this.warning("Recheck size of both matrixes!");
-        }
-
-        return res;
-    }
-
-    int[][] scalarMultiplication(int[][] inA, int inB) {
-        int l1 = inA.length;
-        int l2 = inA[0].length;
-        int[][] res = new int[l1][l2];
-
-        for(int c1 = 0; c1 < l1; ++c1) {
-            for(int c2 = 0; c2 < l2; ++c2) {
-                res[c1][c2] = inA[c1][c2] * inB;
-            }
-        }
-
-        return res;
-    }
-
-    int[][] scalarMultiplication(int[][] inA, int[] inB) {
-        int l1 = inB.length;
-        int l2 = inA.length;
-        int l3 = inA[0].length;
-        int[][] res = (int[][])null;
-        if (l1 == l3) {
-            res = new int[l2][l3];
-
-            for(int c1 = 0; c1 < l2; ++c1) {
-                for(int c2 = 0; c2 < l3; ++c2) {
-                    res[c1][c2] = inB[c2] * inA[c1][c2];
-                }
-            }
-        } else {
-            this.warning("Recheck size of both matrixes!");
-        }
-
-        return res;
-    }
-
-    int[][] scalarMultiplication(int[][] inA, int[][] inB) {
-        int col1 = inA[0].length;
-        int col2 = inB[0].length;
-        int row1 = inA.length;
-        int row2 = inB.length;
-        int[][] res = (int[][])null;
-        int c1;
-        int c2;
-        if (col1 == 1) {
-            if (row1 == row2) {
-                res = new int[row2][col2];
-
-                for(c1 = 0; c1 < row2; ++c1) {
-                    for(c2 = 0; c2 < col2; ++c2) {
-                        res[c1][c2] = inB[c1][c2] * inA[c1][0];
-                    }
-                }
-            } else {
-                this.warning("Recheck size of both matrixes!");
-            }
-        } else if (col2 == 1) {
-            if (row1 == row2) {
-                res = new int[row1][col1];
-
-                for(c1 = 0; c1 < row1; ++c1) {
-                    for(c2 = 0; c2 < col1; ++c2) {
-                        res[c1][c2] = inA[c1][c2] * inB[c1][0];
-                    }
-                }
-            } else {
-                this.warning("Recheck size of both matrixes!");
-            }
-        } else {
-            res = new int[row1][col1];
-
-            for(c1 = 0; c1 < row1; ++c1) {
-                for(c2 = 0; c2 < col1; ++c2) {
-                    res[c1][c2] = inA[c1][c2] * inB[c1][c2];
-                }
-            }
-        }
-
-        return res;
-    }
-
-    double[] vectorMultiplication(double[] inA, double[][] inB) {
-        double[] res = null;
-        int colB = inB[0].length;
-        int colA = inA.length;
-        boolean rowA = true;
-        int rowB = inB.length;
-        int count = colA;
-        if (colA == rowB) {
-            res = new double[colB];
-
-            for(int c2 = 0; c2 < colB; ++c2) {
-                int c1 = 0;
-
-                for(res[c2] = 0.0; c1 < count; ++c1) {
-                    res[c2] += inA[c1] * inB[c1][c2];
-                }
-            }
-        } else {
-            this.warning("Recheck size of both matrixes!");
-        }
-
-        return res;
-    }
-
-    double[][] vectorMultiplication(double[][] inA, double[][] inB) {
-        double[][] res = (double[][])null;
-        int colA = inA[0].length;
-        int rowA = inA.length;
-        int colB = inB[0].length;
-        int rowB = inB.length;
-        int count = colA;
-        if (colA == rowB) {
-            res = new double[rowA][colB];
-
-            for(int c1 = 0; c1 < rowA; ++c1) {
-                for(int c2 = 0; c2 < colB; ++c2) {
-                    for(int c3 = 0; c3 < count; ++c3) {
-                        res[c1][c2] += inA[c1][c3] * inB[c3][c2];
-                    }
-                }
-            }
-        } else {
-            this.warning("Recheck size of both matrixes!");
-        }
-
-        return res;
-    }
-
-    int vectorMultiplication(int[] inA, int[] inB) {
-        int nb = inB.length;
-        int _output = 0;
-        if (inA.length == nb) {
-            for(int i = 0; i < inA.length; ++i) {
-                _output += inA[i] * inB[i];
-            }
-        } else {
-            this.warning("Length of both data has to be same!");
-        }
-
-        return _output;
-    }
-
-    double vectorMultiplication(double[] inA, double[] inB) {
-        int nb = inB.length;
-        double _output = 0.0;
-        if (inA.length == nb) {
-            for(int i = 0; i < inA.length; ++i) {
-                _output += inA[i] * inB[i];
-            }
-        } else {
-            this.warning("Length of both data has to be same!");
-        }
-
-        return _output;
-    }
-
-    int[] vectorMultiplication(int[] inA, int[][] inB) {
-        int[] res = null;
-        int colB = inB[0].length;
-        int colA = inA.length;
-        boolean rowA = true;
-        int rowB = inB.length;
-        int count = colA;
-        if (colA == rowB) {
-            res = new int[colB];
-
-            for(int c2 = 0; c2 < colB; ++c2) {
-                int c1 = 0;
-
-                for(res[c2] = 0; c1 < count; ++c1) {
-                    res[c2] += inA[c1] * inB[c1][c2];
-                }
-            }
-        } else {
-            this.warning("Recheck size of both matrixes!");
-        }
-
-        return res;
-    }
-
-    int[][] vectorMultiplication(int[][] inA, int[][] inB) {
-        int[][] res = (int[][])null;
-        int colA = inA[0].length;
-        int rowA = inA.length;
-        int colB = inB[0].length;
-        int rowB = inB.length;
-        int count = colA;
-        if (colA == rowB) {
-            res = new int[rowA][colB];
-
-            for(int c1 = 0; c1 < rowA; ++c1) {
-                for(int c2 = 0; c2 < colB; ++c2) {
-                    for(int c3 = 0; c3 < count; ++c3) {
-                        res[c1][c2] += inA[c1][c3] * inB[c3][c2];
-                    }
-                }
-            }
-        } else {
-            this.warning("Recheck size of both matrixes!");
-        }
-
-        return res;
-    }
+public class Vector {
 
     private double getDistance_Absolute(double[] p1, double[] p2) {
         double jarak = 0.0;
@@ -349,7 +12,7 @@ public class Vector extends Calculation {
             double difference = p2[i] - p1[i];
             jarak += difference * difference;
         }
-        return java.lang.Math.sqrt(jarak);
+        return Math.sqrt(jarak);
     }
 
     private double getDistance_Absolute(int[] p1, double[] p2) {
@@ -358,7 +21,7 @@ public class Vector extends Calculation {
             double difference = p2[i] - (double)p1[i];
             jarak += difference * difference;
         }
-        return java.lang.Math.sqrt(jarak);
+        return Math.sqrt(jarak);
     }
 
     private double getDistance_Absolute(double[] p1, int[] p2) {
@@ -369,7 +32,7 @@ public class Vector extends Calculation {
             jarak += difference * difference;
         }
 
-        return java.lang.Math.sqrt(jarak);
+        return Math.sqrt(jarak);
     }
 
     private double getDistance_Relative(double[] p1, double[] p2) {
@@ -432,7 +95,7 @@ public class Vector extends Calculation {
                 jarak = this.getDistance_Relative(p1, p2);
                 break;
             default:
-                this.warning("Error distance type!");
+                new Utils().warning("Error distance type!");
         }
         return jarak;
     }
@@ -485,7 +148,7 @@ public class Vector extends Calculation {
                 jarak = this.getDistance_Relative(p1, p2);
                 break;
             default:
-                this.warning("Error distance type!");
+                new Utils().warning("Error distance type!");
         }
 
         return jarak;
@@ -515,7 +178,7 @@ public class Vector extends Calculation {
                 jarak = this.getDistance_Relative(p1, p2);
                 break;
             default:
-                this.warning("Error distance type!");
+                new Utils().warning("Error distance type!");
         }
         return jarak;
     }
@@ -526,7 +189,7 @@ public class Vector extends Calculation {
             int difference = p2[i] - p1[i];
             jarak += (double)(difference * difference);
         }
-        return java.lang.Math.sqrt(jarak);
+        return Math.sqrt(jarak);
     }
 
     public double getDistance(int[] p1, int[] p2, String type) {
@@ -553,7 +216,7 @@ public class Vector extends Calculation {
                 jarak = (double)this.getDistance_Relative(p1, p2);
                 break;
             default:
-                this.warning("Error distance type!");
+                new Utils().warning("Error distance type!");
         }
 
         return jarak;
@@ -634,7 +297,7 @@ public class Vector extends Calculation {
                 jarak = this.getDistance_Relative(p1, p2);
                 break;
             default:
-                this.warning("Error distance type!");
+                new Utils().warning("Error distance type!");
         }
 
         return jarak;
@@ -664,7 +327,7 @@ public class Vector extends Calculation {
                 jarak = this.getDistance_Relative(p1, p2);
                 break;
             default:
-                this.warning("Error distance type!");
+                new Utils().warning("Error distance type!");
         }
 
         return jarak;
@@ -694,7 +357,7 @@ public class Vector extends Calculation {
                 jarak = this.getDistance_Relative(p1, p2);
                 break;
             default:
-                this.warning("Error distance type!");
+                new Utils().warning("Error distance type!");
         }
 
         return jarak;
@@ -741,7 +404,7 @@ public class Vector extends Calculation {
                 jarak = this.getDistance_Relative(p1, p2);
                 break;
             default:
-                this.warning("Error distance type!");
+                new Utils().warning("Error distance type!");
         }
 
         return jarak;

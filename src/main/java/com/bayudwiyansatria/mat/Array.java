@@ -1,10 +1,11 @@
 package com.bayudwiyansatria.mat;
 
-import com.bayudwiyansatria.utils.Calculation;
+import com.bayudwiyansatria.math.Math;
+import com.bayudwiyansatria.utils.Utils;
 
 import java.util.*;
 
-public class Array extends Calculation {
+public class Array {
 
     /* ======================================= Array View Start ======================================================*/
 
@@ -65,7 +66,7 @@ public class Array extends Calculation {
     }
 
     public void print(double data, int decimal_fraction) {
-        System.out.println(this.getRound(data, decimal_fraction) + "\n");
+        System.out.println(new Math().getRound(data, decimal_fraction) + "\n");
     }
 
     public void print(double[] data, int decimal_fraction) {
@@ -77,7 +78,7 @@ public class Array extends Calculation {
     }
 
     public void print(String label, double data, int decimal_fraction) {
-        System.out.println(label + " = " + this.getRound(data, decimal_fraction) + "\n");
+        System.out.println(label + " = " + new Math().getRound(data, decimal_fraction) + "\n");
     }
 
     public void print(String label, int[] data) {
@@ -174,10 +175,10 @@ public class Array extends Calculation {
             System.out.println(label + " =");
         }
         for(int i = 0; i < data.length - 1; ++i) {
-            System.out.print(this.getRound(data[i], decimal_fraction) + "    ");
+            System.out.print(new Math().getRound(data[i], decimal_fraction) + "    ");
         }
         if (data.length > 0) {
-            System.out.print(this.getRound(data[data.length - 1], decimal_fraction));
+            System.out.print(new Math().getRound(data[data.length - 1], decimal_fraction));
         }
         System.out.print("\n\n");
     }
@@ -189,7 +190,7 @@ public class Array extends Calculation {
 
         for(int i = 0; i < data.length; ++i) {
             for(int j = 0; j < data[i].length; ++j) {
-                System.out.print(this.getRound(data[i][j], decimal_fraction) + "    ");
+                System.out.print(new Math().getRound(data[i][j], decimal_fraction) + "    ");
             }
             System.out.print("\n");
         }
@@ -395,7 +396,7 @@ public class Array extends Calculation {
         mode = mode.toLowerCase();
         int[] ar = this.copyArray(data);
         Arrays.sort(ar);
-        Map<Integer, Integer> map = new HashMap();
+        Map<Integer, Integer> map = new HashMap<>();
         for(int i = 0; i < data.length; ++i) {
             map.put(i, data[i]);
         }
@@ -429,7 +430,7 @@ public class Array extends Calculation {
         mode = mode.toLowerCase();
         double[] ar = this.copyArray(data);
         Arrays.sort(ar);
-        Map<Integer, Double> map = new HashMap();
+        Map<Integer, Double> map = new HashMap<>();
         for(int i = 0; i < data.length; ++i) {
             map.put(i, data[i]);
         }
@@ -940,7 +941,7 @@ public class Array extends Calculation {
             newArray = new int[length];
 
             for(int i = 0; i < length; ++i) {
-                newArray[i] = this.getRandom(min, max);
+                newArray[i] = new Math().getRandom(min, max);
             }
         } else {
             System.out.println("Array length must be greater than zero!");
@@ -955,7 +956,7 @@ public class Array extends Calculation {
             newArray = new double[length];
 
             for(int i = 0; i < length; ++i) {
-                newArray[i] = this.getRandom(min, max);
+                newArray[i] = new Math().getRandom(min, max);
             }
         } else {
             System.out.println("Array length must be greater than zero!");
@@ -971,7 +972,7 @@ public class Array extends Calculation {
 
             for(int i = 0; i < rows; ++i) {
                 for(int j = 0; j < cols; ++j) {
-                    newArray[i][j] = this.getRandom(min, max);
+                    newArray[i][j] = new Math().getRandom(min, max);
                 }
             }
         } else {
@@ -988,7 +989,7 @@ public class Array extends Calculation {
 
             for(int i = 0; i < rows; ++i) {
                 for(int j = 0; j < cols; ++j) {
-                    newArray[i][j] = this.getRandom(min, max);
+                    newArray[i][j] = new Math().getRandom(min, max);
                 }
             }
         } else {
@@ -1000,19 +1001,19 @@ public class Array extends Calculation {
 
     public int[][] initArrayUniform(int dimension) {
         int[][] center = new int[][]{{25, 25}, {50, 25}, {75, 25}, {25, 50}, {50, 50}, {75, 50}, {25, 75}, {50, 75}, {75, 75}};
-        List list_x = new ArrayList();
-        List list_y = new ArrayList();
+        List<Integer> list_x = new ArrayList<>();
+        List<Integer> list_y = new ArrayList<>();
 
         int j;
-        for(int i = 0; i < center.length; ++i) {
-            int r = this.getRandom(1, 10);
+        for (int[] ints : center) {
+            int r = new Math().getRandom(1, 10);
             if (r > 5) {
-                int x = center[i][0];
-                int y = center[i][1];
+                int x = ints[0];
+                int y = ints[1];
 
-                for(j = 0; j < 20; ++j) {
-                    list_x.add(new Integer(this.getRandom(x - dimension, x + dimension)));
-                    list_y.add(new Integer(this.getRandom(y - dimension, y + dimension)));
+                for (j = 0; j < 20; ++j) {
+                    list_x.add(new Math().getRandom(x - dimension, x + dimension));
+                    list_y.add(new Math().getRandom(y - dimension, y + dimension));
                 }
             }
         }
@@ -1020,8 +1021,8 @@ public class Array extends Calculation {
         int[][] newArray = new int[list_x.size()][2];
 
         for(j = 0; j < list_x.size(); ++j) {
-            newArray[j][0] = (Integer)list_x.get(j);
-            newArray[j][1] = (Integer)list_y.get(j);
+            newArray[j][0] = list_x.get(j);
+            newArray[j][1] = list_y.get(j);
         }
 
         return newArray;
@@ -1036,7 +1037,7 @@ public class Array extends Calculation {
         int length = data.length();
         String tmp = this.cleanArrIn(data);
         String[] split = tmp.split(",");
-        int[] newData = this.String_to_int(split);
+        int[] newData = new Utils().String_to_int(split);
         return newData;
     }
 
@@ -1045,7 +1046,7 @@ public class Array extends Calculation {
         int length = data.length();
         String tmp = this.cleanArrIn(data);
         String[] split = tmp.split(",");
-        double[] newData = this.String_to_double(split);
+        double[] newData = new Utils().String_to_double(split);
         return newData;
     }
 

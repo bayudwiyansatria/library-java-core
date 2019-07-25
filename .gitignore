@@ -288,10 +288,11 @@ paket-files/
 .fake/
 
 # JetBrains Rider
-.settings/
 .idea/
+.gradle/
+.settings/
 *.sln.iml
-target/
+
 
 # CodeRush
 .cr/

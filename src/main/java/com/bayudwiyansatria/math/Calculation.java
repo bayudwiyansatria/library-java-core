@@ -1,6 +1,10 @@
-package com.bayudwiyansatria.mat;
+package com.bayudwiyansatria.math;
 
-public class Mat extends Vector{
+import com.bayudwiyansatria.utils.Utils;
+
+
+public class Calculation {
+
     /* ========================================= Addition Start ======================================================*/
 
     public int[] addition(int[] inA, int inB) {
@@ -30,7 +34,7 @@ public class Mat extends Vector{
                 res[c1] = inA[c1] + inB[c1];
             }
         } else {
-            this.warning("Recheck size of both matrixes!");
+            new Utils().warning("Recheck size of both matrix");
         }
 
         return res;
@@ -45,7 +49,7 @@ public class Mat extends Vector{
                 res[c1] = inA[c1] + inB[c1];
             }
         } else {
-            this.warning("Recheck size of both matrixes!");
+            new Utils().warning("Recheck size of both matrix");
         }
 
         return res;
@@ -91,7 +95,7 @@ public class Mat extends Vector{
                 }
             }
         } else {
-            this.warning("Recheck size of both matrixes. It has to be same");
+            new Utils().warning("Recheck size of both matrix");
         }
 
         return res;
@@ -109,7 +113,7 @@ public class Mat extends Vector{
                 }
             }
         } else {
-            this.warning("Recheck size of both matrixes!");
+            new Utils().warning("Recheck size of both matrix");
         }
 
         return res;
@@ -133,7 +137,7 @@ public class Mat extends Vector{
                     }
                 }
             } else {
-                this.warning("Recheck size of both matrixes!");
+                new Utils().warning("Recheck size of both matrix");
             }
         } else if (col2 == 1) {
             if (row1 == row2) {
@@ -145,7 +149,7 @@ public class Mat extends Vector{
                     }
                 }
             } else {
-                this.warning("Recheck size of both matrixes!");
+                new Utils().warning("Recheck size of both matrix");
             }
         } else {
             res = new int[row1][col1];
@@ -178,7 +182,8 @@ public class Mat extends Vector{
                     }
                 }
             } else {
-                this.warning("Recheck size of both matrixes!");
+
+                new Utils().warning("Recheck size of both matrix");
             }
         } else if (col2 == 1) {
             if (row1 == row2) {
@@ -190,7 +195,8 @@ public class Mat extends Vector{
                     }
                 }
             } else {
-                this.warning("Recheck size of both matrixes!");
+
+                new Utils().warning("Recheck size of both matrix");
             }
         } else {
             res = new double[row1][col1];
@@ -229,7 +235,7 @@ public class Mat extends Vector{
                 res[c1] = inA[c1] - inB[c1];
             }
         } else {
-            this.warning("Recheck size of both matrixes. It has to be same");
+            new Utils().warning("Recheck size of both matrix. It has to be same");
         }
 
         return res;
@@ -261,7 +267,8 @@ public class Mat extends Vector{
                 }
             }
         } else {
-            this.warning("Recheck size of both matrixes!");
+
+                new Utils().warning("Recheck size of both matrix");
         }
 
         return res;
@@ -285,7 +292,8 @@ public class Mat extends Vector{
                     }
                 }
             } else {
-                this.warning("Recheck size of both matrixes!");
+
+                new Utils().warning("Recheck size of both matrix");
             }
         } else if (col2 == 1) {
             if (row1 == row2) {
@@ -298,7 +306,8 @@ public class Mat extends Vector{
                 }
             }
 
-            this.warning("Recheck size of both matrixes!");
+
+                new Utils().warning("Recheck size of both matrix");
         } else {
             res = new double[row1][col1];
 
@@ -331,7 +340,8 @@ public class Mat extends Vector{
                 res[c1] = inA[c1] - inB[c1];
             }
         } else {
-            this.warning("Recheck size of both matrixes!");
+
+                new Utils().warning("Recheck size of both matrix");
         }
 
         return res;
@@ -363,7 +373,8 @@ public class Mat extends Vector{
                 }
             }
         } else {
-            this.warning("Recheck size of both matrixes!");
+
+                new Utils().warning("Recheck size of both matrix");
         }
 
         return res;
@@ -387,7 +398,8 @@ public class Mat extends Vector{
                     }
                 }
             } else {
-                this.warning("Recheck size of both matrixes!");
+
+                new Utils().warning("Recheck size of both matrix");
             }
         } else if (col2 == 1) {
             if (row1 == row2) {
@@ -399,7 +411,8 @@ public class Mat extends Vector{
                     }
                 }
             } else {
-                this.warning("Recheck size of both matrixes!");
+
+                new Utils().warning("Recheck size of both matrix");
             }
         } else {
             res = new int[row1][col1];
@@ -434,7 +447,8 @@ public class Mat extends Vector{
                 res[c1] = inA[c1] / inB[c1];
             }
         } else {
-            this.warning("Recheck size of both matrixes!");
+
+                new Utils().warning("Recheck size of both matrix");
         }
 
         return res;
@@ -466,7 +480,8 @@ public class Mat extends Vector{
                 }
             }
         } else {
-            this.warning("Recheck size of both matrixes!");
+
+                new Utils().warning("Recheck size of both matrix");
         }
 
         return res;
@@ -490,7 +505,8 @@ public class Mat extends Vector{
                     }
                 }
             } else {
-                this.warning("Recheck size of both matrixes!");
+
+                new Utils().warning("Recheck size of both matrix");
             }
         } else if (col2 == 1) {
             if (row1 == row2) {
@@ -502,7 +518,8 @@ public class Mat extends Vector{
                     }
                 }
             } else {
-                this.warning("Recheck size of both matrixes!");
+
+                new Utils().warning("Recheck size of both matrix");
             }
         } else {
             res = new double[row1][col1];
@@ -536,7 +553,8 @@ public class Mat extends Vector{
                 res[c1] = (double)(inA[c1] / inB[c1]);
             }
         } else {
-            this.warning("Recheck size of both matrixes!");
+
+                new Utils().warning("Recheck size of both matrix");
         }
 
         return res;
@@ -568,7 +586,8 @@ public class Mat extends Vector{
                 }
             }
         } else {
-            this.warning("Recheck size of both matrixes!");
+
+                new Utils().warning("Recheck size of both matrix");
         }
 
         return res;
@@ -592,7 +611,8 @@ public class Mat extends Vector{
                     }
                 }
             } else {
-                this.warning("Recheck size of both matrixes!");
+
+                new Utils().warning("Recheck size of both matrix");
             }
         } else if (col2 == 1) {
             if (row1 == row2) {
@@ -604,7 +624,8 @@ public class Mat extends Vector{
                     }
                 }
             } else {
-                this.warning("Recheck size of both matrixes!");
+
+                new Utils().warning("Recheck size of both matrix");
             }
         } else {
             res = new double[row1][col1];
@@ -652,7 +673,7 @@ public class Mat extends Vector{
                 _output = this.scalarMultiplication(data, point);
                 break;
             default:
-                this.warning("Type is not defined!");
+                new Utils().warning("Type is not defined!");
         }
 
         return _output;
@@ -700,7 +721,7 @@ public class Mat extends Vector{
                 _output = this.division(data, point);
                 break;
             default:
-                this.warning("Type is not defined!");
+                new Utils().warning("Type is not defined!");
         }
 
         return _output;
@@ -739,7 +760,7 @@ public class Mat extends Vector{
                 _output = this.scalarMultiplication(data, point);
                 break;
             default:
-                this.warning("Type is not defined!");
+                new Utils().warning("Type is not defined!");
         }
         return _output;
     }
@@ -786,7 +807,7 @@ public class Mat extends Vector{
                 _output = this.division(data, point);
                 break;
             default:
-                this.warning("Type is not defined!");
+                new Utils().warning("Type is not defined!");
         }
 
         return _output;
@@ -825,7 +846,7 @@ public class Mat extends Vector{
                 _output = this.scalarMultiplication(data, point);
                 break;
             default:
-                this.warning("Type is not defined!");
+                new Utils().warning("Type is not defined!");
         }
 
         return _output;
@@ -873,7 +894,7 @@ public class Mat extends Vector{
                 _output = this.division(data, point);
                 break;
             default:
-                this.warning("Type is not defined!");
+                new Utils().warning("Type is not defined!");
         }
 
         return _output;
@@ -912,7 +933,7 @@ public class Mat extends Vector{
                 _output = this.scalarMultiplication(data, point);
                 break;
             default:
-                this.warning("Type is not defined!");
+                new Utils().warning("Type is not defined!");
         }
 
         return _output;
@@ -960,7 +981,7 @@ public class Mat extends Vector{
                 _output = this.division(data, point);
                 break;
             default:
-                this.warning("Type is not defined!");
+                new Utils().warning("Type is not defined!");
         }
 
         return _output;
@@ -999,7 +1020,7 @@ public class Mat extends Vector{
                 _output = this.scalarMultiplication(data, point);
                 break;
             default:
-                this.warning("Type is not defined!");
+                new Utils().warning("Type is not defined!");
         }
 
         return _output;
@@ -1046,7 +1067,7 @@ public class Mat extends Vector{
                 _output = this.division(data, point);
                 break;
             default:
-                this.warning("Type is not defined!");
+                new Utils().warning("Type is not defined!");
         }
 
         return _output;
@@ -1085,7 +1106,7 @@ public class Mat extends Vector{
                 _output = this.scalarMultiplication(data, point);
                 break;
             default:
-                this.warning("Type is not defined!");
+                new Utils().warning("Type is not defined!");
         }
 
         return _output;
@@ -1133,7 +1154,7 @@ public class Mat extends Vector{
                 _output = this.division(data, point);
                 break;
             default:
-                this.warning("Type is not defined!");
+                new Utils().warning("Type is not defined!");
         }
 
         return _output;
@@ -1172,7 +1193,7 @@ public class Mat extends Vector{
                 _output = this.scalarMultiplication(data, point);
                 break;
             default:
-                this.warning("Type is not defined!");
+                new Utils().warning("Type is not defined!");
         }
 
         return _output;
@@ -1220,7 +1241,7 @@ public class Mat extends Vector{
                 _output = this.division(data, point);
                 break;
             default:
-                this.warning("Type is not defined!");
+                new Utils().warning("Type is not defined!");
         }
 
         return _output;
@@ -1259,7 +1280,7 @@ public class Mat extends Vector{
                 _output = this.scalarMultiplication(data, point);
                 break;
             default:
-                this.warning("Type is not defined!");
+                new Utils().warning("Type is not defined!");
         }
 
         return _output;
@@ -1307,7 +1328,7 @@ public class Mat extends Vector{
                 _output = this.division(data, point);
                 break;
             default:
-                this.warning("Type is not defined!");
+                new Utils().warning("Type is not defined!");
         }
 
         return _output;
@@ -1356,4 +1377,341 @@ public class Mat extends Vector{
 
     /* ========================================= Calculate Start ==================================================== */
 
+    double[] scalarMultiplication(double[] inA, double inB) {
+        int l1 = inA.length;
+        double[] res = new double[l1];
+
+        for(int c1 = 0; c1 < l1; ++c1) {
+            res[c1] = inA[c1] * inB;
+        }
+
+        return res;
+    }
+
+    double[] scalarMultiplication(double[] inA, double[] inB) {
+        int l1 = inA.length;
+        int l2 = inB.length;
+        double[] res = null;
+        if (l1 == l2) {
+            res = new double[l1];
+
+            for(int c1 = 0; c1 < l1; ++c1) {
+                res[c1] = inA[c1] * inB[c1];
+            }
+        } else {
+            new Utils().warning("Recheck size of both matrixes!");
+        }
+
+        return res;
+    }
+
+    double[][] scalarMultiplication(double[][] inA, double inB) {
+        int l1 = inA.length;
+        int l2 = inA[0].length;
+        double[][] res = new double[l1][l2];
+
+        for(int c1 = 0; c1 < l1; ++c1) {
+            for(int c2 = 0; c2 < l2; ++c2) {
+                res[c1][c2] = inA[c1][c2] * inB;
+            }
+        }
+
+        return res;
+    }
+
+    double[][] scalarMultiplication(double[][] inA, double[] inB) {
+        int l1 = inB.length;
+        int l2 = inA.length;
+        int l3 = inA[0].length;
+        double[][] res = (double[][])null;
+        if (l1 == l3) {
+            res = new double[l2][l3];
+
+            for(int c1 = 0; c1 < l2; ++c1) {
+                for(int c2 = 0; c2 < l3; ++c2) {
+                    res[c1][c2] = inB[c2] * inA[c1][c2];
+                }
+            }
+        } else {
+            new Utils().warning("Recheck size of both matrixes!");
+        }
+
+        return res;
+    }
+
+    double[][] scalarMultiplication(double[][] inA, double[][] inB) {
+        int col1 = inA[0].length;
+        int col2 = inB[0].length;
+        int row1 = inA.length;
+        int row2 = inB.length;
+        double[][] res = (double[][])null;
+        int c1;
+        int c2;
+        if (col1 == 1) {
+            if (row1 == row2) {
+                res = new double[row2][col2];
+
+                for(c1 = 0; c1 < row2; ++c1) {
+                    for(c2 = 0; c2 < col2; ++c2) {
+                        res[c1][c2] = inB[c1][c2] * inA[c1][0];
+                    }
+                }
+            } else {
+                new Utils().warning("Recheck size of both matrixes!");
+            }
+        } else if (col2 == 1) {
+            if (row1 == row2) {
+                res = new double[row1][col1];
+
+                for(c1 = 0; c1 < row1; ++c1) {
+                    for(c2 = 0; c2 < col1; ++c2) {
+                        res[c1][c2] = inA[c1][c2] * inB[c1][0];
+                    }
+                }
+            } else {
+                new Utils().warning("Recheck size of both matrixes!");
+            }
+        } else {
+            res = new double[row1][col1];
+
+            for(c1 = 0; c1 < row1; ++c1) {
+                for(c2 = 0; c2 < col1; ++c2) {
+                    res[c1][c2] = inA[c1][c2] * inB[c1][c2];
+                }
+            }
+        }
+
+        return res;
+    }
+
+    int[] scalarMultiplication(int[] inA, int inB) {
+        int l1 = inA.length;
+        int[] res = new int[l1];
+
+        for(int c1 = 0; c1 < l1; ++c1) {
+            res[c1] = inA[c1] * inB;
+        }
+
+        return res;
+    }
+
+    int[] scalarMultiplication(int[] inA, int[] inB) {
+        int l1 = inA.length;
+        int l2 = inB.length;
+        int[] res = null;
+        if (l1 == l2) {
+            res = new int[l1];
+
+            for(int c1 = 0; c1 < l1; ++c1) {
+                res[c1] = inA[c1] * inB[c1];
+            }
+        } else {
+            new Utils().warning("Recheck size of both matrixes!");
+        }
+
+        return res;
+    }
+
+    int[][] scalarMultiplication(int[][] inA, int inB) {
+        int l1 = inA.length;
+        int l2 = inA[0].length;
+        int[][] res = new int[l1][l2];
+
+        for(int c1 = 0; c1 < l1; ++c1) {
+            for(int c2 = 0; c2 < l2; ++c2) {
+                res[c1][c2] = inA[c1][c2] * inB;
+            }
+        }
+
+        return res;
+    }
+
+    int[][] scalarMultiplication(int[][] inA, int[] inB) {
+        int l1 = inB.length;
+        int l2 = inA.length;
+        int l3 = inA[0].length;
+        int[][] res = (int[][])null;
+        if (l1 == l3) {
+            res = new int[l2][l3];
+
+            for(int c1 = 0; c1 < l2; ++c1) {
+                for(int c2 = 0; c2 < l3; ++c2) {
+                    res[c1][c2] = inB[c2] * inA[c1][c2];
+                }
+            }
+        } else {
+            new Utils().warning("Recheck size of both matrixes!");
+        }
+
+        return res;
+    }
+
+    int[][] scalarMultiplication(int[][] inA, int[][] inB) {
+        int col1 = inA[0].length;
+        int col2 = inB[0].length;
+        int row1 = inA.length;
+        int row2 = inB.length;
+        int[][] res = (int[][])null;
+        int c1;
+        int c2;
+        if (col1 == 1) {
+            if (row1 == row2) {
+                res = new int[row2][col2];
+
+                for(c1 = 0; c1 < row2; ++c1) {
+                    for(c2 = 0; c2 < col2; ++c2) {
+                        res[c1][c2] = inB[c1][c2] * inA[c1][0];
+                    }
+                }
+            } else {
+                new Utils().warning("Recheck size of both matrixes!");
+            }
+        } else if (col2 == 1) {
+            if (row1 == row2) {
+                res = new int[row1][col1];
+
+                for(c1 = 0; c1 < row1; ++c1) {
+                    for(c2 = 0; c2 < col1; ++c2) {
+                        res[c1][c2] = inA[c1][c2] * inB[c1][0];
+                    }
+                }
+            } else {
+                new Utils().warning("Recheck size of both matrixes!");
+            }
+        } else {
+            res = new int[row1][col1];
+
+            for(c1 = 0; c1 < row1; ++c1) {
+                for(c2 = 0; c2 < col1; ++c2) {
+                    res[c1][c2] = inA[c1][c2] * inB[c1][c2];
+                }
+            }
+        }
+
+        return res;
+    }
+
+    double[] vectorMultiplication(double[] inA, double[][] inB) {
+        double[] res = null;
+        int colB = inB[0].length;
+        int colA = inA.length;
+        boolean rowA = true;
+        int rowB = inB.length;
+        int count = colA;
+        if (colA == rowB) {
+            res = new double[colB];
+
+            for(int c2 = 0; c2 < colB; ++c2) {
+                int c1 = 0;
+
+                for(res[c2] = 0.0; c1 < count; ++c1) {
+                    res[c2] += inA[c1] * inB[c1][c2];
+                }
+            }
+        } else {
+            new Utils().warning("Recheck size of both matrixes!");
+        }
+
+        return res;
+    }
+
+    double[][] vectorMultiplication(double[][] inA, double[][] inB) {
+        double[][] res = (double[][])null;
+        int colA = inA[0].length;
+        int rowA = inA.length;
+        int colB = inB[0].length;
+        int rowB = inB.length;
+        int count = colA;
+        if (colA == rowB) {
+            res = new double[rowA][colB];
+
+            for(int c1 = 0; c1 < rowA; ++c1) {
+                for(int c2 = 0; c2 < colB; ++c2) {
+                    for(int c3 = 0; c3 < count; ++c3) {
+                        res[c1][c2] += inA[c1][c3] * inB[c3][c2];
+                    }
+                }
+            }
+        } else {
+            new Utils().warning("Recheck size of both matrixes!");
+        }
+
+        return res;
+    }
+
+    int vectorMultiplication(int[] inA, int[] inB) {
+        int nb = inB.length;
+        int _output = 0;
+        if (inA.length == nb) {
+            for(int i = 0; i < inA.length; ++i) {
+                _output += inA[i] * inB[i];
+            }
+        } else {
+            new Utils().warning("Length of both data has to be same!");
+        }
+
+        return _output;
+    }
+
+    double vectorMultiplication(double[] inA, double[] inB) {
+        int nb = inB.length;
+        double _output = 0.0;
+        if (inA.length == nb) {
+            for(int i = 0; i < inA.length; ++i) {
+                _output += inA[i] * inB[i];
+            }
+        } else {
+            new Utils().warning("Length of both data has to be same!");
+        }
+
+        return _output;
+    }
+
+    int[] vectorMultiplication(int[] inA, int[][] inB) {
+        int[] res = null;
+        int colB = inB[0].length;
+        int colA = inA.length;
+        boolean rowA = true;
+        int rowB = inB.length;
+        int count = colA;
+        if (colA == rowB) {
+            res = new int[colB];
+
+            for(int c2 = 0; c2 < colB; ++c2) {
+                int c1 = 0;
+
+                for(res[c2] = 0; c1 < count; ++c1) {
+                    res[c2] += inA[c1] * inB[c1][c2];
+                }
+            }
+        } else {
+            new Utils().warning("Recheck size of both matrixes!");
+        }
+
+        return res;
+    }
+
+    int[][] vectorMultiplication(int[][] inA, int[][] inB) {
+        int[][] res = (int[][])null;
+        int colA = inA[0].length;
+        int rowA = inA.length;
+        int colB = inB[0].length;
+        int rowB = inB.length;
+        int count = colA;
+        if (colA == rowB) {
+            res = new int[rowA][colB];
+
+            for(int c1 = 0; c1 < rowA; ++c1) {
+                for(int c2 = 0; c2 < colB; ++c2) {
+                    for(int c3 = 0; c3 < count; ++c3) {
+                        res[c1][c2] += inA[c1][c3] * inB[c3][c2];
+                    }
+                }
+            }
+        } else {
+            new Utils().warning("Recheck size of both matrixes!");
+        }
+
+        return res;
+    }
 }
