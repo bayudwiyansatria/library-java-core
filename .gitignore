@@ -291,6 +291,7 @@ paket-files/
 .idea/
 .gradle/
 .settings/
+build/
 target/
 *.sln.iml
 
