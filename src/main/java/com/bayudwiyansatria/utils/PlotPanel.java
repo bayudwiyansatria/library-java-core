@@ -1,4 +1,4 @@
-package com.bayudwiyansatria.mat;
+package com.bayudwiyansatria.utils;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;

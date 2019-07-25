@@ -1,4 +1,4 @@
-package com.bayudwiyansatria.mat;
+package com.bayudwiyansatria.math;
 
 import java.math.BigInteger;
 
