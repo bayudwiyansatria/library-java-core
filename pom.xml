@@ -30,7 +30,7 @@
             <email>bayudwiyansatria@gmail.com</email>
             <url>https://profile.bayudwiyansatria.com</url>
             <organization>Bayu Dwiyan Satria</organization>
-            <organizationUrl>https://dev.bayudwiyansatria.com</organizationUrl>
+            <organizationUrl>https://developer.bayudwiyansatria.com</organizationUrl>
             <timezone>UTC+8</timezone>
         </developer>
     </developers>
@@ -55,7 +55,7 @@
 
     <issueManagement>
 		<system>Github</system>
-		<url>https://github.com/bayudwiyansatria/Library-Apache-Spark/issues</url>
+		<url>https://github.com/bayudwiyansatria/Library-Java-Core/issues</url>
     </issueManagement>
 
     <properties>
