@@ -41,7 +41,21 @@
         <url>https://github.com/bayudwiyansatria/Library-Java-Core</url>
         <tag>HEAD</tag>
     </scm>
-
+  
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+        <repository>
+            <id>dev-azure-com-bayudwiyansatria-bayudwiyansatria</id>
+            <url>https://pkgs.dev.azure.com/bayudwiyansatria/_packaging/bayudwiyansatria/maven/v1</url>
+        </repository>
+    </distributionManagement>
 
     <issueManagement>
 		<system>Github</system>
