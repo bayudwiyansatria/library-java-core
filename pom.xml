@@ -3,11 +3,11 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.bayudwiyansatria</groupId>
     <artifactId>core</artifactId>
-    <version>1.1.4-SNAPSHOT</version>
+    <version>1.1.1</version>
     <packaging>jar</packaging>
 
     <name>Bayu Dwiyan Satria - Core</name>
-    <description>Library For Core Of All Bayu Dwiyan Satria Project Frame Work.</description>
+    <description>Core Of Bayu Dwiyan Satria Dependency.</description>
     <url>https://github.com/bayudwiyansatria/Library-Java-Core</url>
 
     <organization>
