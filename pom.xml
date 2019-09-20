@@ -114,7 +114,7 @@
 		<defaultGoal>package</defaultGoal>
 		<resources>
 			<resource>
-				<directory>${project.basedir}/res</directory>
+				<directory>${project.basedir}/src/main/resources</directory>
 				<includes>
 					<include>NOTICE*</include>
 					<include>LICENSE*</include>
