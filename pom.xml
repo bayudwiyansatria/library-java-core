@@ -1,74 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>com.bayudwiyansatria</groupId>
-    <artifactId>core</artifactId>
-    <version>1.1.5-SNAPSHOT</version>
-    <packaging>jar</packaging>
-
-    <name>Bayu Dwiyan Satria - Core</name>
-    <description>Core Of Bayu Dwiyan Satria Dependency.</description>
-    <url>https://github.com/bayudwiyansatria/Library-Java-Core</url>
-
-    <organization>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.bayudwiyansatria</groupId>
+	<artifactId>core</artifactId>
+	<version>1.1.5-SNAPSHOT</version>
+	<packaging>jar</packaging>
+	<name>Bayu Dwiyan Satria - Core</name>
+	<description>Core Of Bayu Dwiyan Satria Dependency.</description>
+	<url>https://github.com/bayudwiyansatria/Library-Java-Core</url>
+	<organization>
 		<name>Bayu Dwiyan Satria</name>
 		<url>https://github.com/bayudwiyansatria</url>
 	</organization>
 	<inceptionYear>2018</inceptionYear>
-
 	<licenses>
 		<license>
 			<name>MIT LICENSE</name>
-            <url>http://www.opensource.org/licenses/mit-license.php</url>
+			<url>http://www.opensource.org/licenses/mit-license.php</url>
 		</license>
-    </licenses>
-
-    <developers>
-        <developer>
-            <id>bayudwiyansatria</id>
-            <name>Bayu Dwiyan Satria</name>
-            <email>bayudwiyansatria@gmail.com</email>
-            <url>https://profile.bayudwiyansatria.com</url>
-            <organization>Bayu Dwiyan Satria</organization>
-            <organizationUrl>https://developer.bayudwiyansatria.com</organizationUrl>
-            <timezone>UTC+8</timezone>
-        </developer>
-    </developers>
-
-    <scm>
-        <connection>scm:git:git://github.com/bayudwiyansatria/Library-Java-Core.git</connection>
-        <developerConnection>scm:git:git@github.com:bayudwiyansatria/Library-Java-Core.git</developerConnection>
-        <url>https://github.com/bayudwiyansatria/Library-Java-Core</url>
-        <tag>HEAD</tag>
-    </scm>
-
-    <distributionManagement>
-        <snapshotRepository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
-        <repository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-        </repository>
-    </distributionManagement>
-
-    <issueManagement>
+	</licenses>
+	<developers>
+		<developer>
+			<id>bayudwiyansatria</id>
+			<name>Bayu Dwiyan Satria</name>
+			<email>bayudwiyansatria@gmail.com</email>
+			<url>https://profile.bayudwiyansatria.com</url>
+			<organization>Bayu Dwiyan Satria</organization>
+			<organizationUrl>https://developer.bayudwiyansatria.com</organizationUrl>
+			<timezone>UTC+8</timezone>
+		</developer>
+	</developers>
+	<scm>
+		<connection>scm:git:git://github.com/bayudwiyansatria/Library-Java-Core.git</connection>
+		<developerConnection>scm:git:git@github.com:bayudwiyansatria/Library-Java-Core.git</developerConnection>
+		<url>https://github.com/bayudwiyansatria/Library-Java-Core</url>
+		<tag>HEAD</tag>
+	</scm>
+	<distributionManagement>
+		<snapshotRepository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+		<repository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+		</repository>
+	</distributionManagement>
+	<issueManagement>
 		<system>Github</system>
 		<url>https://github.com/bayudwiyansatria/Library-Java-Core/issues</url>
-    </issueManagement>
-
-    <properties>
-        <java.version>1.8</java.version>
-        <gpg.executable>gpg</gpg.executable>
-        <maven.version>3.6.1</maven.version>
+	</issueManagement>
+	<properties>
+		<java.version>1.8</java.version>
+		<gpg.executable>gpg</gpg.executable>
+		<maven.version>3.6.1</maven.version>
 		<maven-clean-plugin>3.1.0</maven-clean-plugin>
 		<maven-resources-plugin>3.0.1</maven-resources-plugin>
 		<maven-jar-plugin>3.1.2</maven-jar-plugin>
-        <maven-compiler-plugin>3.6.0</maven-compiler-plugin>
+		<maven-compiler-plugin>3.6.0</maven-compiler-plugin>
 		<maven-surefire-plugin>2.19.1</maven-surefire-plugin>
 		<maven-install-plugin>2.4</maven-install-plugin>
-        <maven-gpg-plugin>1.5</maven-gpg-plugin>
+		<maven-gpg-plugin>1.5</maven-gpg-plugin>
 		<maven-site-plugin>3.5.1</maven-site-plugin>
 		<maven-source-plugin>3.0.1</maven-source-plugin>
 		<maven-javadoc-plugin>2.10.4</maven-javadoc-plugin>
@@ -80,83 +72,47 @@
 		<maven-surefire-report-plugin>2.18.1</maven-surefire-report-plugin>
 		<maven-jxr-plugin>2.5</maven-jxr-plugin>
 		<maven-release-plugin>2.5.3</maven-release-plugin>
-        <maven-gpg-plugin>1.6</maven-gpg-plugin>
-
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <sonatype.plugins>1.6.7</sonatype.plugins>
-    </properties>
-
-    <repositories>
-        <repository>
-            <id>central</id>
-            <name>Central Repository</name>
-            <url>https://repo.maven.apache.org/maven2</url>
-            <releases>
-                <enabled>false</enabled>
-                <updatePolicy>always</updatePolicy>
-                <checksumPolicy>warn</checksumPolicy>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-                <updatePolicy>never</updatePolicy>
-                <checksumPolicy>fail</checksumPolicy>
-            </snapshots>
-        </repository>
-    </repositories>
-
-    <dependencies>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>1.7.26</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.assertj</groupId>
-            <artifactId>assertj-core</artifactId>
-            <version>3.12.2</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.jmockit</groupId>
-            <artifactId>jmockit</artifactId>
-            <version>1.46</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-            <version>1.2.3</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>jul-to-slf4j</artifactId>
-            <version>1.7.26</version>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
-
+		<maven-gpg-plugin>1.6</maven-gpg-plugin>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<sonatype.plugins>1.6.7</sonatype.plugins>
+	</properties>
+	<repositories>
+		<repository>
+			<id>central</id>
+			<name>Central Repository</name>
+			<url>https://repo.maven.apache.org/maven2</url>
+			<releases>
+				<enabled>false</enabled>
+				<updatePolicy>always</updatePolicy>
+				<checksumPolicy>warn</checksumPolicy>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+				<updatePolicy>never</updatePolicy>
+				<checksumPolicy>fail</checksumPolicy>
+			</snapshots>
+		</repository>
+	</repositories>
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
 	<reporting>
-        <outputDirectory>${project.basedir}/target/site</outputDirectory>
-    </reporting>
-
-    <build>
+		<outputDirectory>${project.basedir}/target/site</outputDirectory>
+	</reporting>
+	<build>
 		<directory>${project.basedir}/target</directory>
 		<outputDirectory>${project.build.directory}/classes</outputDirectory>
 		<finalName>${project.artifactId}-${project.version}</finalName>
 		<testOutputDirectory>${project.build.directory}/test-classes</testOutputDirectory>
 		<sourceDirectory>${project.basedir}/src/main/java</sourceDirectory>
 		<defaultGoal>package</defaultGoal>
-
-        <resources>
+		<resources>
 			<resource>
 				<directory>${project.basedir}/res</directory>
 				<includes>
@@ -164,55 +120,53 @@
 					<include>LICENSE*</include>
 				</includes>
 			</resource>
-        </resources>
-
+		</resources>
 		<testResources>
 			<testResource>
 				<directory>${project.basedir}/src/test/resources</directory>
 			</testResource>
 		</testResources>
-
-        <plugins>
+		<plugins>
 			<plugin>
-                <artifactId>maven-clean-plugin</artifactId>
-                <version>${maven-clean-plugin}</version>
-                <executions>
-                    <execution>
-                        <id>default-clean</id>
-                        <phase>clean</phase>
-                        <goals>
-                            <goal>clean</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+				<artifactId>maven-clean-plugin</artifactId>
+				<version>${maven-clean-plugin}</version>
+				<executions>
+					<execution>
+						<id>default-clean</id>
+						<phase>clean</phase>
+						<goals>
+							<goal>clean</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 			<plugin>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>${maven-jar-plugin}</version>
-                <executions>
-                    <execution>
-                        <id>default-jar</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>jar</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>${maven-jar-plugin}</version>
+				<executions>
+					<execution>
+						<id>default-jar</id>
+						<phase>package</phase>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 			<plugin>
-                <artifactId>maven-install-plugin</artifactId>
-                <version>${maven-install-plugin}</version>
-                <executions>
-                    <execution>
-                        <id>default-install</id>
-                        <phase>install</phase>
-                        <goals>
-                            <goal>install</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
+				<artifactId>maven-install-plugin</artifactId>
+				<version>${maven-install-plugin}</version>
+				<executions>
+					<execution>
+						<id>default-install</id>
+						<phase>install</phase>
+						<goals>
+							<goal>install</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>${maven-compiler-plugin}</version>
@@ -221,13 +175,13 @@
 					<target>${java.version}</target>
 					<showDeprecation>true</showDeprecation>
 				</configuration>
-            </plugin>
-            <plugin>
+			</plugin>
+			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
 				<version>${maven-resources-plugin}</version>
-            </plugin>
-            <plugin>
+			</plugin>
+			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>
 				<version>${maven-source-plugin}</version>
@@ -239,8 +193,8 @@
 						</goals>
 					</execution>
 				</executions>
-            </plugin>
-            <plugin>
+			</plugin>
+			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
 				<version>${maven-javadoc-plugin}</version>
@@ -252,28 +206,28 @@
 						</goals>
 					</execution>
 				</executions>
-            </plugin>
-            <plugin>
-                <groupId>org.sonatype.plugins</groupId>
-                <artifactId>nexus-staging-maven-plugin</artifactId>
-                <version>${sonatype.plugins}</version>
-                <extensions>true</extensions>
-                <configuration>
-                    <serverId>ossrh</serverId>
-                    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
-                </configuration>
-            </plugin>
-            <plugin>
+			</plugin>
+			<plugin>
+				<groupId>org.sonatype.plugins</groupId>
+				<artifactId>nexus-staging-maven-plugin</artifactId>
+				<version>${sonatype.plugins}</version>
+				<extensions>true</extensions>
+				<configuration>
+					<serverId>ossrh</serverId>
+					<nexusUrl>https://oss.sonatype.org/</nexusUrl>
+					<autoReleaseAfterClose>true</autoReleaseAfterClose>
+				</configuration>
+			</plugin>
+			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-release-plugin</artifactId>
 				<version>${maven-release-plugin}</version>
-                <configuration>
-                    <autoVersionSubmodules>true</autoVersionSubmodules>
-                    <useReleaseProfile>false</useReleaseProfile>
-                    <releaseProfiles>release</releaseProfiles>
-                    <goals>deploy</goals>
-                </configuration>
+				<configuration>
+					<autoVersionSubmodules>true</autoVersionSubmodules>
+					<useReleaseProfile>false</useReleaseProfile>
+					<releaseProfiles>release</releaseProfiles>
+					<goals>deploy</goals>
+				</configuration>
 				<dependencies>
 					<dependency>
 						<groupId>org.apache.maven.scm</groupId>
@@ -281,23 +235,21 @@
 						<version>${maven-scm-provider-gitexe}</version>
 					</dependency>
 				</dependencies>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-gpg-plugin</artifactId>
-                <version>${maven-gpg-plugin}</version>
-                <executions>
-                    <execution>
-                        <id>sign-artifacts</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>sign</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
-
-
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<version>${maven-gpg-plugin}</version>
+				<executions>
+					<execution>
+						<id>sign-artifacts</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 </project>
