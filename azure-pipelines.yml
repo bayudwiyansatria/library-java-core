@@ -1,3 +1,5 @@
+name: 'Bayu Dwiyan Satria - Core'
+
 trigger:
 - master
 
@@ -8,12 +10,12 @@ steps:
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
-    mavenOptions: '-Xmx1024m'
-    mavenVersionOption: 'Default'
+    goals: 'package'
+    publishJUnitResults: false
     javaHomeOption: 'JDKVersion'
     jdkVersionOption: '1.8'
     jdkArchitectureOption: 'x64'
+    mavenOptions: '-Xmx1024m'
+    mavenVersionOption: 'Default'
     mavenAuthenticateFeed: false
     sonarQubeRunAnalysis: false
-    publishJUnitResults: false
-    goals: 'package'
