@@ -3,8 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.bayudwiyansatria</groupId>
 	<artifactId>core</artifactId>
-	<version>1.1.5-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<version>1.0.0</version>
 	<name>Bayu Dwiyan Satria - Core</name>
 	<description>Core Of Bayu Dwiyan Satria Dependency.</description>
 	<url>https://github.com/bayudwiyansatria/Library-Java-Core</url>
@@ -37,19 +36,18 @@
 		<tag>HEAD</tag>
 	</scm>
 	<distributionManagement>
-		<snapshotRepository>
-			<id>ossrh</id>
-			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
-		</snapshotRepository>
 		<repository>
-			<id>ossrh</id>
-			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+			<id>github</id>
+			<name>GitHub Bayu Dwiyan Satria Apache Maven Packages</name>
+			<url>https://maven.pkg.github.com/bayudwiyansatria/Library-Java-Core</url>
 		</repository>
 	</distributionManagement>
+
 	<issueManagement>
 		<system>Github</system>
 		<url>https://github.com/bayudwiyansatria/Library-Java-Core/issues</url>
 	</issueManagement>
+	
 	<properties>
 		<java.version>1.8</java.version>
 		<gpg.executable>gpg</gpg.executable>
@@ -82,16 +80,6 @@
 			<id>central</id>
 			<name>Central Repository</name>
 			<url>https://repo.maven.apache.org/maven2</url>
-			<releases>
-				<enabled>false</enabled>
-				<updatePolicy>always</updatePolicy>
-				<checksumPolicy>warn</checksumPolicy>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-				<updatePolicy>never</updatePolicy>
-				<checksumPolicy>fail</checksumPolicy>
-			</snapshots>
 		</repository>
 	</repositories>
 	<dependencies>
@@ -206,17 +194,6 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.sonatype.plugins</groupId>
-				<artifactId>nexus-staging-maven-plugin</artifactId>
-				<version>${sonatype.plugins}</version>
-				<extensions>true</extensions>
-				<configuration>
-					<serverId>ossrh</serverId>
-					<nexusUrl>https://oss.sonatype.org/</nexusUrl>
-					<autoReleaseAfterClose>true</autoReleaseAfterClose>
-				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
