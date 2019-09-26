@@ -1,11 +1,8 @@
 package com.bayudwiyansatria.mat;
 
-import com.bayudwiyansatria.math.Math;
-import com.bayudwiyansatria.utils.Utils;
-
 import java.util.*;
 
-public class Array {
+public class Array extends Vector{
 
     /* ======================================= Array View Start ======================================================*/
 
@@ -66,7 +63,7 @@ public class Array {
     }
 
     public void print(double data, int decimal_fraction) {
-        System.out.println(new Math().getRound(data, decimal_fraction) + "\n");
+        System.out.println(new com.bayudwiyansatria.math.Math().getRound(data, decimal_fraction) + "\n");
     }
 
     public void print(double[] data, int decimal_fraction) {
@@ -78,7 +75,7 @@ public class Array {
     }
 
     public void print(String label, double data, int decimal_fraction) {
-        System.out.println(label + " = " + new Math().getRound(data, decimal_fraction) + "\n");
+        System.out.println(label + " = " + new com.bayudwiyansatria.math.Math().getRound(data, decimal_fraction) + "\n");
     }
 
     public void print(String label, int[] data) {
@@ -175,10 +172,10 @@ public class Array {
             System.out.println(label + " =");
         }
         for(int i = 0; i < data.length - 1; ++i) {
-            System.out.print(new Math().getRound(data[i], decimal_fraction) + "    ");
+            System.out.print(new com.bayudwiyansatria.math.Math().getRound(data[i], decimal_fraction) + "    ");
         }
         if (data.length > 0) {
-            System.out.print(new Math().getRound(data[data.length - 1], decimal_fraction));
+            System.out.print(new com.bayudwiyansatria.math.Math().getRound(data[data.length - 1], decimal_fraction));
         }
         System.out.print("\n\n");
     }
@@ -190,7 +187,7 @@ public class Array {
 
         for(int i = 0; i < data.length; ++i) {
             for(int j = 0; j < data[i].length; ++j) {
-                System.out.print(new Math().getRound(data[i][j], decimal_fraction) + "    ");
+                System.out.print(new com.bayudwiyansatria.math.Math().getRound(data[i][j], decimal_fraction) + "    ");
             }
             System.out.print("\n");
         }
@@ -941,7 +938,7 @@ public class Array {
             newArray = new int[length];
 
             for(int i = 0; i < length; ++i) {
-                newArray[i] = new Math().getRandom(min, max);
+                newArray[i] = new com.bayudwiyansatria.math.Math().getRandom(min, max);
             }
         } else {
             System.out.println("Array length must be greater than zero!");
@@ -956,7 +953,7 @@ public class Array {
             newArray = new double[length];
 
             for(int i = 0; i < length; ++i) {
-                newArray[i] = new Math().getRandom(min, max);
+                newArray[i] = new com.bayudwiyansatria.math.Math().getRandom(min, max);
             }
         } else {
             System.out.println("Array length must be greater than zero!");
@@ -972,7 +969,7 @@ public class Array {
 
             for(int i = 0; i < rows; ++i) {
                 for(int j = 0; j < cols; ++j) {
-                    newArray[i][j] = new Math().getRandom(min, max);
+                    newArray[i][j] = new com.bayudwiyansatria.math.Math().getRandom(min, max);
                 }
             }
         } else {
@@ -989,7 +986,7 @@ public class Array {
 
             for(int i = 0; i < rows; ++i) {
                 for(int j = 0; j < cols; ++j) {
-                    newArray[i][j] = new Math().getRandom(min, max);
+                    newArray[i][j] = new com.bayudwiyansatria.math.Math().getRandom(min, max);
                 }
             }
         } else {
@@ -1006,14 +1003,14 @@ public class Array {
 
         int j;
         for (int[] ints : center) {
-            int r = new Math().getRandom(1, 10);
+            int r = new com.bayudwiyansatria.math.Math().getRandom(1, 10);
             if (r > 5) {
                 int x = ints[0];
                 int y = ints[1];
 
                 for (j = 0; j < 20; ++j) {
-                    list_x.add(new Math().getRandom(x - dimension, x + dimension));
-                    list_y.add(new Math().getRandom(y - dimension, y + dimension));
+                    list_x.add(new com.bayudwiyansatria.math.Math().getRandom(x - dimension, x + dimension));
+                    list_y.add(new com.bayudwiyansatria.math.Math().getRandom(y - dimension, y + dimension));
                 }
             }
         }
@@ -1037,7 +1034,7 @@ public class Array {
         int length = data.length();
         String tmp = this.cleanArrIn(data);
         String[] split = tmp.split(",");
-        int[] newData = new Utils().String_to_int(split);
+        int[] newData = new com.bayudwiyansatria.utils.Utils().String_to_int(split);
         return newData;
     }
 
@@ -1046,7 +1043,7 @@ public class Array {
         int length = data.length();
         String tmp = this.cleanArrIn(data);
         String[] split = tmp.split(",");
-        double[] newData = new Utils().String_to_double(split);
+        double[] newData = new com.bayudwiyansatria.utils.Utils().String_to_double(split);
         return newData;
     }
 
