@@ -31,8 +31,6 @@
 
 Core of Bayu Dwiyan Satria Project Framework.
 
-[![License](https://img.shields.io/badge/license-MIT-4EB1BA.svg)](http://www.opensource.org/licenses/mit-license.php)
-
 ## Dependencies
 
 Dependencies Repository : https://search.maven.org/
