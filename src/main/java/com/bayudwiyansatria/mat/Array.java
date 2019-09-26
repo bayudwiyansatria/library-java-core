@@ -400,14 +400,14 @@ public class Array {
         for(int i = 0; i < data.length; ++i) {
             map.put(i, data[i]);
         }
-        Map<String, String> sortedMap = sortByComparator(map);
+        Map<?, ?> sortedMap = sortByComparator(map);
         int p;
-        Iterator iterator;
-        Map.Entry entry;
+        Iterator<?> iterator;
+        Map.Entry<?,?> entry;
         if (mode.equals("asc")) {
             p = 0;
             for(iterator = sortedMap.entrySet().iterator(); iterator.hasNext(); ++p) {
-                entry = (Map.Entry)iterator.next();
+                entry = (Map.Entry<?,?>) iterator.next();
                 newData[1][p] = (Integer)entry.getKey();
                 newData[0][p] = (Integer)entry.getValue();
             }
@@ -415,7 +415,7 @@ public class Array {
             p = data.length - 1;
 
             for(iterator = sortedMap.entrySet().iterator(); iterator.hasNext(); --p) {
-                entry = (Map.Entry)iterator.next();
+                entry = (Map.Entry<?,?>)iterator.next();
                 newData[1][p] = (Integer)entry.getKey();
                 newData[0][p] = (Integer)entry.getValue();
             }
@@ -434,21 +434,21 @@ public class Array {
         for(int i = 0; i < data.length; ++i) {
             map.put(i, data[i]);
         }
-        Map<String, String> sortedMap = sortByComparator(map);
+        Map<?, ?> sortedMap = sortByComparator(map);
         int p;
-        Iterator iterator;
-        Map.Entry entry;
+        Iterator<?> iterator;
+        Map.Entry<?,?> entry;
         if (mode.equals("asc")) {
             p = 0;
             for(iterator = sortedMap.entrySet().iterator(); iterator.hasNext(); ++p) {
-                entry = (Map.Entry)iterator.next();
+                entry = (Map.Entry<?,?>)iterator.next();
                 _hasil[1][p] = (double)(Integer)entry.getKey();
                 _hasil[0][p] = (Double)entry.getValue();
             }
         } else if (mode.equals("desc")) {
             p = data.length - 1;
             for(iterator = sortedMap.entrySet().iterator(); iterator.hasNext(); --p) {
-                entry = (Map.Entry)iterator.next();
+                entry = (Map.Entry<?,?>)iterator.next();
                 _hasil[1][p] = (double)(Integer)entry.getKey();
                 _hasil[0][p] = (Double)entry.getValue();
             }
@@ -469,7 +469,7 @@ public class Array {
         Iterator iterator = list.iterator();
 
         while(iterator.hasNext()) {
-            Map.Entry entry = (Map.Entry)iterator.next();
+            Map.Entry<?,?> entry = (Map.Entry<?,?>)iterator.next();
             sortedMap.put(entry.getKey(), entry.getValue());
         }
         return sortedMap;
