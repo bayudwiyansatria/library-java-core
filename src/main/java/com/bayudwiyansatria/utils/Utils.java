@@ -22,36 +22,36 @@ public class Utils {
     }
 
     public int[] getUnique(int[] data) {
-        SortedSet _set = new TreeSet();
-        int[] datalabel = new int[data.length];
+        SortedSet set = new TreeSet();
+        int[] dataLabel = new int[data.length];
         for(int i = 0; i < data.length; ++i) {
-            _set.add(new Integer(data[i]));
+            set.add(new Integer(data[i]));
         }
-        Iterator elemen = _set.iterator();
+        Iterator element = set.iterator();
         int i;
-        for(i = 0; elemen.hasNext(); ++i) {
-            Integer _tmp = (Integer)elemen.next();
-            datalabel[i] = _tmp;
+        for(i = 0; element.hasNext(); ++i) {
+            Integer _tmp = (Integer)element.next();
+            dataLabel[i] = _tmp;
         }
-        int[] _newdata = new int[i];
-        System.arraycopy(datalabel, 0, _newdata, 0, i);
-        return _newdata;
+        int[] newData = new int[i];
+        System.arraycopy(dataLabel, 0, newData, 0, i);
+        return newData;
     }
 
     public String[] getUnique(String[] data) {
-        SortedSet _set = new TreeSet();
-        String[] datalabel = new String[data.length];
+        SortedSet set = new TreeSet();
+        String[] dataLabel = new String[data.length];
         for(int i = 0; i < data.length; ++i) {
-            _set.add(new String(data[i]));
+            set.add(new String(data[i]));
         }
-        Iterator elemen = _set.iterator();
+        Iterator element = set.iterator();
         int i;
-        for(i = 0; elemen.hasNext(); ++i) {
-            datalabel[i] = (String)elemen.next();
+        for(i = 0; element.hasNext(); ++i) {
+            dataLabel[i] = (String)element.next();
         }
-        String[] _newdata = new String[i];
-        System.arraycopy(datalabel, 0, _newdata, 0, i);
-        return _newdata;
+        String[] newData = new String[i];
+        System.arraycopy(dataLabel, 0, newData, 0, i);
+        return newData;
     }
 
     private int[] getFind(int[] data, int val) {
