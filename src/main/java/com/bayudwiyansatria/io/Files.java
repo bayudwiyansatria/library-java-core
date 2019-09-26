@@ -347,6 +347,7 @@ public class Files extends Array {
         try {
             ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream(filename + ".dst"));
             outputStream.writeObject(data);
+            outputStream.close();
         } catch (Exception e) {
             new Utils().warning(e.toString());
         }
@@ -357,6 +358,7 @@ public class Files extends Array {
         try {
             ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream(filename + ".dst"));
             outputStream.writeObject(data);
+            outputStream.close();
         } catch (Exception e) {
             new Utils().warning(e.toString());
         }
@@ -367,6 +369,7 @@ public class Files extends Array {
         try {
             ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream(filename + ".dst"));
             outputStream.writeObject(data);
+            outputStream.close();
         } catch (Exception e) {
             new Utils().warning(e.toString());
         }
@@ -377,6 +380,7 @@ public class Files extends Array {
         try {
             ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream(filename + ".dst"));
             outputStream.writeObject(data);
+            outputStream.close();
         } catch (Exception e) {
             new Utils().warning(e.toString());
         }
@@ -387,8 +391,9 @@ public class Files extends Array {
         int[] data = null;
 
         try {
-            ObjectInputStream _inputStream = new ObjectInputStream(new FileInputStream(filename + ".dst"));
-            data = (int[])_inputStream.readObject();
+            ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream(filename + ".dst"));
+            data = (int[])inputStream.readObject();
+            inputStream.close();
         } catch (Exception e) {
             new Utils().warning(e.toString());
         }
@@ -400,8 +405,9 @@ public class Files extends Array {
         int[][] data = null;
 
         try {
-            ObjectInputStream _inputStream = new ObjectInputStream(new FileInputStream(filename + ".dst"));
-            data = (int[][])_inputStream.readObject();
+            ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream(filename + ".dst"));
+            data = (int[][])inputStream.readObject();
+            inputStream.close();
         } catch (Exception e) {
             new Utils().warning(e.toString());
         }
@@ -413,8 +419,9 @@ public class Files extends Array {
         double[] data = null;
 
         try {
-            ObjectInputStream _inputStream = new ObjectInputStream(new FileInputStream(filename + ".dst"));
-            data = (double[])_inputStream.readObject();
+            ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream(filename + ".dst"));
+            data = (double[])inputStream.readObject();
+            inputStream.close();
         } catch (Exception e) {
             new Utils().warning(e.toString());
         }
@@ -426,8 +433,9 @@ public class Files extends Array {
         double[][] data = null;
 
         try {
-            ObjectInputStream _inputStream = new ObjectInputStream(new FileInputStream(filename + ".dst"));
-            data = (double[][])_inputStream.readObject();
+            ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream(filename + ".dst"));
+            data = (double[][])inputStream.readObject();
+            inputStream.close();
         } catch (Exception e) {
             new Utils().warning(e.toString());
         }
