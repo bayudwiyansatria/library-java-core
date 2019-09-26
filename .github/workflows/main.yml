@@ -1,4 +1,4 @@
-name: Java CI
+name: Main CI/CD
 
 on: [push]
 
