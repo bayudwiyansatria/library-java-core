@@ -56,22 +56,20 @@ public class Math extends Calculation {
     public double[] getAverage(double[][] data, String mode) {
         double[] average = null;
         double initAverage;
-        int i;
-        int j;
         if (mode.equals("col")) {
             average = new double[data[0].length];
-            for(i = 0; i < data[0].length; ++i) {
+            for(int i = 0; i < data[0].length; ++i) {
                 initAverage = 0.0;
-                for(j = 0; j < data.length; ++j) {
+                for(int j = 0; j < data.length; ++j) {
                     initAverage += data[j][i];
                 }
                 average[i] = initAverage / (double)data.length;
             }
         } else if (mode.equals("row")) {
             average = new double[data.length];
-            for(i = 0; i < data.length; ++i) {
+            for(int i = 0; i < data.length; ++i) {
                 initAverage = 0.0;
-                for(j = 0; j < data[0].length; ++j) {
+                for(int j = 0; j < data[0].length; ++j) {
                     initAverage += data[i][j];
                 }
                 average[i] = initAverage / (double)data[0].length;
@@ -86,12 +84,10 @@ public class Math extends Calculation {
 
     /* ========================================= Random Start ======================================================= */
     public int getRandom(int min, int max) {
-        new Random();
         return (int)(java.lang.Math.random() * (double)(max + 1 - min)) + min;
     }
 
     public double getRandom(double min, double max) {
-        new Random();
         return java.lang.Math.random() * (max - min) + min;
     }
 
@@ -116,16 +112,15 @@ public class Math extends Calculation {
 
     public double[] getStd(double[][] data, String type) {
         double[] output = null;
-        int i;
         if (type.equals("col")) {
             output = new double[data[0].length];
-            for(i = 0; i < data[0].length; ++i) {
+            for(int i = 0; i < data[0].length; ++i) {
                 output[i] = this.getStd(new com.bayudwiyansatria.mat.Mat().getCol(data, i));
             }
         } else if (type.equals("row")) {
             output = new double[data.length];
 
-            for(i = 0; i < data.length; ++i) {
+            for(int i = 0; i < data.length; ++i) {
                 output[i] = this.getStd(new com.bayudwiyansatria.mat.Mat().getRow(data, i));
             }
         } else {
