@@ -2,7 +2,7 @@ package com.bayudwiyansatria.mat;
 
 public class Vector {
 
-    private double getDistance_Absolute(double[] p1, double[] p2) {
+    public double getDistance_Absolute(double[] p1, double[] p2) {
         double distance = 0.0;
         for(int i = 0; i < p1.length; ++i) {
             double difference = p2[i] - p1[i];
@@ -11,7 +11,7 @@ public class Vector {
         return Math.sqrt(distance);
     }
 
-    private double getDistance_Absolute(int[] p1, double[] p2) {
+    public double getDistance_Absolute(int[] p1, double[] p2) {
         double distance = 0.0;
         for(int i = 0; i < p1.length; ++i) {
             double difference = p2[i] - (double)p1[i];
@@ -20,7 +20,7 @@ public class Vector {
         return Math.sqrt(distance);
     }
 
-    private double getDistance_Absolute(double[] p1, int[] p2) {
+    public double getDistance_Absolute(double[] p1, int[] p2) {
         double distance = 0.0;
 
         for(int i = 0; i < p1.length; ++i) {
@@ -31,7 +31,7 @@ public class Vector {
         return Math.sqrt(distance);
     }
 
-    private double getDistance_Relative(double[] p1, double[] p2) {
+    public double getDistance_Relative(double[] p1, double[] p2) {
         double distance = 0.0;
         for(int i = 0; i < p1.length; ++i) {
             double difference = p2[i] - p1[i];
@@ -40,7 +40,7 @@ public class Vector {
         return distance;
     }
 
-    private int getDistance_Relative(int[] p1, int[] p2) {
+    public int getDistance_Relative(int[] p1, int[] p2) {
         int distance = 0;
         for(int i = 0; i < p1.length; ++i) {
             int difference = p2[i] - p1[i];
@@ -49,7 +49,7 @@ public class Vector {
         return distance;
     }
 
-    private double getDistance_Relative(int[] p1, double[] p2) {
+    public double getDistance_Relative(int[] p1, double[] p2) {
         double distance = 0.0;
         for(int i = 0; i < p1.length; ++i) {
             double difference = p2[i] - (double)p1[i];
@@ -58,7 +58,7 @@ public class Vector {
         return distance;
     }
 
-    private double getDistance_Relative(double[] p1, int[] p2) {
+    public double getDistance_Relative(double[] p1, int[] p2) {
         double distance = 0.0;
         for(int i = 0; i < p1.length; ++i) {
             double difference = (double)p2[i] - p1[i];
@@ -91,7 +91,7 @@ public class Vector {
         return distance;
     }
 
-    private double getDistance_Absolute(int[] p1, int[] p2) {
+    public double getDistance_Absolute(int[] p1, int[] p2) {
         double distance = 0.0;
         for(int i = 0; i < p1.length; ++i) {
             int difference = p2[i] - p1[i];
@@ -100,7 +100,7 @@ public class Vector {
         return Math.sqrt(distance);
     }
 
-    private double[] getDistance_Absolute(double[] p1, double[][] p2) {
+    public double[] getDistance_Absolute(double[] p1, double[][] p2) {
         double[] distance = new double[p2.length];
         for(int i = 0; i < p2.length; ++i) {
             distance[i] = this.getDistance_Absolute(p1, p2[i]);
@@ -108,7 +108,7 @@ public class Vector {
         return distance;
     }
 
-    private double[] getDistance_Absolute(double[] p1, int[][] p2) {
+    public double[] getDistance_Absolute(double[] p1, int[][] p2) {
         double[] distance = new double[p2.length];
         for(int i = 0; i < p2.length; ++i) {
             distance[i] = this.getDistance_Absolute(p1, p2[i]);
@@ -116,7 +116,7 @@ public class Vector {
         return distance;
     }
 
-    private double[] getDistance_Absolute(int[] p1, double[][] p2) {
+    public double[] getDistance_Absolute(int[] p1, double[][] p2) {
         double[] distance = new double[p2.length];
         for(int i = 0; i < p2.length; ++i) {
             distance[i] = this.getDistance_Absolute(p1, p2[i]);
@@ -125,7 +125,16 @@ public class Vector {
         return distance;
     }
 
-    private double[] getDistance_Relative(double[] p1, double[][] p2) {
+    public double[] getDistance_Absolute(int[] p1, int[][] p2) {
+        double[] distance = new double[p2.length];
+        for(int i = 0; i < p2.length; ++i) {
+            distance[i] = this.getDistance_Absolute(p1, p2[i]);
+        }
+
+        return distance;
+    }
+
+    public double[] getDistance_Relative(double[] p1, double[][] p2) {
         double[] distance = new double[p2.length];
         for(int i = 0; i < p2.length; ++i) {
             distance[i] = this.getDistance_Relative(p1, p2[i]);
@@ -133,7 +142,7 @@ public class Vector {
         return distance;
     }
 
-    private double[] getDistance_Relative(int[] p1, double[][] p2) {
+    public double[] getDistance_Relative(int[] p1, double[][] p2) {
         double[] distance = new double[p2.length];
         for(int i = 0; i < p2.length; ++i) {
             distance[i] = this.getDistance_Relative(p1, p2[i]);
@@ -142,7 +151,7 @@ public class Vector {
         return distance;
     }
 
-    private double[] getDistance_Relative(double[] p1, int[][] p2) {
+    public double[] getDistance_Relative(double[] p1, int[][] p2) {
         double[] distance = new double[p2.length];
         for(int i = 0; i < p2.length; ++i) {
             distance[i] = this.getDistance_Relative(p1, p2[i]);
@@ -151,16 +160,7 @@ public class Vector {
         return distance;
     }
 
-    private double[] getDistance_Absolute(int[] p1, int[][] p2) {
-        double[] distance = new double[p2.length];
-        for(int i = 0; i < p2.length; ++i) {
-            distance[i] = this.getDistance_Absolute(p1, p2[i]);
-        }
-
-        return distance;
-    }
-
-    private double[] getDistance_Relative(int[] p1, int[][] p2) {
+    public double[] getDistance_Relative(int[] p1, int[][] p2) {
         double[] distance = new double[p2.length];
         for(int i = 0; i < p2.length; ++i) {
             distance[i] = (double)this.getDistance_Relative(p1, p2[i]);

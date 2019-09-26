@@ -637,698 +637,700 @@ public class Calculation {
         return res;
     }
 
-    public int[] Calculate(int[] data, int point, String type) {
-        int[] output = null;
-        byte var6 = -1;
-        switch(type.hashCode()) {
-            case 0:
-                if (type.equals("*")) {
-                    var6 = 2;
-                }
-                break;
-            case 1:
-                if (type.equals("+")) {
-                    var6 = 0;
-                }
-            case 2:
-            default:
-                break;
-            case 3:
-                if (type.equals("-")) {
-                    var6 = 1;
-                }
-        }
-
-        switch(var6) {
-            case 0:
-                output = this.addition(data, point);
-                break;
-            case 1:
-                output = this.substraction(data, point);
-                break;
-            case 2:
-                output = this.scalarMultiplication(data, point);
-                break;
-            default:
-                new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
-        }
-
-        return output;
-    }
-
     public double[] Calculate(double[] data, double point, String type) {
-        double[] output = null;
+        double[] result = null;
         byte bytes = -1;
         switch(type.hashCode()) {
-            case 0:
-                if (type.equals("*")) {
-                    bytes = 2;
-                }
-                break;
-            case 1:
-                if (type.equals("+")) {
-                    bytes = 0;
-                }
-            case 2:
-            case 3:
-            default:
-                break;
-            case 4:
-                if (type.equals("-")) {
-                    bytes = 1;
-                }
-                break;
-            case 5:
-                if (type.equals("/")) {
-                    bytes = 3;
-                }
+        case 42:
+            if (type.equals("*")) {
+                bytes = 2;
+            }
+            break;
+        case 43:
+            if (type.equals("+")) {
+                bytes = 0;
+            }
+        case 44:
+        case 46:
+        default:
+            break;
+        case 45:
+            if (type.equals("-")) {
+                bytes = 1;
+            }
+            break;
+        case 47:
+            if (type.equals("/")) {
+                bytes = 3;
+            }
         }
 
         switch(bytes) {
-            case 0:
-                output = this.addition(data, point);
-                break;
-            case 1:
-                output = this.substraction(data, point);
-                break;
-            case 2:
-                output = this.scalarMultiplication(data, point);
-                break;
-            case 3:
-                output = this.division(data, point);
-                break;
-            default:
-                new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
+        case 0:
+            result = this.addition(data, point);
+            break;
+        case 1:
+            result = this.substraction(data, point);
+            break;
+        case 2:
+            result = this.scalarMultiplication(data, point);
+            break;
+        case 3:
+            result = this.division(data, point);
+            break;
+        default:
+            new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
         }
 
-        return output;
-    }
-
-    public int[] Calculate(int point, int[] data, String type) {
-        int[] output = null;
-        byte var6 = -1;
-        switch(type.hashCode()) {
-            case 0:
-                if (type.equals("*")) {
-                    var6 = 2;
-                }
-                break;
-            case 1:
-                if (type.equals("+")) {
-                    var6 = 0;
-                }
-            case 2:
-            default:
-                break;
-            case 3:
-                if (type.equals("-")) {
-                    var6 = 1;
-                }
-        }
-
-        switch(var6) {
-            case 0:
-                output = this.addition(data, point);
-                break;
-            case 1:
-                output = this.substraction(data, point);
-                break;
-            case 2:
-                output = this.scalarMultiplication(data, point);
-                break;
-            default:
-                new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
-        }
-        return output;
+        return result;
     }
 
     public double[] Calculate(double point, double[] data, String type) {
-        double[] output = null;
+        double[] result = null;
         byte bytes = -1;
         switch(type.hashCode()) {
-            case 0:
-                if (type.equals("*")) {
-                    bytes = 2;
-                }
-                break;
-            case 1:
-                if (type.equals("+")) {
-                    bytes = 0;
-                }
-            case 2:
-            case 3:
-            default:
-                break;
-            case 4:
-                if (type.equals("-")) {
-                    bytes = 1;
-                }
-                break;
-            case 5:
-                if (type.equals("/")) {
-                    bytes = 3;
-                }
+        case 42:
+            if (type.equals("*")) {
+                bytes = 2;
+            }
+            break;
+        case 43:
+            if (type.equals("+")) {
+                bytes = 0;
+            }
+        case 44:
+        case 46:
+        default:
+            break;
+        case 45:
+            if (type.equals("-")) {
+                bytes = 1;
+            }
+            break;
+        case 47:
+            if (type.equals("/")) {
+                bytes = 3;
+            }
         }
 
         switch(bytes) {
-            case 0:
-                output = this.addition(data, point);
-                break;
-            case 1:
-                output = this.substraction(data, point);
-                break;
-            case 2:
-                output = this.scalarMultiplication(data, point);
-                break;
-            case 3:
-                output = this.division(data, point);
-                break;
-            default:
-                new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
+        case 0:
+            result = this.addition(data, point);
+            break;
+        case 1:
+            result = this.substraction(data, point);
+            break;
+        case 2:
+            result = this.scalarMultiplication(data, point);
+            break;
+        case 3:
+            result = this.division(data, point);
+            break;
+        default:
+            new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
         }
 
-        return output;
+        return result;
     }
 
-    public int[] Calculate(int[] data, int[] point, String type) {
-        int[] output = null;
-        byte var6 = -1;
+    public int[] Calculate(int[] data, int point, String type) {
+        int[] result = null;
+        byte bytes = -1;
         switch(type.hashCode()) {
-            case 0:
-                if (type.equals("*")) {
-                    var6 = 2;
-                }
-                break;
-            case 1:
-                if (type.equals("+")) {
-                    var6 = 0;
-                }
-            case 2:
-            default:
-                break;
-            case 3:
-                if (type.equals("-")) {
-                    var6 = 1;
-                }
+        case 42:
+            if (type.equals("*")) {
+                bytes = 2;
+            }
+            break;
+        case 43:
+            if (type.equals("+")) {
+                bytes = 0;
+            }
+        case 44:
+        default:
+            break;
+        case 45:
+            if (type.equals("-")) {
+                bytes = 1;
+            }
         }
 
-        switch(var6) {
-            case 0:
-                output = this.addition(data, point);
-                break;
-            case 1:
-                output = this.substraction(data, point);
-                break;
-            case 2:
-                output = this.scalarMultiplication(data, point);
-                break;
-            default:
-                new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
+        switch(bytes) {
+        case 0:
+            result = this.addition(data, point);
+            break;
+        case 1:
+            result = this.substraction(data, point);
+            break;
+        case 2:
+            result = this.scalarMultiplication(data, point);
+            break;
+        default:
+            new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
         }
 
-        return output;
+        return result;
     }
 
-    public double[] Calculate(double[] data, double[] point, String type) {
-        double[] output = null;
-        byte var6 = -1;
+    public int[] Calculate(int point, int[] data, String type) {
+        int[] result = null;
+        byte bytes = -1;
         switch(type.hashCode()) {
-            case 0:
-                if (type.equals("*")) {
-                    var6 = 2;
-                }
-                break;
-            case 1:
-                if (type.equals("+")) {
-                    var6 = 0;
-                }
-            case 2:
-            case 3:
-            default:
-                break;
-            case 4:
-                if (type.equals("-")) {
-                    var6 = 1;
-                }
-                break;
-            case 5:
-                if (type.equals("/")) {
-                    var6 = 3;
-                }
+        case 42:
+            if (type.equals("*")) {
+                bytes = 2;
+            }
+            break;
+        case 43:
+            if (type.equals("+")) {
+                bytes = 0;
+            }
+        case 44:
+        default:
+            break;
+        case 45:
+            if (type.equals("-")) {
+                bytes = 1;
+            }
         }
 
-        switch(var6) {
-            case 0:
-                output = this.addition(data, point);
-                break;
-            case 1:
-                output = this.substraction(data, point);
-                break;
-            case 2:
-                output = this.scalarMultiplication(data, point);
-                break;
-            case 3:
-                output = this.division(data, point);
-                break;
-            default:
-                new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
+        switch(bytes) {
+        case 0:
+            result = this.addition(data, point);
+            break;
+        case 1:
+            result = this.substraction(data, point);
+            break;
+        case 2:
+            result = this.scalarMultiplication(data, point);
+            break;
+        default:
+            new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
         }
 
-        return output;
-    }
-
-    public int[][] Calculate(int[][] data, int point, String type) {
-        int[][] output = (int[][])null;
-        byte var6 = -1;
-        switch(type.hashCode()) {
-            case 0:
-                if (type.equals("*")) {
-                    var6 = 2;
-                }
-                break;
-            case 1:
-                if (type.equals("+")) {
-                    var6 = 0;
-                }
-            case 2:
-            default:
-                break;
-            case 3:
-                if (type.equals("-")) {
-                    var6 = 1;
-                }
-        }
-
-        switch(var6) {
-            case 0:
-                output = this.addition(data, point);
-                break;
-            case 1:
-                output = this.substraction(data, point);
-                break;
-            case 2:
-                output = this.scalarMultiplication(data, point);
-                break;
-            default:
-                new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
-        }
-
-        return output;
+        return result;
     }
 
     public double[][] Calculate(double[][] data, double point, String type) {
-        double[][] output = (double[][])null;
+        double[][] result = null;
         byte bytes = -1;
         switch(type.hashCode()) {
-            case 0:
-                if (type.equals("*")) {
-                    bytes = 2;
-                }
-                break;
-            case 1:
-                if (type.equals("+")) {
-                    bytes = 0;
-                }
-            case 2:
-            case 3:
-            default:
-                break;
-            case 4:
-                if (type.equals("-")) {
-                    bytes = 1;
-                }
-                break;
-            case 5:
-                if (type.equals("/")) {
-                    bytes = 3;
-                }
+        case 42:
+            if (type.equals("*")) {
+                bytes = 2;
+            }
+            break;
+        case 43:
+            if (type.equals("+")) {
+                bytes = 0;
+            }
+        case 44:
+        case 46:
+        default:
+            break;
+        case 45:
+            if (type.equals("-")) {
+                bytes = 1;
+            }
+            break;
+        case 47:
+            if (type.equals("/")) {
+                bytes = 3;
+            }
         }
 
         switch(bytes) {
-            case 0:
-                output = this.addition(data, point);
-                break;
-            case 1:
-                output = this.substraction(data, point);
-                break;
-            case 2:
-                output = this.scalarMultiplication(data, point);
-                break;
-            case 3:
-                output = this.division(data, point);
-                break;
-            default:
-                new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
+        case 0:
+            result = this.addition(data, point);
+            break;
+        case 1:
+            result = this.substraction(data, point);
+            break;
+        case 2:
+            result = this.scalarMultiplication(data, point);
+            break;
+        case 3:
+            result = this.division(data, point);
+            break;
+        default:
+            new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
         }
 
-        return output;
-    }
-
-    public int[][] Calculate(int point, int[][] data, String type) {
-        int[][] output = (int[][])null;
-        byte var6 = -1;
-        switch(type.hashCode()) {
-            case 0:
-                if (type.equals("*")) {
-                    var6 = 2;
-                }
-                break;
-            case 1:
-                if (type.equals("+")) {
-                    var6 = 0;
-                }
-            case 2:
-            default:
-                break;
-            case 3:
-                if (type.equals("-")) {
-                    var6 = 1;
-                }
-        }
-
-        switch(var6) {
-            case 0:
-                output = this.addition(data, point);
-                break;
-            case 1:
-                output = this.substraction(data, point);
-                break;
-            case 2:
-                output = this.scalarMultiplication(data, point);
-                break;
-            default:
-                new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
-        }
-
-        return output;
+        return result;
     }
 
     public double[][] Calculate(double point, double[][] data, String type) {
-        double[][] output = (double[][])null;
+        double[][] result = null;
         byte bytes = -1;
         switch(type.hashCode()) {
-            case 0:
-                if (type.equals("*")) {
-                    bytes = 2;
-                }
-                break;
-            case 1:
-                if (type.equals("+")) {
-                    bytes = 0;
-                }
-            case 2:
-            case 3:
-            default:
-                break;
-            case 4:
-                if (type.equals("-")) {
-                    bytes = 1;
-                }
-                break;
-            case 5:
-                if (type.equals("/")) {
-                    bytes = 3;
-                }
-        }
-        switch(bytes) {
-            case 0:
-                output = this.addition(data, point);
-                break;
-            case 1:
-                output = this.substraction(data, point);
-                break;
-            case 2:
-                output = this.scalarMultiplication(data, point);
-                break;
-            case 3:
-                output = this.division(data, point);
-                break;
-            default:
-                new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
+        case 42:
+            if (type.equals("*")) {
+                bytes = 2;
+            }
+            break;
+        case 43:
+            if (type.equals("+")) {
+                bytes = 0;
+            }
+        case 44:
+        case 46:
+        default:
+            break;
+        case 45:
+            if (type.equals("-")) {
+                bytes = 1;
+            }
+            break;
+        case 47:
+            if (type.equals("/")) {
+                bytes = 3;
+            }
         }
 
-        return output;
+        switch(bytes) {
+        case 0:
+            result = this.addition(data, point);
+            break;
+        case 1:
+            result = this.substraction(data, point);
+            break;
+        case 2:
+            result = this.scalarMultiplication(data, point);
+            break;
+        case 3:
+            result = this.division(data, point);
+            break;
+        default:
+            new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
+        }
+
+        return result;
     }
 
-    public int[][] Calculate(int[][] data, int[] point, String type) {
-        int[][] output = (int[][])null;
-        byte var6 = -1;
+    public int[][] Calculate(int[][] data, int point, String type) {
+        int[][] result = null;
+        byte bytes = -1;
         switch(type.hashCode()) {
-            case 0:
-                if (type.equals("*")) {
-                    var6 = 2;
-                }
-                break;
-            case 1:
-                if (type.equals("+")) {
-                    var6 = 0;
-                }
-            case 2:
-            default:
-                break;
-            case 3:
-                if (type.equals("-")) {
-                    var6 = 1;
-                }
+        case 42:
+            if (type.equals("*")) {
+                bytes = 2;
+            }
+            break;
+        case 43:
+            if (type.equals("+")) {
+                bytes = 0;
+            }
+        case 44:
+        default:
+            break;
+        case 45:
+            if (type.equals("-")) {
+                bytes = 1;
+            }
         }
 
-        switch(var6) {
-            case 0:
-                output = this.addition(data, point);
-                break;
-            case 1:
-                output = this.substraction(data, point);
-                break;
-            case 2:
-                output = this.scalarMultiplication(data, point);
-                break;
-            default:
-                new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
+        switch(bytes) {
+        case 0:
+            result = this.addition(data, point);
+            break;
+        case 1:
+            result = this.substraction(data, point);
+            break;
+        case 2:
+            result = this.scalarMultiplication(data, point);
+            break;
+        default:
+            new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
         }
 
-        return output;
+        return result;
+    }
+
+    public int[][] Calculate(int point, int[][] data, String type) {
+        int[][] result = null;
+        byte bytes = -1;
+        switch(type.hashCode()) {
+        case 42:
+            if (type.equals("*")) {
+                bytes = 2;
+            }
+            break;
+        case 43:
+            if (type.equals("+")) {
+                bytes = 0;
+            }
+        case 44:
+        default:
+            break;
+        case 45:
+            if (type.equals("-")) {
+                bytes = 1;
+            }
+        }
+
+        switch(bytes) {
+        case 0:
+            result = this.addition(data, point);
+            break;
+        case 1:
+            result = this.substraction(data, point);
+            break;
+        case 2:
+            result = this.scalarMultiplication(data, point);
+            break;
+        default:
+            new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
+        }
+
+        return result;
+    }
+
+    public double[] Calculate(double[] data, double[] point, String type) {
+        double[] result = null;
+        byte bytes = -1;
+        switch(type.hashCode()) {
+        case 42:
+            if (type.equals("*")) {
+                bytes = 2;
+            }
+            break;
+        case 43:
+            if (type.equals("+")) {
+                bytes = 0;
+            }
+        case 44:
+        case 46:
+        default:
+            break;
+        case 45:
+            if (type.equals("-")) {
+                bytes = 1;
+            }
+            break;
+        case 47:
+            if (type.equals("/")) {
+                bytes = 3;
+            }
+        }
+
+        switch(bytes) {
+        case 0:
+            result = this.addition(data, point);
+            break;
+        case 1:
+            result = this.substraction(data, point);
+            break;
+        case 2:
+            result = this.scalarMultiplication(data, point);
+            break;
+        case 3:
+            result = this.division(data, point);
+            break;
+        default:
+            new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
+        }
+
+        return result;
+    }
+
+    public int[] Calculate(int[] data, int[] point, String type) {
+        int[] result = null;
+        byte bytes = -1;
+        switch(type.hashCode()) {
+        case 42:
+            if (type.equals("*")) {
+                bytes = 2;
+            }
+            break;
+        case 43:
+            if (type.equals("+")) {
+                bytes = 0;
+            }
+        case 44:
+        default:
+            break;
+        case 45:
+            if (type.equals("-")) {
+                bytes = 1;
+            }
+        }
+
+        switch(bytes) {
+        case 0:
+            result = this.addition(data, point);
+            break;
+        case 1:
+            result = this.substraction(data, point);
+            break;
+        case 2:
+            result = this.scalarMultiplication(data, point);
+            break;
+        default:
+            new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
+        }
+
+        return result;
     }
 
     public double[][] Calculate(double[][] data, double[] point, String type) {
-        double[][] output = (double[][])null;
-        byte var6 = -1;
+        double[][] result = null;
+        byte bytes = -1;
         switch(type.hashCode()) {
-            case 0:
-                if (type.equals("*")) {
-                    var6 = 2;
-                }
-                break;
-            case 1:
-                if (type.equals("+")) {
-                    var6 = 0;
-                }
-            case 2:
-            case 3:
-            default:
-                break;
-            case 4:
-                if (type.equals("-")) {
-                    var6 = 1;
-                }
-                break;
-            case 5:
-                if (type.equals("/")) {
-                    var6 = 3;
-                }
+        case 42:
+            if (type.equals("*")) {
+                bytes = 2;
+            }
+            break;
+        case 43:
+            if (type.equals("+")) {
+                bytes = 0;
+            }
+        case 44:
+        case 46:
+        default:
+            break;
+        case 45:
+            if (type.equals("-")) {
+                bytes = 1;
+            }
+            break;
+        case 47:
+            if (type.equals("/")) {
+                bytes = 3;
+            }
         }
 
-        switch(var6) {
-            case 0:
-                output = this.addition(data, point);
-                break;
-            case 1:
-                output = this.substraction(data, point);
-                break;
-            case 2:
-                output = this.scalarMultiplication(data, point);
-                break;
-            case 3:
-                output = this.division(data, point);
-                break;
-            default:
-                new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
+        switch(bytes) {
+        case 0:
+            result = this.addition(data, point);
+            break;
+        case 1:
+            result = this.substraction(data, point);
+            break;
+        case 2:
+            result = this.scalarMultiplication(data, point);
+            break;
+        case 3:
+            result = this.division(data, point);
+            break;
+        default:
+            new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
         }
 
-        return output;
-    }
-
-    public int[][] Calculate(int[] point, int[][] data, String type) {
-        int[][] output = (int[][])null;
-        byte var6 = -1;
-        switch(type.hashCode()) {
-            case 0:
-                if (type.equals("*")) {
-                    var6 = 2;
-                }
-                break;
-            case 1:
-                if (type.equals("+")) {
-                    var6 = 0;
-                }
-            case 2:
-            default:
-                break;
-            case 3:
-                if (type.equals("-")) {
-                    var6 = 1;
-                }
-        }
-
-        switch(var6) {
-            case 0:
-                output = this.addition(data, point);
-                break;
-            case 1:
-                output = this.substraction(data, point);
-                break;
-            case 2:
-                output = this.scalarMultiplication(data, point);
-                break;
-            default:
-                new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
-        }
-
-        return output;
+        return result;
     }
 
     public double[][] Calculate(double[] point, double[][] data, String type) {
-        double[][] output = (double[][])null;
-        byte var6 = -1;
+        double[][] result = null;
+        byte bytes = -1;
         switch(type.hashCode()) {
-            case 0:
-                if (type.equals("*")) {
-                    var6 = 2;
-                }
-                break;
-            case 1:
-                if (type.equals("+")) {
-                    var6 = 0;
-                }
-            case 2:
-            case 3:
-            default:
-                break;
-            case 4:
-                if (type.equals("-")) {
-                    var6 = 1;
-                }
-                break;
-            case 5:
-                if (type.equals("/")) {
-                    var6 = 3;
-                }
+        case 42:
+            if (type.equals("*")) {
+                bytes = 2;
+            }
+            break;
+        case 43:
+            if (type.equals("+")) {
+                bytes = 0;
+            }
+        case 44:
+        case 46:
+        default:
+            break;
+        case 45:
+            if (type.equals("-")) {
+                bytes = 1;
+            }
+            break;
+        case 47:
+            if (type.equals("/")) {
+                bytes = 3;
+            }
         }
 
-        switch(var6) {
-            case 0:
-                output = this.addition(data, point);
-                break;
-            case 1:
-                output = this.substraction(data, point);
-                break;
-            case 2:
-                output = this.scalarMultiplication(data, point);
-                break;
-            case 3:
-                output = this.division(data, point);
-                break;
-            default:
-                new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
+        switch(bytes) {
+        case 0:
+            result = this.addition(data, point);
+            break;
+        case 1:
+            result = this.substraction(data, point);
+            break;
+        case 2:
+            result = this.scalarMultiplication(data, point);
+            break;
+        case 3:
+            result = this.division(data, point);
+            break;
+        default:
+            new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
         }
 
-        return output;
+        return result;
     }
 
-    public int[][] Calculate(int[][] data, int[][] point, String type) {
-        int[][] output = (int[][])null;
-        byte var6 = -1;
+    public int[][] Calculate(int[][] data, int[] point, String type) {
+        int[][] result = null;
+        byte bytes = -1;
         switch(type.hashCode()) {
-            case 0:
-                if (type.equals("*")) {
-                    var6 = 2;
-                }
-                break;
-            case 1:
-                if (type.equals("+")) {
-                    var6 = 0;
-                }
-            case 2:
-            default:
-                break;
-            case 3:
-                if (type.equals("-")) {
-                    var6 = 1;
-                }
+        case 42:
+            if (type.equals("*")) {
+                bytes = 2;
+            }
+            break;
+        case 43:
+            if (type.equals("+")) {
+                bytes = 0;
+            }
+        case 44:
+        default:
+            break;
+        case 45:
+            if (type.equals("-")) {
+                bytes = 1;
+            }
         }
 
-        switch(var6) {
-            case 0:
-                output = this.addition(data, point);
-                break;
-            case 1:
-                output = this.substraction(data, point);
-                break;
-            case 2:
-                output = this.scalarMultiplication(data, point);
-                break;
-            default:
-                new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
+        switch(bytes) {
+        case 0:
+            result = this.addition(data, point);
+            break;
+        case 1:
+            result = this.substraction(data, point);
+            break;
+        case 2:
+            result = this.scalarMultiplication(data, point);
+            break;
+        default:
+            new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
         }
 
-        return output;
+        return result;
+    }
+
+    public int[][] Calculate(int[] point, int[][] data, String type) {
+        int[][] result = null;
+        byte bytes = -1;
+        switch(type.hashCode()) {
+        case 42:
+            if (type.equals("*")) {
+                bytes = 2;
+            }
+            break;
+        case 43:
+            if (type.equals("+")) {
+                bytes = 0;
+            }
+        case 44:
+        default:
+            break;
+        case 45:
+            if (type.equals("-")) {
+                bytes = 1;
+            }
+        }
+
+        switch(bytes) {
+        case 0:
+            result = this.addition(data, point);
+            break;
+        case 1:
+            result = this.substraction(data, point);
+            break;
+        case 2:
+            result = this.scalarMultiplication(data, point);
+            break;
+        default:
+            new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
+        }
+
+        return result;
     }
 
     public double[][] Calculate(double[][] data, double[][] point, String type) {
-        double[][] output = (double[][])null;
-        byte var6 = -1;
+        double[][] result = null;
+        byte bytes = -1;
         switch(type.hashCode()) {
-            case 0:
-                if (type.equals("*")) {
-                    var6 = 2;
-                }
-                break;
-            case 1:
-                if (type.equals("+")) {
-                    var6 = 0;
-                }
-            case 2:
-            case 3:
-            default:
-                break;
-            case 4:
-                if (type.equals("-")) {
-                    var6 = 1;
-                }
-                break;
-            case 47:
-                if (type.equals("/")) {
-                    var6 = 3;
-                }
+        case 42:
+            if (type.equals("*")) {
+                bytes = 2;
+            }
+            break;
+        case 43:
+            if (type.equals("+")) {
+                bytes = 0;
+            }
+        case 44:
+        case 46:
+        default:
+            break;
+        case 45:
+            if (type.equals("-")) {
+                bytes = 1;
+            }
+            break;
+        case 47:
+            if (type.equals("/")) {
+                bytes = 3;
+            }
         }
 
-        switch(var6) {
-            case 0:
-                output = this.addition(data, point);
-                break;
-            case 1:
-                output = this.substraction(data, point);
-                break;
-            case 2:
-                output = this.scalarMultiplication(data, point);
-                break;
-            case 3:
-                output = this.division(data, point);
-                break;
-            default:
-                new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
+        switch(bytes) {
+        case 0:
+            result = this.addition(data, point);
+            break;
+        case 1:
+            result = this.substraction(data, point);
+            break;
+        case 2:
+            result = this.scalarMultiplication(data, point);
+            break;
+        case 3:
+            result = this.division(data, point);
+            break;
+        default:
+            new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
         }
 
-        return output;
+        return result;
+    }
+
+    public int[][] Calculate(int[][] data, int[][] point, String type) {
+        int[][] result = null;
+        byte bytes = -1;
+        switch(type.hashCode()) {
+        case 42:
+            if (type.equals("*")) {
+                bytes = 2;
+            }
+            break;
+        case 43:
+            if (type.equals("+")) {
+                bytes = 0;
+            }
+        case 44:
+        default:
+            break;
+        case 45:
+            if (type.equals("-")) {
+                bytes = 1;
+            }
+        }
+
+        switch(bytes) {
+        case 0:
+            result = this.addition(data, point);
+            break;
+        case 1:
+            result = this.substraction(data, point);
+            break;
+        case 2:
+            result = this.scalarMultiplication(data, point);
+            break;
+        default:
+            new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
+        }
+
+        return result;
     }
 
     public int CalculateVector(int[] point, int[] data) {
