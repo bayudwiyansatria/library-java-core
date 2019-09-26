@@ -231,7 +231,7 @@ public class Array extends Vector{
     }
 
     public double[][] sortData(double[] data, String mode) {
-        double[][] _hasil = new double[2][data.length];
+        double[][] output = new double[2][data.length];
         mode = mode.toLowerCase();
         double[] ar = this.copyArray(data);
         Arrays.sort(ar);
@@ -247,20 +247,20 @@ public class Array extends Vector{
             p = 0;
             for(iterator = sortedMap.entrySet().iterator(); iterator.hasNext(); ++p) {
                 entry = (Map.Entry<?,?>)iterator.next();
-                _hasil[1][p] = (double)(Integer)entry.getKey();
-                _hasil[0][p] = (Double)entry.getValue();
+                output[1][p] = (double)(Integer)entry.getKey();
+                output[0][p] = (Double)entry.getValue();
             }
         } else if (mode.equals("desc")) {
             p = data.length - 1;
             for(iterator = sortedMap.entrySet().iterator(); iterator.hasNext(); --p) {
                 entry = (Map.Entry<?,?>)iterator.next();
-                _hasil[1][p] = (double)(Integer)entry.getKey();
-                _hasil[0][p] = (Double)entry.getValue();
+                output[1][p] = (double)(Integer)entry.getKey();
+                output[0][p] = (Double)entry.getValue();
             }
         } else {
             System.out.println("Mode incorrect");
         }
-        return _hasil;
+        return output;
     }
 
     private static Map sortByComparator(Map unsortMap) {
@@ -771,10 +771,9 @@ public class Array extends Vector{
     }
 
     public int[][] initArrayRandom(int rows, int cols, int min, int max) {
-        int[][] newArray = (int[][])null;
+        int[][] newArray = null;
         if (rows > 0 && cols > 0) {
             newArray = new int[rows][cols];
-
             for(int i = 0; i < rows; ++i) {
                 for(int j = 0; j < cols; ++j) {
                     newArray[i][j] = new com.bayudwiyansatria.math.Math().getRandom(min, max);
@@ -788,7 +787,7 @@ public class Array extends Vector{
     }
 
     public double[][] initArrayRandom(int rows, int cols, double min, double max) {
-        double[][] newArray = (double[][])null;
+        double[][] newArray = null;
         if (rows > 0 && cols > 0) {
             newArray = new double[rows][cols];
 
