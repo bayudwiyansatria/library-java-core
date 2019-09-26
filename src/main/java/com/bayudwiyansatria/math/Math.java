@@ -141,8 +141,8 @@ public class Math extends Calculation {
         for(int i = 0; i < decimal_fraction; ++i) {
             format = format + "#";
         }
-        DecimalFormat _Form = new DecimalFormat(format);
-        format = _Form.format(data).replace(",", ".");
+        DecimalFormat Form = new DecimalFormat(format);
+        format = Form.format(data).replace(",", ".");
         data = Double.parseDouble(format);
         return data;
     }
@@ -256,31 +256,30 @@ public class Math extends Calculation {
         PermutationGenerator _xx = new PermutationGenerator(n);
 
         for(int i = 0; _xx.hasMore(); ++i) {
-            int[] _indices = _xx.getNext();
-            System.arraycopy(_indices, 0, _perm[i], 0, n);
+            int[] indices = _xx.getNext();
+            System.arraycopy(indices, 0, _perm[i], 0, n);
         }
 
         return _perm;
     }
 
     public int[] randPerm(int n) {
-        int[] _randperm = new int[n];
-        ArrayList _data = new ArrayList(n);
+        int[] result = new int[n];
+        ArrayList<Integer> data = new ArrayList<Integer>(n);
 
-        int i;
-        for(i = 0; i < n; ++i) {
-            _data.add(new Integer(i));
+        for(int i = 0; i < n; ++i) {
+            data.add(new Integer(i));
         }
 
         Random random = new Random();
 
-        for(i = 0; i < n; ++i) {
-            int index = random.nextInt(_data.size());
-            _randperm[i] = (Integer)_data.get(index);
-            _data.remove(index);
+        for(int i = 0; i < n; ++i) {
+            int index = random.nextInt(data.size());
+            result[i] = (Integer)data.get(index);
+            data.remove(index);
         }
 
-        return _randperm;
+        return result;
     }
 
     /* ========================================= Sum Start ========================================================== */
@@ -304,24 +303,22 @@ public class Math extends Calculation {
     public int[] getSum(int[][] data, String mode) {
         int[] output = null;
         int sum;
-        int i;
-        int j;
         if (mode.equals("col")) {
             output = new int[data[0].length];
-            for(i = 0; i < data[0].length; ++i) {
+            for(int i = 0; i < data[0].length; ++i) {
                 sum = 0;
 
-                for(j = 0; j < data.length; ++j) {
+                for(int j = 0; j < data.length; ++j) {
                     sum += data[j][i];
                 }
                 output[i] = sum;
             }
         } else if (mode.equals("row")) {
             output = new int[data.length];
-            for(i = 0; i < data.length; ++i) {
+            for(int i = 0; i < data.length; ++i) {
                 sum = 0;
 
-                for(j = 0; j < data[0].length; ++j) {
+                for(int j = 0; j < data[0].length; ++j) {
                     sum += data[i][j];
                 }
                 output[i] = sum;
