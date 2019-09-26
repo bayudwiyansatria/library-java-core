@@ -51,22 +51,22 @@ public class PermutationGenerator {
             this.numLeft = this.numLeft.subtract(BigInteger.ONE);
             return this.a;
         } else {
+            int i;
             int j;
-            for(j = this.a.length - 2; this.a[j] > this.a[j + 1]; --j) {
+            for(i = this.a.length - 2; this.a[i] > this.a[i + 1]; --i) {
             }
 
-            int k;
-            for(k = this.a.length - 1; this.a[j] > this.a[k]; --k) {
+            for(j = this.a.length - 1; this.a[i] > this.a[j]; --j) {
             }
 
-            int temp = this.a[k];
-            this.a[k] = this.a[j];
-            this.a[j] = temp;
+            int temp = this.a[j];
+            this.a[j] = this.a[i];
+            this.a[i] = temp;
             int r = this.a.length - 1;
 
-            for(int s = j + 1; r > s; ++s) {
-                temp = this.a[s];
-                this.a[s] = this.a[r];
+            for(int k = i + 1; r > k; ++k) {
+                temp = this.a[k];
+                this.a[k] = this.a[r];
                 this.a[r] = temp;
                 --r;
             }

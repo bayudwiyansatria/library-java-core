@@ -18,12 +18,12 @@ public class Utils {
     }
 
     public int[] getUnique(int[] data) {
-        SortedSet set = new TreeSet();
+        SortedSet<Integer> set = new TreeSet<>();
         int[] dataLabel = new int[data.length];
         for(int i = 0; i < data.length; ++i) {
             set.add(new Integer(data[i]));
         }
-        Iterator element = set.iterator();
+        Iterator<?> element = set.iterator();
         int i;
         for(i = 0; element.hasNext(); ++i) {
             Integer _tmp = (Integer)element.next();
@@ -35,12 +35,12 @@ public class Utils {
     }
 
     public String[] getUnique(String[] data) {
-        SortedSet set = new TreeSet();
+        SortedSet<String> set = new TreeSet<>();
         String[] dataLabel = new String[data.length];
         for(int i = 0; i < data.length; ++i) {
             set.add(new String(data[i]));
         }
-        Iterator element = set.iterator();
+        Iterator<?> element = set.iterator();
         int i;
         for(i = 0; element.hasNext(); ++i) {
             dataLabel[i] = (String)element.next();
@@ -50,205 +50,184 @@ public class Utils {
         return newData;
     }
 
-    private int[] getFind(int[] data, int val) {
-        int find = 0;
-        int[] result = new int[0];
-
-        for(int i = 0; i < data.length; ++i) {
-            if (data[i] == val) {
-                if (find == 0) {
-                    ++find;
-                    result = new int[find];
-                    result[0] = i;
-                } else {
-                    int[] tmp = result;
-                    ++find;
-                    result = new int[find];
-                    System.arraycopy(tmp, 0, result, 0, find - 1);
-                    result[find - 1] = i;
-                }
-            }
-        }
-
-        return result;
-    }
-
     public int[] getFind(int[] data, String opr, int val) {
-        boolean bol = true;
         int find = 0;
-        int[] result = new int[0];
-        boolean ok = false;
-        for(int i = 0; i < data.length; ++i) {
-            ok = false;
-            byte var11 = -1;
-            switch(opr.hashCode()) {
-                case 0:
-                    if (opr.equals("<")) {
-                        var11 = 1;
-                    }
-                    break;
-                case 1:
-                    if (opr.equals("=")) {
-                        var11 = 0;
-                    }
-                    break;
-                case 2:
-                    if (opr.equals(">")) {
-                        var11 = 3;
-                    }
-                    break;
-                case 3:
-                    if (opr.equals("!=")) {
-                        var11 = 5;
-                    }
-                    break;
-                case 4:
-                    if (opr.equals("<=")) {
-                        var11 = 2;
-                    }
-                    break;
-                case 5:
-                    if (opr.equals(">=")) {
-                        var11 = 4;
-                    }
-            }
-
-            switch(var11) {
-                case 0:
-                    if (data[i] == val) {
-                        ok = true;
-                    }
-                    break;
-                case 1:
-                    if (data[i] < val) {
-                        ok = true;
-                    }
-                    break;
-                case 2:
-                    if (data[i] <= val) {
-                        ok = true;
-                    }
-                    break;
-                case 3:
-                    if (data[i] > val) {
-                        ok = true;
-                    }
-                    break;
-                case 4:
-                    if (data[i] >= val) {
-                        ok = true;
-                    }
-                    break;
-                case 5:
-                    if (data[i] != val) {
-                        ok = true;
-                    }
-            }
-            if (ok) {
-                if (find == 0) {
-                    ++find;
-                    result = new int[find];
-                    result[0] = i;
-                } else {
-                    int[] tmp = result;
-                    ++find;
-                    result = new int[find];
-                    System.arraycopy(tmp, 0, result, 0, find - 1);
-                    result[find - 1] = i;
-                }
-            }
-        }
-        return result;
-    }
-
-    public int[] getFind(double[] data, String opr, double val) {
-        boolean bol = true;
-        int find = 0;
-        int[] result = new int[0];
+        int[] output = new int[0];
         boolean ok;
 
         for(int i = 0; i < data.length; ++i) {
             ok = false;
             byte bytes = -1;
             switch(opr.hashCode()) {
-                case 0:
-                    if (opr.equals("<")) {
-                        bytes = 1;
-                    }
-                    break;
-                case 1:
-                    if (opr.equals("=")) {
-                        bytes = 0;
-                    }
-                    break;
-                case 2:
-                    if (opr.equals(">")) {
-                        bytes = 3;
-                    }
-                    break;
-                case 3:
-                    if (opr.equals("!=")) {
-                        bytes = 5;
-                    }
-                    break;
-                case 4:
-                    if (opr.equals("<=")) {
-                        bytes = 2;
-                    }
-                    break;
-                case 5:
-                    if (opr.equals(">=")) {
-                        bytes = 4;
-                    }
+            case 60:
+                if (opr.equals("<")) {
+                    bytes = 1;
+                }
+                break;
+            case 61:
+                if (opr.equals("=")) {
+                    bytes = 0;
+                }
+                break;
+            case 62:
+                if (opr.equals(">")) {
+                    bytes = 3;
+                }
+                break;
+            case 1084:
+                if (opr.equals("!=")) {
+                    bytes = 5;
+                }
+                break;
+            case 1921:
+                if (opr.equals("<=")) {
+                    bytes = 2;
+                }
+                break;
+            case 1983:
+                if (opr.equals(">=")) {
+                    bytes = 4;
+                }
             }
 
             switch(bytes) {
-                case 0:
-                    if (data[i] == val) {
-                        ok = true;
-                    }
-                    break;
-                case 1:
-                    if (data[i] < val) {
-                        ok = true;
-                    }
-                    break;
-                case 2:
-                    if (data[i] <= val) {
-                        ok = true;
-                    }
-                    break;
-                case 3:
-                    if (data[i] > val) {
-                        ok = true;
-                    }
-                    break;
-                case 4:
-                    if (data[i] >= val) {
-                        ok = true;
-                    }
-                    break;
-                case 5:
-                    if (data[i] != val) {
-                        ok = true;
-                    }
+            case 0:
+                if (data[i] == val) {
+                    ok = true;
+                }
+                break;
+            case 1:
+                if (data[i] < val) {
+                    ok = true;
+                }
+                break;
+            case 2:
+                if (data[i] <= val) {
+                    ok = true;
+                }
+                break;
+            case 3:
+                if (data[i] > val) {
+                    ok = true;
+                }
+                break;
+            case 4:
+                if (data[i] >= val) {
+                    ok = true;
+                }
+                break;
+            case 5:
+                if (data[i] != val) {
+                    ok = true;
+                }
             }
 
             if (ok) {
                 if (find == 0) {
                     ++find;
-                    result = new int[find];
-                    result[0] = i;
+                    output = new int[find];
+                    output[0] = i;
                 } else {
-                    int[] tmp = result;
+                    int[] tmp = output;
                     ++find;
-                    result = new int[find];
-                    System.arraycopy(tmp, 0, result, 0, find - 1);
-                    result[find - 1] = i;
+                    output = new int[find];
+                    System.arraycopy(tmp, 0, output, 0, find - 1);
+                    output[find - 1] = i;
                 }
             }
         }
-        return result;
+
+        return output;
+    }
+
+    public int[] getFind(double[] data, String opr, double val) {
+        int find = 0;
+        int[] output = new int[0];
+        boolean ok;
+
+        for(int i = 0; i < data.length; ++i) {
+            ok = false;
+            byte bytes = -1;
+            switch(opr.hashCode()) {
+            case 60:
+                if (opr.equals("<")) {
+                    bytes = 1;
+                }
+                break;
+            case 61:
+                if (opr.equals("=")) {
+                    bytes = 0;
+                }
+                break;
+            case 62:
+                if (opr.equals(">")) {
+                    bytes = 3;
+                }
+                break;
+            case 1084:
+                if (opr.equals("!=")) {
+                    bytes = 5;
+                }
+                break;
+            case 1921:
+                if (opr.equals("<=")) {
+                    bytes = 2;
+                }
+                break;
+            case 1983:
+                if (opr.equals(">=")) {
+                    bytes = 4;
+                }
+            }
+
+            switch(bytes) {
+            case 0:
+                if (data[i] == val) {
+                    ok = true;
+                }
+                break;
+            case 1:
+                if (data[i] < val) {
+                    ok = true;
+                }
+                break;
+            case 2:
+                if (data[i] <= val) {
+                    ok = true;
+                }
+                break;
+            case 3:
+                if (data[i] > val) {
+                    ok = true;
+                }
+                break;
+            case 4:
+                if (data[i] >= val) {
+                    ok = true;
+                }
+                break;
+            case 5:
+                if (data[i] != val) {
+                    ok = true;
+                }
+            }
+
+            if (ok) {
+                if (find == 0) {
+                    ++find;
+                    output = new int[find];
+                    output[0] = i;
+                } else {
+                    int[] tmp = output;
+                    ++find;
+                    output = new int[find];
+                    System.arraycopy(tmp, 0, output, 0, find - 1);
+                    output[find - 1] = i;
+                }
+            }
+        }
+
+        return output;
     }
 
     /* =========================================== Parse DataType Start ============================================= */
@@ -280,10 +259,10 @@ public class Utils {
     }
 
     public int[][] double_to_int(double[][] data) {
-        int _dimensi = data[0].length;
-        int[][] newData = new int[data.length][_dimensi];
+        int dimention = data[0].length;
+        int[][] newData = new int[data.length][dimention];
         for(int i = 0; i < data.length; ++i) {
-            for(int j = 0; j < _dimensi; ++j) {
+            for(int j = 0; j < dimention; ++j) {
                 newData[i][j] = (int)data[i][j];
             }
         }

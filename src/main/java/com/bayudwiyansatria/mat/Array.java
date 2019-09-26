@@ -9,9 +9,7 @@ public class Array extends Vector {
     public int[] getRow(int[][] data, int row) {
         int[] rowData = new int[data[0].length];
         try {
-            for(int i = 0; i < data[0].length; ++i) {
-                rowData[i] = data[row][i];
-            }
+            System.arraycopy(data[row], 0, rowData, 0, data[0].length);
         } catch (Exception e) {
             System.out.println("Row is not correct!");
         }
@@ -28,35 +26,33 @@ public class Array extends Vector {
         return rowData;
     }
 
-    public int[] getRow(int[] data, int startrow, int endrow) {
-        int[] rowData = new int[endrow - startrow + 1];
+    public int[] getRow(int[] data, int startRow, int endRow) {
+        int[] rowData = new int[endRow - startRow + 1];
         try {
-            for(int i = ~(0 - (int)(1L + (long)startrow)); i <= endrow; ++i) {
-                rowData[i - startrow] = data[i];
-            }
+            if (endRow + 1 - ~(0 - (int) (1L + (long) startRow)) >= 0)
+                System.arraycopy(data, ~(0 - (int) (1L + (long) startRow)), rowData, ~(0 - (int) (1L + (long) startRow)) - startRow, endRow + 1 - ~(0 - (int) (1L + (long) startRow)));
         } catch (Exception e) {
             System.out.println("Row is not correct!");
         }
         return rowData;
     }
 
-    public double[] getRow(double[] data, int startrow, int endrow) {
-        double[] rowData = new double[endrow - startrow + 1];
+    public double[] getRow(double[] data, int startRow, int endRow) {
+        double[] rowData = new double[endRow - startRow + 1];
         try {
-            for(int i = ~(0 - (int)(1L + (long)startrow)); i <= endrow; ++i) {
-                rowData[i - startrow] = data[i];
-            }
+            if (endRow + 1 - ~(0 - (int) (1L + (long) startRow)) >= 0)
+                System.arraycopy(data, ~(0 - (int) (1L + (long) startRow)), rowData, ~(0 - (int) (1L + (long) startRow)) - startRow, endRow + 1 - ~(0 - (int) (1L + (long) startRow)));
         } catch (Exception e) {
             System.out.println("Row is not correct!");
         }
         return rowData;
     }
 
-    public int[][] getRow(int[][] data, int startrow, int endrow) {
-        int[][] rowData = new int[endrow - startrow + 1][data[0].length];
+    public int[][] getRow(int[][] data, int startRow, int endRow) {
+        int[][] rowData = new int[endRow - startRow + 1][data[0].length];
         try {
-            for(int i = ~(0 - (int)(1L + (long)startrow)); i <= endrow; ++i) {
-                System.arraycopy(data[i], 0, rowData[i - startrow], 0, data[0].length);
+            for(int i = ~(0 - (int)(1L + (long)startRow)); i <= endRow; ++i) {
+                System.arraycopy(data[i], 0, rowData[i - startRow], 0, data[0].length);
             }
         } catch (Exception var8) {
             System.out.println("Row is not correct!");
@@ -64,12 +60,12 @@ public class Array extends Vector {
         return rowData;
     }
 
-    public double[][] getRow(double[][] data, int startrow, int endrow) {
-        double[][] rowData = new double[endrow - startrow + 1][data[0].length];
+    public double[][] getRow(double[][] data, int startRow, int endRow) {
+        double[][] rowData = new double[endRow - startRow + 1][data[0].length];
         try {
-            for(int i = ~(0 - (int)(1L + (long)startrow)); i <= endrow; ++i) {
+            for(int i = ~(0 - (int)(1L + (long)startRow)); i <= endRow; ++i) {
                 for(int j = 0; i < data[0].length; ++i) {
-                    rowData[i - startrow][i] = data[i][j];
+                    rowData[i - startRow][i] = data[i][j];
                 }
             }
         } catch (Exception var9) {
@@ -102,12 +98,11 @@ public class Array extends Vector {
         return colData;
     }
 
-    public int[] getCol(int[] data, int startcol, int endcol) {
-        int[] colData = new int[endcol - startcol + 1];
+    public int[] getCol(int[] data, int startColumn, int endColumn) {
+        int[] colData = new int[endColumn - startColumn + 1];
         try {
-            for(int i = ~(0 - (int)(1L + (long)startcol)); i <= endcol; ++i) {
-                colData[i - startcol] = data[i];
-            }
+            if (endColumn + 1 - ~(0 - (int) (1L + (long) startColumn)) >= 0)
+                System.arraycopy(data, ~(0 - (int) (1L + (long) startColumn)), colData, ~(0 - (int) (1L + (long) startColumn)) - startColumn, endColumn + 1 - ~(0 - (int) (1L + (long) startColumn)));
         } catch (Exception e) {
             System.out.println("Row is not correct!");
         }
@@ -115,26 +110,24 @@ public class Array extends Vector {
         return colData;
     }
 
-    public double[] getCol(double[] data, int startcol, int endcol) {
-        double[] colData = new double[endcol - startcol + 1];
+    public double[] getCol(double[] data, int startColumn, int endColumn) {
+        double[] colData = new double[endColumn - startColumn + 1];
 
         try {
-            for(int i = ~(0 - (int)(1L + (long)startcol)); i <= endcol; ++i) {
-                colData[i - startcol] = data[i];
-            }
+            if (endColumn + 1 - ~(0 - (int) (1L + (long) startColumn)) >= 0)
+                System.arraycopy(data, ~(0 - (int) (1L + (long) startColumn)), colData, ~(0 - (int) (1L + (long) startColumn)) - startColumn, endColumn + 1 - ~(0 - (int) (1L + (long) startColumn)));
         } catch (Exception e) {
             System.out.println("Row is not correct!");
         }
         return colData;
     }
 
-    public int[][] getCol(int[][] data, int startcol, int endcol) {
-        int[][] colData = new int[data.length][endcol - startcol + 1];
+    public int[][] getCol(int[][] data, int startColumn, int endColumn) {
+        int[][] colData = new int[data.length][endColumn - startColumn + 1];
         try {
             for(int i = 0; i < data.length; ++i) {
-                for(int j = ~(0 - (int)(1L + (long)startcol)); j <= endcol; ++j) {
-                    colData[i][j - startcol] = data[i][j];
-                }
+                if (endColumn + 1 - ~(0 - (int) (1L + (long) startColumn)) >= 0)
+                    System.arraycopy(data[i], ~(0 - (int) (1L + (long) startColumn)), colData[i], ~(0 - (int) (1L + (long) startColumn)) - startColumn, endColumn + 1 - ~(0 - (int) (1L + (long) startColumn)));
             }
         } catch (Exception var9) {
             System.out.println("Column is not correct!");
@@ -142,13 +135,12 @@ public class Array extends Vector {
         return colData;
     }
 
-    public double[][] getCol(double[][] data, int startcol, int endcol) {
-        double[][] colData = new double[data.length][endcol - startcol + 1];
+    public double[][] getCol(double[][] data, int startColumn, int endColumn) {
+        double[][] colData = new double[data.length][endColumn - startColumn + 1];
         try {
             for(int i = 0; i < data.length; ++i) {
-                for(int j = ~(0 - (int)(1L + (long)startcol)); j <= endcol; ++j) {
-                    colData[i][j - startcol] = data[i][j];
-                }
+                if (endColumn + 1 - ~(0 - (int) (1L + (long) startColumn)) >= 0)
+                    System.arraycopy(data[i], ~(0 - (int) (1L + (long) startColumn)), colData[i], ~(0 - (int) (1L + (long) startColumn)) - startColumn, endColumn + 1 - ~(0 - (int) (1L + (long) startColumn)));
             }
         } catch (Exception var9) {
             System.out.println("Column is not correct!");
@@ -156,13 +148,12 @@ public class Array extends Vector {
         return colData;
     }
 
-    public int[][] getRowCol(int[][] data, int startrow, int endrow, int startcol, int endcol) {
-        int[][] colData = new int[endrow - startrow + 1][endcol - startcol + 1];
+    public int[][] getRowCol(int[][] data, int startRow, int endRow, int startColumn, int endColumn) {
+        int[][] colData = new int[endRow - startRow + 1][endColumn - startColumn + 1];
         try {
-            for(int i = ~(0 - (int)(1L + (long)startrow)); i <= endrow; ++i) {
-                for(int j = ~(0 - (int)(1L + (long)startcol)); j <= endcol; ++j) {
-                    colData[i - startrow][j - startcol] = data[i][j];
-                }
+            for(int i = ~(0 - (int)(1L + (long)startRow)); i <= endRow; ++i) {
+                if (endColumn + 1 - ~(0 - (int) (1L + (long) startColumn)) >= 0)
+                    System.arraycopy(data[i], ~(0 - (int) (1L + (long) startColumn)), colData[i - startRow], ~(0 - (int) (1L + (long) startColumn)) - startColumn, endColumn + 1 - ~(0 - (int) (1L + (long) startColumn)));
             }
         } catch (Exception var11) {
             System.out.println("Row is not correct!");
@@ -170,13 +161,12 @@ public class Array extends Vector {
         return colData;
     }
 
-    public double[][] getRowCol(double[][] data, int startrow, int endrow, int startcol, int endcol) {
-        double[][] colData = new double[endrow - startrow + 1][endcol - startcol + 1];
+    public double[][] getRowCol(double[][] data, int startRow, int endRow, int startColumn, int endColumn) {
+        double[][] colData = new double[endRow - startRow + 1][endColumn - startColumn + 1];
         try {
-            for(int i = ~(0 - (int)(1L + (long)startrow)); i <= endrow; ++i) {
-                for(int j = ~(0 - (int)(1L + (long)startcol)); j <= endcol; ++j) {
-                    colData[i - startrow][j - startcol] = data[i][j];
-                }
+            for(int i = ~(0 - (int)(1L + (long)startRow)); i <= endRow; ++i) {
+                if (endColumn + 1 - ~(0 - (int) (1L + (long) startColumn)) >= 0)
+                    System.arraycopy(data[i], ~(0 - (int) (1L + (long) startColumn)), colData[i - startRow], ~(0 - (int) (1L + (long) startColumn)) - startColumn, endColumn + 1 - ~(0 - (int) (1L + (long) startColumn)));
             }
         } catch (Exception var11) {
             System.out.println("Row is not correct!");
@@ -263,8 +253,8 @@ public class Array extends Vector {
         return output;
     }
 
-    private static Map sortByComparator(Map unsortMap) {
-        List list = new LinkedList(unsortMap.entrySet());
+    public static Map sortByComparator(Map unsortMap) {
+        List list = new LinkedList<>(unsortMap.entrySet());
         Collections.sort(list, new Comparator() {
             public int compare(Object o1, Object o2) {
                 return ((Comparable)((Map.Entry)((Map.Entry)o1)).getValue()).compareTo(((Map.Entry)((Map.Entry)o2)).getValue());
@@ -287,12 +277,11 @@ public class Array extends Vector {
     public int[] mergeArray(int[] data1, int[] data2) {
         int[] newArray = this.initArray(data1.length + data2.length, 0);
 
-        int i;
-        for(i = 0; i < data1.length; ++i) {
+        for(int i = 0; i < data1.length; ++i) {
             newArray[i] = data1[i];
         }
 
-        for(i = 0; i < data2.length; ++i) {
+        for(int i = 0; i < data2.length; ++i) {
             newArray[data1.length + i] = data2[i];
         }
 
@@ -302,12 +291,11 @@ public class Array extends Vector {
     public double[] mergeArray(double[] data1, double[] data2) {
         double[] newArray = this.initArray(data1.length + data2.length, 0.0);
 
-        int i;
-        for(i = 0; i < data1.length; ++i) {
+        for(int i = 0; i < data1.length; ++i) {
             newArray[i] = data1[i];
         }
 
-        for(i = 0; i < data2.length; ++i) {
+        for(int i = 0; i < data2.length; ++i) {
             newArray[data1.length + i] = data2[i];
         }
 
@@ -918,7 +906,7 @@ public class Array extends Vector {
 
     /* ======================================= Array Remove Start =====================================================*/
 
-    private String cleanArrIn(String data) {
+    public String cleanArrIn(String data) {
         if (data.charAt(0) != '[' && data.charAt(data.length() - 1) != ']') {
             System.out.println("data should be between [ and ]");
         }
@@ -933,8 +921,8 @@ public class Array extends Vector {
 
     public int[] removeNull(int[] data) {
         int countNulls = 0;
-        for (int i = 0; i < data.length; i++) {
-            if (Integer.toString(data[i]) == null) {
+        for (int datum : data) {
+            if (Integer.toString(datum) == null) {
                 countNulls++;
             }
         }
@@ -950,8 +938,8 @@ public class Array extends Vector {
 
     public double[] removeNull(double[] data) {
         int countNulls = 0;
-        for (int i = 0; i < data.length; i++) {
-            if (Double.toString(data[i]) == null) {
+        for (double datum : data) {
+            if (Double.toString(datum) == null) {
                 countNulls++;
             }
         }
@@ -967,8 +955,8 @@ public class Array extends Vector {
 
     public String[] removeNull(String[] data) {
         int countNulls = 0;
-        for (int i = 0; i < data.length; i++) {
-            if (data[i] == null) {
+        for (String datum : data) {
+            if (datum == null) {
                 countNulls++;
             }
         }
@@ -987,8 +975,8 @@ public class Array extends Vector {
     public int[] arrayReverse(int[] data){
         int[] newArray = new int[data.length];
         int j = data.length;
-        for (int i = 0; i < data.length; i++) {
-            newArray[j - 1] = data[i];
+        for (int datum : data) {
+            newArray[j - 1] = datum;
             j = j - 1;
         }
         return newArray;
@@ -997,8 +985,8 @@ public class Array extends Vector {
     public double[] arrayReverse(double[] data){
         double[] newArray = new double[data.length];
         int j = data.length;
-        for (int i = 0; i < data.length; i++) {
-            newArray[j - 1] = data[i];
+        for (double datum : data) {
+            newArray[j - 1] = datum;
             j = j - 1;
         }
         return newArray;
@@ -1007,8 +995,8 @@ public class Array extends Vector {
     public String[] arrayReverse(String[] data){
         String[] newArray = new String[data.length];
         int j = data.length;
-        for (int i = 0; i < data.length; i++) {
-            newArray[j - 1] = data[i];
+        for (String datum : data) {
+            newArray[j - 1] = datum;
             j = j - 1;
         }
         return newArray;
@@ -1019,9 +1007,7 @@ public class Array extends Vector {
     public String[][] removeDuplicate(String[][] data) {
         String[][] newMatrix = new String[data.length][data[0].length];
         int newMatrixRow = 1;
-        for (int i = 0; i < data[0].length; i++) {
-            newMatrix[0][i] = data[0][i];
-        }
+        System.arraycopy(data[0], 0, newMatrix[0], 0, data[0].length);
         for (int j = 1; j < data.length; j++) {
             List<Boolean> list = new ArrayList<>();
             for (int i = 0; newMatrix[i][0] != null; i++) {
@@ -1035,9 +1021,7 @@ public class Array extends Vector {
                 list.add(same);
             }
             if (!list.contains(true)) {
-                for (int i = 0; i < data[j].length; i++) {
-                    newMatrix[newMatrixRow][i] = data[j][i];
-                }
+                System.arraycopy(data[j], 0, newMatrix[newMatrixRow], 0, data[j].length);
                 newMatrixRow++;
             }
         }
@@ -1045,28 +1029,26 @@ public class Array extends Vector {
         for(i = 0; newMatrix[i][0] != null; i++);
         String[][] finalMatrix = new String[i][newMatrix[0].length];
         for (i = 0; i < finalMatrix.length; i++) {
-            for (int j = 0; j < finalMatrix[i].length; j++) {
-                finalMatrix[i][j] = newMatrix[i][j];
-            }
+            System.arraycopy(newMatrix[i], 0, finalMatrix[i], 0, finalMatrix[i].length);
         }
         return finalMatrix;
     }
 
-    private double[] push(double[] oldArray, double[] newArray) {
+    public double[] push(double[] oldArray, double[] newArray) {
         for (int i = 0; i < oldArray.length - 1; i++) {
             newArray[i] = oldArray[i];
         }
         return newArray;
     }
 
-    private int[] push(int[] oldArray, int[] newArray) {
+    public int[] push(int[] oldArray, int[] newArray) {
         for (int i = 0; i < oldArray.length - 1; i++) {
             newArray[i] = oldArray[i];
         }
         return newArray;
     }
 
-    private String[] push(String[] oldArray, String[] newArray) {
+    public String[] push(String[] oldArray, String[] newArray) {
         for (int i = 0; i < oldArray.length - 1; i++) {
             newArray[i] = oldArray[i];
         }
