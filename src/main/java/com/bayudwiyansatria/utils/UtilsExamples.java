@@ -1,8 +1,5 @@
 package com.bayudwiyansatria.utils;
 
-import com.bayudwiyansatria.mat.Array;
-import com.bayudwiyansatria.io.Files;
-
 public class UtilsExamples {
     public static void main(String[] args){
         Test_String2categorical_1D();
@@ -11,7 +8,7 @@ public class UtilsExamples {
 
     private static void Test_String2categorical_1D(){
         // Read Data
-        String[][] data = new Files().readCSV_String("res/test/transaction");
+        String[][] data = new com.bayudwiyansatria.io.IO().readCSV_String("res/test/transaction");
         String[] dataTest = new String[data.length];
 
         for(int i=0; i<dataTest.length; i++){
@@ -21,12 +18,12 @@ public class UtilsExamples {
 
         // Parse Data Type
         int[] categoricalData = new Utils().String_to_categorical(dataTest);
-        new Array().print(categoricalData);
+        new com.bayudwiyansatria.mat.Mat().print(categoricalData);
     }
 
     private static void Test_String2categorical_2D(){
         // Read Data
-        String[][] data = new Files().readCSV_String("res/test/transaction");
+        String[][] data = new com.bayudwiyansatria.io.IO().readCSV_String("res/test/transaction");
         String[][] dataTest = new String[data.length][2];
 
         for(int i=0; i<dataTest.length; i++){
@@ -36,6 +33,6 @@ public class UtilsExamples {
         }
         // Parse Data Type
         int[][] categoricalData = new Utils().String_to_categorical(dataTest);
-        new Array().print(categoricalData);
+        new com.bayudwiyansatria.mat.Mat().print(categoricalData);
     }
 }
