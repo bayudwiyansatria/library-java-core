@@ -2,7 +2,7 @@ package com.bayudwiyansatria.mat;
 
 import java.util.*;
 
-public class Array extends Vector{
+public class Array extends Vector {
 
     /* ======================================= Array Get Dimension Start =============================================*/
 

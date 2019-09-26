@@ -1,6 +1,7 @@
 package com.bayudwiyansatria.mat;
 
 public class Mat extends Array {
+
 	/* ======================================= Array View Start ======================================================*/
 
     public void print(int data) {

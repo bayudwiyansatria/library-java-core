@@ -1,15 +1,11 @@
 package com.bayudwiyansatria.utils;
 
-import com.bayudwiyansatria.mat.Array;
-import com.bayudwiyansatria.mat.Vector;
-
 import java.io.ObjectInputStream;
 import java.util.*;
 
 public class Utils {
-    private Array array = new Array();
     public void warning(String error_message) {
-        array.print(error_message);
+        new com.bayudwiyansatria.mat.Mat().print(error_message);
         System.exit(1);
     }
 
@@ -55,33 +51,32 @@ public class Utils {
     }
 
     private int[] getFind(int[] data, int val) {
-        boolean found = true;
         int find = 0;
-        int[] _Output = new int[0];
+        int[] result = new int[0];
 
         for(int i = 0; i < data.length; ++i) {
             if (data[i] == val) {
                 if (find == 0) {
                     ++find;
-                    _Output = new int[find];
-                    _Output[0] = i;
+                    result = new int[find];
+                    result[0] = i;
                 } else {
-                    int[] tmppos = _Output;
+                    int[] tmp = result;
                     ++find;
-                    _Output = new int[find];
-                    System.arraycopy(tmppos, 0, _Output, 0, find - 1);
-                    _Output[find - 1] = i;
+                    result = new int[find];
+                    System.arraycopy(tmp, 0, result, 0, find - 1);
+                    result[find - 1] = i;
                 }
             }
         }
 
-        return _Output;
+        return result;
     }
 
     public int[] getFind(int[] data, String opr, int val) {
         boolean bol = true;
         int find = 0;
-        int[] _Output = new int[0];
+        int[] result = new int[0];
         boolean ok = false;
         for(int i = 0; i < data.length; ++i) {
             ok = false;
@@ -152,62 +147,62 @@ public class Utils {
             if (ok) {
                 if (find == 0) {
                     ++find;
-                    _Output = new int[find];
-                    _Output[0] = i;
+                    result = new int[find];
+                    result[0] = i;
                 } else {
-                    int[] _tmppos = _Output;
+                    int[] tmp = result;
                     ++find;
-                    _Output = new int[find];
-                    System.arraycopy(_tmppos, 0, _Output, 0, find - 1);
-                    _Output[find - 1] = i;
+                    result = new int[find];
+                    System.arraycopy(tmp, 0, result, 0, find - 1);
+                    result[find - 1] = i;
                 }
             }
         }
-        return _Output;
+        return result;
     }
 
     public int[] getFind(double[] data, String opr, double val) {
         boolean bol = true;
         int find = 0;
-        int[] _Output = new int[0];
-        boolean ok = false;
+        int[] result = new int[0];
+        boolean ok;
 
         for(int i = 0; i < data.length; ++i) {
             ok = false;
-            byte var12 = -1;
+            byte bytes = -1;
             switch(opr.hashCode()) {
                 case 0:
                     if (opr.equals("<")) {
-                        var12 = 1;
+                        bytes = 1;
                     }
                     break;
                 case 1:
                     if (opr.equals("=")) {
-                        var12 = 0;
+                        bytes = 0;
                     }
                     break;
                 case 2:
                     if (opr.equals(">")) {
-                        var12 = 3;
+                        bytes = 3;
                     }
                     break;
                 case 3:
                     if (opr.equals("!=")) {
-                        var12 = 5;
+                        bytes = 5;
                     }
                     break;
                 case 4:
                     if (opr.equals("<=")) {
-                        var12 = 2;
+                        bytes = 2;
                     }
                     break;
                 case 5:
                     if (opr.equals(">=")) {
-                        var12 = 4;
+                        bytes = 4;
                     }
             }
 
-            switch(var12) {
+            switch(bytes) {
                 case 0:
                     if (data[i] == val) {
                         ok = true;
@@ -242,18 +237,18 @@ public class Utils {
             if (ok) {
                 if (find == 0) {
                     ++find;
-                    _Output = new int[find];
-                    _Output[0] = i;
+                    result = new int[find];
+                    result[0] = i;
                 } else {
-                    int[] _tmppos = _Output;
+                    int[] tmp = result;
                     ++find;
-                    _Output = new int[find];
-                    System.arraycopy(_tmppos, 0, _Output, 0, find - 1);
-                    _Output[find - 1] = i;
+                    result = new int[find];
+                    System.arraycopy(tmp, 0, result, 0, find - 1);
+                    result[find - 1] = i;
                 }
             }
         }
-        return _Output;
+        return result;
     }
 
     /* =========================================== Parse DataType Start ============================================= */
@@ -352,7 +347,7 @@ public class Utils {
     }
 
     public int[][] String_to_categorical(String[][] data){
-        String[][] transposeData = new Vector().transposeMatrix(data);
+        String[][] transposeData = new com.bayudwiyansatria.mat.Mat().transposeMatrix(data);
         int[][] newData = new int[transposeData.length][transposeData[0].length];
         for(int i=0; i< transposeData.length; i++){
             newData[i] = String_to_categorical(transposeData[i]);
