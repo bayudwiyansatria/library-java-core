@@ -1,9 +1,5 @@
 package com.bayudwiyansatria.mat;
 
-
-import com.bayudwiyansatria.math.Calculation;
-import com.bayudwiyansatria.utils.Utils;
-
 public class Vector {
 
     private double getDistance_Absolute(double[] p1, double[] p2) {
@@ -95,7 +91,7 @@ public class Vector {
                 jarak = this.getDistance_Relative(p1, p2);
                 break;
             default:
-                new Utils().warning("Error distance type!");
+                new com.bayudwiyansatria.utils.Utils().warning("Error distance type!");
         }
         return jarak;
     }
@@ -148,7 +144,7 @@ public class Vector {
                 jarak = this.getDistance_Relative(p1, p2);
                 break;
             default:
-                new Utils().warning("Error distance type!");
+                new com.bayudwiyansatria.utils.Utils().warning("Error distance type!");
         }
 
         return jarak;
@@ -178,7 +174,7 @@ public class Vector {
                 jarak = this.getDistance_Relative(p1, p2);
                 break;
             default:
-                new Utils().warning("Error distance type!");
+                new com.bayudwiyansatria.utils.Utils().warning("Error distance type!");
         }
         return jarak;
     }
@@ -216,7 +212,7 @@ public class Vector {
                 jarak = (double)this.getDistance_Relative(p1, p2);
                 break;
             default:
-                new Utils().warning("Error distance type!");
+                new com.bayudwiyansatria.utils.Utils().warning("Error distance type!");
         }
 
         return jarak;
@@ -297,7 +293,7 @@ public class Vector {
                 jarak = this.getDistance_Relative(p1, p2);
                 break;
             default:
-                new Utils().warning("Error distance type!");
+                new com.bayudwiyansatria.utils.Utils().warning("Error distance type!");
         }
 
         return jarak;
@@ -327,7 +323,7 @@ public class Vector {
                 jarak = this.getDistance_Relative(p1, p2);
                 break;
             default:
-                new Utils().warning("Error distance type!");
+                new com.bayudwiyansatria.utils.Utils().warning("Error distance type!");
         }
 
         return jarak;
@@ -357,7 +353,7 @@ public class Vector {
                 jarak = this.getDistance_Relative(p1, p2);
                 break;
             default:
-                new Utils().warning("Error distance type!");
+                new com.bayudwiyansatria.utils.Utils().warning("Error distance type!");
         }
 
         return jarak;
@@ -404,7 +400,7 @@ public class Vector {
                 jarak = this.getDistance_Relative(p1, p2);
                 break;
             default:
-                new Utils().warning("Error distance type!");
+                new com.bayudwiyansatria.utils.Utils().warning("Error distance type!");
         }
 
         return jarak;
