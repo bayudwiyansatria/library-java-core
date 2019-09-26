@@ -50,205 +50,184 @@ public class Utils {
         return newData;
     }
 
-    public int[] getFind(int[] data, int val) {
-        int find = 0;
-        int[] result = new int[0];
-
-        for(int i = 0; i < data.length; ++i) {
-            if (data[i] == val) {
-                if (find == 0) {
-                    ++find;
-                    result = new int[find];
-                    result[0] = i;
-                } else {
-                    int[] tmp = result;
-                    ++find;
-                    result = new int[find];
-                    System.arraycopy(tmp, 0, result, 0, find - 1);
-                    result[find - 1] = i;
-                }
-            }
-        }
-
-        return result;
-    }
-
     public int[] getFind(int[] data, String opr, int val) {
         int find = 0;
-        int[] result = new int[0];
-        boolean valid = false;
+        int[] output = new int[0];
+        boolean ok;
+
         for(int i = 0; i < data.length; ++i) {
-            valid = false;
+            ok = false;
             byte bytes = -1;
             switch(opr.hashCode()) {
-                case 0:
-                    if (opr.equals("=")) {
-                        bytes = 0;
-                    }
-                    break;
-                case 1:
-                    if (opr.equals("<")) {
-                        bytes = 1;
-                    }
-                    break;
-                case 2:
-                    if (opr.equals("<=")) {
-                        bytes = 2;
-                    }
-                    break;
-                    
-                case 3:
-                    if (opr.equals(">")) {
-                        bytes = 3;
-                    }
-                    break;
-                case 4:
-                    if (opr.equals(">=")) {
-                        bytes = 4;
-                    }
-                case 5:
-                    if (opr.equals("!=")) {
-                        bytes = 5;
-                    }
-                    break;     
+            case 60:
+                if (opr.equals("<")) {
+                    bytes = 1;
+                }
+                break;
+            case 61:
+                if (opr.equals("=")) {
+                    bytes = 0;
+                }
+                break;
+            case 62:
+                if (opr.equals(">")) {
+                    bytes = 3;
+                }
+                break;
+            case 1084:
+                if (opr.equals("!=")) {
+                    bytes = 5;
+                }
+                break;
+            case 1921:
+                if (opr.equals("<=")) {
+                    bytes = 2;
+                }
+                break;
+            case 1983:
+                if (opr.equals(">=")) {
+                    bytes = 4;
+                }
             }
 
             switch(bytes) {
-                case 0:
-                    if (data[i] == val) {
-                        valid = true;
-                    }
-                    break;
-                case 1:
-                    if (data[i] < val) {
-                        valid = true;
-                    }
-                    break;
-                case 2:
-                    if (data[i] <= val) {
-                        valid = true;
-                    }
-                    break;
-                case 3:
-                    if (data[i] > val) {
-                        valid = true;
-                    }
-                    break;
-                case 4:
-                    if (data[i] >= val) {
-                        valid = true;
-                    }
-                    break;
-                case 5:
-                    if (data[i] != val) {
-                        valid = true;
-                    }
+            case 0:
+                if (data[i] == val) {
+                    ok = true;
+                }
+                break;
+            case 1:
+                if (data[i] < val) {
+                    ok = true;
+                }
+                break;
+            case 2:
+                if (data[i] <= val) {
+                    ok = true;
+                }
+                break;
+            case 3:
+                if (data[i] > val) {
+                    ok = true;
+                }
+                break;
+            case 4:
+                if (data[i] >= val) {
+                    ok = true;
+                }
+                break;
+            case 5:
+                if (data[i] != val) {
+                    ok = true;
+                }
             }
-            
-            if (valid) {
+
+            if (ok) {
                 if (find == 0) {
                     ++find;
-                    result = new int[find];
-                    result[0] = i;
+                    output = new int[find];
+                    output[0] = i;
                 } else {
-                    int[] tmp = result;
+                    int[] tmp = output;
                     ++find;
-                    result = new int[find];
-                    System.arraycopy(tmp, 0, result, 0, find - 1);
-                    result[find - 1] = i;
+                    output = new int[find];
+                    System.arraycopy(tmp, 0, output, 0, find - 1);
+                    output[find - 1] = i;
                 }
             }
         }
-        return result;
+
+        return output;
     }
 
     public int[] getFind(double[] data, String opr, double val) {
         int find = 0;
-        int[] result = new int[0];
-        boolean valid = false;
+        int[] output = new int[0];
+        boolean ok;
+
         for(int i = 0; i < data.length; ++i) {
-            valid = false;
+            ok = false;
             byte bytes = -1;
             switch(opr.hashCode()) {
-                case 0:
-                    if (opr.equals("=")) {
-                        bytes = 0;
-                    }
-                    break;
-                case 1:
-                    if (opr.equals("<")) {
-                        bytes = 1;
-                    }
-                    break;
-                case 2:
-                    if (opr.equals("<=")) {
-                        bytes = 2;
-                    }
-                    break;
-                    
-                case 3:
-                    if (opr.equals(">")) {
-                        bytes = 3;
-                    }
-                    break;
-                case 4:
-                    if (opr.equals(">=")) {
-                        bytes = 4;
-                    }
-                case 5:
-                    if (opr.equals("!=")) {
-                        bytes = 5;
-                    }
-                    break;     
+            case 60:
+                if (opr.equals("<")) {
+                    bytes = 1;
+                }
+                break;
+            case 61:
+                if (opr.equals("=")) {
+                    bytes = 0;
+                }
+                break;
+            case 62:
+                if (opr.equals(">")) {
+                    bytes = 3;
+                }
+                break;
+            case 1084:
+                if (opr.equals("!=")) {
+                    bytes = 5;
+                }
+                break;
+            case 1921:
+                if (opr.equals("<=")) {
+                    bytes = 2;
+                }
+                break;
+            case 1983:
+                if (opr.equals(">=")) {
+                    bytes = 4;
+                }
             }
 
             switch(bytes) {
-                case 0:
-                    if (data[i] == val) {
-                        valid = true;
-                    }
-                    break;
-                case 1:
-                    if (data[i] < val) {
-                        valid = true;
-                    }
-                    break;
-                case 2:
-                    if (data[i] <= val) {
-                        valid = true;
-                    }
-                    break;
-                case 3:
-                    if (data[i] > val) {
-                        valid = true;
-                    }
-                    break;
-                case 4:
-                    if (data[i] >= val) {
-                        valid = true;
-                    }
-                    break;
-                case 5:
-                    if (data[i] != val) {
-                        valid = true;
-                    }
+            case 0:
+                if (data[i] == val) {
+                    ok = true;
+                }
+                break;
+            case 1:
+                if (data[i] < val) {
+                    ok = true;
+                }
+                break;
+            case 2:
+                if (data[i] <= val) {
+                    ok = true;
+                }
+                break;
+            case 3:
+                if (data[i] > val) {
+                    ok = true;
+                }
+                break;
+            case 4:
+                if (data[i] >= val) {
+                    ok = true;
+                }
+                break;
+            case 5:
+                if (data[i] != val) {
+                    ok = true;
+                }
             }
-            
-            if (valid) {
+
+            if (ok) {
                 if (find == 0) {
                     ++find;
-                    result = new int[find];
-                    result[0] = i;
+                    output = new int[find];
+                    output[0] = i;
                 } else {
-                    int[] tmp = result;
+                    int[] tmp = output;
                     ++find;
-                    result = new int[find];
-                    System.arraycopy(tmp, 0, result, 0, find - 1);
-                    result[find - 1] = i;
+                    output = new int[find];
+                    System.arraycopy(tmp, 0, output, 0, find - 1);
+                    output[find - 1] = i;
                 }
             }
         }
-        return result;
+
+        return output;
     }
 
     /* =========================================== Parse DataType Start ============================================= */
