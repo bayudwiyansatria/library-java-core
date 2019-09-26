@@ -37,9 +37,13 @@
 		<tag>HEAD</tag>
 	</scm>
 	<distributionManagement>
+		<snapshotRepository>
+			<id>jira</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
 		<repository>
-			<id>github</id>
-			<url>https://maven.pkg.github.com/bayudwiyansatria/Library-Java-Core</url>
+			<id>jira</id>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
 		</repository>
 	</distributionManagement>
 	<issueManagement>
@@ -56,6 +60,7 @@
 		<maven-compiler-plugin>3.6.0</maven-compiler-plugin>
 		<maven-surefire-plugin>2.19.1</maven-surefire-plugin>
 		<maven-install-plugin>2.4</maven-install-plugin>
+		<maven-deploy-plugin>2.8.2</maven-deploy-plugin>
 		<maven-gpg-plugin>1.5</maven-gpg-plugin>
 		<maven-site-plugin>3.5.1</maven-site-plugin>
 		<maven-source-plugin>3.0.1</maven-source-plugin>
@@ -135,6 +140,20 @@
 						<phase>install</phase>
 						<goals>
 							<goal>install</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<version>${maven-deploy-plugin}</version>
+				<executions>
+					<execution>
+						<id>default-deploy</id>
+						<phase>deploy</phase>
+						<goals>
+							<goal>deploy</goal>
 						</goals>
 					</execution>
 				</executions>
