@@ -22,7 +22,7 @@ public class Array extends Vector{
         double[] rowData = new double[data[0].length];
         try {
             System.arraycopy(data[row], 0, rowData, 0, data[0].length);
-        } catch (Exception var6) {
+        } catch (Exception e) {
             System.out.println("Row is not correct!");
         }
         return rowData;
@@ -34,7 +34,7 @@ public class Array extends Vector{
             for(int i = ~(0 - (int)(1L + (long)startrow)); i <= endrow; ++i) {
                 rowData[i - startrow] = data[i];
             }
-        } catch (Exception var7) {
+        } catch (Exception e) {
             System.out.println("Row is not correct!");
         }
         return rowData;
@@ -46,7 +46,7 @@ public class Array extends Vector{
             for(int i = ~(0 - (int)(1L + (long)startrow)); i <= endrow; ++i) {
                 rowData[i - startrow] = data[i];
             }
-        } catch (Exception var7) {
+        } catch (Exception e) {
             System.out.println("Row is not correct!");
         }
         return rowData;
@@ -84,7 +84,7 @@ public class Array extends Vector{
             for(int i = 0; i < data.length; ++i) {
                 colData[i] = data[i][col];
             }
-        } catch (Exception var6) {
+        } catch (Exception e) {
             System.out.println("Column is not correct!");
         }
         return colData;
@@ -96,7 +96,7 @@ public class Array extends Vector{
             for(int i = 0; i < data.length; ++i) {
                 colData[i] = data[i][col];
             }
-        } catch (Exception var6) {
+        } catch (Exception e) {
             System.out.println("Column is not correct!");
         }
         return colData;
@@ -108,7 +108,7 @@ public class Array extends Vector{
             for(int i = ~(0 - (int)(1L + (long)startcol)); i <= endcol; ++i) {
                 colData[i - startcol] = data[i];
             }
-        } catch (Exception var7) {
+        } catch (Exception e) {
             System.out.println("Row is not correct!");
         }
 
@@ -122,7 +122,7 @@ public class Array extends Vector{
             for(int i = ~(0 - (int)(1L + (long)startcol)); i <= endcol; ++i) {
                 colData[i - startcol] = data[i];
             }
-        } catch (Exception var7) {
+        } catch (Exception e) {
             System.out.println("Row is not correct!");
         }
         return colData;
