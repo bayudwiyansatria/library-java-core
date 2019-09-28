@@ -49,6 +49,8 @@ Dependencies Repository : https://search.maven.org/
 * *Release 1.1.2* : **2019, Jul**. (Available On Maven Central)
 * *Release 1.1.3* : **2019, Jul**.
 * *Release 1.1.4* : **2019, Sept**. (Available On Maven Central)
+* *Release 1.1.5* : **2019, Sept**. (Available On Maven Central)
+* *Release 1.1.6* : **2019, Sept**. (Available On Maven Central)
 
 ## Contributing
 

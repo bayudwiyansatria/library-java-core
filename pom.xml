@@ -353,7 +353,7 @@
 						<java>default_style</java>
 					</mapping>
 					<headerDefinitions>
-						<headerDefinition>${project.basedir}/license-header.xml</headerDefinition>
+						<headerDefinition>${project.basedir}/copyright.xml</headerDefinition>
 					</headerDefinitions>
 					<includes>
 						<include>src/main/**/*</include>
