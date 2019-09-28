@@ -353,8 +353,7 @@
 						<java>default_style</java>
 					</mapping>
 					<headerDefinitions>
-						<headerDefinition>${project.basedir}/.idea/license-header-style.xml
-						</headerDefinition>
+						<headerDefinition>${project.basedir}/license-header.xml</headerDefinition>
 					</headerDefinitions>
 					<includes>
 						<include>src/main/**/*</include>
