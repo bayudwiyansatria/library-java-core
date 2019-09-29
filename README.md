@@ -32,17 +32,19 @@
 Core of Bayu Dwiyan Satria Project Framework.
 
 <table>
-<tr>
-<td>Name</td>
-<td>Bayu Dwiyan Satria - Core</td></tr>
-<tr>
-<td>Description</td>
-<td>Core Of Bayu Dwiyan Satria Dependency.</td></tr>
-<tr>
-<td>Homepage</td>
-<td><a href="https://bayudwiyansatria.github.io/Library-Java-Core/">https://bayudwiyansatria.github.io/Library-Java-Core/</a></td></tr></table></div>
-<div>
-<table>
+    <tr>
+        <td>Name</td>
+        <td>Bayu Dwiyan Satria - Core</td>
+    </tr>
+    <tr>
+        <td>Description</td>
+        <td>Core Of Bayu Dwiyan Satria Dependency.</td>
+    </tr>
+    <tr>
+        <td>Homepage</td>
+        <td><a href="https://bayudwiyansatria.github.io/Library-Java-Core/">https://bayudwiyansatria.github.io/Library-Java-Core/</a></td>
+    </tr>
+</table>
 
 ## Table of Contents
 
@@ -50,7 +52,7 @@ Core of Bayu Dwiyan Satria Project Framework.
 * [Installation](#installation)
 * [Development](#development)
 * [Contributing](#contributing)
-* [License](#License)
+* [License](#license)
 
 ## Dependencies
 

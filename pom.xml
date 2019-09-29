@@ -30,7 +30,7 @@
 	<artifactId>core</artifactId>
 	<version>1.1.7</version>
 	<packaging>jar</packaging>
-	
+
 	<name>Bayu Dwiyan Satria - Core</name>
 	<description>Core Of Bayu Dwiyan Satria Dependency.</description>
 	<url>https://bayudwiyansatria.github.io/Library-Java-Core/</url>
@@ -47,7 +47,7 @@
 			<comments>Open Source</comments>
 		</license>
 	</licenses>
-	
+
 	<developers>
 		<developer>
 			<id>bayudwiyansatria</id>
@@ -68,7 +68,7 @@
 		</developer>
 	</developers>
 	<contributors/>
-	
+
 	<mailingLists>
 		<mailingList>
 			<name>Bayu Dwiyan Satria</name>
@@ -78,16 +78,16 @@
 			<archive>bayudwiyansatria@gmail.com</archive>
 		</mailingList>
 	</mailingLists>
-	
+
 	<modules/>
-	
+
 	<scm>
 		<connection>scm:git:git://github.com/bayudwiyansatria/Library-Java-Core.git</connection>
 		<developerConnection>scm:git:git@github.com:bayudwiyansatria/Library-Java-Core.git</developerConnection>
 		<url>https://github.com/bayudwiyansatria/Library-Java-Core</url>
 		<tag>HEAD</tag>
 	</scm>
-	
+
 	<issueManagement>
 		<system>Github</system>
 		<url>https://github.com/bayudwiyansatria/Library-Java-Core/issues</url>
@@ -96,7 +96,7 @@
 		<system>Github</system>
 		<url>https://github.com/bayudwiyansatria/Library-Java-Core/actions</url>
 	</ciManagement>
-	
+
 	<distributionManagement>
 		<repository>
 			<id>jira</id>
@@ -112,22 +112,22 @@
 		</snapshotRepository>
 		<downloadUrl>https://search.maven.org/artifact/com.bayudwiyansatria/core</downloadUrl>
 	</distributionManagement>
-	
+
 	<properties>
 		<!-- Project Properties -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.test.coverage.targetPercentage>70%</project.test.coverage.targetPercentage>
-		
+
 		<!-- Dependency Properties -->
 		<checkstyle.version>8.11</checkstyle.version>
-		
+
 		<!-- JVM Properties -->
-        <java.debug>true</java.debug>
+		<java.debug>true</java.debug>
 		<java.version>1.8</java.version>
 		<maven.version>3.6.1</maven.version>
-        <java.optimize>true</java.optimize>
+		<java.optimize>true</java.optimize>
 		<gpg.executable>gpg</gpg.executable>
-		
+
 		<!-- Main Properties -->
 		<maven-checkstyle-plugin.version>3.0.0</maven-checkstyle-plugin.version>
 		<maven-clover-plugin.version>4.3.0</maven-clover-plugin.version>
@@ -150,20 +150,20 @@
 		<maven-spotbugs-plugin.version>3.1.11</maven-spotbugs-plugin.version>
 		<maven-surefire-plugin.version>2.19.1</maven-surefire-plugin.version>
 		<maven-versions-plugin.version>2.7</maven-versions-plugin.version>
-		
+
 		<!-- Operation Properties -->
 		<maven-clean-plugin.version>3.1.0</maven-clean-plugin.version>
 		<maven-install-plugin.version>2.4</maven-install-plugin.version>
 		<maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
 		<maven-release-plugin.version>2.5.3</maven-release-plugin.version>
-		
+
 		<!-- Extra Properties -->
 		<maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
 		<maven-scm-plugin.version>1.11.2</maven-scm-plugin.version>
 		<maven-scm-provider-gitexe.version>1.9.5</maven-scm-provider-gitexe.version>
 		<maven-changelog-plugin.version>2.3</maven-changelog-plugin.version>
 		<maven-jxr-plugin.version>2.5</maven-jxr-plugin.version>
-		
+
 		<!-- Third Party Properties-->
 		<junit.version>4.12</junit.version>
 		<hamcrest.version>1.3</hamcrest.version>
@@ -171,7 +171,7 @@
 		<sonatype.plugins.version>1.6.7</sonatype.plugins.version>
 		<github.plugins.version>0.12</github.plugins.version>
 	</properties>
-	
+
 	<dependencyManagement>
 		<dependencies/>
 	</dependencyManagement>
@@ -188,7 +188,7 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-		
+
 		<!-- Test -->
 		<dependency>
 			<groupId>junit</groupId>
@@ -227,7 +227,7 @@
 			</exclusions>
 		</dependency>
 	</dependencies>
-	
+
 	<repositories>
 		<repository>
 			<id>central</id>
@@ -255,9 +255,9 @@
 			</snapshots>
 			<layout>default</layout>
 		</pluginRepository>
-	
+
 	</pluginRepositories>
-	
+
 	<build>
 		<sourceDirectory>${project.basedir}/src/main/java</sourceDirectory>
 		<testSourceDirectory>${project.basedir}/src/test/java</testSourceDirectory>
