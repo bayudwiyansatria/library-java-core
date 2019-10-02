@@ -22,12 +22,12 @@
 # SOFTWARE.
 #
 
-name: Github-Action
+name: Github Action
 
 on:
   push:
     branches:
-      - release
+      - master
 jobs:
   build:
     runs-on: ubuntu-latest
