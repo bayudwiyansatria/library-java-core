@@ -27,6 +27,8 @@
 
 # Bayu Dwiyan Satria - Core
 
+[![Github Action](https://github.com/bayudwiyansatria/Library-Java-Core/actions)](https://github.com/bayudwiyansatria/Library-Java-Core/workflows/Github-Action/badge.svg) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/2045f7bf665040aba79cd79f03aeff7c)](https://www.codacy.com/manual/bayudwiyansatria/Library-Java-Core?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=bayudwiyansatria/Library-Java-Core&amp;utm_campaign=Badge_Grade)
+
 Core of Bayu Dwiyan Satria Project Framework.
 
 |   Key     |   Description |

@@ -22,7 +22,7 @@
 # SOFTWARE.
 #
 
-name: Main CI/CD
+name: Github-Action
 
 on:
   push:
