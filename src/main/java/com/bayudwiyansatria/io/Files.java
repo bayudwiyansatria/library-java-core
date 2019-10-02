@@ -468,30 +468,16 @@ public class Files extends Array {
         boolean validation = false;
         byte bytes = -1;
         switch(titlemode.hashCode()) {
-            case 0:
-                if (titlemode.equals("title:col")) {
-                    bytes = 0;
-                }
-                break;
-            case 1:
-                if (titlemode.equals("title:row")) {
-                    bytes = 1;
-                }
-                break;
-            case 2:
-                if (titlemode.equals("title:rowcol")) {
-                    bytes = 2;
-                }
-                break;
-            case 3:
-                if (titlemode.equals("title:no")) {
-                    bytes = 3;
-                }
-                break;
-            case 4:
-                if (titlemode.equals("title:colrow")) {
-                    bytes = 4;
-                }
+            case 0: if (titlemode.equals("title:col")) { bytes = 0; }
+            break;
+            case 1: if (titlemode.equals("title:row")) { bytes = 1; }
+            break;
+            case 2: if (titlemode.equals("title:rowcol")) { bytes = 2; }
+            break;
+            case 3: if (titlemode.equals("title:no")) { bytes = 3; }
+            break;
+            case 4: if (titlemode.equals("title:colrow")) { bytes = 4;
+            }
         }
 
         switch(bytes) {
@@ -499,9 +485,8 @@ public class Files extends Array {
             case 1:
             case 2:
             case 3:
-            case 4:
-                validation = true;
-                break;
+            case 4: validation = true;
+            break;
         }
 
         if (validation) {

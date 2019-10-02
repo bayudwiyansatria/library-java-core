@@ -212,7 +212,7 @@ public class Array extends Vector {
 
     public int[][] sortData(int[] data, String mode) {
         int[][] newData = new int[2][data.length];
-        mode = mode.toLowerCase();
+        String dataSort = mode.toLowerCase();
         int[] ar = this.copyArray(data);
         Arrays.sort(ar);
         Map<Integer, Integer> map = new HashMap<>();
@@ -223,14 +223,14 @@ public class Array extends Vector {
         int p;
         Iterator<?> iterator;
         Map.Entry<?,?> entry;
-        if (mode.equals("asc")) {
+        if (dataSort.equals("asc")) {
             p = 0;
             for(iterator = sortedMap.entrySet().iterator(); iterator.hasNext(); ++p) {
                 entry = (Map.Entry<?,?>) iterator.next();
                 newData[1][p] = (Integer)entry.getKey();
                 newData[0][p] = (Integer)entry.getValue();
             }
-        } else if (mode.equals("desc")) {
+        } else if (dataSort.equals("desc")) {
             p = data.length - 1;
 
             for(iterator = sortedMap.entrySet().iterator(); iterator.hasNext(); --p) {
@@ -246,7 +246,7 @@ public class Array extends Vector {
 
     public double[][] sortData(double[] data, String mode) {
         double[][] output = new double[2][data.length];
-        mode = mode.toLowerCase();
+        String dataSort = mode.toLowerCase();
         double[] ar = this.copyArray(data);
         Arrays.sort(ar);
         Map<Integer, Double> map = new HashMap<>();
@@ -257,14 +257,14 @@ public class Array extends Vector {
         int p;
         Iterator<?> iterator;
         Map.Entry<?,?> entry;
-        if (mode.equals("asc")) {
+        if (dataSort.equals("asc")) {
             p = 0;
             for(iterator = sortedMap.entrySet().iterator(); iterator.hasNext(); ++p) {
                 entry = (Map.Entry<?,?>)iterator.next();
                 output[1][p] = (double)(Integer)entry.getKey();
                 output[0][p] = (Double)entry.getValue();
             }
-        } else if (mode.equals("desc")) {
+        } else if (dataSort.equals("desc")) {
             p = data.length - 1;
             for(iterator = sortedMap.entrySet().iterator(); iterator.hasNext(); --p) {
                 entry = (Map.Entry<?,?>)iterator.next();
@@ -326,7 +326,7 @@ public class Array extends Vector {
         return newArray;
     }
 
-    public int[][] mergeArray_row(int[] data1, int[] data2) {
+    public int[][] mergeArrayRow(int[] data1, int[] data2) {
         int[][] newArray = this.initArray(2, data1.length, 0);
         if (data1.length != data2.length) {
             System.out.println("length of both data has to be same!");
@@ -340,7 +340,7 @@ public class Array extends Vector {
         return newArray;
     }
 
-    public double[][] mergeArray_row(double[] data1, double[] data2) {
+    public double[][] mergeArrayRow(double[] data1, double[] data2) {
         double[][] newArray = this.initArray(2, data1.length, 0.0);
         if (data1.length != data2.length) {
             System.out.println("length of both data has to be same!");
@@ -354,7 +354,7 @@ public class Array extends Vector {
         return newArray;
     }
 
-    public int[][] mergeArray_col(int[] data1, int[] data2) {
+    public int[][] mergeArrayColumn(int[] data1, int[] data2) {
         int[][] newArray = this.initArray(data1.length, 2, 0);
         if (data1.length != data2.length) {
             System.out.println("length of both data has to be same!");
@@ -368,7 +368,7 @@ public class Array extends Vector {
         return newArray;
     }
 
-    public double[][] mergeArray_col(double[] data1, double[] data2) {
+    public double[][] mergeArrayColumn(double[] data1, double[] data2) {
         double[][] newArray = this.initArray(data1.length, 2, 0.0);
         if (data1.length != data2.length) {
             System.out.println("length of both data has to be same!");
@@ -382,7 +382,7 @@ public class Array extends Vector {
         return newArray;
     }
 
-    public int[][] mergeArray_row(int[] data1, int[][] data2) {
+    public int[][] mergeArrayRow(int[] data1, int[][] data2) {
         int dimension = data2[0].length;
         int[][] newArray = (int[][])null;
         if (dimension == data1.length) {
@@ -405,7 +405,7 @@ public class Array extends Vector {
         return newArray;
     }
 
-    public double[][] mergeArray_row(double[] data1, double[][] data2) {
+    public double[][] mergeArrayRow(double[] data1, double[][] data2) {
         int dimension = data2[0].length;
         double[][] newArray = (double[][])null;
         if (dimension == data1.length) {
@@ -428,7 +428,7 @@ public class Array extends Vector {
         return newArray;
     }
 
-    public int[][] mergeArray_col(int[] data1, int[][] data2) {
+    public int[][] mergeArrayColumn(int[] data1, int[][] data2) {
         int dimension = data2[0].length;
         int[][] newArray = (int[][])null;
         if (data1.length == data2.length) {
@@ -448,7 +448,7 @@ public class Array extends Vector {
         return newArray;
     }
 
-    public double[][] mergeArray_col(double[] data1, double[][] data2) {
+    public double[][] mergeArrayColumn(double[] data1, double[][] data2) {
         int dimension = data2[0].length;
         double[][] newArray = (double[][])null;
         if (data1.length == data2.length) {
@@ -468,7 +468,7 @@ public class Array extends Vector {
         return newArray;
     }
 
-    public int[][] mergeArray_row(int[][] data1, int[] data2) {
+    public int[][] mergeArrayRow(int[][] data1, int[] data2) {
         int[][] newArray = (int[][])null;
         if (data1[0].length == data2.length) {
             newArray = this.initArray(data1.length + 1, data1[0].length, 0);
@@ -490,7 +490,7 @@ public class Array extends Vector {
         return newArray;
     }
 
-    public double[][] mergeArray_row(double[][] data1, double[] data2) {
+    public double[][] mergeArrayRow(double[][] data1, double[] data2) {
         double[][] newArray = (double[][])null;
         if (data1[0].length == data2.length) {
             newArray = this.initArray(data1.length + 1, data1[0].length, 0.0);
@@ -512,7 +512,7 @@ public class Array extends Vector {
         return newArray;
     }
 
-    public int[][] mergeArray_col(int[][] data1, int[] data2) {
+    public int[][] mergeArrayColumn(int[][] data1, int[] data2) {
         int[][] newArray = (int[][])null;
         if (data1.length == data2.length) {
             newArray = this.initArray(data1.length, data1[0].length + 1, 0);
@@ -531,7 +531,7 @@ public class Array extends Vector {
         return newArray;
     }
 
-    public double[][] mergeArray_col(double[][] data1, double[] data2) {
+    public double[][] mergeArrayColumn(double[][] data1, double[] data2) {
         double[][] newArray = (double[][])null;
         if (data1.length == data2.length) {
             newArray = this.initArray(data1.length, data1[0].length + 1, 0.0);
@@ -550,7 +550,7 @@ public class Array extends Vector {
         return newArray;
     }
 
-    public int[][] mergeArray_row(int[][] data1, int[][] data2) {
+    public int[][] mergeArrayRow(int[][] data1, int[][] data2) {
         int dimension = data2[0].length;
         int[][] newArray = this.initArray(data1.length + data2.length, data1[0].length, 0);
         if (data1[0].length != dimension) {
@@ -571,7 +571,7 @@ public class Array extends Vector {
         return newArray;
     }
 
-    public double[][] mergeArray_row(double[][] data1, double[][] data2) {
+    public double[][] mergeArrayRow(double[][] data1, double[][] data2) {
         double[][] newArray = this.initArray(data1.length + data2.length, data1[0].length, 0.0);
         if (data1[0].length != data1[0].length) {
             System.out.println("Cols of both data has to be same!");
@@ -588,7 +588,7 @@ public class Array extends Vector {
         return newArray;
     }
 
-    public int[][] mergeArray_col(int[][] data1, int[][] data2) {
+    public int[][] mergeArrayColumn(int[][] data1, int[][] data2) {
         int dimension = data2[0].length;
         int[][] newArray = this.initArray(data1.length, data1[0].length + dimension, 0);
         if (data1.length != data2.length) {
@@ -607,7 +607,7 @@ public class Array extends Vector {
         return newArray;
     }
 
-    public double[][] mergeArray_col(double[][] data1, double[][] data2) {
+    public double[][] mergeArrayColumn(double[][] data1, double[][] data2) {
         int dimension = data2[0].length;
         double[][] newArray = this.initArray(data1.length, data1[0].length + dimension, 0.0);
         if (data1.length != data2.length) {
@@ -931,16 +931,15 @@ public class Array extends Vector {
     /* ======================================= Array Remove Start =====================================================*/
 
     public String cleanArrIn(String data) {
-        if (data.charAt(0) != '[' && data.charAt(data.length() - 1) != ']') {
+        String newData = data;
+        if (newData.charAt(0) != '[' && newData.charAt(newData.length() - 1) != ']') {
             System.out.println("data should be between [ and ]");
         }
-
-        data = data.substring(1, data.length() - 1);
-        if (data.charAt(data.length() - 1) == ';') {
-            data = data.substring(0, data.length() - 1);
+        newData = newData.substring(1, newData.length() - 1);
+        if (newData.charAt(newData.length() - 1) == ';') {
+            newData = newData.substring(0, newData.length() - 1);
         }
-
-        return data;
+        return newData;
     }
 
     public int[] removeNull(int[] data) {
