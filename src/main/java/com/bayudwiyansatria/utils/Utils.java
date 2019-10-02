@@ -24,8 +24,10 @@
 
 package com.bayudwiyansatria.utils;
 
+import javax.lang.model.element.Element;
 import java.io.ObjectInputStream;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Utils {
     public void warning(String error_message) {
@@ -33,12 +35,20 @@ public class Utils {
         System.exit(1);
     }
 
-    String buildArgument(String[] Array, String Splitter){
-        String argument = Array[0];
-        for(int i=1; i<Array.length; i++){
-            argument = argument+""+Splitter+""+Array[i];
+    public String buildArgument(String[] array, String splitter){
+        String argument = array[0];
+        for(int i=1; i<array.length; i++){
+            argument = argument+""+splitter+""+array[i];
         }
         return argument;
+    }
+
+    public String buildDependencyArgument(String[][] dependency, String splitter){
+        String argument = "";
+        for(int i=0; i<dependency.length; i++){
+            argument = argument+""+splitter+""+buildArgument(dependency[i],":");
+        }
+        return argument.substring(1);
     }
 
     public int[] getUnique(int[] data) {
@@ -259,7 +269,7 @@ public class Utils {
     public double[] int_to_double(int[] data) {
         double[] newData = new double[data.length];
         for(int i = 0; i < data.length; ++i) {
-            newData[i] = (double)data[i];
+            newData[i] = data[i];
         }
         return newData;
     }
@@ -268,10 +278,30 @@ public class Utils {
         double[][] newData = new double[data.length][data[0].length];
         for(int i = 0; i < data.length; ++i) {
             for(int j = 0; j < data[0].length; ++j) {
-                newData[i][j] = (double)data[i][j];
+                newData[i][j] = data[i][j];
             }
         }
         return newData;
+    }
+
+    public List<Integer> int_to_list(int[][] data){
+    	List<Integer> list = null;
+    	for(int i=0; i<data.length; i++){
+            for(int j = 0; j < data[0].length; ++j) {
+	            list.add(data[i][j]);
+            }
+	    }
+        return list;
+    }
+
+    public ArrayList<Integer> int_to_arraylist(int[][] data){
+    	ArrayList<Integer> list = null;
+    	for (int i=0; i<data.length; i++){
+    		for(int j = 0; j < data[0].length; ++j) {
+	            list.add(data[i][j]);
+            }
+	    }
+    	return list;
     }
 
     public int[] double_to_int(double[] data) {
@@ -358,6 +388,28 @@ public class Utils {
         return newData;
     }
 
+    public List<String> String_to_list(String[][] data){
+    	List<String> list = null;
+    	for(int i=0; i<data.length; i++){
+            for(int j = 0; j < data[0].length; ++j) {
+	            list.add(data[i][j]);
+            }
+	    }
+        return list;
+    }
+
+    public ArrayList<ArrayList<String>> String_to_arraylist(String[][] data){
+    	ArrayList<ArrayList<String>> list = new ArrayList<ArrayList<String>>(data.length);
+    	for (int i=0; i<data.length; i++){
+    	    ArrayList<String> sublist = new ArrayList<String>();
+    		for(int j=0; i<data[0].length; i++){
+    		    sublist.add(data[i][j]);
+		    }
+    	    list.add(sublist);
+	    }
+    	return list;
+    }
+
     public List<ArrayList> Bytes_to_arraylist(ObjectInputStream data){
         List<ArrayList>newData = null;
         try {
@@ -369,8 +421,8 @@ public class Utils {
             warning(except.toString());
         }
         return newData;
-
     }
+
 
     public String[][] List_to_String(ArrayList<String[]> data){
         String[][] newData  = new String[data.size()][data.get(0).length];
@@ -379,17 +431,6 @@ public class Utils {
                 newData[i][j] = data.get(i)[j];
             }
         }
-        return newData;
-    }
-
-    public List String_to_List(String[] data){
-        List newData = null;
-        return newData;
-
-    }
-
-    public List String_to_List(String[][] data){
-        List newData = null;
         return newData;
     }
 

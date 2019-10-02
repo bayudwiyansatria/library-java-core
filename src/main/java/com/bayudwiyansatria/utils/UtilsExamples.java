@@ -24,20 +24,22 @@
 
 package com.bayudwiyansatria.utils;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class UtilsExamples {
     public static void main(String[] args){
-        Test_String2categorical_1D();
-        Test_String2categorical_2D();
+        BuildArgument();
     }
 
     private static void Test_String2categorical_1D(){
         // Read Data
-        String[][] data = new com.bayudwiyansatria.io.IO().readCSV_String("res/test/transaction");
+        String[][] data = new com.bayudwiyansatria.io.IO().readCSV_String("src/main/resources/ruspini");
         String[] dataTest = new String[data.length];
 
         for(int i=0; i<dataTest.length; i++){
             // Read Index 4 of Data
-            dataTest[i]=data[i][4];
+            dataTest[i]=data[i][3];
         }
 
         // Parse Data Type
@@ -47,7 +49,7 @@ public class UtilsExamples {
 
     private static void Test_String2categorical_2D(){
         // Read Data
-        String[][] data = new com.bayudwiyansatria.io.IO().readCSV_String("res/test/transaction");
+        String[][] data = new com.bayudwiyansatria.io.IO().readCSV_String("src/main/resources/ruspini");
         String[][] dataTest = new String[data.length][2];
 
         for(int i=0; i<dataTest.length; i++){
@@ -58,5 +60,20 @@ public class UtilsExamples {
         // Parse Data Type
         int[][] categoricalData = new Utils().String_to_categorical(dataTest);
         new com.bayudwiyansatria.mat.Mat().print(categoricalData);
+    }
+
+    private static void Test_String2ArrayList(){
+    	// Read Data
+        String[][] data = new com.bayudwiyansatria.io.IO().readCSV_String("src/main/resources/ruspini");
+        // Parse Data Type
+        ArrayList<ArrayList<String>> categoricalData = new Utils().String_to_arraylist(data);
+        System.out.println(categoricalData.get(1));
+    }
+
+    private static void BuildArgument(){
+        String[][] array = { {"com.bayudwiyansatria","core","1.1.7"}, {"com.bayudwiyansatria","ml","1.0"}, {"com.bayudwiyansatria","env-apache-spark","1.0"}, {"com.bayudwiyansatria","env-apache-hadoop","1.0"} };
+        String[] array1 = { "com.bayudwiyansatria", "core", "1.1.7" };
+        new com.bayudwiyansatria.mat.Mat().print(new Utils().buildDependencyArgument(array,","));
+
     }
 }

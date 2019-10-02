@@ -25,4 +25,12 @@
 package com.bayudwiyansatria;
 
 public class Core {
+	public String USERNAME = System.getProperty("user.name");
+	public void setUsername(String Username){
+		this.USERNAME = Username;
+	}
+
+	public String getUsername(){
+		return USERNAME;
+	}
 }

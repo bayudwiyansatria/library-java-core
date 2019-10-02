@@ -116,23 +116,19 @@ public class Files extends Array {
     }
 
     public int[][] readCSV_int(String filename, String titlemode) {
-        String[][] read = this.readCSV(filename, titlemode);
-        return new Utils().String_to_int(read);
+        return new Utils().String_to_int(this.readCSV(filename, titlemode));
     }
 
     public int[][] readCSV_int(String filename) {
-        String[][] read = this.readCSV(filename, "title:no");
-        return new Utils().String_to_int(read);
+        return new Utils().String_to_int(this.readCSV(filename, "title:no"));
     }
 
     public double[][] readCSV_double(String filename, String titlemode) {
-        String[][] read = this.readCSV(filename, titlemode);
-        return new Utils().String_to_double(read);
+        return new Utils().String_to_double(this.readCSV(filename, titlemode));
     }
 
     public double[][] readCSV_double(String filename) {
-        String[][] read = this.readCSV(filename, "title:no");
-        return new Utils().String_to_double(read);
+        return new Utils().String_to_double(this.readCSV(filename, "title:no"));
     }
 
     public String[][] readCSV_String(String filename, String titlemode) {
