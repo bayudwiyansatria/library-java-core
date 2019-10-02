@@ -464,19 +464,19 @@ public class Files extends Array {
     }
 
 
-    public void convertCSV_to_DST_int(String filename, String titlemode) {
+    public void convertCSV_to_DST_int(String filename, String titleMode) {
         boolean validation = false;
         byte bytes = -1;
-        switch(titlemode.hashCode()) {
-            case 0: if (titlemode.equals("title:col")) { bytes = 0; }
+        switch(titleMode.hashCode()) {
+            case 0: if ( "title:col".equals(titleMode)) { bytes = 0; }
             break;
-            case 1: if (titlemode.equals("title:row")) { bytes = 1; }
+            case 1: if ("title:row".equals(titleMode)) { bytes = 1; }
             break;
-            case 2: if (titlemode.equals("title:rowcol")) { bytes = 2; }
+            case 2: if ("title:rowcol".equals(titleMode)) { bytes = 2; }
             break;
-            case 3: if (titlemode.equals("title:no")) { bytes = 3; }
+            case 3: if ("title:no".equals(titleMode)) { bytes = 3; }
             break;
-            case 4: if (titlemode.equals("title:colrow")) { bytes = 4;
+            case 4: if ("title:colrow".equals(titleMode)) { bytes = 4;
             }
         }
 
@@ -491,7 +491,7 @@ public class Files extends Array {
 
         if (validation) {
             try {
-                int[][] dataset = this.readCSV_int(filename, titlemode);
+                int[][] dataset = this.readCSV_int(filename, titleMode);
                 this.saveDST(dataset, filename);
             } catch (Exception var6) {
                 new Utils().warning("Can not find the file!");

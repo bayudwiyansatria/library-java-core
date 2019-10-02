@@ -93,12 +93,12 @@ public class Utils {
             ok = false;
             byte bytes = -1;
             switch(opr.hashCode()) {
-                case 60: if (opr.equals("<")) { bytes = 1; }
-                case 61: if (opr.equals("=")) { bytes = 0; }
-                case 62: if (opr.equals(">")) { bytes = 3; }
-                case 1084: if (opr.equals("!=")) { bytes = 5; }
-                case 1921: if (opr.equals("<=")) { bytes = 2; }
-                case 1983: if (opr.equals(">=")) { bytes = 4; }
+                case 60: if ("<".equals(opr)) { bytes = 1; }
+                case 61: if ("=".equals(opr)) { bytes = 0; }
+                case 62: if (">".equals(opr)) { bytes = 3; }
+                case 1084: if ("!=".equals(opr)) { bytes = 5; }
+                case 1921: if ("<=".equals(opr)) { bytes = 2; }
+                case 1983: if (">=".equals(opr)) { bytes = 4; }
             }
 
             switch(bytes) {
@@ -137,12 +137,12 @@ public class Utils {
             ok = false;
             byte bytes = -1;
             switch(opr.hashCode()) {
-                case 60: if (opr.equals("<")) { bytes = 1; }
-                case 61: if (opr.equals("=")) { bytes = 0; }
-                case 62: if (opr.equals(">")) { bytes = 3; }
-                case 1084: if (opr.equals("!=")) { bytes = 5; }
-                case 1921: if (opr.equals("<=")) { bytes = 2; }
-                case 1983: if (opr.equals(">=")) { bytes = 4; }
+                case 60: if ("<".equals(opr)) { bytes = 1; }
+                case 61: if ("=".equals(opr)) { bytes = 0; }
+                case 62: if (">".equals(opr)) { bytes = 3; }
+                case 1084: if ("!=".equals(opr)) { bytes = 5; }
+                case 1921: if ("<=".equals(opr)) { bytes = 2; }
+                case 1983: if (">=".equals(opr)) { bytes = 4; }
             }
 
             switch(bytes) {
