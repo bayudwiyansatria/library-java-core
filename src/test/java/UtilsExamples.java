@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-package com.bayudwiyansatria.utils;
+import com.bayudwiyansatria.utils.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
