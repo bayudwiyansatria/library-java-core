@@ -27,7 +27,7 @@
 
 # Bayu Dwiyan Satria - Core
 
-![Github Actions](http://aliyunfc.tarocch1.com/github-actions-badge/bayudwiyansatria/Library-Java-Core?style=flat-square) [![Build Status](https://dev.azure.com/bayudwiyansatria/Library/_apis/build/status/Bayu%20Dwiyan%20Satria%20-%20Core?branchName=master)](https://dev.azure.com/bayudwiyansatria/Library/_build/latest?definitionId=4&branchName=master)
+![Github Actions](https://github.com/bayudwiyansatria/Library-Java-Core/workflows/Github%20Action/badge.svg) [![Build Status](https://dev.azure.com/bayudwiyansatria/Library/_apis/build/status/Bayu%20Dwiyan%20Satria%20-%20Core?branchName=master)](https://dev.azure.com/bayudwiyansatria/Library/_build/latest?definitionId=4&branchName=master)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/2045f7bf665040aba79cd79f03aeff7c)](https://www.codacy.com/manual/bayudwiyansatria/Library-Java-Core?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=bayudwiyansatria/Library-Java-Core&amp;utm_campaign=Badge_Grade)
 
 Core of Bayu Dwiyan Satria Project Framework.

@@ -38,7 +38,7 @@ public class Calculation {
         return res;
     }
 
-    double[] addition(double[] inA, double inB) {
+    public double[] addition(double[] inA, double inB) {
         int l1 = inA.length;
         double[] res = new double[l1];
         for(int c1 = 0; c1 < l1; ++c1) {
@@ -47,7 +47,7 @@ public class Calculation {
         return res;
     }
 
-    int[] addition(int[] inA, int[] inB) {
+    public int[] addition(int[] inA, int[] inB) {
         int l1 = inA.length;
         int[] res = new int[l1];
         if (inA.length == inB.length) {
@@ -61,7 +61,7 @@ public class Calculation {
         return res;
     }
 
-    double[] addition(double[] inA, double[] inB) {
+    public double[] addition(double[] inA, double[] inB) {
         int l1 = inA.length;
         int l2 = inB.length;
         double[] res = new double[l1];
@@ -76,7 +76,7 @@ public class Calculation {
         return res;
     }
 
-    int[][] addition(int[][] inA, int inB) {
+    public int[][] addition(int[][] inA, int inB) {
         int l1 = inA.length;
         int l2 = inA[0].length;
         int[][] res = new int[l1][l2];
@@ -90,7 +90,7 @@ public class Calculation {
         return res;
     }
 
-    double[][] addition(double[][] inA, double inB) {
+    public double[][] addition(double[][] inA, double inB) {
         int l1 = inA.length;
         int l2 = inA[0].length;
         double[][] res = new double[l1][l2];
@@ -104,7 +104,7 @@ public class Calculation {
         return res;
     }
 
-    int[][] addition(int[][] inA, int[] inB) {
+    public int[][] addition(int[][] inA, int[] inB) {
         int l1 = inA.length;
         int l2 = inA[0].length;
         int l3 = inB.length;
@@ -122,7 +122,7 @@ public class Calculation {
         return res;
     }
 
-    double[][] addition(double[][] inA, double[] inB) {
+    public double[][] addition(double[][] inA, double[] inB) {
         int l1 = inA.length;
         int l2 = inA[0].length;
         int l3 = inB.length;
@@ -140,7 +140,7 @@ public class Calculation {
         return res;
     }
 
-    int[][] addition(int[][] inA, int[][] inB) {
+    public int[][] addition(int[][] inA, int[][] inB) {
         int col1 = inA[0].length;
         int col2 = inB[0].length;
         int row1 = inA.length;
@@ -185,7 +185,7 @@ public class Calculation {
         return res;
     }
 
-    double[][] addition(double[][] inA, double[][] inB) {
+    public double[][] addition(double[][] inA, double[][] inB) {
         int col1 = inA[0].length;
         int col2 = inB[0].length;
         int row1 = inA.length;
@@ -236,7 +236,7 @@ public class Calculation {
 
     /* ========================================= Substraction Start ==================================================*/
 
-    double[] substraction(double[] inA, double inB) {
+    public double[] substraction(double[] inA, double inB) {
         int l1 = inA.length;
         double[] res = new double[l1];
 
@@ -247,7 +247,7 @@ public class Calculation {
         return res;
     }
 
-    double[] substraction(double[] inA, double[] inB) {
+    public double[] substraction(double[] inA, double[] inB) {
         int l1 = inA.length;
         int l2 = inB.length;
         double[] res = new double[l1];
@@ -262,7 +262,7 @@ public class Calculation {
         return res;
     }
 
-    double[][] substraction(double[][] inA, double inB) {
+    public double[][] substraction(double[][] inA, double inB) {
         int l1 = inA.length;
         int l2 = inA[0].length;
         double[][] res = new double[l1][l2];
@@ -276,7 +276,7 @@ public class Calculation {
         return res;
     }
 
-    double[][] substraction(double[][] inA, double[] inB) {
+    public double[][] substraction(double[][] inA, double[] inB) {
         int l1 = inA.length;
         int l2 = inA[0].length;
         int l3 = inB.length;
@@ -295,7 +295,7 @@ public class Calculation {
         return res;
     }
 
-    double[][] substraction(double[][] inA, double[][] inB) {
+    public double[][] substraction(double[][] inA, double[][] inB) {
         int col1 = inA[0].length;
         int col2 = inB[0].length;
         int row1 = inA.length;
@@ -353,7 +353,7 @@ public class Calculation {
         return res;
     }
 
-    int[] substraction(int[] inA, int[] inB) {
+    public int[] substraction(int[] inA, int[] inB) {
         int l1 = inA.length;
         int[] res = new int[l1];
         if (inA.length == inB.length) {
@@ -368,7 +368,7 @@ public class Calculation {
         return res;
     }
 
-    int[][] substraction(int[][] inA, int inB) {
+    public int[][] substraction(int[][] inA, int inB) {
         int l1 = inA.length;
         int l2 = inA[0].length;
         int[][] res = new int[l1][l2];
@@ -382,7 +382,7 @@ public class Calculation {
         return res;
     }
 
-    int[][] substraction(int[][] inA, int[] inB) {
+    public int[][] substraction(int[][] inA, int[] inB) {
         int l1 = inA.length;
         int l2 = inA[0].length;
         int l3 = inB.length;
@@ -401,7 +401,7 @@ public class Calculation {
         return res;
     }
 
-    int[][] substraction(int[][] inA, int[][] inB) {
+    public int[][] substraction(int[][] inA, int[][] inB) {
         int col1 = inA[0].length;
         int col2 = inB[0].length;
         int row1 = inA.length;
@@ -448,7 +448,7 @@ public class Calculation {
         return res;
     }
 
-    double[] division(double[] inA, double inB) {
+    public double[] division(double[] inA, double inB) {
         int l1 = inA.length;
         double[] res = new double[l1];
 
@@ -459,7 +459,7 @@ public class Calculation {
         return res;
     }
 
-    double[] division(double[] inA, double[] inB) {
+    public double[] division(double[] inA, double[] inB) {
         int l1 = inA.length;
         int l2 = inB.length;
         double[] res = new double[l1];
@@ -475,7 +475,7 @@ public class Calculation {
         return res;
     }
 
-    double[][] division(double[][] inA, double inB) {
+    public double[][] division(double[][] inA, double inB) {
         int l1 = inA.length;
         int l2 = inA[0].length;
         double[][] res = new double[l1][l2];
@@ -489,7 +489,7 @@ public class Calculation {
         return res;
     }
 
-    double[][] division(double[][] inA, double[] inB) {
+    public double[][] division(double[][] inA, double[] inB) {
         int l1 = inA.length;
         int l2 = inA[0].length;
         int l3 = inB.length;
@@ -508,7 +508,7 @@ public class Calculation {
         return res;
     }
 
-    double[][] division(double[][] inA, double[][] inB) {
+    public double[][] division(double[][] inA, double[][] inB) {
         int col1 = inA[0].length;
         int col2 = inB[0].length;
         int row1 = inA.length;
@@ -555,7 +555,7 @@ public class Calculation {
         return res;
     }
 
-    double[] division(int[] inA, int inB) {
+    public double[] division(int[] inA, int inB) {
         int l1 = inA.length;
         double[] res = new double[l1];
 
@@ -566,7 +566,7 @@ public class Calculation {
         return res;
     }
 
-    double[] division(int[] inA, int[] inB) {
+    public double[] division(int[] inA, int[] inB) {
         int l1 = inA.length;
         double[] res = new double[l1];
         if (inA.length == inB.length) {
@@ -581,7 +581,7 @@ public class Calculation {
         return res;
     }
 
-    double[][] division(int[][] inA, int inB) {
+    public double[][] division(int[][] inA, int inB) {
         int l1 = inA.length;
         int l2 = inA[0].length;
         double[][] res = new double[l1][l2];
@@ -595,7 +595,7 @@ public class Calculation {
         return res;
     }
 
-    double[][] division(int[][] inA, int[] inB) {
+    public double[][] division(int[][] inA, int[] inB) {
         int l1 = inA.length;
         int l2 = inA[0].length;
         int l3 = inB.length;
@@ -614,7 +614,7 @@ public class Calculation {
         return res;
     }
 
-    double[][] division(int[][] inA, int[][] inB) {
+    public double[][] division(int[][] inA, int[][] inB) {
         int col1 = inA[0].length;
         int col2 = inB[0].length;
         int row1 = inA.length;
@@ -1400,7 +1400,7 @@ public class Calculation {
 
     /* ========================================= Calculate Start ==================================================== */
 
-    double[] scalarMultiplication(double[] inA, double inB) {
+    public double[] scalarMultiplication(double[] inA, double inB) {
         int l1 = inA.length;
         double[] res = new double[l1];
 
@@ -1411,7 +1411,7 @@ public class Calculation {
         return res;
     }
 
-    double[] scalarMultiplication(double[] inA, double[] inB) {
+    public double[] scalarMultiplication(double[] inA, double[] inB) {
         int l1 = inA.length;
         int l2 = inB.length;
         double[] res = null;
@@ -1428,7 +1428,7 @@ public class Calculation {
         return res;
     }
 
-    double[][] scalarMultiplication(double[][] inA, double inB) {
+    public double[][] scalarMultiplication(double[][] inA, double inB) {
         int l1 = inA.length;
         int l2 = inA[0].length;
         double[][] res = new double[l1][l2];
@@ -1442,7 +1442,7 @@ public class Calculation {
         return res;
     }
 
-    double[][] scalarMultiplication(double[][] inA, double[] inB) {
+    public double[][] scalarMultiplication(double[][] inA, double[] inB) {
         int l1 = inB.length;
         int l2 = inA.length;
         int l3 = inA[0].length;
@@ -1462,7 +1462,7 @@ public class Calculation {
         return res;
     }
 
-    double[][] scalarMultiplication(double[][] inA, double[][] inB) {
+    public double[][] scalarMultiplication(double[][] inA, double[][] inB) {
         int col1 = inA[0].length;
         int col2 = inB[0].length;
         int row1 = inA.length;
@@ -1507,7 +1507,7 @@ public class Calculation {
         return res;
     }
 
-    int[] scalarMultiplication(int[] inA, int inB) {
+    public int[] scalarMultiplication(int[] inA, int inB) {
         int l1 = inA.length;
         int[] res = new int[l1];
 
@@ -1518,7 +1518,7 @@ public class Calculation {
         return res;
     }
 
-    int[] scalarMultiplication(int[] inA, int[] inB) {
+    public int[] scalarMultiplication(int[] inA, int[] inB) {
         int l1 = inA.length;
         int l2 = inB.length;
         int[] res = null;
@@ -1535,7 +1535,7 @@ public class Calculation {
         return res;
     }
 
-    int[][] scalarMultiplication(int[][] inA, int inB) {
+    public int[][] scalarMultiplication(int[][] inA, int inB) {
         int l1 = inA.length;
         int l2 = inA[0].length;
         int[][] res = new int[l1][l2];
@@ -1549,7 +1549,7 @@ public class Calculation {
         return res;
     }
 
-    int[][] scalarMultiplication(int[][] inA, int[] inB) {
+    public int[][] scalarMultiplication(int[][] inA, int[] inB) {
         int l1 = inB.length;
         int l2 = inA.length;
         int l3 = inA[0].length;
@@ -1569,7 +1569,7 @@ public class Calculation {
         return res;
     }
 
-    int[][] scalarMultiplication(int[][] inA, int[][] inB) {
+    public int[][] scalarMultiplication(int[][] inA, int[][] inB) {
         int col1 = inA[0].length;
         int col2 = inB[0].length;
         int row1 = inA.length;
@@ -1614,7 +1614,7 @@ public class Calculation {
         return res;
     }
 
-    double[] vectorMultiplication(double[] inA, double[][] inB) {
+    public double[] vectorMultiplication(double[] inA, double[][] inB) {
         double[] res = null;
         int colB = inB[0].length;
         int colA = inA.length;
@@ -1638,7 +1638,7 @@ public class Calculation {
         return res;
     }
 
-    double[][] vectorMultiplication(double[][] inA, double[][] inB) {
+    public double[][] vectorMultiplication(double[][] inA, double[][] inB) {
         double[][] res = (double[][])null;
         int colA = inA[0].length;
         int rowA = inA.length;
@@ -1662,7 +1662,7 @@ public class Calculation {
         return res;
     }
 
-    int vectorMultiplication(int[] inA, int[] inB) {
+    public int vectorMultiplication(int[] inA, int[] inB) {
         int nb = inB.length;
         int output = 0;
         if (inA.length == nb) {
@@ -1676,7 +1676,7 @@ public class Calculation {
         return output;
     }
 
-    double vectorMultiplication(double[] inA, double[] inB) {
+    public double vectorMultiplication(double[] inA, double[] inB) {
         int nb = inB.length;
         double output = 0.0;
         if (inA.length == nb) {
@@ -1690,7 +1690,7 @@ public class Calculation {
         return output;
     }
 
-    int[] vectorMultiplication(int[] inA, int[][] inB) {
+    public int[] vectorMultiplication(int[] inA, int[][] inB) {
         int[] res = null;
         int colB = inB[0].length;
         int colA = inA.length;
@@ -1714,7 +1714,7 @@ public class Calculation {
         return res;
     }
 
-    int[][] vectorMultiplication(int[][] inA, int[][] inB) {
+    public int[][] vectorMultiplication(int[][] inA, int[][] inB) {
         int[][] res = (int[][])null;
         int colA = inA[0].length;
         int rowA = inA.length;
