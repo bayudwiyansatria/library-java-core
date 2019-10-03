@@ -48,6 +48,4 @@ jobs:
           java-version: ${{ matrix.java-version }}
       - name: Maven build clean, build, test and install
         run: |
-          mvn clean
-          mvn install
           mvn package --file pom.xml
