@@ -665,45 +665,27 @@ public class Calculation {
         double[] result = null;
         byte bytes = -1;
         switch(type.hashCode()) {
-        case 42:
-            if (type.equals("*")) {
-                bytes = 2;
-            }
-            break;
-        case 43:
-            if (type.equals("+")) {
-                bytes = 0;
-            }
-        case 44:
-        case 46:
-        default:
-            break;
-        case 45:
-            if (type.equals("-")) {
-                bytes = 1;
-            }
-            break;
-        case 47:
-            if (type.equals("/")) {
-                bytes = 3;
-            }
+            case 42: if (type.equals("*")) { bytes = 2; }
+                break;
+            case 43: if (type.equals("+")) { bytes = 0; }
+            case 44:
+            case 46:
+            case 45: if (type.equals("-")) { bytes = 1; }
+                break;
+            case 47: if (type.equals("/")) { bytes = 3; }
+            default: break;
         }
 
         switch(bytes) {
-        case 0:
-            result = this.addition(data, point);
-            break;
-        case 1:
-            result = this.substraction(data, point);
-            break;
-        case 2:
-            result = this.scalarMultiplication(data, point);
-            break;
-        case 3:
-            result = this.division(data, point);
-            break;
-        default:
-            new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
+            case 0: result = this.addition(data, point);
+                break;
+            case 1: result = this.substraction(data, point);
+                break;
+            case 2: result = this.scalarMultiplication(data, point);
+                break;
+            case 3: result = this.division(data, point);
+                break;
+            default: new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
         }
 
         return result;
@@ -713,47 +695,28 @@ public class Calculation {
         double[] result = null;
         byte bytes = -1;
         switch(type.hashCode()) {
-        case 42:
-            if (type.equals("*")) {
-                bytes = 2;
-            }
-            break;
-        case 43:
-            if (type.equals("+")) {
-                bytes = 0;
-            }
-        case 44:
-        case 46:
-        default:
-            break;
-        case 45:
-            if (type.equals("-")) {
-                bytes = 1;
-            }
-            break;
-        case 47:
-            if (type.equals("/")) {
-                bytes = 3;
-            }
+            case 42: if (type.equals("*")) { bytes = 2; }
+                break;
+            case 43: if (type.equals("+")) { bytes = 0; }
+            case 44:
+            case 46:
+            case 45: if (type.equals("-")) { bytes = 1; }
+                break;
+            case 47: if (type.equals("/")) { bytes = 3; }
+            default: break;
         }
 
         switch(bytes) {
-        case 0:
-            result = this.addition(data, point);
-            break;
-        case 1:
-            result = this.substraction(data, point);
-            break;
-        case 2:
-            result = this.scalarMultiplication(data, point);
-            break;
-        case 3:
-            result = this.division(data, point);
-            break;
-        default:
-            new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
+            case 0: result = this.addition(data, point);
+                break;
+            case 1: result = this.substraction(data, point);
+                break;
+            case 2: result = this.scalarMultiplication(data, point);
+                break;
+            case 3: result = this.division(data, point);
+                break;
+            default: new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
         }
-
         return result;
     }
 
@@ -761,38 +724,24 @@ public class Calculation {
         int[] result = null;
         byte bytes = -1;
         switch(type.hashCode()) {
-        case 42:
-            if (type.equals("*")) {
-                bytes = 2;
-            }
-            break;
-        case 43:
-            if (type.equals("+")) {
-                bytes = 0;
-            }
-        case 44:
-        default:
-            break;
-        case 45:
-            if (type.equals("-")) {
-                bytes = 1;
-            }
+            case 42: if (type.equals("*")) { bytes = 2; }
+                break;
+            case 43: if (type.equals("+")) { bytes = 0; }
+            case 44:
+            default:
+                break;
+            case 45: if (type.equals("-")) { bytes = 1; }
         }
 
         switch(bytes) {
-        case 0:
-            result = this.addition(data, point);
-            break;
-        case 1:
-            result = this.substraction(data, point);
-            break;
-        case 2:
-            result = this.scalarMultiplication(data, point);
-            break;
-        default:
-            new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
+            case 0: result = this.addition(data, point);
+                break;
+            case 1: result = this.substraction(data, point);
+                break;
+            case 2: result = this.scalarMultiplication(data, point);
+                break;
+            default: new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
         }
-
         return result;
     }
 
@@ -800,36 +749,23 @@ public class Calculation {
         int[] result = null;
         byte bytes = -1;
         switch(type.hashCode()) {
-        case 42:
-            if (type.equals("*")) {
-                bytes = 2;
-            }
-            break;
-        case 43:
-            if (type.equals("+")) {
-                bytes = 0;
-            }
-        case 44:
-        default:
-            break;
-        case 45:
-            if (type.equals("-")) {
-                bytes = 1;
-            }
+            case 42: if (type.equals("*")) { bytes = 2; }
+                break;
+            case 43: if (type.equals("+")) { bytes = 0; }
+            case 44:
+            default:
+                break;
+            case 45: if (type.equals("-")) { bytes = 1; }
         }
 
         switch(bytes) {
-        case 0:
-            result = this.addition(data, point);
-            break;
-        case 1:
-            result = this.substraction(data, point);
-            break;
-        case 2:
-            result = this.scalarMultiplication(data, point);
-            break;
-        default:
-            new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
+            case 0: result = this.addition(data, point);
+                break;
+            case 1: result = this.substraction(data, point);
+                break;
+            case 2: result = this.scalarMultiplication(data, point);
+                break;
+            default: new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
         }
 
         return result;
@@ -839,45 +775,28 @@ public class Calculation {
         double[][] result = null;
         byte bytes = -1;
         switch(type.hashCode()) {
-        case 42:
-            if (type.equals("*")) {
-                bytes = 2;
-            }
-            break;
-        case 43:
-            if (type.equals("+")) {
-                bytes = 0;
-            }
-        case 44:
-        case 46:
-        default:
-            break;
-        case 45:
-            if (type.equals("-")) {
-                bytes = 1;
-            }
-            break;
-        case 47:
-            if (type.equals("/")) {
-                bytes = 3;
-            }
+            case 42: if (type.equals("*")) { bytes = 2; }
+                break;
+            case 43: if (type.equals("+")) { bytes = 0; }
+            case 44:
+            case 46:
+            default:
+                break;
+            case 45: if (type.equals("-")) { bytes = 1; }
+                break;
+            case 47: if (type.equals("/")) { bytes = 3; }
         }
 
         switch(bytes) {
-        case 0:
-            result = this.addition(data, point);
-            break;
-        case 1:
-            result = this.substraction(data, point);
-            break;
-        case 2:
-            result = this.scalarMultiplication(data, point);
-            break;
-        case 3:
-            result = this.division(data, point);
-            break;
-        default:
-            new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
+            case 0: result = this.addition(data, point);
+                break;
+            case 1: result = this.substraction(data, point);
+                break;
+            case 2: result = this.scalarMultiplication(data, point);
+                break;
+            case 3: result = this.division(data, point);
+                break;
+            default: new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
         }
 
         return result;
@@ -887,47 +806,29 @@ public class Calculation {
         double[][] result = null;
         byte bytes = -1;
         switch(type.hashCode()) {
-        case 42:
-            if (type.equals("*")) {
-                bytes = 2;
-            }
-            break;
-        case 43:
-            if (type.equals("+")) {
-                bytes = 0;
-            }
-        case 44:
-        case 46:
-        default:
-            break;
-        case 45:
-            if (type.equals("-")) {
-                bytes = 1;
-            }
-            break;
-        case 47:
-            if (type.equals("/")) {
-                bytes = 3;
-            }
+            case 42: if (type.equals("*")) { bytes = 2; }
+                break;
+            case 43: if (type.equals("+")) { bytes = 0; }
+            case 44:
+            case 46:
+            default:
+                break;
+            case 45: if (type.equals("-")) { bytes = 1; }
+                break;
+            case 47: if (type.equals("/")) { bytes = 3; }
         }
 
         switch(bytes) {
-        case 0:
-            result = this.addition(data, point);
-            break;
-        case 1:
-            result = this.substraction(data, point);
-            break;
-        case 2:
-            result = this.scalarMultiplication(data, point);
-            break;
-        case 3:
-            result = this.division(data, point);
-            break;
-        default:
-            new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
+            case 0: result = this.addition(data, point);
+                break;
+            case 1: result = this.substraction(data, point);
+                break;
+            case 2: result = this.scalarMultiplication(data, point);
+                break;
+            case 3: result = this.division(data, point);
+                break;
+            default: new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
         }
-
         return result;
     }
 
@@ -935,36 +836,23 @@ public class Calculation {
         int[][] result = null;
         byte bytes = -1;
         switch(type.hashCode()) {
-        case 42:
-            if (type.equals("*")) {
-                bytes = 2;
-            }
-            break;
-        case 43:
-            if (type.equals("+")) {
-                bytes = 0;
-            }
-        case 44:
-        default:
-            break;
-        case 45:
-            if (type.equals("-")) {
-                bytes = 1;
-            }
+            case 42: if (type.equals("*")) { bytes = 2; }
+                break;
+            case 43: if (type.equals("+")) { bytes = 0; }
+            case 44:
+            default:
+                break;
+            case 45: if (type.equals("-")) { bytes = 1; }
         }
 
         switch(bytes) {
-        case 0:
-            result = this.addition(data, point);
-            break;
-        case 1:
-            result = this.substraction(data, point);
-            break;
-        case 2:
-            result = this.scalarMultiplication(data, point);
-            break;
-        default:
-            new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
+            case 0: result = this.addition(data, point);
+                break;
+            case 1: result = this.substraction(data, point);
+                break;
+            case 2: result = this.scalarMultiplication(data, point);
+                break;
+            default: new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
         }
 
         return result;
@@ -974,36 +862,24 @@ public class Calculation {
         int[][] result = null;
         byte bytes = -1;
         switch(type.hashCode()) {
-        case 42:
-            if (type.equals("*")) {
-                bytes = 2;
-            }
-            break;
-        case 43:
-            if (type.equals("+")) {
-                bytes = 0;
-            }
-        case 44:
-        default:
-            break;
-        case 45:
-            if (type.equals("-")) {
-                bytes = 1;
-            }
+            case 42: if (type.equals("*")) { bytes = 2; }
+                break;
+            case 43:
+                if (type.equals("+")) { bytes = 0; }
+            case 44:
+            default:
+                break;
+            case 45: if (type.equals("-")) { bytes = 1; }
         }
 
         switch(bytes) {
-        case 0:
-            result = this.addition(data, point);
-            break;
-        case 1:
-            result = this.substraction(data, point);
-            break;
-        case 2:
-            result = this.scalarMultiplication(data, point);
-            break;
-        default:
-            new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
+            case 0: result = this.addition(data, point);
+                break;
+            case 1: result = this.substraction(data, point);
+                break;
+            case 2: result = this.scalarMultiplication(data, point);
+                break;
+            default: new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
         }
 
         return result;
@@ -1013,45 +889,28 @@ public class Calculation {
         double[] result = null;
         byte bytes = -1;
         switch(type.hashCode()) {
-        case 42:
-            if (type.equals("*")) {
-                bytes = 2;
-            }
-            break;
-        case 43:
-            if (type.equals("+")) {
-                bytes = 0;
-            }
-        case 44:
-        case 46:
-        default:
-            break;
-        case 45:
-            if (type.equals("-")) {
-                bytes = 1;
-            }
-            break;
-        case 47:
-            if (type.equals("/")) {
-                bytes = 3;
-            }
+            case 42: if (type.equals("*")) { bytes = 2; }
+                break;
+            case 43: if (type.equals("+")) { bytes = 0; }
+            case 44:
+            case 46:
+            default:
+                break;
+            case 45: if (type.equals("-")) { bytes = 1; }
+                break;
+            case 47: if (type.equals("/")) { bytes = 3; }
         }
 
         switch(bytes) {
-        case 0:
-            result = this.addition(data, point);
-            break;
-        case 1:
-            result = this.substraction(data, point);
-            break;
-        case 2:
-            result = this.scalarMultiplication(data, point);
-            break;
-        case 3:
-            result = this.division(data, point);
-            break;
-        default:
-            new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
+            case 0: result = this.addition(data, point);
+                break;
+            case 1: result = this.substraction(data, point);
+                break;
+            case 2: result = this.scalarMultiplication(data, point);
+                break;
+            case 3: result = this.division(data, point);
+                break;
+            default: new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
         }
 
         return result;
@@ -1061,36 +920,23 @@ public class Calculation {
         int[] result = null;
         byte bytes = -1;
         switch(type.hashCode()) {
-        case 42:
-            if (type.equals("*")) {
-                bytes = 2;
-            }
-            break;
-        case 43:
-            if (type.equals("+")) {
-                bytes = 0;
-            }
-        case 44:
-        default:
-            break;
-        case 45:
-            if (type.equals("-")) {
-                bytes = 1;
-            }
+            case 42: if (type.equals("*")) { bytes = 2; }
+                break;
+            case 43: if (type.equals("+")) { bytes = 0; }
+            case 44:
+            default:
+                break;
+            case 45: if (type.equals("-")) { bytes = 1; }
         }
 
         switch(bytes) {
-        case 0:
-            result = this.addition(data, point);
-            break;
-        case 1:
-            result = this.substraction(data, point);
-            break;
-        case 2:
-            result = this.scalarMultiplication(data, point);
-            break;
-        default:
-            new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
+            case 0: result = this.addition(data, point);
+                break;
+            case 1: result = this.substraction(data, point);
+                break;
+            case 2: result = this.scalarMultiplication(data, point);
+                break;
+            default: new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
         }
 
         return result;
@@ -1100,45 +946,28 @@ public class Calculation {
         double[][] result = null;
         byte bytes = -1;
         switch(type.hashCode()) {
-        case 42:
-            if (type.equals("*")) {
-                bytes = 2;
-            }
-            break;
-        case 43:
-            if (type.equals("+")) {
-                bytes = 0;
-            }
-        case 44:
-        case 46:
-        default:
-            break;
-        case 45:
-            if (type.equals("-")) {
-                bytes = 1;
-            }
-            break;
-        case 47:
-            if (type.equals("/")) {
-                bytes = 3;
-            }
+            case 42: if (type.equals("*")) { bytes = 2; }
+                break;
+            case 43: if (type.equals("+")) { bytes = 0; }
+            case 44:
+            case 46:
+            default:
+                break;
+            case 45: if (type.equals("-")) { bytes = 1; }
+                break;
+            case 47: if (type.equals("/")) { bytes = 3; }
         }
 
         switch(bytes) {
-        case 0:
-            result = this.addition(data, point);
-            break;
-        case 1:
-            result = this.substraction(data, point);
-            break;
-        case 2:
-            result = this.scalarMultiplication(data, point);
-            break;
-        case 3:
-            result = this.division(data, point);
-            break;
-        default:
-            new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
+            case 0: result = this.addition(data, point);
+                break;
+            case 1: result = this.substraction(data, point);
+                break;
+            case 2: result = this.scalarMultiplication(data, point);
+                break;
+            case 3: result = this.division(data, point);
+                break;
+            default: new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
         }
 
         return result;
@@ -1148,28 +977,16 @@ public class Calculation {
         double[][] result = null;
         byte bytes = -1;
         switch(type.hashCode()) {
-        case 42:
-            if (type.equals("*")) {
-                bytes = 2;
-            }
-            break;
-        case 43:
-            if (type.equals("+")) {
-                bytes = 0;
-            }
-        case 44:
-        case 46:
-        default:
-            break;
-        case 45:
-            if (type.equals("-")) {
-                bytes = 1;
-            }
-            break;
-        case 47:
-            if (type.equals("/")) {
-                bytes = 3;
-            }
+            case 42: if (type.equals("*")) { bytes = 2; }
+                break;
+            case 43: if (type.equals("+")) { bytes = 0; }
+            case 44:
+            case 46:
+            default:
+                break;
+            case 45: if (type.equals("-")) { bytes = 1; }
+                break;
+            case 47: if (type.equals("/")) { bytes = 3; }
         }
 
         switch(bytes) {
@@ -1196,36 +1013,23 @@ public class Calculation {
         int[][] result = null;
         byte bytes = -1;
         switch(type.hashCode()) {
-        case 42:
-            if (type.equals("*")) {
-                bytes = 2;
-            }
+            case 42: if (type.equals("*")) { bytes = 2; }
             break;
-        case 43:
-            if (type.equals("+")) {
-                bytes = 0;
-            }
-        case 44:
-        default:
-            break;
-        case 45:
-            if (type.equals("-")) {
-                bytes = 1;
-            }
+            case 43: if (type.equals("+")) { bytes = 0; }
+            case 44:
+            default:
+                break;
+            case 45: if (type.equals("-")) { bytes = 1; }
         }
 
         switch(bytes) {
-        case 0:
-            result = this.addition(data, point);
-            break;
-        case 1:
-            result = this.substraction(data, point);
-            break;
-        case 2:
-            result = this.scalarMultiplication(data, point);
-            break;
-        default:
-            new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
+            case 0: result = this.addition(data, point);
+                break;
+            case 1: result = this.substraction(data, point);
+                break;
+            case 2: result = this.scalarMultiplication(data, point);
+                break;
+            default: new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
         }
 
         return result;
@@ -1235,36 +1039,23 @@ public class Calculation {
         int[][] result = null;
         byte bytes = -1;
         switch(type.hashCode()) {
-        case 42:
-            if (type.equals("*")) {
-                bytes = 2;
-            }
-            break;
-        case 43:
-            if (type.equals("+")) {
-                bytes = 0;
-            }
-        case 44:
-        default:
-            break;
-        case 45:
-            if (type.equals("-")) {
-                bytes = 1;
-            }
+            case 42: if (type.equals("*")) { bytes = 2; }
+                break;
+            case 43: if (type.equals("+")) { bytes = 0; }
+            case 44:
+            default:
+                break;
+            case 45: if (type.equals("-")) { bytes = 1; }
         }
 
         switch(bytes) {
-        case 0:
-            result = this.addition(data, point);
-            break;
-        case 1:
-            result = this.substraction(data, point);
-            break;
-        case 2:
-            result = this.scalarMultiplication(data, point);
-            break;
-        default:
-            new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
+            case 0: result = this.addition(data, point);
+                break;
+            case 1: result = this.substraction(data, point);
+                break;
+            case 2: result = this.scalarMultiplication(data, point);
+                break;
+            default: new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
         }
 
         return result;
@@ -1274,45 +1065,28 @@ public class Calculation {
         double[][] result = null;
         byte bytes = -1;
         switch(type.hashCode()) {
-        case 42:
-            if (type.equals("*")) {
-                bytes = 2;
-            }
+            case 42: if (type.equals("*")) { bytes = 2; }
             break;
-        case 43:
-            if (type.equals("+")) {
-                bytes = 0;
-            }
-        case 44:
-        case 46:
-        default:
-            break;
-        case 45:
-            if (type.equals("-")) {
-                bytes = 1;
-            }
-            break;
-        case 47:
-            if (type.equals("/")) {
-                bytes = 3;
-            }
+            case 43: if (type.equals("+")) { bytes = 0; }
+            case 44:
+            case 46:
+            default:
+                break;
+            case 45: if (type.equals("-")) { bytes = 1; }
+                break;
+            case 47: if (type.equals("/")) { bytes = 3; }
         }
 
         switch(bytes) {
-        case 0:
-            result = this.addition(data, point);
-            break;
-        case 1:
-            result = this.substraction(data, point);
-            break;
-        case 2:
-            result = this.scalarMultiplication(data, point);
-            break;
-        case 3:
-            result = this.division(data, point);
-            break;
-        default:
-            new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
+            case 0: result = this.addition(data, point);
+                break;
+            case 1: result = this.substraction(data, point);
+                break;
+            case 2: result = this.scalarMultiplication(data, point);
+                break;
+            case 3: result = this.division(data, point);
+                break;
+            default: new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
         }
 
         return result;
@@ -1322,36 +1096,23 @@ public class Calculation {
         int[][] result = null;
         byte bytes = -1;
         switch(type.hashCode()) {
-        case 42:
-            if (type.equals("*")) {
-                bytes = 2;
-            }
-            break;
-        case 43:
-            if (type.equals("+")) {
-                bytes = 0;
-            }
-        case 44:
-        default:
-            break;
-        case 45:
-            if (type.equals("-")) {
-                bytes = 1;
-            }
+            case 42: if (type.equals("*")) { bytes = 2; }
+                break;
+            case 43: if (type.equals("+")) { bytes = 0; }
+            case 44:
+            default:
+                break;
+            case 45: if (type.equals("-")) { bytes = 1; }
         }
 
         switch(bytes) {
-        case 0:
-            result = this.addition(data, point);
-            break;
-        case 1:
-            result = this.substraction(data, point);
-            break;
-        case 2:
-            result = this.scalarMultiplication(data, point);
-            break;
-        default:
-            new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
+            case 0: result = this.addition(data, point);
+                break;
+            case 1: result = this.substraction(data, point);
+                break;
+            case 2: result = this.scalarMultiplication(data, point);
+                break;
+            default: new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
         }
 
         return result;

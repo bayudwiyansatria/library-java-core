@@ -170,7 +170,7 @@
 		<slf4j.version>1.7.25</slf4j.version>
 		<sonatype.plugins.version>1.6.7</sonatype.plugins.version>
 		<github.plugins.version>0.12</github.plugins.version>
-		<jacoco.plugins.version>0.8.4</jacoco.plugins.version>
+		<jacoco-maven-plugin.version>0.8.4</jacoco-maven-plugin.version>
 	</properties>
 
 	<dependencyManagement>
@@ -325,6 +325,30 @@
 									<transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
 								</transformers>
 							</configuration>
+						</execution>
+					</executions>
+				</plugin>
+				<plugin>
+					<groupId>org.jacoco</groupId>
+					<artifactId>jacoco-maven-plugin</artifactId>
+					<version>${jacoco-maven-plugin.version}</version>
+					<configuration>
+						<excludes>
+							<exclude>**/FastRegexpLineParser.*</exclude>
+						</excludes>
+					</configuration>
+					<executions>
+						<execution>
+							<goals>
+								<goal>prepare-agent</goal>
+							</goals>
+						</execution>
+						<execution>
+							<id>report</id>
+							<phase>prepare-package</phase>
+							<goals>
+								<goal>report</goal>
+							</goals>
 						</execution>
 					</executions>
 				</plugin>
@@ -532,7 +556,7 @@
 			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
-				<version>${jacoco.plugins.version}</version>
+				<version>${jacoco-maven-plugin.version}</version>
 				<executions>
 					<execution>
 						<id>coverage-initialize</id>

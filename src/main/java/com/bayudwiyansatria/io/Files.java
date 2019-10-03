@@ -477,6 +477,7 @@ public class Files extends Array {
             case 3: if ("title:no".equals(titleMode)) { bytes = 3; }
             break;
             case 4: if ("title:colrow".equals(titleMode)) { bytes = 4; }
+            default: break;
         }
 
         switch(bytes) {
