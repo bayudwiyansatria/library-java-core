@@ -30,7 +30,7 @@ on:
       - master
       - release/*
   schedule:
-    - cron: 0 0 1 * * *
+    - cron: '0 0 1 * * *'
 jobs:
   test: 
     name: Test run on ${{ matrix.java-version}} and ${{matrix-operating-system}}
