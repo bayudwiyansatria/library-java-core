@@ -28,20 +28,44 @@ on:
   push:
     branches:
       - master
+      - release/*
+  schedule:
+    - cron: 0 0 1 * * *
 jobs:
-  build:
-    run:
-      name: Run
-      runs-on: ${{ matrix.operating-system }}
-      startegy:
-        matrix: 
-          operating-system: [ubuntu-latest, windows-latest]
+  test: 
+    name: Test run on ${{ matrix.java-version}} and ${{matrix-operating-system}}
+    strategy:
+        matrix:
+          java-version: [1.8]
+          operating-system: [ubuntu-latest, windows-latest, macOS-latest]
+    runs-on: ${{ matrix.operating-system }}
     steps:
       - name: Prepare
         uses: actions/checkout@v1
       - name: Set Up Java Development Kit
         uses: actions/setup-java@v1
         with:
-          java-version: 1.8
-      - name: Build with Maven
-        run: mvn clean package install --file pom.xml
+          java-version: ${{matix.java-version}}
+      - name: Maven test
+        run: |
+          mvn clean
+          mvn test
+  build:
+    name: Main
+    strategy:
+        matrix:
+          java-version: [1.8]
+          operating-system: [ubuntu-latest]
+    runs-on: ${{matrix.operating-system }}
+    steps:
+      - name: Prepare
+        uses: actions/checkout@v1
+      - name: Set Up Java Development Kit
+        uses: actions/setup-java@v1
+        with:
+          java-version: ${{matrix.java-version}}
+      - name: Maven build clean, build, test and install
+        run: |
+          mvn clean
+          mvn install
+          mvn package --file pom.xml
