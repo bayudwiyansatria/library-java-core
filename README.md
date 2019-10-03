@@ -86,7 +86,7 @@ implementation 'com.bayudwiyansatria:core:${bayudwiyansatria.core.version}'
 
 SBT
 
-```properties
+```sbt
 libraryDependencies += "com.bayudwiyansatria" % "core" % "${bayudwiyansatria.core.version}"
 ```
 

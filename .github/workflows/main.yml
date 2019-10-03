@@ -30,7 +30,12 @@ on:
       - master
 jobs:
   build:
-    runs-on: ubuntu-latest
+    run:
+      name: Run
+      runs-on: ${{ matrix.operating-system }}
+      startegy:
+        matrix: 
+          operating-system: [ubuntu-latest, windows-latest]
     steps:
       - name: Prepare
         uses: actions/checkout@v1
@@ -39,4 +44,4 @@ jobs:
         with:
           java-version: 1.8
       - name: Build with Maven
-        run: mvn package --file pom.xml
+        run: mvn clean install package --file pom.xml
