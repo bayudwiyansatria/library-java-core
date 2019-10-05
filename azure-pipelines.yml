@@ -1,6 +1,7 @@
 name: 'Bayu Dwiyan Satria - Core'
 
-trigger:
+trigger: none
+pr:
 - master
 
 pool:
