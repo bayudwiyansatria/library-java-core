@@ -1,3 +1,27 @@
+/*
+ * MIT License
+ *
+ * Copyright (c) 2019 Bayu Dwiyan Satria
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
 package com.bayudwiyansatria.io;
 
 import com.bayudwiyansatria.mat.Array;
@@ -92,23 +116,19 @@ public class Files extends Array {
     }
 
     public int[][] readCSV_int(String filename, String titlemode) {
-        String[][] read = this.readCSV(filename, titlemode);
-        return new Utils().String_to_int(read);
+        return new Utils().String_to_int(this.readCSV(filename, titlemode));
     }
 
     public int[][] readCSV_int(String filename) {
-        String[][] read = this.readCSV(filename, "title:no");
-        return new Utils().String_to_int(read);
+        return new Utils().String_to_int(this.readCSV(filename, "title:no"));
     }
 
     public double[][] readCSV_double(String filename, String titlemode) {
-        String[][] read = this.readCSV(filename, titlemode);
-        return new Utils().String_to_double(read);
+        return new Utils().String_to_double(this.readCSV(filename, titlemode));
     }
 
     public double[][] readCSV_double(String filename) {
-        String[][] read = this.readCSV(filename, "title:no");
-        return new Utils().String_to_double(read);
+        return new Utils().String_to_double(this.readCSV(filename, "title:no"));
     }
 
     public String[][] readCSV_String(String filename, String titlemode) {
@@ -347,6 +367,7 @@ public class Files extends Array {
         try {
             ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream(filename + ".dst"));
             outputStream.writeObject(data);
+            outputStream.close();
         } catch (Exception e) {
             new Utils().warning(e.toString());
         }
@@ -357,6 +378,7 @@ public class Files extends Array {
         try {
             ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream(filename + ".dst"));
             outputStream.writeObject(data);
+            outputStream.close();
         } catch (Exception e) {
             new Utils().warning(e.toString());
         }
@@ -367,6 +389,7 @@ public class Files extends Array {
         try {
             ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream(filename + ".dst"));
             outputStream.writeObject(data);
+            outputStream.close();
         } catch (Exception e) {
             new Utils().warning(e.toString());
         }
@@ -377,6 +400,7 @@ public class Files extends Array {
         try {
             ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream(filename + ".dst"));
             outputStream.writeObject(data);
+            outputStream.close();
         } catch (Exception e) {
             new Utils().warning(e.toString());
         }
@@ -387,8 +411,9 @@ public class Files extends Array {
         int[] data = null;
 
         try {
-            ObjectInputStream _inputStream = new ObjectInputStream(new FileInputStream(filename + ".dst"));
-            data = (int[])_inputStream.readObject();
+            ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream(filename + ".dst"));
+            data = (int[])inputStream.readObject();
+            inputStream.close();
         } catch (Exception e) {
             new Utils().warning(e.toString());
         }
@@ -400,8 +425,9 @@ public class Files extends Array {
         int[][] data = null;
 
         try {
-            ObjectInputStream _inputStream = new ObjectInputStream(new FileInputStream(filename + ".dst"));
-            data = (int[][])_inputStream.readObject();
+            ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream(filename + ".dst"));
+            data = (int[][])inputStream.readObject();
+            inputStream.close();
         } catch (Exception e) {
             new Utils().warning(e.toString());
         }
@@ -413,8 +439,9 @@ public class Files extends Array {
         double[] data = null;
 
         try {
-            ObjectInputStream _inputStream = new ObjectInputStream(new FileInputStream(filename + ".dst"));
-            data = (double[])_inputStream.readObject();
+            ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream(filename + ".dst"));
+            data = (double[])inputStream.readObject();
+            inputStream.close();
         } catch (Exception e) {
             new Utils().warning(e.toString());
         }
@@ -426,8 +453,9 @@ public class Files extends Array {
         double[][] data = null;
 
         try {
-            ObjectInputStream _inputStream = new ObjectInputStream(new FileInputStream(filename + ".dst"));
-            data = (double[][])_inputStream.readObject();
+            ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream(filename + ".dst"));
+            data = (double[][])inputStream.readObject();
+            inputStream.close();
         } catch (Exception e) {
             new Utils().warning(e.toString());
         }
@@ -436,34 +464,20 @@ public class Files extends Array {
     }
 
 
-    public void convertCSV_to_DST_int(String filename, String titlemode) {
+    public void convertCSV_to_DST_int(String filename, String titleMode) {
         boolean validation = false;
         byte bytes = -1;
-        switch(titlemode.hashCode()) {
-            case 0:
-                if (titlemode.equals("title:col")) {
-                    bytes = 0;
-                }
-                break;
-            case 1:
-                if (titlemode.equals("title:row")) {
-                    bytes = 1;
-                }
-                break;
-            case 2:
-                if (titlemode.equals("title:rowcol")) {
-                    bytes = 2;
-                }
-                break;
-            case 3:
-                if (titlemode.equals("title:no")) {
-                    bytes = 3;
-                }
-                break;
-            case 4:
-                if (titlemode.equals("title:colrow")) {
-                    bytes = 4;
-                }
+        switch(titleMode.hashCode()) {
+            case 0: if ( "title:col".equals(titleMode)) { bytes = 0; }
+            break;
+            case 1: if ("title:row".equals(titleMode)) { bytes = 1; }
+            break;
+            case 2: if ("title:rowcol".equals(titleMode)) { bytes = 2; }
+            break;
+            case 3: if ("title:no".equals(titleMode)) { bytes = 3; }
+            break;
+            case 4: if ("title:colrow".equals(titleMode)) { bytes = 4; }
+            default: break;
         }
 
         switch(bytes) {
@@ -471,14 +485,13 @@ public class Files extends Array {
             case 1:
             case 2:
             case 3:
-            case 4:
-                validation = true;
-                break;
+            case 4: validation = true;
+            break;
         }
 
         if (validation) {
             try {
-                int[][] dataset = this.readCSV_int(filename, titlemode);
+                int[][] dataset = this.readCSV_int(filename, titleMode);
                 this.saveDST(dataset, filename);
             } catch (Exception var6) {
                 new Utils().warning("Can not find the file!");

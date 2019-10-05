@@ -1,3 +1,27 @@
+/*
+ * MIT License
+ *
+ * Copyright (c) 2019 Bayu Dwiyan Satria
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
 package com.bayudwiyansatria.math;
 
 import java.math.BigInteger;
@@ -51,22 +75,22 @@ public class PermutationGenerator {
             this.numLeft = this.numLeft.subtract(BigInteger.ONE);
             return this.a;
         } else {
+            int i;
             int j;
-            for(j = this.a.length - 2; this.a[j] > this.a[j + 1]; --j) {
+            for(i = this.a.length - 2; this.a[i] > this.a[i + 1]; --i) {
             }
 
-            int k;
-            for(k = this.a.length - 1; this.a[j] > this.a[k]; --k) {
+            for(j = this.a.length - 1; this.a[i] > this.a[j]; --j) {
             }
 
-            int temp = this.a[k];
-            this.a[k] = this.a[j];
-            this.a[j] = temp;
+            int temp = this.a[j];
+            this.a[j] = this.a[i];
+            this.a[i] = temp;
             int r = this.a.length - 1;
 
-            for(int s = j + 1; r > s; ++s) {
-                temp = this.a[s];
-                this.a[s] = this.a[r];
+            for(int k = i + 1; r > k; ++k) {
+                temp = this.a[k];
+                this.a[k] = this.a[r];
                 this.a[r] = temp;
                 --r;
             }

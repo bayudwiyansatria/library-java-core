@@ -1,212 +1,39 @@
-package com.bayudwiyansatria.mat;
+/*
+ * MIT License
+ *
+ * Copyright (c) 2019 Bayu Dwiyan Satria
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
 
-import com.bayudwiyansatria.math.Math;
-import com.bayudwiyansatria.utils.Utils;
+package com.bayudwiyansatria.mat;
 
 import java.util.*;
 
-public class Array {
-
-    /* ======================================= Array View Start ======================================================*/
-
-    public void print(int data) {
-        System.out.println(data + "\n");
-    }
-
-    public void print(double data) {
-        System.out.println(data + "\n");
-    }
-
-    public void print(long data) {
-        System.out.println(data + "\n");
-    }
-
-    public void print(String data) {
-        System.out.println(data + "\n");
-    }
-
-    public void print(String label, int data) {
-        System.out.println(label + " = " + data + "\n");
-    }
-
-    public void print(String label, double data) {
-        System.out.println(label + " = " + data + "\n");
-    }
-
-    public void print(String label, long data) {
-        System.out.println(label + " = " + data + "\n");
-    }
-
-    public void print(String label, String data) {
-        System.out.println(label + " = " + data + "\n");
-    }
-
-    public void print(int[] data) {
-        this.print("", data);
-    }
-
-    public void print(double[] data) {
-        this.print("", data);
-    }
-
-    public void print(String[] data) {
-        this.print("", data);
-    }
-
-    public void print(int[][] data) {
-        this.print("", data);
-    }
-
-    public void print(double[][] data) {
-        this.print("", data);
-    }
-
-    public void print(String[][] data) {
-        this.print("", data);
-    }
-
-    public void print(double data, int decimal_fraction) {
-        System.out.println(new Math().getRound(data, decimal_fraction) + "\n");
-    }
-
-    public void print(double[] data, int decimal_fraction) {
-        this.print("", data, decimal_fraction);
-    }
-
-    public void print(double[][] data, int decimal_fraction) {
-        this.print("", data, decimal_fraction);
-    }
-
-    public void print(String label, double data, int decimal_fraction) {
-        System.out.println(label + " = " + new Math().getRound(data, decimal_fraction) + "\n");
-    }
-
-    public void print(String label, int[] data) {
-        if (label.length() > 0) {
-            System.out.println(label + " =");
-        }
-        for(int i = 0; i < data.length - 1; ++i) {
-            System.out.print(data[i] + "    ");
-        }
-        if (data.length > 0) {
-            System.out.print(data[data.length - 1]);
-        }
-        System.out.print("\n\n");
-    }
-
-    public void print(String label, double[] data) {
-        if (label.length() > 0) {
-            System.out.println(label + " =");
-        }
-
-        for(int i = 0; i < data.length - 1; ++i) {
-            System.out.print(data[i] + "    ");
-        }
-
-        if (data.length > 0) {
-            System.out.print(data[data.length - 1]);
-        }
-
-        System.out.print("\n\n");
-    }
-
-    public void print(String label, String[] data) {
-        if (label.length() > 0) {
-            System.out.println(label + " =");
-        }
-        for(int i = 0; i < data.length - 1; ++i) {
-            System.out.print(data[i] + "    ");
-        }
-        if (data.length > 0) {
-            System.out.print(data[data.length - 1]);
-        }
-
-        System.out.print("\n\n");
-    }
-
-    public void print(String label, int[][] data) {
-        if (label.length() > 0) {
-            System.out.println(label + " =");
-        }
-
-        for(int i = 0; i < data.length; ++i) {
-            for(int j = 0; j < data[i].length; ++j) {
-                System.out.print(data[i][j] + "    ");
-            }
-            System.out.print("\n");
-        }
-        System.out.print("\n");
-    }
-
-    public void print(String label, double[][] data) {
-        if (label.length() > 0) {
-            System.out.println(label + " =");
-        }
-
-        for(int i = 0; i < data.length; ++i) {
-
-            for(int j = 0; j < data[i].length; ++j) {
-                System.out.print(data[i][j] + "    ");
-            }
-
-            System.out.print("\n");
-        }
-
-        System.out.print("\n");
-    }
-
-    public void print(String label, String[][] data) {
-        if (label.length() > 0) {
-            System.out.println(label + " =");
-        }
-
-        for(int i = 0; i < data.length; ++i) {
-            for(int j = 0; j < data[i].length; ++j) {
-                System.out.print(data[i][j] + "    ");
-            }
-            System.out.print("\n");
-        }
-        System.out.print("\n");
-    }
-
-
-    public void print(String label, double[] data, int decimal_fraction) {
-        if (label.length() > 0) {
-            System.out.println(label + " =");
-        }
-        for(int i = 0; i < data.length - 1; ++i) {
-            System.out.print(new Math().getRound(data[i], decimal_fraction) + "    ");
-        }
-        if (data.length > 0) {
-            System.out.print(new Math().getRound(data[data.length - 1], decimal_fraction));
-        }
-        System.out.print("\n\n");
-    }
-
-    public void print(String label, double[][] data, int decimal_fraction) {
-        if (label.length() > 0) {
-            System.out.println(label + " =");
-        }
-
-        for(int i = 0; i < data.length; ++i) {
-            for(int j = 0; j < data[i].length; ++j) {
-                System.out.print(new Math().getRound(data[i][j], decimal_fraction) + "    ");
-            }
-            System.out.print("\n");
-        }
-        System.out.print("\n");
-    }
-
-    /* ======================================= Array View End ========================================================*/
+public class Array extends Vector {
 
     /* ======================================= Array Get Dimension Start =============================================*/
 
     public int[] getRow(int[][] data, int row) {
         int[] rowData = new int[data[0].length];
         try {
-            for(int i = 0; i < data[0].length; ++i) {
-                rowData[i] = data[row][i];
-            }
+            System.arraycopy(data[row], 0, rowData, 0, data[0].length);
         } catch (Exception e) {
             System.out.println("Row is not correct!");
         }
@@ -217,41 +44,39 @@ public class Array {
         double[] rowData = new double[data[0].length];
         try {
             System.arraycopy(data[row], 0, rowData, 0, data[0].length);
-        } catch (Exception var6) {
+        } catch (Exception e) {
             System.out.println("Row is not correct!");
         }
         return rowData;
     }
 
-    public int[] getRow(int[] data, int startrow, int endrow) {
-        int[] rowData = new int[endrow - startrow + 1];
+    public int[] getRow(int[] data, int startRow, int endRow) {
+        int[] rowData = new int[endRow - startRow + 1];
         try {
-            for(int i = ~(0 - (int)(1L + (long)startrow)); i <= endrow; ++i) {
-                rowData[i - startrow] = data[i];
-            }
-        } catch (Exception var7) {
+            if (endRow + 1 - ~(0 - (int) (1L + (long) startRow)) >= 0)
+                System.arraycopy(data, ~(0 - (int) (1L + (long) startRow)), rowData, ~(0 - (int) (1L + (long) startRow)) - startRow, endRow + 1 - ~(0 - (int) (1L + (long) startRow)));
+        } catch (Exception e) {
             System.out.println("Row is not correct!");
         }
         return rowData;
     }
 
-    public double[] getRow(double[] data, int startrow, int endrow) {
-        double[] rowData = new double[endrow - startrow + 1];
+    public double[] getRow(double[] data, int startRow, int endRow) {
+        double[] rowData = new double[endRow - startRow + 1];
         try {
-            for(int i = ~(0 - (int)(1L + (long)startrow)); i <= endrow; ++i) {
-                rowData[i - startrow] = data[i];
-            }
-        } catch (Exception var7) {
+            if (endRow + 1 - ~(0 - (int) (1L + (long) startRow)) >= 0)
+                System.arraycopy(data, ~(0 - (int) (1L + (long) startRow)), rowData, ~(0 - (int) (1L + (long) startRow)) - startRow, endRow + 1 - ~(0 - (int) (1L + (long) startRow)));
+        } catch (Exception e) {
             System.out.println("Row is not correct!");
         }
         return rowData;
     }
 
-    public int[][] getRow(int[][] data, int startrow, int endrow) {
-        int[][] rowData = new int[endrow - startrow + 1][data[0].length];
+    public int[][] getRow(int[][] data, int startRow, int endRow) {
+        int[][] rowData = new int[endRow - startRow + 1][data[0].length];
         try {
-            for(int i = ~(0 - (int)(1L + (long)startrow)); i <= endrow; ++i) {
-                System.arraycopy(data[i], 0, rowData[i - startrow], 0, data[0].length);
+            for(int i = ~(0 - (int)(1L + (long)startRow)); i <= endRow; ++i) {
+                System.arraycopy(data[i], 0, rowData[i - startRow], 0, data[0].length);
             }
         } catch (Exception var8) {
             System.out.println("Row is not correct!");
@@ -259,12 +84,12 @@ public class Array {
         return rowData;
     }
 
-    public double[][] getRow(double[][] data, int startrow, int endrow) {
-        double[][] rowData = new double[endrow - startrow + 1][data[0].length];
+    public double[][] getRow(double[][] data, int startRow, int endRow) {
+        double[][] rowData = new double[endRow - startRow + 1][data[0].length];
         try {
-            for(int i = ~(0 - (int)(1L + (long)startrow)); i <= endrow; ++i) {
+            for(int i = ~(0 - (int)(1L + (long)startRow)); i <= endRow; ++i) {
                 for(int j = 0; i < data[0].length; ++i) {
-                    rowData[i - startrow][i] = data[i][j];
+                    rowData[i - startRow][i] = data[i][j];
                 }
             }
         } catch (Exception var9) {
@@ -279,7 +104,7 @@ public class Array {
             for(int i = 0; i < data.length; ++i) {
                 colData[i] = data[i][col];
             }
-        } catch (Exception var6) {
+        } catch (Exception e) {
             System.out.println("Column is not correct!");
         }
         return colData;
@@ -291,45 +116,42 @@ public class Array {
             for(int i = 0; i < data.length; ++i) {
                 colData[i] = data[i][col];
             }
-        } catch (Exception var6) {
+        } catch (Exception e) {
             System.out.println("Column is not correct!");
         }
         return colData;
     }
 
-    public int[] getCol(int[] data, int startcol, int endcol) {
-        int[] colData = new int[endcol - startcol + 1];
+    public int[] getCol(int[] data, int startColumn, int endColumn) {
+        int[] colData = new int[endColumn - startColumn + 1];
         try {
-            for(int i = ~(0 - (int)(1L + (long)startcol)); i <= endcol; ++i) {
-                colData[i - startcol] = data[i];
-            }
-        } catch (Exception var7) {
+            if (endColumn + 1 - ~(0 - (int) (1L + (long) startColumn)) >= 0)
+                System.arraycopy(data, ~(0 - (int) (1L + (long) startColumn)), colData, ~(0 - (int) (1L + (long) startColumn)) - startColumn, endColumn + 1 - ~(0 - (int) (1L + (long) startColumn)));
+        } catch (Exception e) {
             System.out.println("Row is not correct!");
         }
 
         return colData;
     }
 
-    public double[] getCol(double[] data, int startcol, int endcol) {
-        double[] colData = new double[endcol - startcol + 1];
+    public double[] getCol(double[] data, int startColumn, int endColumn) {
+        double[] colData = new double[endColumn - startColumn + 1];
 
         try {
-            for(int i = ~(0 - (int)(1L + (long)startcol)); i <= endcol; ++i) {
-                colData[i - startcol] = data[i];
-            }
-        } catch (Exception var7) {
+            if (endColumn + 1 - ~(0 - (int) (1L + (long) startColumn)) >= 0)
+                System.arraycopy(data, ~(0 - (int) (1L + (long) startColumn)), colData, ~(0 - (int) (1L + (long) startColumn)) - startColumn, endColumn + 1 - ~(0 - (int) (1L + (long) startColumn)));
+        } catch (Exception e) {
             System.out.println("Row is not correct!");
         }
         return colData;
     }
 
-    public int[][] getCol(int[][] data, int startcol, int endcol) {
-        int[][] colData = new int[data.length][endcol - startcol + 1];
+    public int[][] getCol(int[][] data, int startColumn, int endColumn) {
+        int[][] colData = new int[data.length][endColumn - startColumn + 1];
         try {
             for(int i = 0; i < data.length; ++i) {
-                for(int j = ~(0 - (int)(1L + (long)startcol)); j <= endcol; ++j) {
-                    colData[i][j - startcol] = data[i][j];
-                }
+                if (endColumn + 1 - ~(0 - (int) (1L + (long) startColumn)) >= 0)
+                    System.arraycopy(data[i], ~(0 - (int) (1L + (long) startColumn)), colData[i], ~(0 - (int) (1L + (long) startColumn)) - startColumn, endColumn + 1 - ~(0 - (int) (1L + (long) startColumn)));
             }
         } catch (Exception var9) {
             System.out.println("Column is not correct!");
@@ -337,13 +159,12 @@ public class Array {
         return colData;
     }
 
-    public double[][] getCol(double[][] data, int startcol, int endcol) {
-        double[][] colData = new double[data.length][endcol - startcol + 1];
+    public double[][] getCol(double[][] data, int startColumn, int endColumn) {
+        double[][] colData = new double[data.length][endColumn - startColumn + 1];
         try {
             for(int i = 0; i < data.length; ++i) {
-                for(int j = ~(0 - (int)(1L + (long)startcol)); j <= endcol; ++j) {
-                    colData[i][j - startcol] = data[i][j];
-                }
+                if (endColumn + 1 - ~(0 - (int) (1L + (long) startColumn)) >= 0)
+                    System.arraycopy(data[i], ~(0 - (int) (1L + (long) startColumn)), colData[i], ~(0 - (int) (1L + (long) startColumn)) - startColumn, endColumn + 1 - ~(0 - (int) (1L + (long) startColumn)));
             }
         } catch (Exception var9) {
             System.out.println("Column is not correct!");
@@ -351,13 +172,12 @@ public class Array {
         return colData;
     }
 
-    public int[][] getRowCol(int[][] data, int startrow, int endrow, int startcol, int endcol) {
-        int[][] colData = new int[endrow - startrow + 1][endcol - startcol + 1];
+    public int[][] getRowCol(int[][] data, int startRow, int endRow, int startColumn, int endColumn) {
+        int[][] colData = new int[endRow - startRow + 1][endColumn - startColumn + 1];
         try {
-            for(int i = ~(0 - (int)(1L + (long)startrow)); i <= endrow; ++i) {
-                for(int j = ~(0 - (int)(1L + (long)startcol)); j <= endcol; ++j) {
-                    colData[i - startrow][j - startcol] = data[i][j];
-                }
+            for(int i = ~(0 - (int)(1L + (long)startRow)); i <= endRow; ++i) {
+                if (endColumn + 1 - ~(0 - (int) (1L + (long) startColumn)) >= 0)
+                    System.arraycopy(data[i], ~(0 - (int) (1L + (long) startColumn)), colData[i - startRow], ~(0 - (int) (1L + (long) startColumn)) - startColumn, endColumn + 1 - ~(0 - (int) (1L + (long) startColumn)));
             }
         } catch (Exception var11) {
             System.out.println("Row is not correct!");
@@ -365,13 +185,12 @@ public class Array {
         return colData;
     }
 
-    public double[][] getRowCol(double[][] data, int startrow, int endrow, int startcol, int endcol) {
-        double[][] colData = new double[endrow - startrow + 1][endcol - startcol + 1];
+    public double[][] getRowCol(double[][] data, int startRow, int endRow, int startColumn, int endColumn) {
+        double[][] colData = new double[endRow - startRow + 1][endColumn - startColumn + 1];
         try {
-            for(int i = ~(0 - (int)(1L + (long)startrow)); i <= endrow; ++i) {
-                for(int j = ~(0 - (int)(1L + (long)startcol)); j <= endcol; ++j) {
-                    colData[i - startrow][j - startcol] = data[i][j];
-                }
+            for(int i = ~(0 - (int)(1L + (long)startRow)); i <= endRow; ++i) {
+                if (endColumn + 1 - ~(0 - (int) (1L + (long) startColumn)) >= 0)
+                    System.arraycopy(data[i], ~(0 - (int) (1L + (long) startColumn)), colData[i - startRow], ~(0 - (int) (1L + (long) startColumn)) - startColumn, endColumn + 1 - ~(0 - (int) (1L + (long) startColumn)));
             }
         } catch (Exception var11) {
             System.out.println("Row is not correct!");
@@ -393,29 +212,29 @@ public class Array {
 
     public int[][] sortData(int[] data, String mode) {
         int[][] newData = new int[2][data.length];
-        mode = mode.toLowerCase();
+        String dataSort = mode.toLowerCase();
         int[] ar = this.copyArray(data);
         Arrays.sort(ar);
         Map<Integer, Integer> map = new HashMap<>();
         for(int i = 0; i < data.length; ++i) {
             map.put(i, data[i]);
         }
-        Map<String, String> sortedMap = sortByComparator(map);
+        Map<?, ?> sortedMap = sortByComparator(map);
         int p;
-        Iterator iterator;
-        Map.Entry entry;
-        if (mode.equals("asc")) {
+        Iterator<?> iterator;
+        Map.Entry<?,?> entry;
+        if (dataSort.equals("asc")) {
             p = 0;
             for(iterator = sortedMap.entrySet().iterator(); iterator.hasNext(); ++p) {
-                entry = (Map.Entry)iterator.next();
+                entry = (Map.Entry<?,?>) iterator.next();
                 newData[1][p] = (Integer)entry.getKey();
                 newData[0][p] = (Integer)entry.getValue();
             }
-        } else if (mode.equals("desc")) {
+        } else if (dataSort.equals("desc")) {
             p = data.length - 1;
 
             for(iterator = sortedMap.entrySet().iterator(); iterator.hasNext(); --p) {
-                entry = (Map.Entry)iterator.next();
+                entry = (Map.Entry<?,?>)iterator.next();
                 newData[1][p] = (Integer)entry.getKey();
                 newData[0][p] = (Integer)entry.getValue();
             }
@@ -426,40 +245,40 @@ public class Array {
     }
 
     public double[][] sortData(double[] data, String mode) {
-        double[][] _hasil = new double[2][data.length];
-        mode = mode.toLowerCase();
+        double[][] output = new double[2][data.length];
+        String dataSort = mode.toLowerCase();
         double[] ar = this.copyArray(data);
         Arrays.sort(ar);
         Map<Integer, Double> map = new HashMap<>();
         for(int i = 0; i < data.length; ++i) {
             map.put(i, data[i]);
         }
-        Map<String, String> sortedMap = sortByComparator(map);
+        Map<?, ?> sortedMap = sortByComparator(map);
         int p;
-        Iterator iterator;
-        Map.Entry entry;
-        if (mode.equals("asc")) {
+        Iterator<?> iterator;
+        Map.Entry<?,?> entry;
+        if (dataSort.equals("asc")) {
             p = 0;
             for(iterator = sortedMap.entrySet().iterator(); iterator.hasNext(); ++p) {
-                entry = (Map.Entry)iterator.next();
-                _hasil[1][p] = (double)(Integer)entry.getKey();
-                _hasil[0][p] = (Double)entry.getValue();
+                entry = (Map.Entry<?,?>)iterator.next();
+                output[1][p] = (double)(Integer)entry.getKey();
+                output[0][p] = (Double)entry.getValue();
             }
-        } else if (mode.equals("desc")) {
+        } else if (dataSort.equals("desc")) {
             p = data.length - 1;
             for(iterator = sortedMap.entrySet().iterator(); iterator.hasNext(); --p) {
-                entry = (Map.Entry)iterator.next();
-                _hasil[1][p] = (double)(Integer)entry.getKey();
-                _hasil[0][p] = (Double)entry.getValue();
+                entry = (Map.Entry<?,?>)iterator.next();
+                output[1][p] = (double)(Integer)entry.getKey();
+                output[0][p] = (Double)entry.getValue();
             }
         } else {
             System.out.println("Mode incorrect");
         }
-        return _hasil;
+        return output;
     }
 
-    private static Map sortByComparator(Map unsortMap) {
-        List list = new LinkedList(unsortMap.entrySet());
+    public static Map sortByComparator(Map unsortMap) {
+        List list = new LinkedList<>(unsortMap.entrySet());
         Collections.sort(list, new Comparator() {
             public int compare(Object o1, Object o2) {
                 return ((Comparable)((Map.Entry)((Map.Entry)o1)).getValue()).compareTo(((Map.Entry)((Map.Entry)o2)).getValue());
@@ -469,7 +288,7 @@ public class Array {
         Iterator iterator = list.iterator();
 
         while(iterator.hasNext()) {
-            Map.Entry entry = (Map.Entry)iterator.next();
+            Map.Entry<?,?> entry = (Map.Entry<?,?>)iterator.next();
             sortedMap.put(entry.getKey(), entry.getValue());
         }
         return sortedMap;
@@ -482,12 +301,11 @@ public class Array {
     public int[] mergeArray(int[] data1, int[] data2) {
         int[] newArray = this.initArray(data1.length + data2.length, 0);
 
-        int i;
-        for(i = 0; i < data1.length; ++i) {
+        for(int i = 0; i < data1.length; ++i) {
             newArray[i] = data1[i];
         }
 
-        for(i = 0; i < data2.length; ++i) {
+        for(int i = 0; i < data2.length; ++i) {
             newArray[data1.length + i] = data2[i];
         }
 
@@ -497,19 +315,18 @@ public class Array {
     public double[] mergeArray(double[] data1, double[] data2) {
         double[] newArray = this.initArray(data1.length + data2.length, 0.0);
 
-        int i;
-        for(i = 0; i < data1.length; ++i) {
+        for(int i = 0; i < data1.length; ++i) {
             newArray[i] = data1[i];
         }
 
-        for(i = 0; i < data2.length; ++i) {
+        for(int i = 0; i < data2.length; ++i) {
             newArray[data1.length + i] = data2[i];
         }
 
         return newArray;
     }
 
-    public int[][] mergeArray_row(int[] data1, int[] data2) {
+    public int[][] mergeArrayRow(int[] data1, int[] data2) {
         int[][] newArray = this.initArray(2, data1.length, 0);
         if (data1.length != data2.length) {
             System.out.println("length of both data has to be same!");
@@ -523,7 +340,7 @@ public class Array {
         return newArray;
     }
 
-    public double[][] mergeArray_row(double[] data1, double[] data2) {
+    public double[][] mergeArrayRow(double[] data1, double[] data2) {
         double[][] newArray = this.initArray(2, data1.length, 0.0);
         if (data1.length != data2.length) {
             System.out.println("length of both data has to be same!");
@@ -537,7 +354,7 @@ public class Array {
         return newArray;
     }
 
-    public int[][] mergeArray_col(int[] data1, int[] data2) {
+    public int[][] mergeArrayColumn(int[] data1, int[] data2) {
         int[][] newArray = this.initArray(data1.length, 2, 0);
         if (data1.length != data2.length) {
             System.out.println("length of both data has to be same!");
@@ -551,7 +368,7 @@ public class Array {
         return newArray;
     }
 
-    public double[][] mergeArray_col(double[] data1, double[] data2) {
+    public double[][] mergeArrayColumn(double[] data1, double[] data2) {
         double[][] newArray = this.initArray(data1.length, 2, 0.0);
         if (data1.length != data2.length) {
             System.out.println("length of both data has to be same!");
@@ -565,7 +382,7 @@ public class Array {
         return newArray;
     }
 
-    public int[][] mergeArray_row(int[] data1, int[][] data2) {
+    public int[][] mergeArrayRow(int[] data1, int[][] data2) {
         int dimension = data2[0].length;
         int[][] newArray = (int[][])null;
         if (dimension == data1.length) {
@@ -588,7 +405,7 @@ public class Array {
         return newArray;
     }
 
-    public double[][] mergeArray_row(double[] data1, double[][] data2) {
+    public double[][] mergeArrayRow(double[] data1, double[][] data2) {
         int dimension = data2[0].length;
         double[][] newArray = (double[][])null;
         if (dimension == data1.length) {
@@ -611,7 +428,7 @@ public class Array {
         return newArray;
     }
 
-    public int[][] mergeArray_col(int[] data1, int[][] data2) {
+    public int[][] mergeArrayColumn(int[] data1, int[][] data2) {
         int dimension = data2[0].length;
         int[][] newArray = (int[][])null;
         if (data1.length == data2.length) {
@@ -631,7 +448,7 @@ public class Array {
         return newArray;
     }
 
-    public double[][] mergeArray_col(double[] data1, double[][] data2) {
+    public double[][] mergeArrayColumn(double[] data1, double[][] data2) {
         int dimension = data2[0].length;
         double[][] newArray = (double[][])null;
         if (data1.length == data2.length) {
@@ -651,7 +468,7 @@ public class Array {
         return newArray;
     }
 
-    public int[][] mergeArray_row(int[][] data1, int[] data2) {
+    public int[][] mergeArrayRow(int[][] data1, int[] data2) {
         int[][] newArray = (int[][])null;
         if (data1[0].length == data2.length) {
             newArray = this.initArray(data1.length + 1, data1[0].length, 0);
@@ -673,7 +490,7 @@ public class Array {
         return newArray;
     }
 
-    public double[][] mergeArray_row(double[][] data1, double[] data2) {
+    public double[][] mergeArrayRow(double[][] data1, double[] data2) {
         double[][] newArray = (double[][])null;
         if (data1[0].length == data2.length) {
             newArray = this.initArray(data1.length + 1, data1[0].length, 0.0);
@@ -695,7 +512,7 @@ public class Array {
         return newArray;
     }
 
-    public int[][] mergeArray_col(int[][] data1, int[] data2) {
+    public int[][] mergeArrayColumn(int[][] data1, int[] data2) {
         int[][] newArray = (int[][])null;
         if (data1.length == data2.length) {
             newArray = this.initArray(data1.length, data1[0].length + 1, 0);
@@ -714,7 +531,7 @@ public class Array {
         return newArray;
     }
 
-    public double[][] mergeArray_col(double[][] data1, double[] data2) {
+    public double[][] mergeArrayColumn(double[][] data1, double[] data2) {
         double[][] newArray = (double[][])null;
         if (data1.length == data2.length) {
             newArray = this.initArray(data1.length, data1[0].length + 1, 0.0);
@@ -733,7 +550,7 @@ public class Array {
         return newArray;
     }
 
-    public int[][] mergeArray_row(int[][] data1, int[][] data2) {
+    public int[][] mergeArrayRow(int[][] data1, int[][] data2) {
         int dimension = data2[0].length;
         int[][] newArray = this.initArray(data1.length + data2.length, data1[0].length, 0);
         if (data1[0].length != dimension) {
@@ -754,7 +571,7 @@ public class Array {
         return newArray;
     }
 
-    public double[][] mergeArray_row(double[][] data1, double[][] data2) {
+    public double[][] mergeArrayRow(double[][] data1, double[][] data2) {
         double[][] newArray = this.initArray(data1.length + data2.length, data1[0].length, 0.0);
         if (data1[0].length != data1[0].length) {
             System.out.println("Cols of both data has to be same!");
@@ -771,7 +588,7 @@ public class Array {
         return newArray;
     }
 
-    public int[][] mergeArray_col(int[][] data1, int[][] data2) {
+    public int[][] mergeArrayColumn(int[][] data1, int[][] data2) {
         int dimension = data2[0].length;
         int[][] newArray = this.initArray(data1.length, data1[0].length + dimension, 0);
         if (data1.length != data2.length) {
@@ -790,7 +607,7 @@ public class Array {
         return newArray;
     }
 
-    public double[][] mergeArray_col(double[][] data1, double[][] data2) {
+    public double[][] mergeArrayColumn(double[][] data1, double[][] data2) {
         int dimension = data2[0].length;
         double[][] newArray = this.initArray(data1.length, data1[0].length + dimension, 0.0);
         if (data1.length != data2.length) {
@@ -941,7 +758,7 @@ public class Array {
             newArray = new int[length];
 
             for(int i = 0; i < length; ++i) {
-                newArray[i] = new Math().getRandom(min, max);
+                newArray[i] = new com.bayudwiyansatria.math.Math().getRandom(min, max);
             }
         } else {
             System.out.println("Array length must be greater than zero!");
@@ -956,7 +773,7 @@ public class Array {
             newArray = new double[length];
 
             for(int i = 0; i < length; ++i) {
-                newArray[i] = new Math().getRandom(min, max);
+                newArray[i] = new com.bayudwiyansatria.math.Math().getRandom(min, max);
             }
         } else {
             System.out.println("Array length must be greater than zero!");
@@ -966,13 +783,12 @@ public class Array {
     }
 
     public int[][] initArrayRandom(int rows, int cols, int min, int max) {
-        int[][] newArray = (int[][])null;
+        int[][] newArray = null;
         if (rows > 0 && cols > 0) {
             newArray = new int[rows][cols];
-
             for(int i = 0; i < rows; ++i) {
                 for(int j = 0; j < cols; ++j) {
-                    newArray[i][j] = new Math().getRandom(min, max);
+                    newArray[i][j] = new com.bayudwiyansatria.math.Math().getRandom(min, max);
                 }
             }
         } else {
@@ -983,13 +799,13 @@ public class Array {
     }
 
     public double[][] initArrayRandom(int rows, int cols, double min, double max) {
-        double[][] newArray = (double[][])null;
+        double[][] newArray = null;
         if (rows > 0 && cols > 0) {
             newArray = new double[rows][cols];
 
             for(int i = 0; i < rows; ++i) {
                 for(int j = 0; j < cols; ++j) {
-                    newArray[i][j] = new Math().getRandom(min, max);
+                    newArray[i][j] = new com.bayudwiyansatria.math.Math().getRandom(min, max);
                 }
             }
         } else {
@@ -1006,14 +822,14 @@ public class Array {
 
         int j;
         for (int[] ints : center) {
-            int r = new Math().getRandom(1, 10);
+            int r = new com.bayudwiyansatria.math.Math().getRandom(1, 10);
             if (r > 5) {
                 int x = ints[0];
                 int y = ints[1];
 
                 for (j = 0; j < 20; ++j) {
-                    list_x.add(new Math().getRandom(x - dimension, x + dimension));
-                    list_y.add(new Math().getRandom(y - dimension, y + dimension));
+                    list_x.add(new com.bayudwiyansatria.math.Math().getRandom(x - dimension, x + dimension));
+                    list_y.add(new com.bayudwiyansatria.math.Math().getRandom(y - dimension, y + dimension));
                 }
             }
         }
@@ -1037,7 +853,7 @@ public class Array {
         int length = data.length();
         String tmp = this.cleanArrIn(data);
         String[] split = tmp.split(",");
-        int[] newData = new Utils().String_to_int(split);
+        int[] newData = new com.bayudwiyansatria.utils.Utils().String_to_int(split);
         return newData;
     }
 
@@ -1046,7 +862,7 @@ public class Array {
         int length = data.length();
         String tmp = this.cleanArrIn(data);
         String[] split = tmp.split(",");
-        double[] newData = new Utils().String_to_double(split);
+        double[] newData = new com.bayudwiyansatria.utils.Utils().String_to_double(split);
         return newData;
     }
 
@@ -1114,23 +930,22 @@ public class Array {
 
     /* ======================================= Array Remove Start =====================================================*/
 
-    private String cleanArrIn(String data) {
-        if (data.charAt(0) != '[' && data.charAt(data.length() - 1) != ']') {
+    public String cleanArrIn(String data) {
+        String newData = data;
+        if (newData.charAt(0) != '[' && newData.charAt(newData.length() - 1) != ']') {
             System.out.println("data should be between [ and ]");
         }
-
-        data = data.substring(1, data.length() - 1);
-        if (data.charAt(data.length() - 1) == ';') {
-            data = data.substring(0, data.length() - 1);
+        newData = newData.substring(1, newData.length() - 1);
+        if (newData.charAt(newData.length() - 1) == ';') {
+            newData = newData.substring(0, newData.length() - 1);
         }
-
-        return data;
+        return newData;
     }
 
     public int[] removeNull(int[] data) {
         int countNulls = 0;
-        for (int i = 0; i < data.length; i++) {
-            if (Integer.toString(data[i]) == null) {
+        for (int datum : data) {
+            if (Integer.toString(datum) == null) {
                 countNulls++;
             }
         }
@@ -1146,8 +961,8 @@ public class Array {
 
     public double[] removeNull(double[] data) {
         int countNulls = 0;
-        for (int i = 0; i < data.length; i++) {
-            if (Double.toString(data[i]) == null) {
+        for (double datum : data) {
+            if (Double.toString(datum) == null) {
                 countNulls++;
             }
         }
@@ -1163,8 +978,8 @@ public class Array {
 
     public String[] removeNull(String[] data) {
         int countNulls = 0;
-        for (int i = 0; i < data.length; i++) {
-            if (data[i] == null) {
+        for (String datum : data) {
+            if (datum == null) {
                 countNulls++;
             }
         }
@@ -1183,8 +998,8 @@ public class Array {
     public int[] arrayReverse(int[] data){
         int[] newArray = new int[data.length];
         int j = data.length;
-        for (int i = 0; i < data.length; i++) {
-            newArray[j - 1] = data[i];
+        for (int datum : data) {
+            newArray[j - 1] = datum;
             j = j - 1;
         }
         return newArray;
@@ -1193,8 +1008,8 @@ public class Array {
     public double[] arrayReverse(double[] data){
         double[] newArray = new double[data.length];
         int j = data.length;
-        for (int i = 0; i < data.length; i++) {
-            newArray[j - 1] = data[i];
+        for (double datum : data) {
+            newArray[j - 1] = datum;
             j = j - 1;
         }
         return newArray;
@@ -1203,8 +1018,8 @@ public class Array {
     public String[] arrayReverse(String[] data){
         String[] newArray = new String[data.length];
         int j = data.length;
-        for (int i = 0; i < data.length; i++) {
-            newArray[j - 1] = data[i];
+        for (String datum : data) {
+            newArray[j - 1] = datum;
             j = j - 1;
         }
         return newArray;
@@ -1215,9 +1030,7 @@ public class Array {
     public String[][] removeDuplicate(String[][] data) {
         String[][] newMatrix = new String[data.length][data[0].length];
         int newMatrixRow = 1;
-        for (int i = 0; i < data[0].length; i++) {
-            newMatrix[0][i] = data[0][i];
-        }
+        System.arraycopy(data[0], 0, newMatrix[0], 0, data[0].length);
         for (int j = 1; j < data.length; j++) {
             List<Boolean> list = new ArrayList<>();
             for (int i = 0; newMatrix[i][0] != null; i++) {
@@ -1231,9 +1044,7 @@ public class Array {
                 list.add(same);
             }
             if (!list.contains(true)) {
-                for (int i = 0; i < data[j].length; i++) {
-                    newMatrix[newMatrixRow][i] = data[j][i];
-                }
+                System.arraycopy(data[j], 0, newMatrix[newMatrixRow], 0, data[j].length);
                 newMatrixRow++;
             }
         }
@@ -1241,28 +1052,26 @@ public class Array {
         for(i = 0; newMatrix[i][0] != null; i++);
         String[][] finalMatrix = new String[i][newMatrix[0].length];
         for (i = 0; i < finalMatrix.length; i++) {
-            for (int j = 0; j < finalMatrix[i].length; j++) {
-                finalMatrix[i][j] = newMatrix[i][j];
-            }
+            System.arraycopy(newMatrix[i], 0, finalMatrix[i], 0, finalMatrix[i].length);
         }
         return finalMatrix;
     }
 
-    private double[] push(double[] oldArray, double[] newArray) {
+    public double[] push(double[] oldArray, double[] newArray) {
         for (int i = 0; i < oldArray.length - 1; i++) {
             newArray[i] = oldArray[i];
         }
         return newArray;
     }
 
-    private int[] push(int[] oldArray, int[] newArray) {
+    public int[] push(int[] oldArray, int[] newArray) {
         for (int i = 0; i < oldArray.length - 1; i++) {
             newArray[i] = oldArray[i];
         }
         return newArray;
     }
 
-    private String[] push(String[] oldArray, String[] newArray) {
+    public String[] push(String[] oldArray, String[] newArray) {
         for (int i = 0; i < oldArray.length - 1; i++) {
             newArray[i] = oldArray[i];
         }

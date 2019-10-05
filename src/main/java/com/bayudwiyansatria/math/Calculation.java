@@ -1,7 +1,28 @@
+/*
+ * MIT License
+ *
+ * Copyright (c) 2019 Bayu Dwiyan Satria
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
 package com.bayudwiyansatria.math;
-
-import com.bayudwiyansatria.utils.Utils;
-
 
 public class Calculation {
 
@@ -17,7 +38,7 @@ public class Calculation {
         return res;
     }
 
-    double[] addition(double[] inA, double inB) {
+    public double[] addition(double[] inA, double inB) {
         int l1 = inA.length;
         double[] res = new double[l1];
         for(int c1 = 0; c1 < l1; ++c1) {
@@ -26,7 +47,7 @@ public class Calculation {
         return res;
     }
 
-    int[] addition(int[] inA, int[] inB) {
+    public int[] addition(int[] inA, int[] inB) {
         int l1 = inA.length;
         int[] res = new int[l1];
         if (inA.length == inB.length) {
@@ -34,13 +55,13 @@ public class Calculation {
                 res[c1] = inA[c1] + inB[c1];
             }
         } else {
-            new Utils().warning("Recheck size of both matrix");
+            new com.bayudwiyansatria.utils.Utils().warning("Recheck size of both matrix");
         }
 
         return res;
     }
 
-    double[] addition(double[] inA, double[] inB) {
+    public double[] addition(double[] inA, double[] inB) {
         int l1 = inA.length;
         int l2 = inB.length;
         double[] res = new double[l1];
@@ -49,13 +70,13 @@ public class Calculation {
                 res[c1] = inA[c1] + inB[c1];
             }
         } else {
-            new Utils().warning("Recheck size of both matrix");
+            new com.bayudwiyansatria.utils.Utils().warning("Recheck size of both matrix");
         }
 
         return res;
     }
 
-    int[][] addition(int[][] inA, int inB) {
+    public int[][] addition(int[][] inA, int inB) {
         int l1 = inA.length;
         int l2 = inA[0].length;
         int[][] res = new int[l1][l2];
@@ -69,7 +90,7 @@ public class Calculation {
         return res;
     }
 
-    double[][] addition(double[][] inA, double inB) {
+    public double[][] addition(double[][] inA, double inB) {
         int l1 = inA.length;
         int l2 = inA[0].length;
         double[][] res = new double[l1][l2];
@@ -83,7 +104,7 @@ public class Calculation {
         return res;
     }
 
-    int[][] addition(int[][] inA, int[] inB) {
+    public int[][] addition(int[][] inA, int[] inB) {
         int l1 = inA.length;
         int l2 = inA[0].length;
         int l3 = inB.length;
@@ -95,13 +116,13 @@ public class Calculation {
                 }
             }
         } else {
-            new Utils().warning("Recheck size of both matrix");
+            new com.bayudwiyansatria.utils.Utils().warning("Recheck size of both matrix");
         }
 
         return res;
     }
 
-    double[][] addition(double[][] inA, double[] inB) {
+    public double[][] addition(double[][] inA, double[] inB) {
         int l1 = inA.length;
         int l2 = inA[0].length;
         int l3 = inB.length;
@@ -113,13 +134,13 @@ public class Calculation {
                 }
             }
         } else {
-            new Utils().warning("Recheck size of both matrix");
+            new com.bayudwiyansatria.utils.Utils().warning("Recheck size of both matrix");
         }
 
         return res;
     }
 
-    int[][] addition(int[][] inA, int[][] inB) {
+    public int[][] addition(int[][] inA, int[][] inB) {
         int col1 = inA[0].length;
         int col2 = inB[0].length;
         int row1 = inA.length;
@@ -137,7 +158,7 @@ public class Calculation {
                     }
                 }
             } else {
-                new Utils().warning("Recheck size of both matrix");
+                new com.bayudwiyansatria.utils.Utils().warning("Recheck size of both matrix");
             }
         } else if (col2 == 1) {
             if (row1 == row2) {
@@ -149,7 +170,7 @@ public class Calculation {
                     }
                 }
             } else {
-                new Utils().warning("Recheck size of both matrix");
+                new com.bayudwiyansatria.utils.Utils().warning("Recheck size of both matrix");
             }
         } else {
             res = new int[row1][col1];
@@ -164,7 +185,7 @@ public class Calculation {
         return res;
     }
 
-    double[][] addition(double[][] inA, double[][] inB) {
+    public double[][] addition(double[][] inA, double[][] inB) {
         int col1 = inA[0].length;
         int col2 = inB[0].length;
         int row1 = inA.length;
@@ -183,7 +204,7 @@ public class Calculation {
                 }
             } else {
 
-                new Utils().warning("Recheck size of both matrix");
+                new com.bayudwiyansatria.utils.Utils().warning("Recheck size of both matrix");
             }
         } else if (col2 == 1) {
             if (row1 == row2) {
@@ -196,7 +217,7 @@ public class Calculation {
                 }
             } else {
 
-                new Utils().warning("Recheck size of both matrix");
+                new com.bayudwiyansatria.utils.Utils().warning("Recheck size of both matrix");
             }
         } else {
             res = new double[row1][col1];
@@ -215,7 +236,7 @@ public class Calculation {
 
     /* ========================================= Substraction Start ==================================================*/
 
-    double[] substraction(double[] inA, double inB) {
+    public double[] substraction(double[] inA, double inB) {
         int l1 = inA.length;
         double[] res = new double[l1];
 
@@ -226,7 +247,7 @@ public class Calculation {
         return res;
     }
 
-    double[] substraction(double[] inA, double[] inB) {
+    public double[] substraction(double[] inA, double[] inB) {
         int l1 = inA.length;
         int l2 = inB.length;
         double[] res = new double[l1];
@@ -235,13 +256,13 @@ public class Calculation {
                 res[c1] = inA[c1] - inB[c1];
             }
         } else {
-            new Utils().warning("Recheck size of both matrix. It has to be same");
+            new com.bayudwiyansatria.utils.Utils().warning("Recheck size of both matrix. It has to be same");
         }
 
         return res;
     }
 
-    double[][] substraction(double[][] inA, double inB) {
+    public double[][] substraction(double[][] inA, double inB) {
         int l1 = inA.length;
         int l2 = inA[0].length;
         double[][] res = new double[l1][l2];
@@ -255,7 +276,7 @@ public class Calculation {
         return res;
     }
 
-    double[][] substraction(double[][] inA, double[] inB) {
+    public double[][] substraction(double[][] inA, double[] inB) {
         int l1 = inA.length;
         int l2 = inA[0].length;
         int l3 = inB.length;
@@ -268,13 +289,13 @@ public class Calculation {
             }
         } else {
 
-                new Utils().warning("Recheck size of both matrix");
+                new com.bayudwiyansatria.utils.Utils().warning("Recheck size of both matrix");
         }
 
         return res;
     }
 
-    double[][] substraction(double[][] inA, double[][] inB) {
+    public double[][] substraction(double[][] inA, double[][] inB) {
         int col1 = inA[0].length;
         int col2 = inB[0].length;
         int row1 = inA.length;
@@ -293,7 +314,7 @@ public class Calculation {
                 }
             } else {
 
-                new Utils().warning("Recheck size of both matrix");
+                new com.bayudwiyansatria.utils.Utils().warning("Recheck size of both matrix");
             }
         } else if (col2 == 1) {
             if (row1 == row2) {
@@ -307,7 +328,7 @@ public class Calculation {
             }
 
 
-                new Utils().warning("Recheck size of both matrix");
+                new com.bayudwiyansatria.utils.Utils().warning("Recheck size of both matrix");
         } else {
             res = new double[row1][col1];
 
@@ -332,7 +353,7 @@ public class Calculation {
         return res;
     }
 
-    int[] substraction(int[] inA, int[] inB) {
+    public int[] substraction(int[] inA, int[] inB) {
         int l1 = inA.length;
         int[] res = new int[l1];
         if (inA.length == inB.length) {
@@ -341,13 +362,13 @@ public class Calculation {
             }
         } else {
 
-                new Utils().warning("Recheck size of both matrix");
+                new com.bayudwiyansatria.utils.Utils().warning("Recheck size of both matrix");
         }
 
         return res;
     }
 
-    int[][] substraction(int[][] inA, int inB) {
+    public int[][] substraction(int[][] inA, int inB) {
         int l1 = inA.length;
         int l2 = inA[0].length;
         int[][] res = new int[l1][l2];
@@ -361,7 +382,7 @@ public class Calculation {
         return res;
     }
 
-    int[][] substraction(int[][] inA, int[] inB) {
+    public int[][] substraction(int[][] inA, int[] inB) {
         int l1 = inA.length;
         int l2 = inA[0].length;
         int l3 = inB.length;
@@ -374,13 +395,13 @@ public class Calculation {
             }
         } else {
 
-                new Utils().warning("Recheck size of both matrix");
+                new com.bayudwiyansatria.utils.Utils().warning("Recheck size of both matrix");
         }
 
         return res;
     }
 
-    int[][] substraction(int[][] inA, int[][] inB) {
+    public int[][] substraction(int[][] inA, int[][] inB) {
         int col1 = inA[0].length;
         int col2 = inB[0].length;
         int row1 = inA.length;
@@ -399,7 +420,7 @@ public class Calculation {
                 }
             } else {
 
-                new Utils().warning("Recheck size of both matrix");
+                new com.bayudwiyansatria.utils.Utils().warning("Recheck size of both matrix");
             }
         } else if (col2 == 1) {
             if (row1 == row2) {
@@ -412,7 +433,7 @@ public class Calculation {
                 }
             } else {
 
-                new Utils().warning("Recheck size of both matrix");
+                new com.bayudwiyansatria.utils.Utils().warning("Recheck size of both matrix");
             }
         } else {
             res = new int[row1][col1];
@@ -427,7 +448,7 @@ public class Calculation {
         return res;
     }
 
-    double[] division(double[] inA, double inB) {
+    public double[] division(double[] inA, double inB) {
         int l1 = inA.length;
         double[] res = new double[l1];
 
@@ -438,7 +459,7 @@ public class Calculation {
         return res;
     }
 
-    double[] division(double[] inA, double[] inB) {
+    public double[] division(double[] inA, double[] inB) {
         int l1 = inA.length;
         int l2 = inB.length;
         double[] res = new double[l1];
@@ -448,13 +469,13 @@ public class Calculation {
             }
         } else {
 
-                new Utils().warning("Recheck size of both matrix");
+                new com.bayudwiyansatria.utils.Utils().warning("Recheck size of both matrix");
         }
 
         return res;
     }
 
-    double[][] division(double[][] inA, double inB) {
+    public double[][] division(double[][] inA, double inB) {
         int l1 = inA.length;
         int l2 = inA[0].length;
         double[][] res = new double[l1][l2];
@@ -468,7 +489,7 @@ public class Calculation {
         return res;
     }
 
-    double[][] division(double[][] inA, double[] inB) {
+    public double[][] division(double[][] inA, double[] inB) {
         int l1 = inA.length;
         int l2 = inA[0].length;
         int l3 = inB.length;
@@ -481,13 +502,13 @@ public class Calculation {
             }
         } else {
 
-                new Utils().warning("Recheck size of both matrix");
+                new com.bayudwiyansatria.utils.Utils().warning("Recheck size of both matrix");
         }
 
         return res;
     }
 
-    double[][] division(double[][] inA, double[][] inB) {
+    public double[][] division(double[][] inA, double[][] inB) {
         int col1 = inA[0].length;
         int col2 = inB[0].length;
         int row1 = inA.length;
@@ -506,7 +527,7 @@ public class Calculation {
                 }
             } else {
 
-                new Utils().warning("Recheck size of both matrix");
+                new com.bayudwiyansatria.utils.Utils().warning("Recheck size of both matrix");
             }
         } else if (col2 == 1) {
             if (row1 == row2) {
@@ -519,7 +540,7 @@ public class Calculation {
                 }
             } else {
 
-                new Utils().warning("Recheck size of both matrix");
+                new com.bayudwiyansatria.utils.Utils().warning("Recheck size of both matrix");
             }
         } else {
             res = new double[row1][col1];
@@ -534,7 +555,7 @@ public class Calculation {
         return res;
     }
 
-    double[] division(int[] inA, int inB) {
+    public double[] division(int[] inA, int inB) {
         int l1 = inA.length;
         double[] res = new double[l1];
 
@@ -545,7 +566,7 @@ public class Calculation {
         return res;
     }
 
-    double[] division(int[] inA, int[] inB) {
+    public double[] division(int[] inA, int[] inB) {
         int l1 = inA.length;
         double[] res = new double[l1];
         if (inA.length == inB.length) {
@@ -554,13 +575,13 @@ public class Calculation {
             }
         } else {
 
-                new Utils().warning("Recheck size of both matrix");
+                new com.bayudwiyansatria.utils.Utils().warning("Recheck size of both matrix");
         }
 
         return res;
     }
 
-    double[][] division(int[][] inA, int inB) {
+    public double[][] division(int[][] inA, int inB) {
         int l1 = inA.length;
         int l2 = inA[0].length;
         double[][] res = new double[l1][l2];
@@ -574,7 +595,7 @@ public class Calculation {
         return res;
     }
 
-    double[][] division(int[][] inA, int[] inB) {
+    public double[][] division(int[][] inA, int[] inB) {
         int l1 = inA.length;
         int l2 = inA[0].length;
         int l3 = inB.length;
@@ -587,13 +608,13 @@ public class Calculation {
             }
         } else {
 
-                new Utils().warning("Recheck size of both matrix");
+                new com.bayudwiyansatria.utils.Utils().warning("Recheck size of both matrix");
         }
 
         return res;
     }
 
-    double[][] division(int[][] inA, int[][] inB) {
+    public double[][] division(int[][] inA, int[][] inB) {
         int col1 = inA[0].length;
         int col2 = inB[0].length;
         int row1 = inA.length;
@@ -612,7 +633,7 @@ public class Calculation {
                 }
             } else {
 
-                new Utils().warning("Recheck size of both matrix");
+                new com.bayudwiyansatria.utils.Utils().warning("Recheck size of both matrix");
             }
         } else if (col2 == 1) {
             if (row1 == row2) {
@@ -625,7 +646,7 @@ public class Calculation {
                 }
             } else {
 
-                new Utils().warning("Recheck size of both matrix");
+                new com.bayudwiyansatria.utils.Utils().warning("Recheck size of both matrix");
             }
         } else {
             res = new double[row1][col1];
@@ -640,744 +661,507 @@ public class Calculation {
         return res;
     }
 
-    public int[] Calculate(int[] data, int point, String type) {
-        int[] _output = null;
-        byte var6 = -1;
-        switch(type.hashCode()) {
-            case 0:
-                if (type.equals("*")) {
-                    var6 = 2;
-                }
-                break;
-            case 1:
-                if (type.equals("+")) {
-                    var6 = 0;
-                }
-            case 2:
-            default:
-                break;
-            case 3:
-                if (type.equals("-")) {
-                    var6 = 1;
-                }
-        }
-
-        switch(var6) {
-            case 0:
-                _output = this.addition(data, point);
-                break;
-            case 1:
-                _output = this.substraction(data, point);
-                break;
-            case 2:
-                _output = this.scalarMultiplication(data, point);
-                break;
-            default:
-                new Utils().warning("Type is not defined!");
-        }
-
-        return _output;
-    }
-
     public double[] Calculate(double[] data, double point, String type) {
-        double[] _output = null;
-        byte var7 = -1;
+        double[] result = null;
+        byte bytes = -1;
         switch(type.hashCode()) {
-            case 0:
-                if (type.equals("*")) {
-                    var7 = 2;
-                }
+            case 42: if (type.equals("*")) { bytes = 2; }
                 break;
-            case 1:
-                if (type.equals("+")) {
-                    var7 = 0;
-                }
-            case 2:
-            case 3:
-            default:
+            case 43: if (type.equals("+")) { bytes = 0; }
+            case 44:
+            case 46:
+            case 45: if (type.equals("-")) { bytes = 1; }
                 break;
-            case 4:
-                if (type.equals("-")) {
-                    var7 = 1;
-                }
-                break;
-            case 5:
-                if (type.equals("/")) {
-                    var7 = 3;
-                }
+            case 47: if (type.equals("/")) { bytes = 3; }
+            default: break;
         }
 
-        switch(var7) {
-            case 0:
-                _output = this.addition(data, point);
+        switch(bytes) {
+            case 0: result = this.addition(data, point);
                 break;
-            case 1:
-                _output = this.substraction(data, point);
+            case 1: result = this.substraction(data, point);
                 break;
-            case 2:
-                _output = this.scalarMultiplication(data, point);
+            case 2: result = this.scalarMultiplication(data, point);
                 break;
-            case 3:
-                _output = this.division(data, point);
+            case 3: result = this.division(data, point);
                 break;
-            default:
-                new Utils().warning("Type is not defined!");
+            default: new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
         }
 
-        return _output;
-    }
-
-    public int[] Calculate(int point, int[] data, String type) {
-        int[] _output = null;
-        byte var6 = -1;
-        switch(type.hashCode()) {
-            case 0:
-                if (type.equals("*")) {
-                    var6 = 2;
-                }
-                break;
-            case 1:
-                if (type.equals("+")) {
-                    var6 = 0;
-                }
-            case 2:
-            default:
-                break;
-            case 3:
-                if (type.equals("-")) {
-                    var6 = 1;
-                }
-        }
-
-        switch(var6) {
-            case 0:
-                _output = this.addition(data, point);
-                break;
-            case 1:
-                _output = this.substraction(data, point);
-                break;
-            case 2:
-                _output = this.scalarMultiplication(data, point);
-                break;
-            default:
-                new Utils().warning("Type is not defined!");
-        }
-        return _output;
+        return result;
     }
 
     public double[] Calculate(double point, double[] data, String type) {
-        double[] _output = null;
-        byte var7 = -1;
+        double[] result = null;
+        byte bytes = -1;
         switch(type.hashCode()) {
-            case 0:
-                if (type.equals("*")) {
-                    var7 = 2;
-                }
+            case 42: if (type.equals("*")) { bytes = 2; }
                 break;
-            case 1:
-                if (type.equals("+")) {
-                    var7 = 0;
-                }
-            case 2:
-            case 3:
-            default:
+            case 43: if (type.equals("+")) { bytes = 0; }
+            case 44:
+            case 46:
+            case 45: if (type.equals("-")) { bytes = 1; }
                 break;
-            case 4:
-                if (type.equals("-")) {
-                    var7 = 1;
-                }
-                break;
-            case 5:
-                if (type.equals("/")) {
-                    var7 = 3;
-                }
+            case 47: if (type.equals("/")) { bytes = 3; }
+            default: break;
         }
 
-        switch(var7) {
-            case 0:
-                _output = this.addition(data, point);
+        switch(bytes) {
+            case 0: result = this.addition(data, point);
                 break;
-            case 1:
-                _output = this.substraction(data, point);
+            case 1: result = this.substraction(data, point);
                 break;
-            case 2:
-                _output = this.scalarMultiplication(data, point);
+            case 2: result = this.scalarMultiplication(data, point);
                 break;
-            case 3:
-                _output = this.division(data, point);
+            case 3: result = this.division(data, point);
                 break;
-            default:
-                new Utils().warning("Type is not defined!");
+            default: new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
         }
-
-        return _output;
+        return result;
     }
 
-    public int[] Calculate(int[] data, int[] point, String type) {
-        int[] _output = null;
-        byte var6 = -1;
+    public int[] Calculate(int[] data, int point, String type) {
+        int[] result = null;
+        byte bytes = -1;
         switch(type.hashCode()) {
-            case 0:
-                if (type.equals("*")) {
-                    var6 = 2;
-                }
+            case 42: if (type.equals("*")) { bytes = 2; }
                 break;
-            case 1:
-                if (type.equals("+")) {
-                    var6 = 0;
-                }
-            case 2:
+            case 43: if (type.equals("+")) { bytes = 0; }
+            case 44:
             default:
                 break;
-            case 3:
-                if (type.equals("-")) {
-                    var6 = 1;
-                }
+            case 45: if (type.equals("-")) { bytes = 1; }
         }
 
-        switch(var6) {
-            case 0:
-                _output = this.addition(data, point);
+        switch(bytes) {
+            case 0: result = this.addition(data, point);
                 break;
-            case 1:
-                _output = this.substraction(data, point);
+            case 1: result = this.substraction(data, point);
                 break;
-            case 2:
-                _output = this.scalarMultiplication(data, point);
+            case 2: result = this.scalarMultiplication(data, point);
                 break;
-            default:
-                new Utils().warning("Type is not defined!");
+            default: new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
         }
-
-        return _output;
+        return result;
     }
 
-    public double[] Calculate(double[] data, double[] point, String type) {
-        double[] _output = null;
-        byte var6 = -1;
+    public int[] Calculate(int point, int[] data, String type) {
+        int[] result = null;
+        byte bytes = -1;
         switch(type.hashCode()) {
-            case 0:
-                if (type.equals("*")) {
-                    var6 = 2;
-                }
+            case 42: if (type.equals("*")) { bytes = 2; }
                 break;
-            case 1:
-                if (type.equals("+")) {
-                    var6 = 0;
-                }
-            case 2:
-            case 3:
+            case 43: if (type.equals("+")) { bytes = 0; }
+            case 44:
             default:
                 break;
-            case 4:
-                if (type.equals("-")) {
-                    var6 = 1;
-                }
-                break;
-            case 5:
-                if (type.equals("/")) {
-                    var6 = 3;
-                }
+            case 45: if (type.equals("-")) { bytes = 1; }
         }
 
-        switch(var6) {
-            case 0:
-                _output = this.addition(data, point);
+        switch(bytes) {
+            case 0: result = this.addition(data, point);
                 break;
-            case 1:
-                _output = this.substraction(data, point);
+            case 1: result = this.substraction(data, point);
                 break;
-            case 2:
-                _output = this.scalarMultiplication(data, point);
+            case 2: result = this.scalarMultiplication(data, point);
                 break;
-            case 3:
-                _output = this.division(data, point);
-                break;
-            default:
-                new Utils().warning("Type is not defined!");
+            default: new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
         }
 
-        return _output;
-    }
-
-    public int[][] Calculate(int[][] data, int point, String type) {
-        int[][] _output = (int[][])null;
-        byte var6 = -1;
-        switch(type.hashCode()) {
-            case 0:
-                if (type.equals("*")) {
-                    var6 = 2;
-                }
-                break;
-            case 1:
-                if (type.equals("+")) {
-                    var6 = 0;
-                }
-            case 2:
-            default:
-                break;
-            case 3:
-                if (type.equals("-")) {
-                    var6 = 1;
-                }
-        }
-
-        switch(var6) {
-            case 0:
-                _output = this.addition(data, point);
-                break;
-            case 1:
-                _output = this.substraction(data, point);
-                break;
-            case 2:
-                _output = this.scalarMultiplication(data, point);
-                break;
-            default:
-                new Utils().warning("Type is not defined!");
-        }
-
-        return _output;
+        return result;
     }
 
     public double[][] Calculate(double[][] data, double point, String type) {
-        double[][] _output = (double[][])null;
-        byte var7 = -1;
+        double[][] result = null;
+        byte bytes = -1;
         switch(type.hashCode()) {
-            case 0:
-                if (type.equals("*")) {
-                    var7 = 2;
-                }
+            case 42: if (type.equals("*")) { bytes = 2; }
                 break;
-            case 1:
-                if (type.equals("+")) {
-                    var7 = 0;
-                }
-            case 2:
-            case 3:
+            case 43: if (type.equals("+")) { bytes = 0; }
+            case 44:
+            case 46:
             default:
                 break;
-            case 4:
-                if (type.equals("-")) {
-                    var7 = 1;
-                }
+            case 45: if (type.equals("-")) { bytes = 1; }
                 break;
-            case 5:
-                if (type.equals("/")) {
-                    var7 = 3;
-                }
+            case 47: if (type.equals("/")) { bytes = 3; }
         }
 
-        switch(var7) {
-            case 0:
-                _output = this.addition(data, point);
+        switch(bytes) {
+            case 0: result = this.addition(data, point);
                 break;
-            case 1:
-                _output = this.substraction(data, point);
+            case 1: result = this.substraction(data, point);
                 break;
-            case 2:
-                _output = this.scalarMultiplication(data, point);
+            case 2: result = this.scalarMultiplication(data, point);
                 break;
-            case 3:
-                _output = this.division(data, point);
+            case 3: result = this.division(data, point);
                 break;
-            default:
-                new Utils().warning("Type is not defined!");
+            default: new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
         }
 
-        return _output;
-    }
-
-    public int[][] Calculate(int point, int[][] data, String type) {
-        int[][] _output = (int[][])null;
-        byte var6 = -1;
-        switch(type.hashCode()) {
-            case 0:
-                if (type.equals("*")) {
-                    var6 = 2;
-                }
-                break;
-            case 1:
-                if (type.equals("+")) {
-                    var6 = 0;
-                }
-            case 2:
-            default:
-                break;
-            case 3:
-                if (type.equals("-")) {
-                    var6 = 1;
-                }
-        }
-
-        switch(var6) {
-            case 0:
-                _output = this.addition(data, point);
-                break;
-            case 1:
-                _output = this.substraction(data, point);
-                break;
-            case 2:
-                _output = this.scalarMultiplication(data, point);
-                break;
-            default:
-                new Utils().warning("Type is not defined!");
-        }
-
-        return _output;
+        return result;
     }
 
     public double[][] Calculate(double point, double[][] data, String type) {
-        double[][] _output = (double[][])null;
-        byte var7 = -1;
+        double[][] result = null;
+        byte bytes = -1;
         switch(type.hashCode()) {
-            case 0:
-                if (type.equals("*")) {
-                    var7 = 2;
-                }
+            case 42: if (type.equals("*")) { bytes = 2; }
                 break;
-            case 1:
-                if (type.equals("+")) {
-                    var7 = 0;
-                }
-            case 2:
-            case 3:
+            case 43: if (type.equals("+")) { bytes = 0; }
+            case 44:
+            case 46:
             default:
                 break;
-            case 4:
-                if (type.equals("-")) {
-                    var7 = 1;
-                }
+            case 45: if (type.equals("-")) { bytes = 1; }
                 break;
-            case 5:
-                if (type.equals("/")) {
-                    var7 = 3;
-                }
-        }
-        switch(var7) {
-            case 0:
-                _output = this.addition(data, point);
-                break;
-            case 1:
-                _output = this.substraction(data, point);
-                break;
-            case 2:
-                _output = this.scalarMultiplication(data, point);
-                break;
-            case 3:
-                _output = this.division(data, point);
-                break;
-            default:
-                new Utils().warning("Type is not defined!");
+            case 47: if (type.equals("/")) { bytes = 3; }
         }
 
-        return _output;
+        switch(bytes) {
+            case 0: result = this.addition(data, point);
+                break;
+            case 1: result = this.substraction(data, point);
+                break;
+            case 2: result = this.scalarMultiplication(data, point);
+                break;
+            case 3: result = this.division(data, point);
+                break;
+            default: new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
+        }
+        return result;
     }
 
-    public int[][] Calculate(int[][] data, int[] point, String type) {
-        int[][] _output = (int[][])null;
-        byte var6 = -1;
+    public int[][] Calculate(int[][] data, int point, String type) {
+        int[][] result = null;
+        byte bytes = -1;
         switch(type.hashCode()) {
-            case 0:
-                if (type.equals("*")) {
-                    var6 = 2;
-                }
+            case 42: if (type.equals("*")) { bytes = 2; }
                 break;
-            case 1:
-                if (type.equals("+")) {
-                    var6 = 0;
-                }
-            case 2:
+            case 43: if (type.equals("+")) { bytes = 0; }
+            case 44:
             default:
                 break;
-            case 3:
-                if (type.equals("-")) {
-                    var6 = 1;
-                }
+            case 45: if (type.equals("-")) { bytes = 1; }
         }
 
-        switch(var6) {
-            case 0:
-                _output = this.addition(data, point);
+        switch(bytes) {
+            case 0: result = this.addition(data, point);
                 break;
-            case 1:
-                _output = this.substraction(data, point);
+            case 1: result = this.substraction(data, point);
                 break;
-            case 2:
-                _output = this.scalarMultiplication(data, point);
+            case 2: result = this.scalarMultiplication(data, point);
                 break;
+            default: new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
+        }
+
+        return result;
+    }
+
+    public int[][] Calculate(int point, int[][] data, String type) {
+        int[][] result = null;
+        byte bytes = -1;
+        switch(type.hashCode()) {
+            case 42: if (type.equals("*")) { bytes = 2; }
+                break;
+            case 43:
+                if (type.equals("+")) { bytes = 0; }
+            case 44:
             default:
-                new Utils().warning("Type is not defined!");
+                break;
+            case 45: if (type.equals("-")) { bytes = 1; }
         }
 
-        return _output;
+        switch(bytes) {
+            case 0: result = this.addition(data, point);
+                break;
+            case 1: result = this.substraction(data, point);
+                break;
+            case 2: result = this.scalarMultiplication(data, point);
+                break;
+            default: new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
+        }
+
+        return result;
+    }
+
+    public double[] Calculate(double[] data, double[] point, String type) {
+        double[] result = null;
+        byte bytes = -1;
+        switch(type.hashCode()) {
+            case 42: if (type.equals("*")) { bytes = 2; }
+                break;
+            case 43: if (type.equals("+")) { bytes = 0; }
+            case 44:
+            case 46:
+            default:
+                break;
+            case 45: if (type.equals("-")) { bytes = 1; }
+                break;
+            case 47: if (type.equals("/")) { bytes = 3; }
+        }
+
+        switch(bytes) {
+            case 0: result = this.addition(data, point);
+                break;
+            case 1: result = this.substraction(data, point);
+                break;
+            case 2: result = this.scalarMultiplication(data, point);
+                break;
+            case 3: result = this.division(data, point);
+                break;
+            default: new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
+        }
+
+        return result;
+    }
+
+    public int[] Calculate(int[] data, int[] point, String type) {
+        int[] result = null;
+        byte bytes = -1;
+        switch(type.hashCode()) {
+            case 42: if (type.equals("*")) { bytes = 2; }
+                break;
+            case 43: if (type.equals("+")) { bytes = 0; }
+            case 44:
+            default:
+                break;
+            case 45: if (type.equals("-")) { bytes = 1; }
+        }
+
+        switch(bytes) {
+            case 0: result = this.addition(data, point);
+                break;
+            case 1: result = this.substraction(data, point);
+                break;
+            case 2: result = this.scalarMultiplication(data, point);
+                break;
+            default: new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
+        }
+
+        return result;
     }
 
     public double[][] Calculate(double[][] data, double[] point, String type) {
-        double[][] _output = (double[][])null;
-        byte var6 = -1;
+        double[][] result = null;
+        byte bytes = -1;
         switch(type.hashCode()) {
-            case 0:
-                if (type.equals("*")) {
-                    var6 = 2;
-                }
+            case 42: if (type.equals("*")) { bytes = 2; }
                 break;
-            case 1:
-                if (type.equals("+")) {
-                    var6 = 0;
-                }
-            case 2:
-            case 3:
+            case 43: if (type.equals("+")) { bytes = 0; }
+            case 44:
+            case 46:
             default:
                 break;
-            case 4:
-                if (type.equals("-")) {
-                    var6 = 1;
-                }
+            case 45: if (type.equals("-")) { bytes = 1; }
                 break;
-            case 5:
-                if (type.equals("/")) {
-                    var6 = 3;
-                }
+            case 47: if (type.equals("/")) { bytes = 3; }
         }
 
-        switch(var6) {
-            case 0:
-                _output = this.addition(data, point);
+        switch(bytes) {
+            case 0: result = this.addition(data, point);
                 break;
-            case 1:
-                _output = this.substraction(data, point);
+            case 1: result = this.substraction(data, point);
                 break;
-            case 2:
-                _output = this.scalarMultiplication(data, point);
+            case 2: result = this.scalarMultiplication(data, point);
                 break;
-            case 3:
-                _output = this.division(data, point);
+            case 3: result = this.division(data, point);
                 break;
-            default:
-                new Utils().warning("Type is not defined!");
+            default: new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
         }
 
-        return _output;
-    }
-
-    public int[][] Calculate(int[] point, int[][] data, String type) {
-        int[][] _output = (int[][])null;
-        byte var6 = -1;
-        switch(type.hashCode()) {
-            case 0:
-                if (type.equals("*")) {
-                    var6 = 2;
-                }
-                break;
-            case 1:
-                if (type.equals("+")) {
-                    var6 = 0;
-                }
-            case 2:
-            default:
-                break;
-            case 3:
-                if (type.equals("-")) {
-                    var6 = 1;
-                }
-        }
-
-        switch(var6) {
-            case 0:
-                _output = this.addition(data, point);
-                break;
-            case 1:
-                _output = this.substraction(data, point);
-                break;
-            case 2:
-                _output = this.scalarMultiplication(data, point);
-                break;
-            default:
-                new Utils().warning("Type is not defined!");
-        }
-
-        return _output;
+        return result;
     }
 
     public double[][] Calculate(double[] point, double[][] data, String type) {
-        double[][] _output = (double[][])null;
-        byte var6 = -1;
+        double[][] result = null;
+        byte bytes = -1;
         switch(type.hashCode()) {
-            case 0:
-                if (type.equals("*")) {
-                    var6 = 2;
-                }
+            case 42: if (type.equals("*")) { bytes = 2; }
                 break;
-            case 1:
-                if (type.equals("+")) {
-                    var6 = 0;
-                }
-            case 2:
-            case 3:
+            case 43: if (type.equals("+")) { bytes = 0; }
+            case 44:
+            case 46:
             default:
                 break;
-            case 4:
-                if (type.equals("-")) {
-                    var6 = 1;
-                }
+            case 45: if (type.equals("-")) { bytes = 1; }
                 break;
-            case 5:
-                if (type.equals("/")) {
-                    var6 = 3;
-                }
+            case 47: if (type.equals("/")) { bytes = 3; }
         }
 
-        switch(var6) {
-            case 0:
-                _output = this.addition(data, point);
-                break;
-            case 1:
-                _output = this.substraction(data, point);
-                break;
-            case 2:
-                _output = this.scalarMultiplication(data, point);
-                break;
-            case 3:
-                _output = this.division(data, point);
-                break;
-            default:
-                new Utils().warning("Type is not defined!");
+        switch(bytes) {
+        case 0:
+            result = this.addition(data, point);
+            break;
+        case 1:
+            result = this.substraction(data, point);
+            break;
+        case 2:
+            result = this.scalarMultiplication(data, point);
+            break;
+        case 3:
+            result = this.division(data, point);
+            break;
+        default:
+            new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
         }
 
-        return _output;
+        return result;
     }
 
-    public int[][] Calculate(int[][] data, int[][] point, String type) {
-        int[][] _output = (int[][])null;
-        byte var6 = -1;
+    public int[][] Calculate(int[][] data, int[] point, String type) {
+        int[][] result = null;
+        byte bytes = -1;
         switch(type.hashCode()) {
-            case 0:
-                if (type.equals("*")) {
-                    var6 = 2;
-                }
-                break;
-            case 1:
-                if (type.equals("+")) {
-                    var6 = 0;
-                }
-            case 2:
+            case 42: if (type.equals("*")) { bytes = 2; }
+            break;
+            case 43: if (type.equals("+")) { bytes = 0; }
+            case 44:
             default:
                 break;
-            case 3:
-                if (type.equals("-")) {
-                    var6 = 1;
-                }
+            case 45: if (type.equals("-")) { bytes = 1; }
         }
 
-        switch(var6) {
-            case 0:
-                _output = this.addition(data, point);
+        switch(bytes) {
+            case 0: result = this.addition(data, point);
                 break;
-            case 1:
-                _output = this.substraction(data, point);
+            case 1: result = this.substraction(data, point);
                 break;
-            case 2:
-                _output = this.scalarMultiplication(data, point);
+            case 2: result = this.scalarMultiplication(data, point);
                 break;
+            default: new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
+        }
+
+        return result;
+    }
+
+    public int[][] Calculate(int[] point, int[][] data, String type) {
+        int[][] result = null;
+        byte bytes = -1;
+        switch(type.hashCode()) {
+            case 42: if (type.equals("*")) { bytes = 2; }
+                break;
+            case 43: if (type.equals("+")) { bytes = 0; }
+            case 44:
             default:
-                new Utils().warning("Type is not defined!");
+                break;
+            case 45: if (type.equals("-")) { bytes = 1; }
         }
 
-        return _output;
+        switch(bytes) {
+            case 0: result = this.addition(data, point);
+                break;
+            case 1: result = this.substraction(data, point);
+                break;
+            case 2: result = this.scalarMultiplication(data, point);
+                break;
+            default: new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
+        }
+
+        return result;
     }
 
     public double[][] Calculate(double[][] data, double[][] point, String type) {
-        double[][] _output = (double[][])null;
-        byte var6 = -1;
+        double[][] result = null;
+        byte bytes = -1;
         switch(type.hashCode()) {
-            case 0:
-                if (type.equals("*")) {
-                    var6 = 2;
-                }
-                break;
-            case 1:
-                if (type.equals("+")) {
-                    var6 = 0;
-                }
-            case 2:
-            case 3:
+            case 42: if (type.equals("*")) { bytes = 2; }
+            break;
+            case 43: if (type.equals("+")) { bytes = 0; }
+            case 44:
+            case 46:
             default:
                 break;
-            case 4:
-                if (type.equals("-")) {
-                    var6 = 1;
-                }
+            case 45: if (type.equals("-")) { bytes = 1; }
                 break;
-            case 47:
-                if (type.equals("/")) {
-                    var6 = 3;
-                }
+            case 47: if (type.equals("/")) { bytes = 3; }
         }
 
-        switch(var6) {
-            case 0:
-                _output = this.addition(data, point);
+        switch(bytes) {
+            case 0: result = this.addition(data, point);
                 break;
-            case 1:
-                _output = this.substraction(data, point);
+            case 1: result = this.substraction(data, point);
                 break;
-            case 2:
-                _output = this.scalarMultiplication(data, point);
+            case 2: result = this.scalarMultiplication(data, point);
                 break;
-            case 3:
-                _output = this.division(data, point);
+            case 3: result = this.division(data, point);
                 break;
+            default: new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
+        }
+
+        return result;
+    }
+
+    public int[][] Calculate(int[][] data, int[][] point, String type) {
+        int[][] result = null;
+        byte bytes = -1;
+        switch(type.hashCode()) {
+            case 42: if (type.equals("*")) { bytes = 2; }
+                break;
+            case 43: if (type.equals("+")) { bytes = 0; }
+            case 44:
             default:
-                new Utils().warning("Type is not defined!");
+                break;
+            case 45: if (type.equals("-")) { bytes = 1; }
         }
 
-        return _output;
+        switch(bytes) {
+            case 0: result = this.addition(data, point);
+                break;
+            case 1: result = this.substraction(data, point);
+                break;
+            case 2: result = this.scalarMultiplication(data, point);
+                break;
+            default: new com.bayudwiyansatria.utils.Utils().warning("Type is not defined!");
+        }
+
+        return result;
     }
 
     public int CalculateVector(int[] point, int[] data) {
-        int _output = this.vectorMultiplication(data, point);
-        return _output;
+        int output = this.vectorMultiplication(data, point);
+        return output;
     }
 
     public double CalculateVector(double[] point, double[] data) {
-        double _output = this.vectorMultiplication(data, point);
-        return _output;
+        double output = this.vectorMultiplication(data, point);
+        return output;
     }
 
     public int[] CalculateVector(int[] point, int[][] data) {
-        int[] _output = this.vectorMultiplication(point, data);
-        return _output;
+        int[] output = this.vectorMultiplication(point, data);
+        return output;
     }
 
     public double[] CalculateVector(double[] point, double[][] data) {
-        double[] _output = this.vectorMultiplication(point, data);
-        return _output;
+        double[] output = this.vectorMultiplication(point, data);
+        return output;
     }
 
     public int[] CalculateVector(int[][] point, int[] data) {
-        int[] _output = this.vectorMultiplication(data, point);
-        return _output;
+        int[] output = this.vectorMultiplication(data, point);
+        return output;
     }
 
     public double[] CalculateVector(double[][] point, double[] data) {
-        double[] _output = this.vectorMultiplication(data, point);
-        return _output;
+        double[] output = this.vectorMultiplication(data, point);
+        return output;
     }
 
 
     public int[][] CalculateVector(int[][] point, int[][] data) {
-        int[][] _output = this.vectorMultiplication(point, data);
-        return _output;
+        int[][] output = this.vectorMultiplication(point, data);
+        return output;
     }
 
     public double[][] CalculateVector(double[][] point, double[][] data) {
-        double[][] _output = this.vectorMultiplication(point, data);
-        return _output;
+        double[][] output = this.vectorMultiplication(point, data);
+        return output;
     }
 
     /* ========================================= Calculate Start ==================================================== */
 
-    double[] scalarMultiplication(double[] inA, double inB) {
+    public double[] scalarMultiplication(double[] inA, double inB) {
         int l1 = inA.length;
         double[] res = new double[l1];
 
@@ -1388,7 +1172,7 @@ public class Calculation {
         return res;
     }
 
-    double[] scalarMultiplication(double[] inA, double[] inB) {
+    public double[] scalarMultiplication(double[] inA, double[] inB) {
         int l1 = inA.length;
         int l2 = inB.length;
         double[] res = null;
@@ -1399,13 +1183,13 @@ public class Calculation {
                 res[c1] = inA[c1] * inB[c1];
             }
         } else {
-            new Utils().warning("Recheck size of both matrixes!");
+            new com.bayudwiyansatria.utils.Utils().warning("Recheck size of both matrixes!");
         }
 
         return res;
     }
 
-    double[][] scalarMultiplication(double[][] inA, double inB) {
+    public double[][] scalarMultiplication(double[][] inA, double inB) {
         int l1 = inA.length;
         int l2 = inA[0].length;
         double[][] res = new double[l1][l2];
@@ -1419,7 +1203,7 @@ public class Calculation {
         return res;
     }
 
-    double[][] scalarMultiplication(double[][] inA, double[] inB) {
+    public double[][] scalarMultiplication(double[][] inA, double[] inB) {
         int l1 = inB.length;
         int l2 = inA.length;
         int l3 = inA[0].length;
@@ -1433,13 +1217,13 @@ public class Calculation {
                 }
             }
         } else {
-            new Utils().warning("Recheck size of both matrixes!");
+            new com.bayudwiyansatria.utils.Utils().warning("Recheck size of both matrixes!");
         }
 
         return res;
     }
 
-    double[][] scalarMultiplication(double[][] inA, double[][] inB) {
+    public double[][] scalarMultiplication(double[][] inA, double[][] inB) {
         int col1 = inA[0].length;
         int col2 = inB[0].length;
         int row1 = inA.length;
@@ -1457,7 +1241,7 @@ public class Calculation {
                     }
                 }
             } else {
-                new Utils().warning("Recheck size of both matrixes!");
+                new com.bayudwiyansatria.utils.Utils().warning("Recheck size of both matrixes!");
             }
         } else if (col2 == 1) {
             if (row1 == row2) {
@@ -1469,7 +1253,7 @@ public class Calculation {
                     }
                 }
             } else {
-                new Utils().warning("Recheck size of both matrixes!");
+                new com.bayudwiyansatria.utils.Utils().warning("Recheck size of both matrixes!");
             }
         } else {
             res = new double[row1][col1];
@@ -1484,7 +1268,7 @@ public class Calculation {
         return res;
     }
 
-    int[] scalarMultiplication(int[] inA, int inB) {
+    public int[] scalarMultiplication(int[] inA, int inB) {
         int l1 = inA.length;
         int[] res = new int[l1];
 
@@ -1495,7 +1279,7 @@ public class Calculation {
         return res;
     }
 
-    int[] scalarMultiplication(int[] inA, int[] inB) {
+    public int[] scalarMultiplication(int[] inA, int[] inB) {
         int l1 = inA.length;
         int l2 = inB.length;
         int[] res = null;
@@ -1506,13 +1290,13 @@ public class Calculation {
                 res[c1] = inA[c1] * inB[c1];
             }
         } else {
-            new Utils().warning("Recheck size of both matrixes!");
+            new com.bayudwiyansatria.utils.Utils().warning("Recheck size of both matrixes!");
         }
 
         return res;
     }
 
-    int[][] scalarMultiplication(int[][] inA, int inB) {
+    public int[][] scalarMultiplication(int[][] inA, int inB) {
         int l1 = inA.length;
         int l2 = inA[0].length;
         int[][] res = new int[l1][l2];
@@ -1526,7 +1310,7 @@ public class Calculation {
         return res;
     }
 
-    int[][] scalarMultiplication(int[][] inA, int[] inB) {
+    public int[][] scalarMultiplication(int[][] inA, int[] inB) {
         int l1 = inB.length;
         int l2 = inA.length;
         int l3 = inA[0].length;
@@ -1540,13 +1324,13 @@ public class Calculation {
                 }
             }
         } else {
-            new Utils().warning("Recheck size of both matrixes!");
+            new com.bayudwiyansatria.utils.Utils().warning("Recheck size of both matrixes!");
         }
 
         return res;
     }
 
-    int[][] scalarMultiplication(int[][] inA, int[][] inB) {
+    public int[][] scalarMultiplication(int[][] inA, int[][] inB) {
         int col1 = inA[0].length;
         int col2 = inB[0].length;
         int row1 = inA.length;
@@ -1564,7 +1348,7 @@ public class Calculation {
                     }
                 }
             } else {
-                new Utils().warning("Recheck size of both matrixes!");
+                new com.bayudwiyansatria.utils.Utils().warning("Recheck size of both matrixes!");
             }
         } else if (col2 == 1) {
             if (row1 == row2) {
@@ -1576,7 +1360,7 @@ public class Calculation {
                     }
                 }
             } else {
-                new Utils().warning("Recheck size of both matrixes!");
+                new com.bayudwiyansatria.utils.Utils().warning("Recheck size of both matrixes!");
             }
         } else {
             res = new int[row1][col1];
@@ -1591,7 +1375,7 @@ public class Calculation {
         return res;
     }
 
-    double[] vectorMultiplication(double[] inA, double[][] inB) {
+    public double[] vectorMultiplication(double[] inA, double[][] inB) {
         double[] res = null;
         int colB = inB[0].length;
         int colA = inA.length;
@@ -1609,13 +1393,13 @@ public class Calculation {
                 }
             }
         } else {
-            new Utils().warning("Recheck size of both matrixes!");
+            new com.bayudwiyansatria.utils.Utils().warning("Recheck size of both matrixes!");
         }
 
         return res;
     }
 
-    double[][] vectorMultiplication(double[][] inA, double[][] inB) {
+    public double[][] vectorMultiplication(double[][] inA, double[][] inB) {
         double[][] res = (double[][])null;
         int colA = inA[0].length;
         int rowA = inA.length;
@@ -1633,41 +1417,41 @@ public class Calculation {
                 }
             }
         } else {
-            new Utils().warning("Recheck size of both matrixes!");
+            new com.bayudwiyansatria.utils.Utils().warning("Recheck size of both matrixes!");
         }
 
         return res;
     }
 
-    int vectorMultiplication(int[] inA, int[] inB) {
+    public int vectorMultiplication(int[] inA, int[] inB) {
         int nb = inB.length;
-        int _output = 0;
+        int output = 0;
         if (inA.length == nb) {
             for(int i = 0; i < inA.length; ++i) {
-                _output += inA[i] * inB[i];
+                output += inA[i] * inB[i];
             }
         } else {
-            new Utils().warning("Length of both data has to be same!");
+            new com.bayudwiyansatria.utils.Utils().warning("Length of both data has to be same!");
         }
 
-        return _output;
+        return output;
     }
 
-    double vectorMultiplication(double[] inA, double[] inB) {
+    public double vectorMultiplication(double[] inA, double[] inB) {
         int nb = inB.length;
-        double _output = 0.0;
+        double output = 0.0;
         if (inA.length == nb) {
             for(int i = 0; i < inA.length; ++i) {
-                _output += inA[i] * inB[i];
+                output += inA[i] * inB[i];
             }
         } else {
-            new Utils().warning("Length of both data has to be same!");
+            new com.bayudwiyansatria.utils.Utils().warning("Length of both data has to be same!");
         }
 
-        return _output;
+        return output;
     }
 
-    int[] vectorMultiplication(int[] inA, int[][] inB) {
+    public int[] vectorMultiplication(int[] inA, int[][] inB) {
         int[] res = null;
         int colB = inB[0].length;
         int colA = inA.length;
@@ -1685,13 +1469,13 @@ public class Calculation {
                 }
             }
         } else {
-            new Utils().warning("Recheck size of both matrixes!");
+            new com.bayudwiyansatria.utils.Utils().warning("Recheck size of both matrixes!");
         }
 
         return res;
     }
 
-    int[][] vectorMultiplication(int[][] inA, int[][] inB) {
+    public int[][] vectorMultiplication(int[][] inA, int[][] inB) {
         int[][] res = (int[][])null;
         int colA = inA[0].length;
         int rowA = inA.length;
@@ -1709,7 +1493,7 @@ public class Calculation {
                 }
             }
         } else {
-            new Utils().warning("Recheck size of both matrixes!");
+            new com.bayudwiyansatria.utils.Utils().warning("Recheck size of both matrixes!");
         }
 
         return res;
