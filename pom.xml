@@ -406,6 +406,7 @@
 						<exclude>*.txt</exclude>
 						<exclude>*.yml</exclude>
 						<exclude>*.yaml</exclude>
+						<exclude>.github/*</exclude>
 					</excludes>
 					<includes>
 						<include>src/main/**/*</include>
