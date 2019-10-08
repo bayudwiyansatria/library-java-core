@@ -9,6 +9,7 @@ pool:
 
 steps:
 - task: Maven@3
+  displayName: 'Maven Build $(Build.BuildNumber)'
   inputs:
     mavenPomFile: 'pom.xml'
     goals: 'package'
@@ -22,13 +23,14 @@ steps:
     sonarQubeRunAnalysis: false
     
 - task: GitHubRelease@1
+  condition: startsWith(variables['Build.SourceBranch'], 'refs/tags/release-v')
+  displayName: 'Create GitHub Release'
   inputs:
     gitHubConnection: 'bayudwiyansatria'
     repositoryName: '$(Build.Repository.Name)'
     action: 'create'
     target: '$(Build.SourceVersion)'
     tagSource: 'gitTag'
-    tagPattern: '/^v([0-9.]+)$/'
     title: '$(Build.BuildNumber)'
     releaseNotesFilePath: 'README.md'
     isPreRelease: true
