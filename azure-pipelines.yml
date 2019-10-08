@@ -9,7 +9,7 @@ pool:
 
 steps:
 - task: Maven@3
-  displayName: 'Maven Build'
+  displayName: 'Maven Build $(Build.BuildNumber)'
   inputs:
     mavenPomFile: 'pom.xml'
     goals: 'package'
@@ -30,7 +30,7 @@ steps:
     action: 'create'
     target: '$(Build.SourceVersion)'
     tagSource: 'userSpecifiedTag'
-    tag: '$(Build.BuildNumber)'
+    tag: v'$(Build.BuildNumber)'
     title: '$(Build.BuildNumber)'
     releaseNotesFilePath: 'README.md'
     changeLogCompareToRelease: 'lastFullRelease'
