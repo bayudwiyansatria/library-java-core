@@ -1379,7 +1379,6 @@ public class Calculation {
         double[] res = null;
         int colB = inB[0].length;
         int colA = inA.length;
-        boolean rowA = true;
         int rowB = inB.length;
         int count = colA;
         if (colA == rowB) {
@@ -1455,7 +1454,6 @@ public class Calculation {
         int[] res = null;
         int colB = inB[0].length;
         int colA = inA.length;
-        boolean rowA = true;
         int rowB = inB.length;
         int count = colA;
         if (colA == rowB) {
