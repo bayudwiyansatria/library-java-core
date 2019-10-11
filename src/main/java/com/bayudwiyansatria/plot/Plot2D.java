@@ -22,10 +22,10 @@
  * SOFTWARE.
  */
 
-package com.bayudwiyansatria.utils;
+package com.bayudwiyansatria.plot;
 
-import com.bayudwiyansatria.mat.Array;
+import com.bayudwiyansatria.mat.Mat;
 
-public class Plot2D extends Array {
+public class Plot2D extends Mat {
 
 }

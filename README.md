@@ -1,31 +1,31 @@
 <p align="center">
-	<a href="https://bayudwiyansatria.github.io/Development-And-Operations/">
-		<img src="https://cdn.bayudwiyansatria.com/assets/logo-full.png" width="100%" />
-	</a>
-	<br>
+<a href="https://bayudwiyansatria.github.io/Development-And-Operations/">
+<img src="https://cdn.bayudwiyansatria.com/assets/logo-full.png" width="100%" />
+</a>
+<br>
 </p>
 <p align="center">
-	<a href="#">
-		<img src="https://img.shields.io/badge/%20Platforms-Java-blue.svg?style=flat-square" alt="Platforms" />
-	</a>
-	<a href="https://github.com/bayudwiyansatria/Development-And-Operations/blob/master/LICENSE">
-		<img src="https://img.shields.io/badge/%20Licence-MIT-green.svg?style=flat-square" alt="license" />
-	</a>
+<a href="#">
+<img src="https://img.shields.io/badge/%20Platforms-Java-blue.svg?style=flat-square" alt="Platforms" />
+</a>
+<a href="https://github.com/bayudwiyansatria/Development-And-Operations/blob/master/LICENSE">
+<img src="https://img.shields.io/badge/%20Licence-MIT-green.svg?style=flat-square" alt="license" />
+</a>
 </p>
 <p align="center">
-	<a href="https://github.com/bayudwiyansatria/Development-And-Operations/blob/master/CODE_OF_CONDUCT.md">
-		<img src="https://img.shields.io/badge/Community-Code%20of%20Conduct-orange.svg?style=flat-squre" alt="Code of Conduct" />
-	</a>
-	<a href="https://github.com/bayudwiyansatria/Development-And-Operations/blob/master/SUPPORT.md">
-		<img src="https://img.shields.io/badge/Community-Support-red.svg?style=flat-square" alt="Support" />
-	</a>
-	<a href="https://github.com/bayudwiyansatria/Development-And-Operations/blob/master/CONTRIBUTING.md">
-		<img src="https://img.shields.io/badge/%20Community-Contribution-yellow.svg?style=flat-square" alt="Contribution" />
-	</a>
+<a href="https://github.com/bayudwiyansatria/Development-And-Operations/blob/master/CODE_OF_CONDUCT.md">
+<img src="https://img.shields.io/badge/Community-Code%20of%20Conduct-orange.svg?style=flat-squre" alt="Code of Conduct" />
+</a>
+<a href="https://github.com/bayudwiyansatria/Development-And-Operations/blob/master/SUPPORT.md">
+<img src="https://img.shields.io/badge/Community-Support-red.svg?style=flat-square" alt="Support" />
+</a>
+<a href="https://github.com/bayudwiyansatria/Development-And-Operations/blob/master/CONTRIBUTING.md">
+<img src="https://img.shields.io/badge/%20Community-Contribution-yellow.svg?style=flat-square" alt="Contribution" />
+</a>
 </p>
 <hr>
 
-# Bayu Dwiyan Satria - Core 
+# Bayu Dwiyan Satria - Core
 
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v1.4%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md)
 
@@ -51,7 +51,7 @@ Core of Bayu Dwiyan Satria Project Framework.
 
 ## Dependencies
 
-Dependencies Repository : https://search.maven.org/
+Dependencies Repository : [https://search.maven.org/](https://search.maven.org/)
 
 **Maven Central** :
 
