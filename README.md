@@ -51,7 +51,7 @@ Core of Bayu Dwiyan Satria Project Framework.
 
 ## Dependencies
 
-Dependencies Repository : https://search.maven.org/
+Dependencies Repository : [https://search.maven.org/](https://search.maven.org/)
 
 **Maven Central** :
 
