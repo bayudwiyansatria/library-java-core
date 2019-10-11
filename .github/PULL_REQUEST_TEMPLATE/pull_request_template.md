@@ -1,4 +1,4 @@
-# PULL REQUEST TEMPLETE
+# PULL REQUEST TEMPLATE
 
 Thank you for sending in this pull request. Please make sure you take a look at the [contributing file](../../CONTRIBUTING.md). Here's a few things for you to consider in this pull request:
 
