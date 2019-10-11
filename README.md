@@ -25,7 +25,9 @@
 </p>
 <hr>
 
-# Bayu Dwiyan Satria - Core
+# Bayu Dwiyan Satria - Core 
+
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v1.4%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md)
 
 ![Github Actions](https://github.com/bayudwiyansatria/Library-Java-Core/workflows/Github%20Action/badge.svg)
 [![Build Status](https://dev.azure.com/bayudwiyansatria/Libraries/_apis/build/status/Library%20Java%20Core?branchName=master)](https://dev.azure.com/bayudwiyansatria/Libraries/_build/latest?definitionId=6&branchName=master)
