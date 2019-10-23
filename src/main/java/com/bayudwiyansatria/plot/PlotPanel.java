@@ -60,10 +60,10 @@ class PlotPanel extends JPanel {
     private int[] range = null;
 
     public PlotPanel(int axisxmin, int axisxmax, int axisymin, int axisymax) {
-        this.xMin = (double)axisxmin;
-        this.yMin = (double)axisymin;
-        this.xMax = (double)axisxmax;
-        this.yMax = (double)(-axisymax);
+        this.xMin = axisxmin;
+        this.yMin = axisymin;
+        this.xMax = axisxmax;
+        this.yMax = -axisymax;
         this.x[0] = 0.0D;
         this.y[0] = this.yMax;
         this.repaint();
@@ -82,7 +82,7 @@ class PlotPanel extends JPanel {
             this.origin = new Double();
             this.offset = new Double();
             if (this.xMax < 0.0D) {
-                this.origin.x = (double)(this.w - 40);
+                this.origin.x = this.w - 40;
                 this.offset.x = this.origin.x - this.xScale * this.xMax;
             } else if (this.xMin < 0.0D) {
                 this.origin.x = 40.0D - this.xScale * this.xMin;
@@ -93,7 +93,7 @@ class PlotPanel extends JPanel {
             }
 
             if (this.yMax < 0.0D) {
-                this.origin.y = (double)(this.h - 40);
+                this.origin.y = this.h - 40;
                 this.offset.y = this.origin.y - this.yScale * this.yMax;
             } else if (this.yMin < 0.0D) {
                 this.origin.y = 40.0D - this.yScale * this.yMin;
@@ -103,8 +103,8 @@ class PlotPanel extends JPanel {
                 this.offset.y = 40.0D - this.yScale * this.yMin;
             }
 
-            this.g2.draw(new java.awt.geom.Line2D.Double(40.0D, this.origin.y, (double)(this.w - 40), this.origin.y));
-            this.g2.draw(new java.awt.geom.Line2D.Double(this.origin.x, 40.0D, this.origin.x, (double)(this.h - 40)));
+            this.g2.draw(new java.awt.geom.Line2D.Double(40.0D, this.origin.y, this.w - 40 , this.origin.y));
+            this.g2.draw(new java.awt.geom.Line2D.Double(this.origin.x, 40.0D, this.origin.x, this.h - 40 ));
             this.g2.setPaint(Color.black);
             Font font = this.g2.getFont();
             FontRenderContext frc = this.g2.getFontRenderContext();

@@ -345,7 +345,7 @@ public class Array extends Vector {
 
     public int[][] mergeArrayRow(int[] data1, int[][] data2) {
         int dimension = data2[0].length;
-        int[][] newArray = (int[][])null;
+        int[][] newArray = null;
         if (dimension == data1.length) {
             newArray = this.initArray(data2.length + 1, dimension, 0);
 
@@ -368,7 +368,7 @@ public class Array extends Vector {
 
     public double[][] mergeArrayRow(double[] data1, double[][] data2) {
         int dimension = data2[0].length;
-        double[][] newArray = (double[][])null;
+        double[][] newArray = null;
         if (dimension == data1.length) {
             newArray = this.initArray(data2.length + 1, dimension, 0.0);
 
@@ -391,7 +391,7 @@ public class Array extends Vector {
 
     public int[][] mergeArrayColumn(int[] data1, int[][] data2) {
         int dimension = data2[0].length;
-        int[][] newArray = (int[][])null;
+        int[][] newArray = null;
         if (data1.length == data2.length) {
             newArray = this.initArray(data1.length, dimension + 1, 0);
 
@@ -411,7 +411,7 @@ public class Array extends Vector {
 
     public double[][] mergeArrayColumn(double[] data1, double[][] data2) {
         int dimension = data2[0].length;
-        double[][] newArray = (double[][])null;
+        double[][] newArray = null;
         if (data1.length == data2.length) {
             newArray = this.initArray(data1.length, dimension + 1, 0.0);
 
@@ -430,7 +430,7 @@ public class Array extends Vector {
     }
 
     public int[][] mergeArrayRow(int[][] data1, int[] data2) {
-        int[][] newArray = (int[][])null;
+        int[][] newArray = null;
         if (data1[0].length == data2.length) {
             newArray = this.initArray(data1.length + 1, data1[0].length, 0);
 
@@ -452,7 +452,7 @@ public class Array extends Vector {
     }
 
     public double[][] mergeArrayRow(double[][] data1, double[] data2) {
-        double[][] newArray = (double[][])null;
+        double[][] newArray = null;
         if (data1[0].length == data2.length) {
             newArray = this.initArray(data1.length + 1, data1[0].length, 0.0);
 
@@ -474,7 +474,7 @@ public class Array extends Vector {
     }
 
     public int[][] mergeArrayColumn(int[][] data1, int[] data2) {
-        int[][] newArray = (int[][])null;
+        int[][] newArray = null;
         if (data1.length == data2.length) {
             newArray = this.initArray(data1.length, data1[0].length + 1, 0);
 
@@ -493,7 +493,7 @@ public class Array extends Vector {
     }
 
     public double[][] mergeArrayColumn(double[][] data1, double[] data2) {
-        double[][] newArray = (double[][])null;
+        double[][] newArray = null;
         if (data1.length == data2.length) {
             newArray = this.initArray(data1.length, data1[0].length + 1, 0.0);
 
@@ -680,7 +680,7 @@ public class Array extends Vector {
     }
 
     public int[][] initArray(int rows, int cols, int init_value) {
-        int[][] newArray = (int[][])null;
+        int[][] newArray = null;
         if (rows > 0 && cols > 0) {
             newArray = new int[rows][cols];
 
@@ -697,7 +697,7 @@ public class Array extends Vector {
     }
 
     public double[][] initArray(int rows, int cols, double init_value) {
-        double[][] newArray = (double[][])null;
+        double[][] newArray = null;
         if (rows > 0 && cols > 0) {
             newArray = new double[rows][cols];
 
@@ -813,7 +813,7 @@ public class Array extends Vector {
         data = data.replace(" ", "");
         String tmp = this.cleanArrIn(data);
         String[] split = tmp.split(",");
-        int[] newData = new com.bayudwiyansatria.utils.Utils().String_to_int(split);
+        int[] newData = new com.bayudwiyansatria.utils.Utils().string_to_int (split);
         return newData;
     }
 
@@ -821,7 +821,7 @@ public class Array extends Vector {
         data = data.replace(" ", "");
         String tmp = this.cleanArrIn(data);
         String[] split = tmp.split(",");
-        double[] newData = new com.bayudwiyansatria.utils.Utils().String_to_double(split);
+        double[] newData = new com.bayudwiyansatria.utils.Utils().string_to_double (split);
         return newData;
     }
 

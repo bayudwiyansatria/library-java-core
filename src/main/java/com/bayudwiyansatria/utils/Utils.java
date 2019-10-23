@@ -24,10 +24,8 @@
 
 package com.bayudwiyansatria.utils;
 
-import javax.lang.model.element.Element;
 import java.io.ObjectInputStream;
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class Utils {
     public void warning(String error_message) {
@@ -72,7 +70,7 @@ public class Utils {
         SortedSet<String> set = new TreeSet<>();
         String[] dataLabel = new String[data.length];
         for(int i = 0; i < data.length; ++i) {
-            set.add(new String(data[i]));
+            set.add( data[ i ] );
         }
         Iterator<?> element = set.iterator();
         int i;
@@ -231,7 +229,7 @@ public class Utils {
         return newData;
     }
 
-    public int[] String_to_int(String[] data) {
+    public int[] string_to_int(String[] data) {
         int[] newData = new int[data.length];
         for(int i = 0; i < data.length; ++i) {
             newData[i] = Integer.parseInt(data[i]);
@@ -239,7 +237,7 @@ public class Utils {
         return newData;
     }
 
-    public int[][] String_to_int(String[][] data) {
+    public int[][] string_to_int(String[][] data) {
         int[][] newData = new int[data.length][data[0].length];
         for(int i = 0; i < data.length; ++i) {
             for(int j = 0; j < data[0].length; ++j) {
@@ -249,7 +247,7 @@ public class Utils {
         return newData;
     }
 
-    public double[] String_to_double(String[] data) {
+    public double[] string_to_double(String[] data) {
         double[] newData = new double[data.length];
         for(int i = 0; i < data.length; ++i) {
             newData[i] = Double.parseDouble(data[i]);
@@ -257,7 +255,7 @@ public class Utils {
         return newData;
     }
 
-    public double[][] String_to_double(String[][] data) {
+    public double[][] string_to_double(String[][] data) {
         double[][] newData = new double[data.length][data[0].length];
         for(int i = 0; i < data.length; ++i) {
             for(int j = 0; j < data[0].length; ++j) {
@@ -267,7 +265,7 @@ public class Utils {
         return newData;
     }
 
-    public int[] String_to_categorical(String[] data){
+    public int[] string_to_categorical(String[] data){
         int[] newData = new int[data.length];
         String[] unique = getUnique(data);
 
@@ -287,11 +285,11 @@ public class Utils {
         return newData;
     }
 
-    public int[][] String_to_categorical(String[][] data){
+    public int[][] string_to_categorical(String[][] data){
         String[][] transposeData = new com.bayudwiyansatria.mat.Mat().transposeMatrix(data);
         int[][] newData = new int[transposeData.length][transposeData[0].length];
         for(int i=0; i< transposeData.length; i++){
-            newData[i] = String_to_categorical(transposeData[i]);
+            newData[i] = string_to_categorical(transposeData[i]);
         }
         return newData;
     }

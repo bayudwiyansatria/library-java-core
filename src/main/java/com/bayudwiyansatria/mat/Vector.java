@@ -119,7 +119,7 @@ public class Vector {
         double distance = 0.0;
         for(int i = 0; i < p1.length; ++i) {
             int difference = p2[i] - p1[i];
-            distance += (double)(difference * difference);
+            distance += difference * difference;
         }
         return Math.sqrt(distance);
     }
@@ -187,7 +187,7 @@ public class Vector {
     public double[] getDistanceRelative(int[] p1, int[][] p2) {
         double[] distance = new double[p2.length];
         for(int i = 0; i < p2.length; ++i) {
-            distance[i] = (double)this.getDistanceRelative(p1, p2[i]);
+            distance[i] = this.getDistanceRelative(p1, p2[i]);
         }
         return distance;
     }
@@ -233,7 +233,7 @@ public class Vector {
     public double[] getMinDistanceRelative(int[] p1, int[][] p2) {
         double[] min = new double[]{(double)this.getDistanceRelative(p1, p2[0]), 0.0};
         for(int i = 1; i < p2.length; ++i) {
-            double distance = (double)this.getDistanceRelative(p1, p2[i]);
+            double distance = this.getDistanceRelative(p1, p2[i]);
             if (distance < min[0]) {
                 min[0] = distance;
                 min[1] = i;
@@ -263,7 +263,7 @@ public class Vector {
             double distance = this.getDistanceAbsolute(p1, p2[i]);
             if (distance < min[0]) {
                 min[0] = distance;
-                min[1] = (double)i;
+                min[1] = i;
             }
         }
 
@@ -276,7 +276,7 @@ public class Vector {
             double distance = this.getDistanceAbsolute(p1, p2[i]);
             if (distance < min[0]) {
                 min[0] = distance;
-                min[1] = (double)i;
+                min[1] = i;
             }
         }
 
@@ -289,7 +289,7 @@ public class Vector {
             double distance = this.getDistanceAbsolute(p1, p2[i]);
             if (distance < min[0]) {
                 min[0] = distance;
-                min[1] = (double)i;
+                min[1] = i;
             }
         }
         return min;

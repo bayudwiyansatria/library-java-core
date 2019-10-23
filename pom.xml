@@ -227,6 +227,12 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+		<dependency>
+			<groupId>org.jetbrains</groupId>
+			<artifactId>annotations</artifactId>
+			<version>RELEASE</version>
+			<scope>compile</scope>
+		</dependency>
 	</dependencies>
 
 	<repositories>
@@ -328,47 +334,9 @@
 						</execution>
 					</executions>
 				</plugin>
-				<plugin>
-					<groupId>org.jacoco</groupId>
-					<artifactId>jacoco-maven-plugin</artifactId>
-					<version>${jacoco-maven-plugin.version}</version>
-					<configuration>
-						<excludes>
-							<exclude>**/FastRegexpLineParser.*</exclude>
-						</excludes>
-					</configuration>
-					<executions>
-						<execution>
-							<goals>
-								<goal>prepare-agent</goal>
-							</goals>
-						</execution>
-						<execution>
-							<id>report</id>
-							<phase>prepare-package</phase>
-							<goals>
-								<goal>report</goal>
-							</goals>
-						</execution>
-					</executions>
-				</plugin>
 			</plugins>
 		</pluginManagement>
 		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-clean-plugin</artifactId>
-				<version>${maven-clean-plugin.version}</version>
-				<executions>
-					<execution>
-						<id>auto-clean</id>
-						<phase>clean</phase>
-						<goals>
-							<goal>clean</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -564,11 +532,22 @@
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
 				<version>${jacoco-maven-plugin.version}</version>
+				<configuration>
+					<destFile>${basedir}/target/coverage-reports/jacoco-unit.exec</destFile>
+					<dataFile>${basedir}/target/coverage-reports/jacoco-unit.exec</dataFile>
+				</configuration>
 				<executions>
 					<execution>
 						<id>coverage-initialize</id>
 						<goals>
 							<goal>prepare-agent</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>report-aggregate</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>report</goal>
 						</goals>
 					</execution>
 					<execution>
@@ -578,28 +557,7 @@
 							<goal>report</goal>
 						</goals>
 					</execution>
-					<!-- Threshold -->
-					<execution>
-						<id>coverage-check</id>
-						<goals>
-							<goal>check</goal>
-						</goals>
-					</execution>
 				</executions>
-				<configuration>
-        <rules>
-          <rule>
-            <element>CLASS</element>
-            <limits>
-              <limit>
-                <counter>LINE</counter>
-                <value>COVEREDRATIO</value>
-                <minimum>80%</minimum>
-              </limit>
-            </limits>
-          </rule>
-        </rules>
-      </configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.sonatype.plugins</groupId>
@@ -634,8 +592,8 @@
 	<reports/>
 	<reporting>
 		<outputDirectory>${project.basedir}/target/site</outputDirectory>
-		<!-- Default Site Pages -->
 		<plugins>
+			<!-- Default Site Pages -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-project-info-reports-plugin</artifactId>
@@ -647,6 +605,19 @@
 				<artifactId>maven-javadoc-plugin</artifactId>
 				<version>${maven-javadoc-plugin.version}</version>
 			</plugin>
+			<!-- Code Coverage -->
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>${jacoco-maven-plugin.version}</version>
+				<reportSets>
+          <reportSet>
+            <reports>
+              <report>report</report>
+            </reports>
+          </reportSet>
+        </reportSets>
+      </plugin>
 		</plugins>
 	</reporting>
 	<profiles/>

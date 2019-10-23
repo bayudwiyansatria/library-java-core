@@ -182,7 +182,7 @@ public class Math extends Calculation {
         for(int i = 1; i < data.length; ++i) {
             if (data[i] < min[0]) {
                 min[0] = data[i];
-                min[1] = (double)i;
+                min[1] = i;
             }
         }
         return min;
@@ -294,7 +294,7 @@ public class Math extends Calculation {
 
         for(int i = 0; i < n; ++i) {
             int index = random.nextInt(data.size());
-            result[i] = (Integer)data.get(index);
+            result[i] = data.get(index);
             data.remove(index);
         }
 

@@ -24,8 +24,6 @@
 
 package com.bayudwiyansatria;
 
-import java.util.Arrays;
-
 public class Core {
 	public String USERNAME = System.getProperty("user.name");
 	public void setUsername(String Username){
