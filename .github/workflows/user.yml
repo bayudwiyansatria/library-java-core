@@ -19,11 +19,18 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: ${{ matrix.java-version }}
-      - name: Maven build clean, build, test and install
+      - name: Maven Clean
         run: |
           mvn clean
+      - name: Maven Test
+        env:
+          CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}
+        run: |
           mvn test
+      - name: Maven Packages
           mvn package --file pom.xml
+      - name: Generate Code Coverage
+        run: |
           curl -Ls -o codacy-coverage-reporter "$(curl -Ls https://api.github.com/repos/codacy/codacy-coverage-reporter/releases/latest | jq -r '.assets | map({name, browser_download_url} | select(.name | contains("codacy-coverage-reporter-linux"))) | .[0].browser_download_url')"
           chmod +x codacy-coverage-reporter
           ./codacy-coverage-reporter report -l Java -r target/site/jacoco/test/jacoco.xml
