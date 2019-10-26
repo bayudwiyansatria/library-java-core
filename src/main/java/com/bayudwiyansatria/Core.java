@@ -24,13 +24,10 @@
 
 package com.bayudwiyansatria;
 
-public class Core {
-	public String USERNAME = System.getProperty("user.name");
-	public void setUsername(String Username){
-		this.USERNAME = Username;
-	}
+import com.bayudwiyansatria.system.Properties;
 
-	public String getUsername(){
-		return USERNAME;
-	}
+public class Core extends Properties {
+	private String HOSTNAME;
+	private String INTERFACE;
+	private String IP_ADDRESS;
 }

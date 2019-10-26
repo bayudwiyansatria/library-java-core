@@ -28,9 +28,7 @@ public class Mat extends Array {
 
 	/* ======================================= Array View Start ======================================================*/
 
-    public void print(int data) {
-        System.out.println(data + "\n");
-    }
+    public void print(int data) { System.out.println(data + "\n"); }
 
     public void print(double data) {
         System.out.println(data + "\n");
