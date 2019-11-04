@@ -21,4 +21,6 @@ jobs:
           java-version: ${{ matrix.java-version }}
       - name: Maven clean, build, test and install
         run: |
+          mvn clean
+          mvn test
           mvn package --file pom.xml
