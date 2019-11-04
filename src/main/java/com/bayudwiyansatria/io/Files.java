@@ -30,6 +30,7 @@ import com.bayudwiyansatria.utils.Utils;
 import java.io.*;
 
 public class Files extends Array {
+    
     private String[][] readCSV(String filename, String titlemode) {
         filename = filename + ".csv";
         String initData = "";
@@ -138,7 +139,7 @@ public class Files extends Array {
     public String[][] readCSV_String(String filename) {
         return this.readCSV(filename, "title:no");
     }
-
+    
     public void saveCSV(int[] data, String filename) {
         PrintWriter writer = null;
         File file = new File(filename + ".csv");

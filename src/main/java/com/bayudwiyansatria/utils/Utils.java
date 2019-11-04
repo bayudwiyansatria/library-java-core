@@ -24,7 +24,6 @@
 
 package com.bayudwiyansatria.utils;
 
-import java.io.ObjectInputStream;
 import java.util.*;
 
 public class Utils {
@@ -190,26 +189,6 @@ public class Utils {
         return newData;
     }
 
-    public List<Integer> int_to_list(int[][] data){
-    	List<Integer> list = null;
-    	for(int i=0; i<data.length; i++){
-            for(int j = 0; j < data[0].length; ++j) {
-	            list.add(data[i][j]);
-            }
-	    }
-        return list;
-    }
-
-    public ArrayList<Integer> int_to_arraylist(int[][] data){
-    	ArrayList<Integer> list = null;
-    	for (int i=0; i<data.length; i++){
-    		for(int j = 0; j < data[0].length; ++j) {
-	            list.add(data[i][j]);
-            }
-	    }
-    	return list;
-    }
-
     public int[] double_to_int(double[] data) {
         int[] newData = new int[data.length];
         for(int i = 0; i < data.length; ++i) {
@@ -294,16 +273,6 @@ public class Utils {
         return newData;
     }
 
-    public List<String> String_to_list(String[][] data){
-    	List<String> list = null;
-    	for(int i=0; i<data.length; i++){
-            for(int j = 0; j < data[0].length; ++j) {
-	            list.add(data[i][j]);
-            }
-	    }
-        return list;
-    }
-
     public ArrayList<ArrayList<String>> String_to_arraylist(String[][] data){
     	ArrayList<ArrayList<String>> list = new ArrayList<ArrayList<String>>(data.length);
     	for (int i=0; i<data.length; i++){
@@ -315,20 +284,6 @@ public class Utils {
 	    }
     	return list;
     }
-
-    public List<ArrayList> Bytes_to_arraylist(ObjectInputStream data){
-        List<ArrayList>newData = null;
-        try {
-            Object obj = data.readObject();
-            while(obj != null){
-                newData.add((ArrayList) newData);
-            }
-        } catch (Exception except){
-            warning(except.toString());
-        }
-        return newData;
-    }
-
 
     public String[][] List_to_String(ArrayList<String[]> data){
         String[][] newData  = new String[data.size()][data.get(0).length];
