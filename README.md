@@ -84,7 +84,7 @@ Configure the following dependency in the pom file:
 Configure the following dependency in the build.gradle file:
 
 ```properties
-implementation 'com.bayudwiyansatria:core:${bayudwiyansatria.core.version}'
+implementation='com.bayudwiyansatria:core:${bayudwiyansatria.core.version}'
 ```
 
 SBT

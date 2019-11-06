@@ -1,12 +1,11 @@
-name: Release Action
+name: User Action
 
 on:
   push:
-    tags:
-    - 'v*'
-
+    branches:
+      - users/*
 jobs:
-  release:
+  build:
     name: Main
     runs-on: ${{ matrix.operating-system }}
     strategy:
@@ -20,12 +19,8 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: ${{ matrix.java-version }}
-      - name: Maven build clean, build, test and install
+      - name: Maven Clean, Test, And Packages
         run: |
           mvn clean
           mvn test
           mvn package --file pom.xml
-      - name: Creating Release Draft
-        uses: toolmantim/release-drafter@v5.2.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}

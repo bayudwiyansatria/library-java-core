@@ -22,17 +22,16 @@
  * SOFTWARE.
  */
 
-package com.bayudwiyansatria;
+package com.bayudwiyansatria.system;
 
-import com.bayudwiyansatria.system.Properties;
-
-public class Core extends Properties {
-	private String HOSTNAME;
-	private String INTERFACE;
-	private String IP_ADDRESS;
-	public static void main(String[] args){
-		long StartTime = System.currentTimeMillis();
-		long EndTime = System.currentTimeMillis();
-		float sec = (EndTime - StartTime) / 1000F; System.out.println(sec + " seconds");
+public class JavaVirtualMachineProperties extends Properties {
+	
+	public String getJavaHome() {
+		return System.getProperty("java.home");
 	}
+	
+	public String getJavaVersion() {
+		return System.getProperty("java.version");
+	}
+	
 }

@@ -30,6 +30,7 @@ import com.bayudwiyansatria.utils.Utils;
 import java.io.*;
 
 public class Files extends Array {
+    
     private String[][] readCSV(String filename, String titlemode) {
         filename = filename + ".csv";
         String initData = "";
@@ -116,19 +117,19 @@ public class Files extends Array {
     }
 
     public int[][] readCSV_int(String filename, String titlemode) {
-        return new Utils().String_to_int(this.readCSV(filename, titlemode));
+        return new Utils().string_to_int (this.readCSV(filename, titlemode));
     }
 
     public int[][] readCSV_int(String filename) {
-        return new Utils().String_to_int(this.readCSV(filename, "title:no"));
+        return new Utils().string_to_int (this.readCSV(filename, "title:no"));
     }
 
     public double[][] readCSV_double(String filename, String titlemode) {
-        return new Utils().String_to_double(this.readCSV(filename, titlemode));
+        return new Utils().string_to_double (this.readCSV(filename, titlemode));
     }
 
     public double[][] readCSV_double(String filename) {
-        return new Utils().String_to_double(this.readCSV(filename, "title:no"));
+        return new Utils().string_to_double (this.readCSV(filename, "title:no"));
     }
 
     public String[][] readCSV_String(String filename, String titlemode) {
@@ -138,7 +139,7 @@ public class Files extends Array {
     public String[][] readCSV_String(String filename) {
         return this.readCSV(filename, "title:no");
     }
-
+    
     public void saveCSV(int[] data, String filename) {
         PrintWriter writer = null;
         File file = new File(filename + ".csv");

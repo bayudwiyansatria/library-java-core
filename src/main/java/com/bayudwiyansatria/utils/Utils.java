@@ -24,10 +24,7 @@
 
 package com.bayudwiyansatria.utils;
 
-import javax.lang.model.element.Element;
-import java.io.ObjectInputStream;
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class Utils {
     public void warning(String error_message) {
@@ -72,7 +69,7 @@ public class Utils {
         SortedSet<String> set = new TreeSet<>();
         String[] dataLabel = new String[data.length];
         for(int i = 0; i < data.length; ++i) {
-            set.add(new String(data[i]));
+            set.add( data[ i ] );
         }
         Iterator<?> element = set.iterator();
         int i;
@@ -192,26 +189,6 @@ public class Utils {
         return newData;
     }
 
-    public List<Integer> int_to_list(int[][] data){
-    	List<Integer> list = null;
-    	for(int i=0; i<data.length; i++){
-            for(int j = 0; j < data[0].length; ++j) {
-	            list.add(data[i][j]);
-            }
-	    }
-        return list;
-    }
-
-    public ArrayList<Integer> int_to_arraylist(int[][] data){
-    	ArrayList<Integer> list = null;
-    	for (int i=0; i<data.length; i++){
-    		for(int j = 0; j < data[0].length; ++j) {
-	            list.add(data[i][j]);
-            }
-	    }
-    	return list;
-    }
-
     public int[] double_to_int(double[] data) {
         int[] newData = new int[data.length];
         for(int i = 0; i < data.length; ++i) {
@@ -231,7 +208,7 @@ public class Utils {
         return newData;
     }
 
-    public int[] String_to_int(String[] data) {
+    public int[] string_to_int(String[] data) {
         int[] newData = new int[data.length];
         for(int i = 0; i < data.length; ++i) {
             newData[i] = Integer.parseInt(data[i]);
@@ -239,7 +216,7 @@ public class Utils {
         return newData;
     }
 
-    public int[][] String_to_int(String[][] data) {
+    public int[][] string_to_int(String[][] data) {
         int[][] newData = new int[data.length][data[0].length];
         for(int i = 0; i < data.length; ++i) {
             for(int j = 0; j < data[0].length; ++j) {
@@ -249,7 +226,7 @@ public class Utils {
         return newData;
     }
 
-    public double[] String_to_double(String[] data) {
+    public double[] string_to_double(String[] data) {
         double[] newData = new double[data.length];
         for(int i = 0; i < data.length; ++i) {
             newData[i] = Double.parseDouble(data[i]);
@@ -257,7 +234,7 @@ public class Utils {
         return newData;
     }
 
-    public double[][] String_to_double(String[][] data) {
+    public double[][] string_to_double(String[][] data) {
         double[][] newData = new double[data.length][data[0].length];
         for(int i = 0; i < data.length; ++i) {
             for(int j = 0; j < data[0].length; ++j) {
@@ -267,7 +244,7 @@ public class Utils {
         return newData;
     }
 
-    public int[] String_to_categorical(String[] data){
+    public int[] string_to_categorical(String[] data){
         int[] newData = new int[data.length];
         String[] unique = getUnique(data);
 
@@ -287,23 +264,13 @@ public class Utils {
         return newData;
     }
 
-    public int[][] String_to_categorical(String[][] data){
+    public int[][] string_to_categorical(String[][] data){
         String[][] transposeData = new com.bayudwiyansatria.mat.Mat().transposeMatrix(data);
         int[][] newData = new int[transposeData.length][transposeData[0].length];
         for(int i=0; i< transposeData.length; i++){
-            newData[i] = String_to_categorical(transposeData[i]);
+            newData[i] = string_to_categorical(transposeData[i]);
         }
         return newData;
-    }
-
-    public List<String> String_to_list(String[][] data){
-    	List<String> list = null;
-    	for(int i=0; i<data.length; i++){
-            for(int j = 0; j < data[0].length; ++j) {
-	            list.add(data[i][j]);
-            }
-	    }
-        return list;
     }
 
     public ArrayList<ArrayList<String>> String_to_arraylist(String[][] data){
@@ -317,20 +284,6 @@ public class Utils {
 	    }
     	return list;
     }
-
-    public List<ArrayList> Bytes_to_arraylist(ObjectInputStream data){
-        List<ArrayList>newData = null;
-        try {
-            Object obj = data.readObject();
-            while(obj != null){
-                newData.add((ArrayList) newData);
-            }
-        } catch (Exception except){
-            warning(except.toString());
-        }
-        return newData;
-    }
-
 
     public String[][] List_to_String(ArrayList<String[]> data){
         String[][] newData  = new String[data.size()][data.get(0).length];
