@@ -174,7 +174,6 @@ public class Vector {
         for(int i = 0; i < p1.length; ++i) {
             double difference = p2[i] - p1[i];
             distance += difference * difference;
-            System.out.println ( i + " : " + distance + " = " + distance + " x " + " ( " + difference + " x " + difference + " ) " );
         }
         return distance;
     }
