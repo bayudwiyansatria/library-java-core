@@ -87,69 +87,22 @@ public class Utils {
             ok = false;
             byte bytes = -1;
             switch(opr.hashCode()) {
-            case 60:
-                if (opr.equals("<")) {
-                    bytes = 1;
-                }
-                break;
-            case 61:
-                if (opr.equals("=")) {
-                    bytes = 0;
-                }
-                break;
-            case 62:
-                if (opr.equals(">")) {
-                    bytes = 3;
-                }
-                break;
-            case 1084:
-                if (opr.equals("!=")) {
-                    bytes = 5;
-                }
-                break;
-            case 1921:
-                if (opr.equals("<=")) {
-                    bytes = 2;
-                }
-                break;
-            case 1983:
-                if (opr.equals(">=")) {
-                    bytes = 4;
-                }
+                case 60: if ("<".equals(opr)) { bytes = 1; } break;
+                case 61: if ("=".equals(opr)) { bytes = 0; } break;
+                case 62: if (">".equals(opr)) { bytes = 3; } break;
+                case 1084: if ("!=".equals(opr)) { bytes = 5; } break;
+                case 1921: if ("<=".equals(opr)) { bytes = 2;  } break;
+                case 1983: if (">=".equals(opr)) { bytes = 4; }
             }
 
             switch(bytes) {
-            case 0:
-                if (data[i] == val) {
-                    ok = true;
-                }
-                break;
-            case 1:
-                if (data[i] < val) {
-                    ok = true;
-                }
-                break;
-            case 2:
-                if (data[i] <= val) {
-                    ok = true;
-                }
-                break;
-            case 3:
-                if (data[i] > val) {
-                    ok = true;
-                }
-                break;
-            case 4:
-                if (data[i] >= val) {
-                    ok = true;
-                }
-                break;
-            case 5:
-                if (data[i] != val) {
-                    ok = true;
-                }
+                case 0: if (data[i] == val) { ok = true;  } break;
+                case 1: if (data[i] < val) { ok = true;  } break;
+                case 2: if (data[i] <= val) { ok = true;  } break;
+                case 3: if (data[i] > val) { ok = true;  } break;
+                case 4: if (data[i] >= val) { ok = true;  } break;
+                case 5: if (data[i] != val) { ok = true; }
             }
-
             if (ok) {
                 if (find == 0) {
                     ++find;
@@ -177,20 +130,20 @@ public class Utils {
             ok = false;
             byte bytes = -1;
             switch(opr.hashCode()) {
-                case 60: if ("<".equals(opr)) { bytes = 1; break; }
-                case 61: if ("=".equals(opr)) { bytes = 0; break;}
-                case 62: if (">".equals(opr)) { bytes = 3; break;}
-                case 1084: if ("!=".equals(opr)) { bytes = 5; break; }
-                case 1921: if ("<=".equals(opr)) { bytes = 2; break;}
+                case 60: if ("<".equals(opr)) { bytes = 1; } break;
+                case 61: if ("=".equals(opr)) { bytes = 0;} break;
+                case 62: if (">".equals(opr)) { bytes = 3;} break;
+                case 1084: if ("!=".equals(opr)) { bytes = 5; } break;
+                case 1921: if ("<=".equals(opr)) { bytes = 2;} break;
                 case 1983: if (">=".equals(opr)) { bytes = 4; }
             }
 
             switch(bytes) {
-                case 0: if (data[i] == val) { ok = true; break; }
-                case 1: if (data[i] < val) { ok = true; break; }
-                case 2: if (data[i] <= val) { ok = true; break; }
-                case 3: if (data[i] > val) { ok = true; break; }
-                case 4: if (data[i] >= val) { ok = true; break; }
+                case 0: if (data[i] == val) { ok = true; } break;
+                case 1: if (data[i] < val) { ok = true; } break;
+                case 2: if (data[i] <= val) { ok = true; } break;
+                case 3: if (data[i] > val) { ok = true; } break;
+                case 4: if (data[i] >= val) { ok = true; } break;
                 case 5: if (data[i] != val) { ok = true; }
             }
             
