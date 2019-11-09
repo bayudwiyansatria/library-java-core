@@ -199,6 +199,29 @@
 			</snapshots>
 			<layout>default</layout>
 		</repository>
+		<repository>
+		  <id>azure</id>
+			<name>Azure DevOps Artifacts</name>
+		  <url>https://pkgs.dev.azure.com/bayudwiyansatria/_packaging/bayudwiyansatria/maven/v1</url>
+		  <releases>
+		    <enabled>true</enabled>
+		  </releases>
+		  <snapshots>
+		    <enabled>true</enabled>
+		  </snapshots>
+		</repository>
+		<repository>
+			<id>github</id>
+			<name>Github Package Registry</name>
+			<url>https://maven.pkg.github.com/bayudwiyansatria</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+			<layout>default</layout>
+		</repository>
 	</repositories>
 	
 	<pluginRepositories>
