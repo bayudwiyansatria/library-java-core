@@ -51,8 +51,8 @@ public class Utils {
     public int[] getUnique(int[] data) {
         SortedSet<Integer> set = new TreeSet<>();
         int[] dataLabel = new int[data.length];
-        for(int i = 0; i < data.length; ++i) {
-            set.add(new Integer(data[i]));
+        for ( int datum : data ) {
+            set.add ( datum );
         }
         Iterator<?> element = set.iterator();
         int i;
@@ -66,11 +66,8 @@ public class Utils {
     }
 
     public String[] getUnique(String[] data) {
-        SortedSet<String> set = new TreeSet<>();
         String[] dataLabel = new String[data.length];
-        for(int i = 0; i < data.length; ++i) {
-            set.add( data[ i ] );
-        }
+        SortedSet < String > set = new TreeSet <> ( Arrays.asList ( data ) );
         Iterator<?> element = set.iterator();
         int i;
         for(i = 0; element.hasNext(); ++i) {
@@ -90,23 +87,22 @@ public class Utils {
             ok = false;
             byte bytes = -1;
             switch(opr.hashCode()) {
-                case 60: if ("<".equals(opr)) { bytes = 1; }
-                case 61: if ("=".equals(opr)) { bytes = 0; }
-                case 62: if (">".equals(opr)) { bytes = 3; }
-                case 1084: if ("!=".equals(opr)) { bytes = 5; }
-                case 1921: if ("<=".equals(opr)) { bytes = 2; }
+                case 60: if ("<".equals(opr)) { bytes = 1; } break;
+                case 61: if ("=".equals(opr)) { bytes = 0; } break;
+                case 62: if (">".equals(opr)) { bytes = 3; } break;
+                case 1084: if ("!=".equals(opr)) { bytes = 5; } break;
+                case 1921: if ("<=".equals(opr)) { bytes = 2;  } break;
                 case 1983: if (">=".equals(opr)) { bytes = 4; }
             }
 
             switch(bytes) {
-                case 0: if (data[i] == val) { ok = true; }
-                case 1: if (data[i] < val) { ok = true; }
-                case 2: if (data[i] <= val) { ok = true; }
-                case 3: if (data[i] > val) { ok = true; }
-                case 4: if (data[i] >= val) { ok = true; }
+                case 0: if (data[i] == val) { ok = true;  } break;
+                case 1: if (data[i] < val) { ok = true;  } break;
+                case 2: if (data[i] <= val) { ok = true;  } break;
+                case 3: if (data[i] > val) { ok = true;  } break;
+                case 4: if (data[i] >= val) { ok = true;  } break;
                 case 5: if (data[i] != val) { ok = true; }
             }
-
             if (ok) {
                 if (find == 0) {
                     ++find;
@@ -134,23 +130,23 @@ public class Utils {
             ok = false;
             byte bytes = -1;
             switch(opr.hashCode()) {
-                case 60: if ("<".equals(opr)) { bytes = 1; }
-                case 61: if ("=".equals(opr)) { bytes = 0; }
-                case 62: if (">".equals(opr)) { bytes = 3; }
-                case 1084: if ("!=".equals(opr)) { bytes = 5; }
-                case 1921: if ("<=".equals(opr)) { bytes = 2; }
+                case 60: if ("<".equals(opr)) { bytes = 1; } break;
+                case 61: if ("=".equals(opr)) { bytes = 0;} break;
+                case 62: if (">".equals(opr)) { bytes = 3;} break;
+                case 1084: if ("!=".equals(opr)) { bytes = 5; } break;
+                case 1921: if ("<=".equals(opr)) { bytes = 2;} break;
                 case 1983: if (">=".equals(opr)) { bytes = 4; }
             }
 
             switch(bytes) {
-                case 0: if (data[i] == val) { ok = true; }
-                case 1: if (data[i] < val) { ok = true; }
-                case 2: if (data[i] <= val) { ok = true; }
-                case 3: if (data[i] > val) { ok = true; }
-                case 4: if (data[i] >= val) { ok = true; }
+                case 0: if (data[i] == val) { ok = true; } break;
+                case 1: if (data[i] < val) { ok = true; } break;
+                case 2: if (data[i] <= val) { ok = true; } break;
+                case 3: if (data[i] > val) { ok = true; } break;
+                case 4: if (data[i] >= val) { ok = true; } break;
                 case 5: if (data[i] != val) { ok = true; }
             }
-
+            
             if (ok) {
                 if (find == 0) {
                     ++find;
@@ -273,17 +269,6 @@ public class Utils {
         return newData;
     }
 
-    public ArrayList<ArrayList<String>> String_to_arraylist(String[][] data){
-    	ArrayList<ArrayList<String>> list = new ArrayList<ArrayList<String>>(data.length);
-    	for (int i=0; i<data.length; i++){
-    	    ArrayList<String> sublist = new ArrayList<String>();
-    		for(int j=0; i<data[0].length; i++){
-    		    sublist.add(data[i][j]);
-		    }
-    	    list.add(sublist);
-	    }
-    	return list;
-    }
 
     public String[][] List_to_String(ArrayList<String[]> data){
         String[][] newData  = new String[data.size()][data.get(0).length];
