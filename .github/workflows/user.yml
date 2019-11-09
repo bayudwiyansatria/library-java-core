@@ -19,8 +19,12 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: ${{ matrix.java-version }}
-      - name: Maven Clean, Test, And Packages
+      - name: Maven Clean
         run: |
           mvn clean
+      - name: Maven Test
+        run: |
           mvn test
+      - name: Maven Package
+        run: |
           mvn package --file pom.xml
