@@ -15,7 +15,7 @@
  *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * FITNESS FOR A PARTICULAR PURPOSE AND NON INFRINGEMENT. IN NO EVENT SHALL THE
  * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
@@ -27,36 +27,14 @@ package com.bayudwiyansatria.system;
 import java.util.Map;
 
 public class Properties {
+	private String USERNAME;
+    
 	public JavaVirtualMachineProperties getJavaVirtualMachineProperties(){
 		return new JavaVirtualMachineProperties ();
 	}
 	
 	public OperationSystemProperties getOperationSystemProperties(){
 		return new OperationSystemProperties ();
-	}
-	
-	public UserProperties getUserProperties(){
-		return new UserProperties ();
-	}
-	
-	public String[] getOperatingSystemInformation () {
-		String[] OSInfo = new String[3];
-		OSInfo[0] = this.getOperationSystemProperties ().getOperatingSystem ();
-		OSInfo[1] = this.getOperationSystemProperties ().getOperatingSystemVersion ();
-		OSInfo[2] = this.getOperationSystemProperties ().getOperatingSystemArchitecture ();
-		System.out.println ( "OS : " + OSInfo[0]);
-		System.out.println ( "OS Version : " + OSInfo[1]);
-		System.out.println ( "OS Architecture : " + OSInfo[2]);
-		return OSInfo;
-	}
-	
-	public String[] getJavaInformation() {
-		String[] JavaInfo = new String[2];
-		JavaInfo[0] = this.getJavaVirtualMachineProperties ().getJavaHome ();
-		JavaInfo[1] = this.getJavaVirtualMachineProperties ().getJavaVersion ();
-		System.out.println ( "Java Home : " + JavaInfo[0] );
-		System.out.println ( "Java Version : " + JavaInfo[1] );
-		return JavaInfo;
 	}
 	
 	public Map<String, String> getEnvironmentVariable(){
@@ -68,4 +46,17 @@ public class Properties {
 			System.out.println ( Keys + ":" + Values );
 		} );
 	}
+	
+	/* USER PROPERTIES */
+	public void setSystemUsername(String username){
+		this.USERNAME = username;
+	}
+	
+	public String getSystemUsername(){
+		if ( USERNAME == null ){
+			setSystemUsername ( System.getProperty("user.name") );
+		}
+		return USERNAME;
+	}
+	
 }
