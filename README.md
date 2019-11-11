@@ -59,10 +59,6 @@ Dependencies Repository : [https://search.maven.org/](https://search.maven.org/)
 |  Name     |   Group   | Artifact  | Version   |
 | -----     |   -----   | -----     | -----     |
 | [JUnit](https://search.maven.org/artifact/junit/junit)                        | junit         | junit         | 4.12
-| [Slf4j](https://search.maven.org/artifact/org.slf4j/slf4j-simple)             | org.slf4j     | slf4j-simple  | 1.7.25
-| [Slf4j](https://search.maven.org/artifact/org.slf4j/slf4j-api)                | org.slf4j     | slf4j-api     | 1.7.25
-| [Ham Crest](https://search.maven.org/artifact/org.hamcrest/hamcrest-core)     | org.hamcrest  | hamcrest-core | 1.3
-| [Ham Crest](https://search.maven.org/artifact/org.hamcrest/hamcrest-library)  | org.hamcrest  | hamcrest-library | 1.3
 
 ## Installation
 
@@ -109,6 +105,7 @@ For more information see : [The Central Repository](https://search.maven.org/art
 - *M2 1.1.5* : **2019, Sept**. (Available On Maven Central)
 - *RC2 1.1.6* : **2019, Sept**. (Available On Maven Central)
 - *GA 1.1.7* : **2019, Sept**. (Available On Maven Central)
+- *RC3 1.1.8* : **2019, Nov**.
 
 ## Contributing
 
