@@ -30,12 +30,12 @@ public class CoreTest {
 	
 	@Test
 	public void setSystemUsername ( ) {
-		new  com.bayudwiyansatria.Core ().getUserProperties ().setSystemUsername ( "bayudwiyansatria" );
+		new  com.bayudwiyansatria.Core ().getOperationSystemProperties ().setSystemUsername ( "bayudwiyansatria" );
 	}
 	
 	@Test
 	public void getSystemUsername ( ) {
-		new com.bayudwiyansatria.mat.Mat ().print ( new  com.bayudwiyansatria.Core ().getUserProperties ().getSystemUsername () );
+		new com.bayudwiyansatria.mat.Mat ().print ( new  com.bayudwiyansatria.Core ().getSystemUsername () );
 	}
 	
 	@Test

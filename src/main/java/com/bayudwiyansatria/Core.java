@@ -15,7 +15,7 @@
  *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * FITNESS FOR A PARTICULAR PURPOSE AND NON INFRINGEMENT. IN NO EVENT SHALL THE
  * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
@@ -27,12 +27,4 @@ package com.bayudwiyansatria;
 import com.bayudwiyansatria.system.Properties;
 
 public class Core extends Properties {
-	private String HOSTNAME;
-	private String INTERFACE;
-	private String IP_ADDRESS;
-	public static void main(String[] args){
-		long StartTime = System.currentTimeMillis();
-		long EndTime = System.currentTimeMillis();
-		float sec = (EndTime - StartTime) / 1000F; System.out.println(sec + " seconds");
-	}
 }

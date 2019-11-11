@@ -15,7 +15,7 @@
  *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * FITNESS FOR A PARTICULAR PURPOSE AND NON INFRINGEMENT. IN NO EVENT SHALL THE
  * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
@@ -32,18 +32,18 @@ public class Utils {
         System.exit(1);
     }
 
-    public String buildArgument(String[] array, String splitter){
-        String argument = array[0];
+    public String buildArgument( String[] array, String splitter){
+        StringBuilder argument = new StringBuilder ( array[ 0 ] );
         for(int i=1; i<array.length; i++){
-            argument = argument+""+splitter+""+array[i];
+            argument.append ( splitter ).append ( array[ i ] );
         }
-        return argument;
+        return argument.toString ( );
     }
 
     public String buildDependencyArgument(String[][] dependency, String splitter){
-        String argument = "";
-        for(int i=0; i<dependency.length; i++){
-            argument = argument+""+splitter+""+buildArgument(dependency[i],":");
+        StringBuilder argument = new StringBuilder ( );
+        for ( String[] strings : dependency ) {
+            argument.append ( splitter ).append ( buildArgument ( strings , ":" ) );
         }
         return argument.substring(1);
     }
@@ -65,7 +65,7 @@ public class Utils {
         return newData;
     }
 
-    public String[] getUnique(String[] data) {
+    public String[] getUnique ( String[] data ) {
         String[] dataLabel = new String[data.length];
         SortedSet < String > set = new TreeSet <> ( Arrays.asList ( data ) );
         Iterator<?> element = set.iterator();
@@ -83,7 +83,7 @@ public class Utils {
         int[] output = new int[0];
         boolean ok;
 
-        for(int i = 0; i < data.length; ++i) {
+        for(int i = 0; i < data.length; ++i){
             ok = false;
             byte bytes = -1;
             switch(opr.hashCode()) {
@@ -194,10 +194,10 @@ public class Utils {
     }
 
     public int[][] double_to_int(double[][] data) {
-        int dimention = data[0].length;
-        int[][] newData = new int[data.length][dimention];
+        int dimension = data[0].length;
+        int[][] newData = new int[data.length][dimension];
         for(int i = 0; i < data.length; ++i) {
-            for(int j = 0; j < dimention; ++j) {
+            for(int j = 0; j < dimension; ++j) {
                 newData[i][j] = (int)data[i][j];
             }
         }
@@ -268,9 +268,18 @@ public class Utils {
         }
         return newData;
     }
-
-
-    public String[][] List_to_String(ArrayList<String[]> data){
+    
+    public static String bytesToHex(byte[] bytes) {
+        StringBuilder sb = new StringBuilder();
+        for ( byte aByte : bytes ) {
+            int intVal = aByte & 0xff;
+            if ( intVal < 0x10 ) sb.append ( "0" );
+            sb.append ( Integer.toHexString ( intVal ).toUpperCase ( ) );
+        }
+        return sb.toString();
+    }
+    
+    public String[][] list_to_String(ArrayList<String[]> data){
         String[][] newData  = new String[data.size()][data.get(0).length];
         for(int i=0; i<data.size();i++){
             for(int j=0; j<data.get(0).length; j++){
