@@ -28,7 +28,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.bayudwiyansatria</groupId>
 	<artifactId>core</artifactId>
-	<version>1.1.8-SNAPSHOT</version>
+	<version>1.1.8</version>
 	<packaging>jar</packaging>
 
 	<name>Bayu Dwiyan Satria - Core</name>
@@ -423,6 +423,7 @@
 					<use>false</use>
 					<quiet>true</quiet>
 					<notimestamp>true</notimestamp>
+					<source>8</source>
 				</configuration>
 				<executions>
 					<execution>
