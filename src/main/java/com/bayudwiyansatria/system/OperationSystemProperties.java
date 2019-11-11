@@ -15,7 +15,7 @@
  *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * FITNESS FOR A PARTICULAR PURPOSE AND NON INFRINGEMENT. IN NO EVENT SHALL THE
  * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
@@ -38,15 +38,18 @@ public class OperationSystemProperties extends Properties {
 		return System.getProperty("os.arch");
 	}
 	
-	public String[] getOperatingSystemInformation () {
-		String[] OSInfo = new String[3];
-		OSInfo[0] = this.getOperatingSystem ();
-		OSInfo[1] = this.getOperatingSystemVersion ();
-		OSInfo[2] = this.getOperatingSystemArchitecture ();
-		System.out.println ( "OS : " + OSInfo[0]);
-		System.out.println ( "OS Version : " + OSInfo[1]);
-		System.out.println ( "OS Architecture : " + OSInfo[2]);
-		return OSInfo;
+	public int getNumOfCores(){
+		return Runtime.getRuntime().availableProcessors();
 	}
 	
+	public String[] getOperatingSystemInformation () {
+		String[] OSInfo = new String[ 3 ];
+		OSInfo[ 0 ] = this.getOperatingSystem ( );
+		OSInfo[ 1 ] = this.getOperatingSystemVersion ( );
+		OSInfo[ 2 ] = this.getOperatingSystemArchitecture ( );
+		System.out.println ( "OS : " + OSInfo[ 0 ] );
+		System.out.println ( "OS Version : " + OSInfo[ 1 ] );
+		System.out.println ( "OS Architecture : " + OSInfo[ 2 ] );
+		return OSInfo;
+	}
 }
