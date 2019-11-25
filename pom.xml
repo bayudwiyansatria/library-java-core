@@ -99,10 +99,9 @@
 
 	<distributionManagement>
 		<repository>
-			<id>jira</id>
-			<name>The Central Repository</name>
-			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-			<layout>default</layout>
+			<id>github</id>
+			<name>Github Packages Registry</name>
+			<url>https://maven.pkg.github.com/bayudwiyansatria/Library-Java-Core</url>
 		</repository>
 		<snapshotRepository>
 			<id>jira</id>
@@ -535,17 +534,6 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.sonatype.plugins</groupId>
-				<artifactId>nexus-staging-maven-plugin</artifactId>
-				<version>${sonatype.plugins.version}</version>
-				<extensions>true</extensions>
-				<configuration>
-					<serverId>jira</serverId>
-					<nexusUrl>https://oss.sonatype.org/</nexusUrl>
-					<autoReleaseAfterClose>true</autoReleaseAfterClose>
-				</configuration>
 			</plugin>
 			<plugin>				
 				<groupId>org.apache.maven.plugins</groupId>
