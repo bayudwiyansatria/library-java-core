@@ -29,4 +29,3 @@ steps:
     mavenVersionOption: 'Default'
     mavenAuthenticateFeed: false
     sonarQubeRunAnalysis: false
-    
