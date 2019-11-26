@@ -6,11 +6,11 @@
 # Contact : bayudwiyansatria@gmail.com / +62-823-9602-9583
 # Site : https://www.bayudwiyansatria.com
 
-name: '1.1.8'
+name: 'Library-Java-Core'
 
 trigger: none
 pr:
-- release/*
+- master
 
 pool:
   vmImage: 'ubuntu-latest'
