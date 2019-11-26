@@ -21,18 +21,3 @@ steps:
     mavenVersionOption: 'Default'
     mavenAuthenticateFeed: false
     sonarQubeRunAnalysis: false
-    
-- task: GitHubRelease@1
-  displayName: 'Create GitHub Release'
-  inputs:
-    gitHubConnection: 'bayudwiyansatria'
-    repositoryName: '$(Build.Repository.Name)'
-    action: 'create'
-    target: '$(Build.SourceVersion)'
-    tagSource: 'userSpecifiedTag'
-    tag: 'v$(Build.BuildNumber)'
-    title: '$(Build.BuildNumber)'
-    releaseNotesFilePath: 'README.md'
-    isPreRelease: true
-    changeLogCompareToRelease: 'lastFullRelease'
-    changeLogType: 'commitBased'
