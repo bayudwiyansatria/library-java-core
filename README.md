@@ -33,6 +33,7 @@
 [![Build Status](https://dev.azure.com/bayudwiyansatria/Bayu%20Dwiyan%20Satria%20-%20Programming%20Library/_apis/build/status/Library-Java-Core?branchName=master)](https://dev.azure.com/bayudwiyansatria/Bayu%20Dwiyan%20Satria%20-%20Programming%20Library/_apis/build/status/Library-Java-Core?branchName=master)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/2045f7bf665040aba79cd79f03aeff7c)](https://www.codacy.com/manual/bayudwiyansatria/Library-Java-Core?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=bayudwiyansatria/Library-Java-Core&amp;utm_campaign=Badge_Grade)
 [![Codacy Badge](https://api.codacy.com/project/badge/Coverage/2045f7bf665040aba79cd79f03aeff7c)](https://www.codacy.com/manual/bayudwiyansatria/Library-Java-Core?utm_source=github.com&utm_medium=referral&utm_content=bayudwiyansatria/Library-Java-Core&utm_campaign=Badge_Coverage)
+[![codecov](https://codecov.io/gh/bayudwiyansatria/Library-Java-Core/branch/master/graph/badge.svg)](https://codecov.io/gh/bayudwiyansatria/Library-Java-Core)
 
 Core of Bayu Dwiyan Satria Project Framework.
 
