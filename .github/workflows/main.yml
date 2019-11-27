@@ -24,10 +24,10 @@ jobs:
       - name: Maven build clean, build, test and install
         env:
           CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
         run: |
           mvn clean
           mvn test
           mvn package --file pom.xml
-          curl -Ls -o codacy-coverage-reporter "$(curl -Ls https://api.github.com/repos/codacy/codacy-coverage-reporter/releases/latest | jq -r '.assets | map({name, browser_download_url} | select(.name | contains("codacy-coverage-reporter-linux"))) | .[0].browser_download_url')"
-          chmod +x codacy-coverage-reporter
-          ./codacy-coverage-reporter report -l Java -r target/site/jacoco/jacoco.xml
+          bash <(curl -s https://codecov.io/bash)
+          
