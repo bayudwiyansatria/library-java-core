@@ -28,6 +28,9 @@ import com.bayudwiyansatria.mat.Array;
 import com.bayudwiyansatria.utils.Utils;
 
 import java.io.*;
+import java.nio.file.Paths;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class Files extends Array {
     
@@ -138,6 +141,36 @@ public class Files extends Array {
 
     public String[][] readCSV_String(String filename) {
         return this.readCSV(filename, "title:no");
+    }
+    
+    public List <String> readData_List( String filename) {
+		List<String> data;
+        try {
+            data = java.nio.file.Files.lines ( Paths.get ( filename ) ).parallel ( ).collect( Collectors.toList());
+        } catch ( IOException e ){
+            data = null;
+        }
+        return data;
+	}
+	
+	public String[] readData_1D_String(String filename){
+        String[]data;
+        try {
+                data = java.nio.file.Files.lines ( Paths.get ( filename ) ).parallel ( ).toArray ( String[] :: new );
+        } catch ( IOException e ){
+            data = null;
+        }
+        return data;
+    }
+    
+    public String[][] readData_2D_String(String filename){
+        String[][] data;
+        try {
+            data = java.nio.file.Files.lines ( Paths.get ( filename ) ).parallel ( ).map ( map -> map.split ( "," ) ).toArray ( String[][] :: new );
+        } catch ( IOException e ){
+            data = null;
+        }
+        return data;
     }
     
     public void saveCSV(int[] data, String filename) {
