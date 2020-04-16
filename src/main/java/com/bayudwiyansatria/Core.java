@@ -27,4 +27,10 @@ package com.bayudwiyansatria;
 import com.bayudwiyansatria.system.Properties;
 
 public class Core extends Properties {
+	public static void main(String[] args) {
+	    long StartTime = System.currentTimeMillis();
+	    long EndTime = System.currentTimeMillis();
+	    float sec = (EndTime - StartTime) / 1000F;
+	    System.out.println(sec + " seconds");
+	}
 }
