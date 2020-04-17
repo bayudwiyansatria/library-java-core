@@ -158,39 +158,6 @@
 			</snapshots>
 		</pluginRepository>
 	</pluginRepositories>
-	
-	<properties>
-		<organization.logo>https://cdn.bayudwiyansatria.com/assets/logo-full.png</organization.logo>
-		
-		<!-- Project Properties -->
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<project.test.coverage.targetPercentage>70%</project.test.coverage.targetPercentage>
-		<project.build.outputTimestamp>2020-01-22T15:10:15Z</project.build.outputTimestamp>
-		
-		<!-- JVM Properties -->
-		<java.version>1.8</java.version>
-		<java.optimize>true</java.optimize>
-		
-		<maven.version>3.6.3</maven.version>
-		<maven.compiler.source>${java.version}</maven.compiler.source>
-		<maven.compiler.target>${java.version}</maven.compiler.target>
-		
-		<gpg.executable>gpg</gpg.executable>
-		<gpg.useagent>true</gpg.useagent>
-		
-	</properties>
-
-	<dependencyManagement/>
-	
-	<dependencies>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<scope>test</scope>
-			<exclusions/>
-		</dependency>
-	</dependencies>
 
 	<properties>
 		<organization.logo>https://cdn.bayudwiyansatria.com/assets/logo-full.png</organization.logo>
