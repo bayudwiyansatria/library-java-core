@@ -38,8 +38,8 @@ public class Math extends Calculation {
             average = new double[data[0].length];
             for(int i = 0; i < data[0].length; ++i) {
                 initAverage = 0.0;
-                for(int j = 0; j < data.length; ++j) {
-                    initAverage += data[j][i];
+                for (int[] datum : data) {
+                    initAverage += datum[i];
                 }
                 average[i] = initAverage / (double)data.length;
             }
@@ -61,20 +61,18 @@ public class Math extends Calculation {
 
     public double getAverage(int[] data) {
         double initAverage = 0.0;
-        for(int i = 0; i < data.length; ++i) {
-            initAverage = initAverage + data[i];
+        for (int datum : data) {
+            initAverage = initAverage + datum;
         }
-        double average = initAverage / (double)data.length;
-        return average;
+        return initAverage / (double)data.length;
     }
 
     public double getAverage(double[] data) {
         double initAverage = 0.0;
-        for(int i = 0; i < data.length; ++i) {
-            initAverage = initAverage + data[i];
+        for (double datum : data) {
+            initAverage = initAverage + datum;
         }
-        double average = initAverage / (double)data.length;
-        return average;
+        return initAverage / (double)data.length;
     }
 
     public double[] getAverage(double[][] data, String mode) {
@@ -84,8 +82,8 @@ public class Math extends Calculation {
             average = new double[data[0].length];
             for(int i = 0; i < data[0].length; ++i) {
                 initAverage = 0.0;
-                for(int j = 0; j < data.length; ++j) {
-                    initAverage += data[j][i];
+                for (double[] datum : data) {
+                    initAverage += datum[i];
                 }
                 average[i] = initAverage / (double)data.length;
             }
@@ -287,7 +285,7 @@ public class Math extends Calculation {
         ArrayList<Integer> data = new ArrayList<Integer>(n);
 
         for(int i = 0; i < n; ++i) {
-            data.add(new Integer(i));
+            data.add(i);
         }
 
         Random random = new Random();
@@ -305,16 +303,16 @@ public class Math extends Calculation {
 
     public int getSum(int[] data) {
         int output = 0;
-        for(int i = 0; i < data.length; ++i) {
-            output += data[i];
+        for (int datum : data) {
+            output += datum;
         }
         return output;
     }
 
     public double getSum(double[] data) {
         double output = 0.0;
-        for(int i = 0; i < data.length; ++i) {
-            output += data[i];
+        for (double datum : data) {
+            output += datum;
         }
         return output;
     }
@@ -326,9 +324,8 @@ public class Math extends Calculation {
             output = new int[data[0].length];
             for(int i = 0; i < data[0].length; ++i) {
                 sum = 0;
-
-                for(int j = 0; j < data.length; ++j) {
-                    sum += data[j][i];
+                for (int[] datum : data) {
+                    sum += datum[i];
                 }
                 output[i] = sum;
             }
@@ -356,9 +353,9 @@ public class Math extends Calculation {
 
             for(int i = 0; i < data[0].length; ++i) {
                 sum = 0.0;
-
-                for(int j = 0; j < data.length; ++j) {
-                    sum += data[j][i];
+    
+                for (double[] datum : data) {
+                    sum += datum[i];
                 }
 
                 output[i] = sum;
